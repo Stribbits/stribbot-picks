@@ -1,7 +1,7 @@
 {
  "date": "2026-10-26",
  "scanned": 395,
- "updatedAt": "2026-10-26T21:30:00Z",
+ "updatedAt": "2026-10-26T21:45:00Z",
  "bets": [
   {
    "rank": 1,
@@ -33,15 +33,15 @@
    "price": "-156",
    "decimal": 1.641,
    "breakeven": 0.609,
-   "est_low": 0.62,
-   "est_high": 0.67,
+   "est_low": 0.57,
+   "est_high": 0.64,
    "method": "Empirical + role",
-   "verdict": "Agreed",
-   "agent1": "Accept",
+   "verdict": "Fun only",
+   "agent1": "Lean",
    "agent2": "Accept",
-   "agent3": "Accept",
+   "agent3": "Recheck",
    "analysts": "Cordell (Covers) backs it, worth it to 63%",
-   "objection": "Top-line role and rising ice time are only a few games old"
+   "objection": "Only 3 of his last 5 games hit 2+ shots, with two 0-shot games; the price needs 61%"
   },
   {
    "rank": 3,
