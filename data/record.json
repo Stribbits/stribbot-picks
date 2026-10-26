@@ -1,0 +1,52 @@
+[
+ {
+  "date": "2026-10-24",
+  "game": "MIN @ SEA",
+  "bet": "Boldy over 3.5 shots",
+  "price": "-141",
+  "decimal": 1.709,
+  "stake": 5,
+  "result": "Win",
+  "placedAt": "2026-10-24T20:50:00Z"
+ },
+ {
+  "date": "2026-10-25",
+  "game": "MIN @ VAN",
+  "bet": "Hronek under 1.5 shots",
+  "price": "-128",
+  "decimal": 1.781,
+  "stake": 5,
+  "result": "Win",
+  "placedAt": "2026-10-25T18:33:00Z"
+ },
+ {
+  "date": "2026-10-25",
+  "game": "MIN @ VAN",
+  "bet": "Boldy over 3.5 shots",
+  "price": "-109",
+  "decimal": 1.917,
+  "stake": 5,
+  "result": "Loss",
+  "placedAt": "2026-10-25T18:33:30Z"
+ },
+ {
+  "date": "2026-10-25",
+  "game": "COL @ NSH",
+  "bet": "Lehkonen 1+ point",
+  "price": "-125",
+  "decimal": 1.8,
+  "stake": 5,
+  "result": "Win",
+  "placedAt": "2026-10-25T18:52:00Z"
+ },
+ {
+  "date": "2026-10-25",
+  "game": "MTL @ WPG",
+  "bet": "Connor over 2.5 shots",
+  "price": "-188",
+  "decimal": 1.531,
+  "stake": 6,
+  "result": "Win",
+  "placedAt": "2026-10-25T20:31:00Z"
+ }
+]
