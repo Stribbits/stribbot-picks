@@ -9,18 +9,12 @@
 <style>
 /* Layout: one column scoreboard — record strip, tonight's ranked board with a Place bet button on each card, then the bet slip you grade. */
 :root {
-  --bg: #F2F5F8; --panel: #FFFFFF; --ink: #0E1A2B; --muted: #5B6B7E; --line: #D6DEE7;
-  --accent: #C8102E; --ok: #1F7A4D; --warn: #A86300; --bad: #B4232C; --chip: #EEF2F6;
+  --bg: #0B1320; --panel: #121C2C; --ink: #E6EDF5; --muted: #8FA0B5; --line: #24344C;
+  --accent: #FF4D5E; --ok: #4CC38A; --warn: #F0B04A; --bad: #FF6B6B; --chip: #1A263A; color-scheme: dark;
   --f-display: "Barlow Condensed", "Arial Narrow", sans-serif;
   --f-body: "IBM Plex Sans", system-ui, sans-serif;
   --f-num: "IBM Plex Mono", ui-monospace, monospace;
 }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
-  --bg: #0B1320; --panel: #121C2C; --ink: #E6EDF5; --muted: #8FA0B5; --line: #24344C;
-  --accent: #FF4D5E; --ok: #4CC38A; --warn: #F0B04A; --bad: #FF6B6B; --chip: #1A263A; color-scheme: dark; } }
-:root[data-theme="dark"] {
-  --bg: #0B1320; --panel: #121C2C; --ink: #E6EDF5; --muted: #8FA0B5; --line: #24344C;
-  --accent: #FF4D5E; --ok: #4CC38A; --warn: #F0B04A; --bad: #FF6B6B; --chip: #1A263A; color-scheme: dark; }
 html { -webkit-text-size-adjust: 100%; }
 body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--f-body); font-size: 15px; line-height: 1.45; }
 .wrap { max-width: 980px; margin: 0 auto; padding-block: 24px 48px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: flex; flex-direction: column; gap: 28px; }
