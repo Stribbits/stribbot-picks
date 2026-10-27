@@ -7,13 +7,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;700&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
 <style>
-/* Layout: one column scoreboard — record strip, tonight's ranked board with a Place bet button on each card, then the bet slip you grade. */
+/* Layout: one column scoreboard — your bet slip first, then tonight's ranked board with a Place bet button on each card. */
 :root {
-  --bg: #0B1320; --panel: #121C2C; --ink: #E6EDF5; --muted: #8FA0B5; --line: #24344C;
-  --accent: #FF4D5E; --ok: #4CC38A; --warn: #F0B04A; --bad: #FF6B6B; --chip: #1A263A; color-scheme: dark;
-  --f-display: "Barlow Condensed", "Arial Narrow", sans-serif;
-  --f-body: "IBM Plex Sans", system-ui, sans-serif;
-  --f-num: "IBM Plex Mono", ui-monospace, monospace;
+--bg: #0B1320; --panel: #121C2C; --ink: #E6EDF5; --muted: #8FA0B5; --line: #24344C;
+--accent: #FF4D5E; --ok: #4CC38A; --warn: #F0B04A; --bad: #FF6B6B; --chip: #1A263A; color-scheme: dark;
+--f-display: "Barlow Condensed", "Arial Narrow", sans-serif;
+--f-body: "IBM Plex Sans", system-ui, sans-serif;
+--f-num: "IBM Plex Mono", ui-monospace, monospace;
 }
 html { -webkit-text-size-adjust: 100%; }
 body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--f-body); font-size: 15px; line-height: 1.45; }
@@ -71,152 +71,121 @@ button:disabled { opacity: .5; cursor: default; }
 .note { font-size: .82rem; color: var(--muted); }
 footer { color: var(--muted); font-size: .8rem; border-top: 1px solid var(--line); padding-top: 14px; }
 .x { border: 0; background: none; color: var(--muted); padding: 4px 6px; }
-.viewonly .place, .viewonly .grade button { display: none; }
 @media (prefers-reduced-motion: no-preference) { .bet, .row { transition: border-color .2s; } }
 </style>
 </head>
 <body>
 <div class="wrap">
-  <header>
-    <h1>Strib<span>bot</span></h1>
-    <p class="sub" id="takeaway">Loading tonight's board…</p>
-  </header>
+<header>
+<h1>Strib<span>bot</span></h1>
+<p class="sub" id="takeaway">Loading tonight's board…</p>
+</header>
 
-  <section aria-labelledby="rec-h">
-    <h2 id="rec-h">Stribbot record</h2>
-    <div class="strip">
-      <div class="stat"><span class="label">W-L-P</span><b class="num" id="s-rec">—</b></div>
-      <div class="stat"><span class="label">Profit</span><b class="num" id="s-pl">—</b></div>
-      <div class="stat"><span class="label">Staked</span><b class="num" id="s-st">—</b></div>
-      <div class="stat"><span class="label">Return</span><b class="num" id="s-roi">—</b></div>
-      <div class="stat"><span class="label">Pending</span><b class="num" id="s-pend">—</b></div>
-    </div>
-    <div class="slip" id="record"><div class="empty">Loading…</div></div>
-  </section>
+<section aria-labelledby="slip-h">
+<h2 id="slip-h">My bets</h2>
+<p class="note">Tap Place bet on a card to track it here. Saved on this device only. Mark it Won, Lost or Push when the game ends.</p>
+<div class="strip" id="mystrip">
+<div class="stat"><span class="label">My W-L-P</span><b class="num" id="m-rec">0-0-0</b></div>
+<div class="stat"><span class="label">My profit</span><b class="num" id="m-pl">$0.00</b></div>
+</div>
+<div class="slip" id="slip"><div class="empty">No bets yet.</div></div>
+</section>
 
-  <section aria-labelledby="board-h">
-    <h2 id="board-h">Tonight's top 10</h2>
-    <p class="note">Every Pinnacle bet on the slate is scanned and ranked. Stribbot Agents 1–3 each vote. "Agreed" means all three accept. Bar shows our estimated win range; the line is what the price needs.</p>
-    <div class="board" id="board"><div class="empty">No board posted yet.</div></div>
-  </section>
+<section aria-labelledby="board-h">
+<h2 id="board-h">Tonight's top 10</h2>
+<p class="note">Every Pinnacle bet on the slate is scanned and ranked by chance to hit. Stribbot Agents 1–3 each vote. "Agreed" means all three accept. Bar shows our estimated win range; the line is what the price needs.</p>
+<div class="board" id="board"><div class="empty">No board posted yet.</div></div>
+</section>
 
-  <section aria-labelledby="slip-h">
-    <h2 id="slip-h">My bets</h2>
-    <p class="note">Tap Place bet on a card to track it here. Saved on this device only. Mark it Won, Lost or Push when the game ends.</p>
-    <div class="strip" id="mystrip">
-      <div class="stat"><span class="label">My W-L-P</span><b class="num" id="m-rec">0-0-0</b></div>
-      <div class="stat"><span class="label">My profit</span><b class="num" id="m-pl">$0.00</b></div>
-    </div>
-    <div class="slip" id="slip"><div class="empty">No bets yet.</div></div>
-  </section>
-
-  <footer>For entertainment only. Picks are estimates, not guarantees. Odds are Pinnacle prices at the time of posting and can move. 19+. Bet only what you can afford to lose.</footer>
+<footer>For entertainment only. Picks are estimates, not guarantees. Odds are Pinnacle prices at the time of posting and can move. 19+. Bet only what you can afford to lose.</footer>
 </div>
 
 <script>
 (() => {
-  const $ = (id) => document.getElementById(id);
-  const money = (v) => (v < 0 ? '−$' : v > 0 ? '+$' : '$') + Math.abs(v).toFixed(2);
-  const pct = (v) => Math.round(v * 1000) / 10 + '%';
-  const profitOf = (b) => b.result === 'Win' ? b.stake * (b.decimal - 1) : b.result === 'Loss' ? -b.stake : 0;
-  const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
-  const KEY = 'stribbot-my-bets';
-  const load = () => { try { return JSON.parse(localStorage.getItem(KEY) || '[]'); } catch (e) { return []; } };
-  const save = (v) => { try { localStorage.setItem(KEY, JSON.stringify(v)); } catch (e) {} };
-  let card = null, record = [], mine = load();
+const $ = (id) => document.getElementById(id);
+const money = (v) => (v < 0 ? '−$' : v > 0 ? '+$' : '$') + Math.abs(v).toFixed(2);
+const pct = (v) => Math.round(v * 1000) / 10 + '%';
+const profitOf = (b) => b.result === 'Win' ? b.stake * (b.decimal - 1) : b.result === 'Loss' ? -b.stake : 0;
+const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
+const KEY = 'stribbot-my-bets';
+const load = () => { try { return JSON.parse(localStorage.getItem(KEY) || '[]'); } catch (e) { return []; } };
+const save = (v) => { try { localStorage.setItem(KEY, JSON.stringify(v)); } catch (e) {} };
+let card = null, mine = load();
 
-  function tally(list) {
-    const settled = list.filter(b => b.result !== 'Pending');
-    const n = (r) => list.filter(b => b.result === r).length;
-    const staked = settled.reduce((s, b) => s + b.stake, 0), pl = settled.reduce((s, b) => s + profitOf(b), 0);
-    return { rec: `${n('Win')}-${n('Loss')}-${n('Push')}`, staked, pl, pend: n('Pending') };
-  }
-  function setPL(node, pl) { node.textContent = money(pl); node.className = 'num ' + (pl > 0 ? 'pos' : pl < 0 ? 'neg' : ''); }
+function tally(list) {
+const settled = list.filter(b => b.result !== 'Pending');
+const n = (r) => list.filter(b => b.result === r).length;
+const staked = settled.reduce((s, b) => s + b.stake, 0), pl = settled.reduce((s, b) => s + profitOf(b), 0);
+return { rec: `${n('Win')}-${n('Loss')}-${n('Push')}`, staked, pl, pend: n('Pending') };
+}
+function setPL(node, pl) { node.textContent = money(pl); node.className = 'num ' + (pl > 0 ? 'pos' : pl < 0 ? 'neg' : ''); }
 
-  function renderRecord() {
-    const t = tally(record);
-    $('s-rec').textContent = t.rec; setPL($('s-pl'), t.pl); $('s-st').textContent = '$' + t.staked.toFixed(2);
-    $('s-roi').textContent = t.staked ? (t.pl >= 0 ? '+' : '') + pct(t.pl / t.staked) : '—'; $('s-pend').textContent = String(t.pend);
-    const box = $('record');
-    if (!record.length) { box.replaceChildren(el('div', 'empty', 'No bets recorded yet.')); return; }
-    const rows = record.slice().sort((a, b) => String(b.date + (b.placedAt || '')).localeCompare(String(a.date + (a.placedAt || ''))));
-    box.replaceChildren(...rows.map(b => {
-      const row = el('div', 'row'), w = el('div', 'what');
-      w.append(el('div', '', b.bet), el('div', 'meta', `${b.date} · ${b.game || ''} · ${b.price} · $${b.stake.toFixed(2)}`));
-      const p = profitOf(b);
-      row.append(w, el('span', 'res ' + (p > 0 ? 'pos' : p < 0 ? 'neg' : ''), b.result === 'Pending' ? 'Pending' : (b.result === 'Push' ? 'Push ' : '') + money(p)));
-      return row;
-    }));
-  }
+function renderMine() {
+const t = tally(mine); $('m-rec').textContent = t.rec; setPL($('m-pl'), t.pl);
+const box = $('slip');
+if (!mine.length) { box.replaceChildren(el('div', 'empty', 'No bets yet.')); return; }
+const rows = mine.slice().sort((a, b) => ((b.result === 'Pending') - (a.result === 'Pending')) || String(b.placedAt).localeCompare(String(a.placedAt)));
+box.replaceChildren(...rows.map(b => {
+const row = el('div', 'row'), w = el('div', 'what');
+w.append(el('div', '', b.bet), el('div', 'meta', `${b.date} · ${b.game} · ${b.price} · $${b.stake.toFixed(2)}`));
+const g = el('div', 'grade');
+const setRes = (res) => { mine = mine.map(x => x.id === b.id ? { ...x, result: res } : x); save(mine); renderAll(); };
+if (b.result === 'Pending') {
+const mk = (lab, cls, res) => { const x = el('button', cls, lab); x.addEventListener('click', () => setRes(res)); return x; };
+const rm = el('button', 'x', 'Remove'); rm.addEventListener('click', () => { mine = mine.filter(x => x.id !== b.id); save(mine); renderAll(); });
+g.append(mk('Won', 'w', 'Win'), mk('Lost', 'l', 'Loss'), mk('Push', '', 'Push'), rm);
+} else {
+const p = profitOf(b);
+const undo = el('button', 'x', 'Undo'); undo.addEventListener('click', () => setRes('Pending'));
+g.append(el('span', 'res ' + (p > 0 ? 'pos' : p < 0 ? 'neg' : ''), (b.result === 'Push' ? 'Push ' : '') + money(p)), undo);
+}
+row.append(w, g); return row;
+}));
+}
 
-  function renderMine() {
-    const t = tally(mine); $('m-rec').textContent = t.rec; setPL($('m-pl'), t.pl);
-    const box = $('slip');
-    if (!mine.length) { box.replaceChildren(el('div', 'empty', 'No bets yet.')); return; }
-    const rows = mine.slice().sort((a, b) => ((b.result === 'Pending') - (a.result === 'Pending')) || String(b.placedAt).localeCompare(String(a.placedAt)));
-    box.replaceChildren(...rows.map(b => {
-      const row = el('div', 'row'), w = el('div', 'what');
-      w.append(el('div', '', b.bet), el('div', 'meta', `${b.date} · ${b.game} · ${b.price} · $${b.stake.toFixed(2)}`));
-      const g = el('div', 'grade');
-      const setRes = (res) => { mine = mine.map(x => x.id === b.id ? { ...x, result: res } : x); save(mine); renderAll(); };
-      if (b.result === 'Pending') {
-        const mk = (lab, cls, res) => { const x = el('button', cls, lab); x.addEventListener('click', () => setRes(res)); return x; };
-        const rm = el('button', 'x', 'Remove'); rm.addEventListener('click', () => { mine = mine.filter(x => x.id !== b.id); save(mine); renderAll(); });
-        g.append(mk('Won', 'w', 'Win'), mk('Lost', 'l', 'Loss'), mk('Push', '', 'Push'), rm);
-      } else {
-        const p = profitOf(b);
-        const undo = el('button', 'x', 'Undo'); undo.addEventListener('click', () => setRes('Pending'));
-        g.append(el('span', 'res ' + (p > 0 ? 'pos' : p < 0 ? 'neg' : ''), (b.result === 'Push' ? 'Push ' : '') + money(p)), undo);
-      }
-      row.append(w, g); return row;
-    }));
-  }
+function renderBoard() {
+const box = $('board');
+if (!card || !Array.isArray(card.bets) || !card.bets.length) { box.replaceChildren(el('div', 'empty', 'No board posted yet.')); $('takeaway').textContent = 'No board posted yet.'; return; }
+const rows = card.bets.slice().sort((a, b) => a.rank - b.rank);
+const agreed = rows.filter(r => r.verdict === 'Agreed').length, fun = rows.filter(r => r.verdict === 'Fun only').length;
+$('takeaway').textContent = `${card.date}: ${card.scanned ? card.scanned.toLocaleString() + ' Pinnacle bets scanned. ' : ''}${agreed} agreed, ${fun} fun only, ${rows.length - agreed - fun} passed.`;
+box.replaceChildren(...rows.map(r => {
+const a = el('article', 'bet' + (r.verdict === 'Agreed' ? ' agreed' : ''));
+const top = el('div', 'top'), left = el('div'); left.style.display = 'flex'; left.style.gap = '10px';
+left.append(el('div', 'rank', String(r.rank)));
+const t = el('div'); t.append(el('div', 'title', r.bet), el('div', 'note', `${r.game} · ${r.start}`)); left.append(t);
+top.append(left, el('span', 'pill v-' + (r.verdict === 'Fun only' ? 'Fun' : r.verdict), r.verdict)); a.append(top);
+const figs = el('div', 'figs');
+const f = (lab, val) => { const d = el('div'); d.append(el('b', '', val), el('span', 'label', lab)); return d; };
+figs.append(f('Price', r.price), f('Needs', pct(r.breakeven)), f('Estimate', `${Math.round(r.est_low * 100)}–${Math.round(r.est_high * 100)}%`)); a.append(figs);
+const lo = .3, hi = .95, x = v => Math.max(0, Math.min(100, (v - lo) / (hi - lo) * 100));
+const rg = el('div', 'range'); rg.setAttribute('aria-hidden', 'true');
+const band = el('i', r.est_high > r.breakeven ? 'good' : ''); band.style.left = x(r.est_low) + '%'; band.style.width = Math.max(2, x(r.est_high) - x(r.est_low)) + '%';
+const be = el('u'); be.style.left = x(r.breakeven) + '%'; rg.append(band, be); a.append(rg);
+const chips = el('div', 'chips');
+[['Agent 1', r.agent1], ['Agent 2', r.agent2], ['Agent 3', r.agent3], ['Analysts', r.analysts]].forEach(([k, v]) => { const c = el('span', 'chip'); c.append(el('em', '', k), document.createTextNode(v || '—')); chips.append(c); });
+a.append(chips, el('p', 'obj', 'Strongest objection: ' + (r.objection || '—')));
+const pl = el('div', 'place');
+const done = mine.find(b => b.date === card.date && b.bet === r.bet && b.game === r.game);
+if (done) pl.append(el('span', 'placed', `Tracking $${done.stake.toFixed(2)} · ${done.result === 'Pending' ? 'pending' : done.result.toLowerCase()}`));
+else {
+const lab = el('label'); lab.append(document.createTextNode('$'));
+const inp = el('input'); inp.type = 'number'; inp.min = '1'; inp.step = '0.5'; inp.value = '5'; inp.id = 'stake-' + r.rank; inp.setAttribute('aria-label', 'Stake for ' + r.bet); lab.append(inp);
+const pays = el('span', 'pays'); const upd = () => { const s = parseFloat(inp.value) || 0; pays.textContent = `wins ${money(s * (r.decimal - 1))}`; };
+inp.addEventListener('input', upd); upd();
+const btn = el('button', 'primary', 'Place bet');
+btn.addEventListener('click', () => { const s = parseFloat(inp.value); if (!(s > 0)) { pays.textContent = 'Enter a stake above $0'; return; }
+mine = mine.concat([{ id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6), date: card.date, game: r.game, bet: r.bet, price: r.price, decimal: r.decimal, stake: Math.round(s * 100) / 100, result: 'Pending', placedAt: new Date().toISOString() }]);
+save(mine); renderAll(); });
+pl.append(lab, btn, pays);
+}
+a.append(pl); return a;
+}));
+}
 
-  function renderBoard() {
-    const box = $('board');
-    if (!card || !Array.isArray(card.bets) || !card.bets.length) { box.replaceChildren(el('div', 'empty', 'No board posted yet.')); $('takeaway').textContent = 'No board posted yet.'; return; }
-    const rows = card.bets.slice().sort((a, b) => a.rank - b.rank);
-    const agreed = rows.filter(r => r.verdict === 'Agreed').length, fun = rows.filter(r => r.verdict === 'Fun only').length;
-    $('takeaway').textContent = `${card.date}: ${card.scanned ? card.scanned.toLocaleString() + ' Pinnacle bets scanned. ' : ''}${agreed} agreed, ${fun} fun only, ${rows.length - agreed - fun} passed.`;
-    box.replaceChildren(...rows.map(r => {
-      const a = el('article', 'bet' + (r.verdict === 'Agreed' ? ' agreed' : ''));
-      const top = el('div', 'top'), left = el('div'); left.style.display = 'flex'; left.style.gap = '10px';
-      left.append(el('div', 'rank', String(r.rank)));
-      const t = el('div'); t.append(el('div', 'title', r.bet), el('div', 'note', `${r.game} · ${r.start}`)); left.append(t);
-      top.append(left, el('span', 'pill v-' + (r.verdict === 'Fun only' ? 'Fun' : r.verdict), r.verdict)); a.append(top);
-      const figs = el('div', 'figs');
-      const f = (lab, val) => { const d = el('div'); d.append(el('b', '', val), el('span', 'label', lab)); return d; };
-      figs.append(f('Price', r.price), f('Needs', pct(r.breakeven)), f('Estimate', `${Math.round(r.est_low * 100)}–${Math.round(r.est_high * 100)}%`)); a.append(figs);
-      const lo = .3, hi = .9, x = v => Math.max(0, Math.min(100, (v - lo) / (hi - lo) * 100));
-      const rg = el('div', 'range'); rg.setAttribute('aria-hidden', 'true');
-      const band = el('i', r.est_high > r.breakeven ? 'good' : ''); band.style.left = x(r.est_low) + '%'; band.style.width = Math.max(2, x(r.est_high) - x(r.est_low)) + '%';
-      const be = el('u'); be.style.left = x(r.breakeven) + '%'; rg.append(band, be); a.append(rg);
-      const chips = el('div', 'chips');
-      [['Agent 1', r.agent1], ['Agent 2', r.agent2], ['Agent 3', r.agent3], ['Analysts', r.analysts]].forEach(([k, v]) => { const c = el('span', 'chip'); c.append(el('em', '', k), document.createTextNode(v || '—')); chips.append(c); });
-      a.append(chips, el('p', 'obj', 'Strongest objection: ' + (r.objection || '—')));
-      const pl = el('div', 'place');
-      const done = mine.find(b => b.date === card.date && b.bet === r.bet && b.game === r.game);
-      if (done) pl.append(el('span', 'placed', `Tracking $${done.stake.toFixed(2)} · ${done.result === 'Pending' ? 'pending' : done.result.toLowerCase()}`));
-      else {
-        const lab = el('label'); lab.append(document.createTextNode('$'));
-        const inp = el('input'); inp.type = 'number'; inp.min = '1'; inp.step = '0.5'; inp.value = '5'; inp.id = 'stake-' + r.rank; inp.setAttribute('aria-label', 'Stake for ' + r.bet); lab.append(inp);
-        const pays = el('span', 'pays'); const upd = () => { const s = parseFloat(inp.value) || 0; pays.textContent = `wins ${money(s * (r.decimal - 1))}`; };
-        inp.addEventListener('input', upd); upd();
-        const btn = el('button', 'primary', 'Place bet');
-        btn.addEventListener('click', () => { const s = parseFloat(inp.value); if (!(s > 0)) { pays.textContent = 'Enter a stake above $0'; return; }
-          mine = mine.concat([{ id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6), date: card.date, game: r.game, bet: r.bet, price: r.price, decimal: r.decimal, stake: Math.round(s * 100) / 100, result: 'Pending', placedAt: new Date().toISOString() }]);
-          save(mine); renderAll(); });
-        pl.append(lab, btn, pays);
-      }
-      a.append(pl); return a;
-    }));
-  }
-
-  const renderAll = () => { renderRecord(); renderBoard(); renderMine(); };
-  renderAll();
-  const bust = '?t=' + Date.now();
-  Promise.all([fetch('data/card.json' + bust).then(r => r.json()).catch(() => null), fetch('data/record.json' + bust).then(r => r.json()).catch(() => [])])
-    .then(([c, rec]) => { card = c; record = Array.isArray(rec) ? rec : []; renderAll(); });
+const renderAll = () => { renderMine(); renderBoard(); };
+renderAll();
+fetch('data/card.json?t=' + Date.now()).then(r => r.json()).catch(() => null).then(c => { card = c; renderAll(); });
 })();
 </script>
 </body>
