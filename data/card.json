@@ -3,7 +3,7 @@
  "scanned": 1064,
  "ranking": "agreed best first, then chance to hit",
  "note": "Updated 3:10 PM ET: Steve banned assists unders again, so Coleman, Michkov, Tuch, Goncalves, Podkolzin and the other assists unders were removed and all three agents re-ranked. Prices re-checked on Pinnacle at 3:05 PM ET (St. Louis +1.5 moved -250 to -245). Agreed = in all three agents' final top 4: Carlsson over 0.5 points, McDavid over 0.5 assists, Toronto +1.5, Edmonton +1.5 (agreed best, not guaranteed). McDavid and Edmonton +1.5 are from the same game and both do better if Edmonton scores. Earlier in the debate Agent 2 mixed up Toronto's opponent (it is Utah) and Agent 3 said Oettinger, Jarry and Cossa were unconfirmed; Daily Faceoff lists all three as confirmed. No bets on Vegas, Colorado or Detroit (2nd night of a back-to-back). Excluded: all assists unders and player goals props (Steve's rules), Helleson (missed Oct 29), Tippett (missed Oct 15-Nov 1), Kindel (missed 2 games), Killorn, Weegar and Sanheim (recent power-play time jumps), Suzuki (injured), tiny samples; goalie saves not ranked. Max 3 bets per game; estimate = midpoint of Pinnacle no-vig and Agent 1's model. No pending bets to grade. Book check 4:00 PM ET: bet365 (Ontario) prices compared where available; the tick marks the better price. bet365 has no points unders.",
- "updatedAt": "2026-11-03T21:30:00Z",
+ "updatedAt": "2026-11-03T22:10:00Z",
  "bets": [
   {
    "rank": 1,
@@ -28,6 +28,15 @@
     "bet365": "-275",
     "best": "pinnacle",
     "bet365_note": null
+   },
+   "track": {
+    "type": "player",
+    "away": "ANA",
+    "home": "VAN",
+    "player": "Leo Carlsson",
+    "stat": "P",
+    "line": 0.5,
+    "side": "over"
    }
   },
   {
@@ -53,6 +62,15 @@
     "bet365": "-220",
     "best": "bet365",
     "bet365_note": null
+   },
+   "track": {
+    "type": "player",
+    "away": "EDM",
+    "home": "NJD",
+    "player": "Connor McDavid",
+    "stat": "A",
+    "line": 0.5,
+    "side": "over"
    }
   },
   {
@@ -78,6 +96,13 @@
     "bet365": "-200",
     "best": "pinnacle",
     "bet365_note": null
+   },
+   "track": {
+    "type": "spread",
+    "away": "UTA",
+    "home": "TOR",
+    "team": "TOR",
+    "line": 1.5
    }
   },
   {
@@ -103,6 +128,13 @@
     "bet365": "-182",
     "best": "bet365",
     "bet365_note": null
+   },
+   "track": {
+    "type": "spread",
+    "away": "EDM",
+    "home": "NJD",
+    "team": "EDM",
+    "line": 1.5
    }
   },
   {
@@ -128,6 +160,15 @@
     "bet365": null,
     "best": "pinnacle",
     "bet365_note": "bet365 does not offer this market"
+   },
+   "track": {
+    "type": "player",
+    "away": "UTA",
+    "home": "TOR",
+    "player": "Jake McCabe",
+    "stat": "P",
+    "line": 0.5,
+    "side": "under"
    }
   },
   {
@@ -153,6 +194,15 @@
     "bet365": null,
     "best": "pinnacle",
     "bet365_note": "bet365 does not offer this market"
+   },
+   "track": {
+    "type": "player",
+    "away": "UTA",
+    "home": "TOR",
+    "player": "Oliver Ekman-Larsson",
+    "stat": "P",
+    "line": 0.5,
+    "side": "under"
    }
   },
   {
@@ -178,6 +228,13 @@
     "bet365": "-260",
     "best": "bet365",
     "bet365_note": null
+   },
+   "track": {
+    "type": "spread",
+    "away": "DAL",
+    "home": "WSH",
+    "team": "DAL",
+    "line": 1.5
    }
   },
   {
@@ -203,6 +260,13 @@
     "bet365": "-260",
     "best": "pinnacle",
     "bet365_note": null
+   },
+   "track": {
+    "type": "spread",
+    "away": "STL",
+    "home": "NYR",
+    "team": "STL",
+    "line": 1.5
    }
   },
   {
@@ -228,6 +292,15 @@
     "bet365": null,
     "best": "pinnacle",
     "bet365_note": "bet365 does not offer this market"
+   },
+   "track": {
+    "type": "player",
+    "away": "MIN",
+    "home": "PHI",
+    "player": "Matt Boldy",
+    "stat": "P",
+    "line": 1.5,
+    "side": "under"
    }
   },
   {
@@ -253,6 +326,15 @@
     "bet365": null,
     "best": "pinnacle",
     "bet365_note": "bet365 does not offer this market"
+   },
+   "track": {
+    "type": "player",
+    "away": "ANA",
+    "home": "VAN",
+    "player": "Zeev Buium",
+    "stat": "P",
+    "line": 0.5,
+    "side": "under"
    }
   }
  ],
@@ -266,7 +348,14 @@
      "bet": "Montreal +2.5 (OT incl)",
      "price": "-916",
      "est": 0.899,
-     "bet365": "-1100"
+     "bet365": "-1100",
+     "track": {
+      "type": "spread",
+      "away": "WPG",
+      "home": "MTL",
+      "team": "MTL",
+      "line": 2.5
+     }
     },
     {
      "game": "MIN @ PHI",
@@ -274,7 +363,14 @@
      "bet": "Under 8.5 goals (OT incl)",
      "price": "-609",
      "est": 0.866,
-     "bet365": "-700"
+     "bet365": "-700",
+     "track": {
+      "type": "total",
+      "away": "MIN",
+      "home": "PHI",
+      "line": 8.5,
+      "side": "under"
+     }
     }
    ],
    "bet": "Montreal +2.5 (OT incl) + Under 8.5 goals (OT incl)",
@@ -301,7 +397,14 @@
      "bet": "Montreal +2.5 (OT incl)",
      "price": "-916",
      "est": 0.899,
-     "bet365": "-1100"
+     "bet365": "-1100",
+     "track": {
+      "type": "spread",
+      "away": "WPG",
+      "home": "MTL",
+      "team": "MTL",
+      "line": 2.5
+     }
     },
     {
      "game": "DAL @ WSH",
@@ -309,7 +412,14 @@
      "bet": "Under 8.5 goals (OT incl)",
      "price": "-660",
      "est": 0.863,
-     "bet365": null
+     "bet365": null,
+     "track": {
+      "type": "total",
+      "away": "DAL",
+      "home": "WSH",
+      "line": 8.5,
+      "side": "under"
+     }
     }
    ],
    "bet": "Montreal +2.5 (OT incl) + Under 8.5 goals (OT incl)",
@@ -336,7 +446,14 @@
      "bet": "Minnesota +2.5 (OT incl)",
      "price": "-971",
      "est": 0.897,
-     "bet365": "-1200"
+     "bet365": "-1200",
+     "track": {
+      "type": "spread",
+      "away": "MIN",
+      "home": "PHI",
+      "team": "MIN",
+      "line": 2.5
+     }
     },
     {
      "game": "DAL @ WSH",
@@ -344,7 +461,14 @@
      "bet": "Under 8.5 goals (OT incl)",
      "price": "-660",
      "est": 0.863,
-     "bet365": null
+     "bet365": null,
+     "track": {
+      "type": "total",
+      "away": "DAL",
+      "home": "WSH",
+      "line": 8.5,
+      "side": "under"
+     }
     }
    ],
    "bet": "Minnesota +2.5 (OT incl) + Under 8.5 goals (OT incl)",
@@ -371,7 +495,14 @@
      "bet": "Minnesota +2.5 (OT incl)",
      "price": "-971",
      "est": 0.897,
-     "bet365": "-1200"
+     "bet365": "-1200",
+     "track": {
+      "type": "spread",
+      "away": "MIN",
+      "home": "PHI",
+      "team": "MIN",
+      "line": 2.5
+     }
     },
     {
      "game": "ANA @ VAN",
@@ -379,7 +510,14 @@
      "bet": "Anaheim +2.5 (OT incl)",
      "price": "-720",
      "est": 0.859,
-     "bet365": null
+     "bet365": null,
+     "track": {
+      "type": "spread",
+      "away": "ANA",
+      "home": "VAN",
+      "team": "ANA",
+      "line": 2.5
+     }
     }
    ],
    "bet": "Minnesota +2.5 (OT incl) + Anaheim +2.5 (OT incl)",
@@ -406,7 +544,14 @@
      "bet": "Under 8.5 goals (OT incl)",
      "price": "-609",
      "est": 0.866,
-     "bet365": "-700"
+     "bet365": "-700",
+     "track": {
+      "type": "total",
+      "away": "MIN",
+      "home": "PHI",
+      "line": 8.5,
+      "side": "under"
+     }
     },
     {
      "game": "UTA @ TOR",
@@ -414,7 +559,14 @@
      "bet": "Under 9.5 goals (OT incl)",
      "price": "-899",
      "est": 0.861,
-     "bet365": null
+     "bet365": null,
+     "track": {
+      "type": "total",
+      "away": "UTA",
+      "home": "TOR",
+      "line": 9.5,
+      "side": "under"
+     }
     }
    ],
    "bet": "Under 8.5 goals (OT incl) + Under 9.5 goals (OT incl)",
@@ -441,7 +593,14 @@
      "bet": "Under 9.5 goals (OT incl)",
      "price": "-899",
      "est": 0.861,
-     "bet365": null
+     "bet365": null,
+     "track": {
+      "type": "total",
+      "away": "UTA",
+      "home": "TOR",
+      "line": 9.5,
+      "side": "under"
+     }
     },
     {
      "game": "ANA @ VAN",
@@ -449,7 +608,14 @@
      "bet": "Anaheim +2.5 (OT incl)",
      "price": "-720",
      "est": 0.859,
-     "bet365": null
+     "bet365": null,
+     "track": {
+      "type": "spread",
+      "away": "ANA",
+      "home": "VAN",
+      "team": "ANA",
+      "line": 2.5
+     }
     },
     {
      "game": "EDM @ NJD",
@@ -457,7 +623,14 @@
      "bet": "New Jersey +2.5 (OT incl)",
      "price": "-794",
      "est": 0.848,
-     "bet365": null
+     "bet365": null,
+     "track": {
+      "type": "spread",
+      "away": "EDM",
+      "home": "NJD",
+      "team": "NJD",
+      "line": 2.5
+     }
     }
    ],
    "bet": "Under 9.5 goals (OT incl) + Anaheim +2.5 (OT incl) + New Jersey +2.5 (OT incl)",
@@ -484,7 +657,14 @@
      "bet": "Montreal +2.5 (OT incl)",
      "price": "-916",
      "est": 0.899,
-     "bet365": "-1100"
+     "bet365": "-1100",
+     "track": {
+      "type": "spread",
+      "away": "WPG",
+      "home": "MTL",
+      "team": "MTL",
+      "line": 2.5
+     }
     },
     {
      "game": "MIN @ PHI",
@@ -492,7 +672,14 @@
      "bet": "Minnesota +2.5 (OT incl)",
      "price": "-971",
      "est": 0.897,
-     "bet365": "-1200"
+     "bet365": "-1200",
+     "track": {
+      "type": "spread",
+      "away": "MIN",
+      "home": "PHI",
+      "team": "MIN",
+      "line": 2.5
+     }
     },
     {
      "game": "DAL @ WSH",
@@ -500,7 +687,14 @@
      "bet": "Under 8.5 goals (OT incl)",
      "price": "-660",
      "est": 0.863,
-     "bet365": null
+     "bet365": null,
+     "track": {
+      "type": "total",
+      "away": "DAL",
+      "home": "WSH",
+      "line": 8.5,
+      "side": "under"
+     }
     },
     {
      "game": "UTA @ TOR",
@@ -508,7 +702,14 @@
      "bet": "Under 9.5 goals (OT incl)",
      "price": "-899",
      "est": 0.861,
-     "bet365": null
+     "bet365": null,
+     "track": {
+      "type": "total",
+      "away": "UTA",
+      "home": "TOR",
+      "line": 9.5,
+      "side": "under"
+     }
     }
    ],
    "bet": "Montreal +2.5 (OT incl) + Minnesota +2.5 (OT incl) + Under 8.5 goals (OT incl) + Under 9.5 goals (OT incl)",
