@@ -116,6 +116,11 @@ footer { color: var(--muted); font-size: .8rem; border-top: 1px solid var(--line
 .book .ck { color: var(--ok); font-weight: 700; }
 .book .ck:empty { display: none; }
 .books .note { flex-basis: 100%; }
+/* Standings tabs + tonight's bets */
+.tabs { display: flex; gap: 6px; flex-wrap: wrap; }
+.tabs button[aria-selected="true"] { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 600; }
+.stand td.picks { white-space: normal; }
+.pk { display: inline-block; font-family: var(--f-num); background: var(--chip); border-radius: 6px; padding: 1px 7px; margin: 2px 4px 2px 0; font-size: .85rem; white-space: nowrap; }
 @media (prefers-reduced-motion: no-preference) { .bet, .row { transition: border-color .2s; } }
 </style>
 </head>
@@ -150,8 +155,18 @@ footer { color: var(--muted); font-size: .8rem; border-top: 1px solid var(--line
 
 <section aria-labelledby="stand-h">
 <h2 id="stand-h">Standings</h2>
+<div class="tabs" role="tablist" aria-label="Standings views">
+<button type="button" role="tab" id="tab-stand" aria-selected="true" aria-controls="pane-stand">Standings</button>
+<button type="button" role="tab" id="tab-night" aria-selected="false" aria-controls="pane-night">Tonight's bets</button>
+</div>
+<div id="pane-stand" role="tabpanel" aria-labelledby="tab-stand">
 <p class="note">Everyone who signs in, ranked by profit on settled bets. Each player marks their own results.</p>
 <div class="stand" id="stand"><div class="empty">Loading standings…</div></div>
+</div>
+<div id="pane-night" role="tabpanel" aria-labelledby="tab-night" hidden>
+<p class="note">What each signed-in player has placed from tonight's card. Numbers are card numbers from Tonight's top 10 and Top parlays, with the stake on each.</p>
+<div class="stand" id="night"><div class="empty">Loading…</div></div>
+</div>
 </section>
 
 <section aria-labelledby="board-h">
@@ -271,6 +286,7 @@ function renderMigrate() {
 }
 
 function renderStandings() {
+renderNight();
   const box = $('stand');
   if (!db) { box.replaceChildren(el('div', 'empty', 'Standings are unavailable right now.')); return; }
   const by = {};
@@ -480,7 +496,41 @@ a.append(pl); return a;
 }));
 }
 
-const renderAll = () => { renderMine(); renderBoard(); renderParlays(); };
+function renderNight() {
+const box = $('night'); if (!box) return;
+if (!db) { box.replaceChildren(el('div', 'empty', 'Tonight\'s bets are unavailable right now.')); return; }
+if (!card || !card.date) { box.replaceChildren(el('div', 'empty', 'No card posted yet.')); return; }
+const singles = new Map((card.bets || []).map(r => [r.bet + '|' + r.game, r.rank]));
+const pars = new Map((card.parlays || []).map(r => ['Parlay: ' + (r.short || r.bet), r.rank]));
+const by = {};
+allBets.filter(b => b.date === card.date).forEach(b => {
+const s = singles.get(b.bet + '|' + b.game), p = pars.get(b.bet);
+if (s == null && p == null) return;
+const o = by[b.uid] = by[b.uid] || { s: [], p: [], total: 0 };
+const stake = Number(b.stake) || 0;
+(s != null ? o.s : o.p).push({ n: s != null ? s : p, stake });
+o.total += stake;
+});
+const uids = Object.keys(by);
+if (!uids.length) { box.replaceChildren(el('div', 'empty', 'No one has placed a bet from tonight\'s card yet.')); return; }
+const fmt = v => '$' + (Math.round(v * 100) % 100 ? v.toFixed(2) : String(Math.round(v)));
+const cell = list => { const td = el('td', 'picks'); if (!list.length) td.textContent = '—'; list.sort((a, b) => a.n - b.n).forEach(x => td.append(el('span', 'pk', `${x.n} (${fmt(x.stake)})`))); return td; };
+const table = el('table'); const head = el('tr');
+[['Name', ''], ['Singles', ''], ['Parlays', ''], ['Stake total', 'r']].forEach(([h, c]) => head.append(el('th', c, h)));
+const thead = el('thead'); thead.append(head); const tb = el('tbody');
+uids.sort((a, b) => by[b].total - by[a].total).forEach(uid => {
+const o = by[uid];
+const tr = el('tr', user && uid === user.uid ? 'me' : '');
+const n = el('td', 'n', (players[uid] && players[uid].name) || 'Player'); if (user && uid === user.uid) n.append(el('span', 'you', 'you'));
+tr.append(n, cell(o.s), cell(o.p), el('td', 'r num', fmt(o.total)));
+tb.append(tr);
+});
+table.append(thead, tb); box.replaceChildren(table);
+}
+const TABS = [['tab-stand', 'pane-stand'], ['tab-night', 'pane-night']];
+TABS.forEach(([t]) => $(t).addEventListener('click', () => TABS.forEach(([t2, p2]) => { const on = t2 === t; $(t2).setAttribute('aria-selected', String(on)); $(p2).hidden = !on; })));
+
+const renderAll = () => { renderMine(); renderBoard(); renderParlays(); renderNight(); };
 renderAll();
 fetch('data/card.json?t=' + Date.now()).then(r => r.json()).catch(() => null).then(c => { card = c; renderAll(); });
 startCloud();
