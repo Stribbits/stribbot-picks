@@ -2,8 +2,8 @@
  "date": "2026-11-03",
  "scanned": 1064,
  "ranking": "agreed best first, then chance to hit",
- "note": "Updated 3:10 PM ET: Steve banned assists unders again, so Coleman, Michkov, Tuch, Goncalves, Podkolzin and the other assists unders were removed and all three agents re-ranked. Prices re-checked on Pinnacle at 3:05 PM ET (St. Louis +1.5 moved -250 to -245). Agreed = in all three agents' final top 4: Carlsson over 0.5 points, McDavid over 0.5 assists, Toronto +1.5, Edmonton +1.5 (agreed best, not guaranteed). McDavid and Edmonton +1.5 are from the same game and both do better if Edmonton scores. Earlier in the debate Agent 2 mixed up Toronto's opponent (it is Utah) and Agent 3 said Oettinger, Jarry and Cossa were unconfirmed; Daily Faceoff lists all three as confirmed. No bets on Vegas, Colorado or Detroit (2nd night of a back-to-back). Excluded: all assists unders and player goals props (Steve's rules), Helleson (missed Oct 29), Tippett (missed Oct 15-Nov 1), Kindel (missed 2 games), Killorn, Weegar and Sanheim (recent power-play time jumps), Suzuki (injured), tiny samples; goalie saves not ranked. Max 3 bets per game; estimate = midpoint of Pinnacle no-vig and Agent 1's model. No pending bets to grade.",
- "updatedAt": "2026-11-03T20:45:00Z",
+ "note": "Updated 3:10 PM ET: Steve banned assists unders again, so Coleman, Michkov, Tuch, Goncalves, Podkolzin and the other assists unders were removed and all three agents re-ranked. Prices re-checked on Pinnacle at 3:05 PM ET (St. Louis +1.5 moved -250 to -245). Agreed = in all three agents' final top 4: Carlsson over 0.5 points, McDavid over 0.5 assists, Toronto +1.5, Edmonton +1.5 (agreed best, not guaranteed). McDavid and Edmonton +1.5 are from the same game and both do better if Edmonton scores. Earlier in the debate Agent 2 mixed up Toronto's opponent (it is Utah) and Agent 3 said Oettinger, Jarry and Cossa were unconfirmed; Daily Faceoff lists all three as confirmed. No bets on Vegas, Colorado or Detroit (2nd night of a back-to-back). Excluded: all assists unders and player goals props (Steve's rules), Helleson (missed Oct 29), Tippett (missed Oct 15-Nov 1), Kindel (missed 2 games), Killorn, Weegar and Sanheim (recent power-play time jumps), Suzuki (injured), tiny samples; goalie saves not ranked. Max 3 bets per game; estimate = midpoint of Pinnacle no-vig and Agent 1's model. No pending bets to grade. Book check 4:00 PM ET: bet365 (Ontario) prices compared where available; the tick marks the better price. bet365 has no points unders.",
+ "updatedAt": "2026-11-03T21:20:00Z",
  "bets": [
   {
    "rank": 1,
@@ -22,7 +22,13 @@
    "agent2": "Top-4 pick; accept small single",
    "agent3": "Top-4 pick; fun only on its own (thin edge)",
    "analysts": "None found",
-   "objection": "Est 71.9% is above the 70.6% break-even. Agreed best, not guaranteed. 21 P in 14 GP; last 5 (Oct 22, 24, 27, 29, Nov 1): 0,2,2,3,3. 1st line with Killorn/Caulfield, PP time steady (~3.8 min). Vancouver: Lankinen likely (.812 in 7 starts). Market 65.8% vs model 78.1%."
+   "objection": "Est 71.9% is above the 70.6% break-even. Agreed best, not guaranteed. 21 P in 14 GP; last 5 (Oct 22, 24, 27, 29, Nov 1): 0,2,2,3,3. 1st line with Killorn/Caulfield, PP time steady (~3.8 min). Vancouver: Lankinen likely (.812 in 7 starts). Market 65.8% vs model 78.1%.",
+   "books": {
+    "pinnacle": "-240",
+    "bet365": "-275",
+    "best": "pinnacle",
+    "bet365_note": null
+   }
   },
   {
    "rank": 2,
@@ -41,7 +47,13 @@
    "agent2": "Top-4 pick; accept small single",
    "agent3": "Top-4 pick; fun only on its own (Hellebuyck)",
    "analysts": "None found",
-   "objection": "Est 70.7% is above the 69.2% break-even. Agreed best, not guaranteed. 30 A in 15 GP; at least one assist in each of the last 5 (Oct 24, 26, 28, 31, Nov 1): 2,1,2,1,1. PP1 (~3.9 min). Hellebuyck confirmed for NJD. Same game as Edmonton +1.5 (both do better if Edmonton scores)."
+   "objection": "Est 70.7% is above the 69.2% break-even. Agreed best, not guaranteed. 30 A in 15 GP; at least one assist in each of the last 5 (Oct 24, 26, 28, 31, Nov 1): 2,1,2,1,1. PP1 (~3.9 min). Hellebuyck confirmed for NJD. Same game as Edmonton +1.5 (both do better if Edmonton scores).",
+   "books": {
+    "pinnacle": "-225",
+    "bet365": "-220",
+    "best": "bet365",
+    "bet365_note": null
+   }
   },
   {
    "rank": 3,
@@ -60,7 +72,13 @@
    "agent2": "Top-4 pick; accept small single",
    "agent3": "Top-4 pick; accept small single",
    "analysts": "Dimers model: Maple Leafs +1.5 (66.7%)",
-   "objection": "Est 70.2% is above the 66.2% break-even. Agreed best, not guaranteed. Toronto is the home underdog (+126). Loses only if Utah wins by 2+. Cossa (UTA) .855 in 4 starts vs Bobrovsky .885, both confirmed. Tavares, Domi and Marchenko out for TOR. Model (76.1%) is more bullish than the market (64.2%). Price moved -198 to -196."
+   "objection": "Est 70.2% is above the 66.2% break-even. Agreed best, not guaranteed. Toronto is the home underdog (+126). Loses only if Utah wins by 2+. Cossa (UTA) .855 in 4 starts vs Bobrovsky .885, both confirmed. Tavares, Domi and Marchenko out for TOR. Model (76.1%) is more bullish than the market (64.2%). Price moved -198 to -196.",
+   "books": {
+    "pinnacle": "-196",
+    "bet365": "-200",
+    "best": "pinnacle",
+    "bet365_note": null
+   }
   },
   {
    "rank": 4,
@@ -79,7 +97,13 @@
    "agent2": "Top-4 pick (added after follow-up: Jarry confirmed); per-bet rating fun only",
    "agent3": "Top-4 pick; accept small single",
    "analysts": "Dimers model: Oilers +1.5 (67.1%)",
-   "objection": "Est 68.1% is above the 65.0% break-even. Agreed best, not guaranteed. Edmonton is the road underdog (+138). Loses only if New Jersey wins by 2+. Jarry (.901, two straight shutouts) vs Hellebuyck (.923 in 2 starts), both confirmed. EDM 11-2-2, 4.20 goals/gm; Hyman and Howard out. Model 73.1% vs market 63.1%."
+   "objection": "Est 68.1% is above the 65.0% break-even. Agreed best, not guaranteed. Edmonton is the road underdog (+138). Loses only if New Jersey wins by 2+. Jarry (.901, two straight shutouts) vs Hellebuyck (.923 in 2 starts), both confirmed. EDM 11-2-2, 4.20 goals/gm; Hyman and Howard out. Model 73.1% vs market 63.1%.",
+   "books": {
+    "pinnacle": "-186",
+    "bet365": "-182",
+    "best": "bet365",
+    "bet365_note": null
+   }
   },
   {
    "rank": 5,
@@ -98,7 +122,13 @@
    "agent2": "Pass",
    "agent3": "Pass",
    "analysts": "None found",
-   "objection": "Est 73.7% is below the 76.2% break-even. 3 P in 16 GP (no goals), all in the last 5 (Oct 22, 24, 26, 28, 31): 1,1,0,0,1. 2nd pair with Raddysh, no PP. Works against Toronto +1.5 a little."
+   "objection": "Est 73.7% is below the 76.2% break-even. 3 P in 16 GP (no goals), all in the last 5 (Oct 22, 24, 26, 28, 31): 1,1,0,0,1. 2nd pair with Raddysh, no PP. Works against Toronto +1.5 a little.",
+   "books": {
+    "pinnacle": "-320",
+    "bet365": null,
+    "best": "pinnacle",
+    "bet365_note": "bet365 does not offer this market"
+   }
   },
   {
    "rank": 6,
@@ -117,7 +147,13 @@
    "agent2": "Fun only",
    "agent3": "Pass",
    "analysts": "None found",
-   "objection": "Est 72.8% is below the 76.2% break-even. 1 P in 16 GP; last 5 (Oct 22-31): 0,0,0,0,0. 3rd pair, no PP. But 0.50 P/gm last season."
+   "objection": "Est 72.8% is below the 76.2% break-even. 1 P in 16 GP; last 5 (Oct 22-31): 0,0,0,0,0. 3rd pair, no PP. But 0.50 P/gm last season.",
+   "books": {
+    "pinnacle": "-320",
+    "bet365": null,
+    "best": "pinnacle",
+    "bet365_note": "bet365 does not offer this market"
+   }
   },
   {
    "rank": 7,
@@ -136,7 +172,13 @@
    "agent2": "Fun only (in first top 4, dropped for Edmonton +1.5 in final)",
    "agent3": "Pass",
    "analysts": "None found",
-   "objection": "Est 72.2% is below the 73.5% break-even. Near pick-em game (DAL -104). Loses only if Washington wins by 2+. Oettinger (.921) and Thompson (.898) confirmed; DAL allows 2.14 goals/gm. Faksa returns for DAL."
+   "objection": "Est 72.2% is below the 73.5% break-even. Near pick-em game (DAL -104). Loses only if Washington wins by 2+. Oettinger (.921) and Thompson (.898) confirmed; DAL allows 2.14 goals/gm. Faksa returns for DAL.",
+   "books": {
+    "pinnacle": "-277",
+    "bet365": "-260",
+    "best": "bet365",
+    "bet365_note": null
+   }
   },
   {
    "rank": 8,
@@ -155,7 +197,13 @@
    "agent2": "Fun only",
    "agent3": "Pass",
    "analysts": "None found",
-   "objection": "Est 70.9% is below the 71.0% break-even. Near pick-em (STL +108). Loses only if the Rangers win by 2+. Hofer (.916) vs Garand (.896), both confirmed; Parayko out for STL, Shesterkin out for NYR. Price moved -250 to -245."
+   "objection": "Est 70.9% is below the 71.0% break-even. Near pick-em (STL +108). Loses only if the Rangers win by 2+. Hofer (.916) vs Garand (.896), both confirmed; Parayko out for STL, Shesterkin out for NYR. Price moved -250 to -245.",
+   "books": {
+    "pinnacle": "-245",
+    "bet365": "-260",
+    "best": "pinnacle",
+    "bet365_note": null
+   }
   },
   {
    "rank": 9,
@@ -174,7 +222,13 @@
    "agent2": "Fun only",
    "agent3": "Pass",
    "analysts": "None found",
-   "objection": "Est 70.1% is below the 70.6% break-even. Wins with 0 or 1 point. 14 P in 16 GP; exactly 1 point in each of the last 5 (Oct 24, 25, 27, 29, Nov 1). Top line with Kaprizov, PP ~4.2 min steady; a 2-point night beats it."
+   "objection": "Est 70.1% is below the 70.6% break-even. Wins with 0 or 1 point. 14 P in 16 GP; exactly 1 point in each of the last 5 (Oct 24, 25, 27, 29, Nov 1). Top line with Kaprizov, PP ~4.2 min steady; a 2-point night beats it.",
+   "books": {
+    "pinnacle": "-240",
+    "bet365": null,
+    "best": "pinnacle",
+    "bet365_note": "bet365 does not offer this market"
+   }
   },
   {
    "rank": 10,
@@ -193,7 +247,13 @@
    "agent2": "Pass",
    "agent3": "Pass",
    "analysts": "None found",
-   "objection": "Est 68.8% is below the 70.6% break-even. 4 P in 16 GP; last 5 (Oct 22, 25, 27, 29, 31): 1,0,1,0,0. ~1.7 PP min. Anaheim allows 3.79 goals/gm, a high-event game."
+   "objection": "Est 68.8% is below the 70.6% break-even. 4 P in 16 GP; last 5 (Oct 22, 25, 27, 29, 31): 1,0,1,0,0. ~1.7 PP min. Anaheim allows 3.79 goals/gm, a high-event game.",
+   "books": {
+    "pinnacle": "-240",
+    "bet365": null,
+    "best": "pinnacle",
+    "bet365_note": "bet365 does not offer this market"
+   }
   }
  ],
  "parlays": [
@@ -205,24 +265,32 @@
      "start": "7:00 PM ET",
      "bet": "Montreal +2.5 (OT incl)",
      "price": "-893",
-     "est": 0.898
+     "est": 0.898,
+     "bet365": "-1100"
     },
     {
      "game": "MIN @ PHI",
      "start": "7:00 PM ET",
      "bet": "Under 8.5 goals (OT incl)",
      "price": "-609",
-     "est": 0.866
+     "est": 0.866,
+     "bet365": "-700"
     }
    ],
    "bet": "Montreal +2.5 (OT incl) + Under 8.5 goals (OT incl)",
+   "short": "MTL +2.5, MIN-PHI U8.5",
    "game": "WPG @ MTL / MIN @ PHI",
    "price": "-339",
    "decimal": 1.295,
    "breakeven": 0.772,
    "chance": 0.777,
-   "note": "2-leg parlay from different games; chance = product of each leg's estimate (games treated as independent). Picked by Agent 1 only; not yet reviewed by Agents 2 and 3.",
-   "short": "MTL +2.5, MIN-PHI U8.5"
+   "books": {
+    "pinnacle": "-339",
+    "bet365": "-405",
+    "best": "pinnacle",
+    "bet365_note": null
+   },
+   "note": "2-leg parlay, every leg from a different game. Chance = product of each leg's estimate (games treated as independent). Picked by Agent 1; not yet reviewed by Agents 2 and 3."
   },
   {
    "rank": 2,
@@ -232,24 +300,32 @@
      "start": "7:00 PM ET",
      "bet": "Montreal +2.5 (OT incl)",
      "price": "-893",
-     "est": 0.898
+     "est": 0.898,
+     "bet365": "-1100"
     },
     {
      "game": "DAL @ WSH",
      "start": "7:00 PM ET",
      "bet": "Under 8.5 goals (OT incl)",
      "price": "-660",
-     "est": 0.863
+     "est": 0.863,
+     "bet365": null
     }
    ],
    "bet": "Montreal +2.5 (OT incl) + Under 8.5 goals (OT incl)",
+   "short": "MTL +2.5, DAL-WSH U8.5",
    "game": "WPG @ MTL / DAL @ WSH",
    "price": "-357",
    "decimal": 1.28,
    "breakeven": 0.781,
    "chance": 0.774,
-   "note": "2-leg parlay from different games; chance = product of each leg's estimate (games treated as independent). Picked by Agent 1 only; not yet reviewed by Agents 2 and 3.",
-   "short": "MTL +2.5, DAL-WSH U8.5"
+   "books": {
+    "pinnacle": "-357",
+    "bet365": null,
+    "best": "pinnacle",
+    "bet365_note": "bet365 alternate lines could not all be checked; the legs we did check were priced worse there"
+   },
+   "note": "2-leg parlay, every leg from a different game. Chance = product of each leg's estimate (games treated as independent). Picked by Agent 1; not yet reviewed by Agents 2 and 3."
   },
   {
    "rank": 3,
@@ -259,24 +335,40 @@
      "start": "7:00 PM ET",
      "bet": "Minnesota +2.5 (OT incl)",
      "price": "-971",
-     "est": 0.897
+     "est": 0.897,
+     "bet365": "-1200"
     },
     {
      "game": "DAL @ WSH",
      "start": "7:00 PM ET",
      "bet": "Under 8.5 goals (OT incl)",
      "price": "-660",
-     "est": 0.863
+     "est": 0.863,
+     "bet365": null
+    },
+    {
+     "game": "UTA @ TOR",
+     "start": "7:00 PM ET",
+     "bet": "Under 9.5 goals (OT incl)",
+     "price": "-892",
+     "est": 0.861,
+     "bet365": null
     }
    ],
-   "bet": "Minnesota +2.5 (OT incl) + Under 8.5 goals (OT incl)",
-   "game": "MIN @ PHI / DAL @ WSH",
-   "price": "-370",
-   "decimal": 1.27,
-   "breakeven": 0.787,
-   "chance": 0.774,
-   "note": "2-leg parlay from different games; chance = product of each leg's estimate (games treated as independent). Picked by Agent 1 only; not yet reviewed by Agents 2 and 3.",
-   "short": "MIN +2.5, DAL-WSH U8.5"
+   "bet": "Minnesota +2.5 (OT incl) + Under 8.5 goals (OT incl) + Under 9.5 goals (OT incl)",
+   "short": "MIN +2.5, DAL-WSH U8.5, UTA-TOR U9.5",
+   "game": "MIN @ PHI / DAL @ WSH / UTA @ TOR",
+   "price": "-242",
+   "decimal": 1.412,
+   "breakeven": 0.708,
+   "chance": 0.666,
+   "books": {
+    "pinnacle": "-242",
+    "bet365": null,
+    "best": "pinnacle",
+    "bet365_note": "bet365 alternate lines could not all be checked; the legs we did check were priced worse there"
+   },
+   "note": "3-leg parlay, every leg from a different game. Chance = product of each leg's estimate (games treated as independent). Picked by Agent 1; not yet reviewed by Agents 2 and 3."
   },
   {
    "rank": 4,
@@ -286,187 +378,475 @@
      "start": "7:00 PM ET",
      "bet": "Minnesota +2.5 (OT incl)",
      "price": "-971",
-     "est": 0.897
+     "est": 0.897,
+     "bet365": "-1200"
+    },
+    {
+     "game": "UTA @ TOR",
+     "start": "7:00 PM ET",
+     "bet": "Under 9.5 goals (OT incl)",
+     "price": "-892",
+     "est": 0.861,
+     "bet365": null
     },
     {
      "game": "ANA @ VAN",
      "start": "9:00 PM ET",
      "bet": "Anaheim +2.5 (OT incl)",
      "price": "-713",
-     "est": 0.859
+     "est": 0.859,
+     "bet365": null
     }
    ],
-   "bet": "Minnesota +2.5 (OT incl) + Anaheim +2.5 (OT incl)",
-   "game": "MIN @ PHI / ANA @ VAN",
-   "price": "-388",
-   "decimal": 1.258,
-   "breakeven": 0.795,
-   "chance": 0.77,
-   "note": "2-leg parlay from different games; chance = product of each leg's estimate (games treated as independent). Picked by Agent 1 only; not yet reviewed by Agents 2 and 3.",
-   "short": "MIN +2.5, ANA +2.5"
+   "bet": "Minnesota +2.5 (OT incl) + Under 9.5 goals (OT incl) + Anaheim +2.5 (OT incl)",
+   "short": "MIN +2.5, UTA-TOR U9.5, ANA +2.5",
+   "game": "MIN @ PHI / UTA @ TOR / ANA @ VAN",
+   "price": "-251",
+   "decimal": 1.399,
+   "breakeven": 0.715,
+   "chance": 0.663,
+   "books": {
+    "pinnacle": "-251",
+    "bet365": null,
+    "best": "pinnacle",
+    "bet365_note": "bet365 alternate lines could not all be checked; the legs we did check were priced worse there"
+   },
+   "note": "3-leg parlay, every leg from a different game. Chance = product of each leg's estimate (games treated as independent). Picked by Agent 1; not yet reviewed by Agents 2 and 3."
   },
   {
    "rank": 5,
    "legs": [
     {
+     "game": "WPG @ MTL",
+     "start": "7:00 PM ET",
+     "bet": "Montreal +2.5 (OT incl)",
+     "price": "-893",
+     "est": 0.898,
+     "bet365": "-1100"
+    },
+    {
      "game": "MIN @ PHI",
      "start": "7:00 PM ET",
+     "bet": "Minnesota +2.5 (OT incl)",
+     "price": "-971",
+     "est": 0.897,
+     "bet365": "-1200"
+    },
+    {
+     "game": "DAL @ WSH",
+     "start": "7:00 PM ET",
      "bet": "Under 8.5 goals (OT incl)",
-     "price": "-609",
-     "est": 0.866
+     "price": "-660",
+     "est": 0.863,
+     "bet365": null
     },
     {
      "game": "UTA @ TOR",
      "start": "7:00 PM ET",
      "bet": "Under 9.5 goals (OT incl)",
      "price": "-892",
-     "est": 0.861
+     "est": 0.861,
+     "bet365": null
     }
    ],
-   "bet": "Under 8.5 goals (OT incl) + Under 9.5 goals (OT incl)",
-   "game": "MIN @ PHI / UTA @ TOR",
-   "price": "-339",
-   "decimal": 1.295,
-   "breakeven": 0.772,
-   "chance": 0.746,
-   "note": "2-leg parlay from different games; chance = product of each leg's estimate (games treated as independent). Picked by Agent 1 only; not yet reviewed by Agents 2 and 3.",
-   "short": "MIN-PHI U8.5, UTA-TOR U9.5"
+   "bet": "Montreal +2.5 (OT incl) + Minnesota +2.5 (OT incl) + Under 8.5 goals (OT incl) + Under 9.5 goals (OT incl)",
+   "short": "MTL +2.5, MIN +2.5, DAL-WSH U8.5, UTA-TOR U9.5",
+   "game": "WPG @ MTL / MIN @ PHI / DAL @ WSH / UTA @ TOR",
+   "price": "-175",
+   "decimal": 1.571,
+   "breakeven": 0.637,
+   "chance": 0.598,
+   "books": {
+    "pinnacle": "-175",
+    "bet365": null,
+    "best": "pinnacle",
+    "bet365_note": "bet365 alternate lines could not all be checked; the legs we did check were priced worse there"
+   },
+   "note": "4-leg parlay, every leg from a different game. Chance = product of each leg's estimate (games treated as independent). Picked by Agent 1; not yet reviewed by Agents 2 and 3."
   },
   {
    "rank": 6,
    "legs": [
     {
+     "game": "WPG @ MTL",
+     "start": "7:00 PM ET",
+     "bet": "Montreal +2.5 (OT incl)",
+     "price": "-893",
+     "est": 0.898,
+     "bet365": "-1100"
+    },
+    {
+     "game": "MIN @ PHI",
+     "start": "7:00 PM ET",
+     "bet": "Minnesota +2.5 (OT incl)",
+     "price": "-971",
+     "est": 0.897,
+     "bet365": "-1200"
+    },
+    {
+     "game": "DAL @ WSH",
+     "start": "7:00 PM ET",
+     "bet": "Under 8.5 goals (OT incl)",
+     "price": "-660",
+     "est": 0.863,
+     "bet365": null
+    },
+    {
      "game": "UTA @ TOR",
      "start": "7:00 PM ET",
      "bet": "Under 9.5 goals (OT incl)",
      "price": "-892",
-     "est": 0.861
+     "est": 0.861,
+     "bet365": null
     },
     {
      "game": "ANA @ VAN",
      "start": "9:00 PM ET",
      "bet": "Anaheim +2.5 (OT incl)",
      "price": "-713",
-     "est": 0.859
+     "est": 0.859,
+     "bet365": null
     }
    ],
-   "bet": "Under 9.5 goals (OT incl) + Anaheim +2.5 (OT incl)",
-   "game": "UTA @ TOR / ANA @ VAN",
-   "price": "-373",
-   "decimal": 1.268,
-   "breakeven": 0.789,
-   "chance": 0.739,
-   "note": "2-leg parlay from different games; chance = product of each leg's estimate (games treated as independent). Picked by Agent 1 only; not yet reviewed by Agents 2 and 3.",
-   "short": "UTA-TOR U9.5, ANA +2.5"
+   "bet": "Montreal +2.5 (OT incl) + Minnesota +2.5 (OT incl) + Under 8.5 goals (OT incl) + Under 9.5 goals (OT incl) + Anaheim +2.5 (OT incl)",
+   "short": "MTL +2.5, MIN +2.5, DAL-WSH U8.5, UTA-TOR U9.5, ANA +2.5",
+   "game": "WPG @ MTL / MIN @ PHI / DAL @ WSH / UTA @ TOR / ANA @ VAN",
+   "price": "-126",
+   "decimal": 1.791,
+   "breakeven": 0.558,
+   "chance": 0.514,
+   "books": {
+    "pinnacle": "-126",
+    "bet365": null,
+    "best": "pinnacle",
+    "bet365_note": "bet365 alternate lines could not all be checked; the legs we did check were priced worse there"
+   },
+   "note": "5-leg parlay, every leg from a different game. Chance = product of each leg's estimate (games treated as independent). Picked by Agent 1; not yet reviewed by Agents 2 and 3."
   },
   {
    "rank": 7,
    "legs": [
     {
+     "game": "WPG @ MTL",
+     "start": "7:00 PM ET",
+     "bet": "Montreal +2.5 (OT incl)",
+     "price": "-893",
+     "est": 0.898,
+     "bet365": "-1100"
+    },
+    {
+     "game": "MIN @ PHI",
+     "start": "7:00 PM ET",
+     "bet": "Minnesota +2.5 (OT incl)",
+     "price": "-971",
+     "est": 0.897,
+     "bet365": "-1200"
+    },
+    {
+     "game": "DAL @ WSH",
+     "start": "7:00 PM ET",
+     "bet": "Under 8.5 goals (OT incl)",
+     "price": "-660",
+     "est": 0.863,
+     "bet365": null
+    },
+    {
+     "game": "UTA @ TOR",
+     "start": "7:00 PM ET",
+     "bet": "Under 9.5 goals (OT incl)",
+     "price": "-892",
+     "est": 0.861,
+     "bet365": null
+    },
+    {
+     "game": "ANA @ VAN",
+     "start": "9:00 PM ET",
+     "bet": "Anaheim +2.5 (OT incl)",
+     "price": "-713",
+     "est": 0.859,
+     "bet365": null
+    },
+    {
      "game": "EDM @ NJD",
      "start": "7:30 PM ET",
      "bet": "New Jersey +2.5 (OT incl)",
      "price": "-794",
-     "est": 0.848
-    },
-    {
-     "game": "STL @ NYR",
-     "start": "7:00 PM ET",
-     "bet": "NY Rangers +2.5 (OT incl)",
-     "price": "-613",
-     "est": 0.845
+     "est": 0.848,
+     "bet365": null
     }
    ],
-   "bet": "New Jersey +2.5 (OT incl) + NY Rangers +2.5 (OT incl)",
-   "game": "EDM @ NJD / STL @ NYR",
-   "price": "-323",
-   "decimal": 1.31,
-   "breakeven": 0.764,
-   "chance": 0.716,
-   "note": "2-leg parlay from different games; chance = product of each leg's estimate (games treated as independent). Picked by Agent 1 only; not yet reviewed by Agents 2 and 3.",
-   "short": "NJD +2.5, NYR +2.5"
+   "bet": "Montreal +2.5 (OT incl) + Minnesota +2.5 (OT incl) + Under 8.5 goals (OT incl) + Under 9.5 goals (OT incl) + Anaheim +2.5 (OT incl) + New Jersey +2.5 (OT incl)",
+   "short": "MTL +2.5, MIN +2.5, DAL-WSH U8.5, UTA-TOR U9.5, ANA +2.5, NJD +2.5",
+   "game": "WPG @ MTL / MIN @ PHI / DAL @ WSH / UTA @ TOR / ANA @ VAN / EDM @ NJD",
+   "price": "+102",
+   "decimal": 2.017,
+   "breakeven": 0.496,
+   "chance": 0.435,
+   "books": {
+    "pinnacle": "+102",
+    "bet365": null,
+    "best": "pinnacle",
+    "bet365_note": "bet365 alternate lines could not all be checked; the legs we did check were priced worse there"
+   },
+   "note": "6-leg parlay, every leg from a different game. Chance = product of each leg's estimate (games treated as independent). Picked by Agent 1; not yet reviewed by Agents 2 and 3."
   },
   {
    "rank": 8,
    "legs": [
     {
-     "game": "EDM @ NJD",
-     "start": "7:30 PM ET",
-     "bet": "New Jersey +2.5 (OT incl)",
-     "price": "-794",
-     "est": 0.848
+     "game": "WPG @ MTL",
+     "start": "7:00 PM ET",
+     "bet": "Montreal +2.5 (OT incl)",
+     "price": "-893",
+     "est": 0.898,
+     "bet365": "-1100"
+    },
+    {
+     "game": "MIN @ PHI",
+     "start": "7:00 PM ET",
+     "bet": "Minnesota +2.5 (OT incl)",
+     "price": "-971",
+     "est": 0.897,
+     "bet365": "-1200"
     },
     {
      "game": "DAL @ WSH",
      "start": "7:00 PM ET",
-     "bet": "Washington +2.5 (OT incl)",
-     "price": "-547",
-     "est": 0.843
-    }
-   ],
-   "bet": "New Jersey +2.5 (OT incl) + Washington +2.5 (OT incl)",
-   "game": "EDM @ NJD / DAL @ WSH",
-   "price": "-301",
-   "decimal": 1.332,
-   "breakeven": 0.751,
-   "chance": 0.715,
-   "note": "2-leg parlay from different games; chance = product of each leg's estimate (games treated as independent). Picked by Agent 1 only; not yet reviewed by Agents 2 and 3.",
-   "short": "NJD +2.5, WSH +2.5"
-  },
-  {
-   "rank": 9,
-   "legs": [
+     "bet": "Under 8.5 goals (OT incl)",
+     "price": "-660",
+     "est": 0.863,
+     "bet365": null
+    },
+    {
+     "game": "UTA @ TOR",
+     "start": "7:00 PM ET",
+     "bet": "Under 9.5 goals (OT incl)",
+     "price": "-892",
+     "est": 0.861,
+     "bet365": null
+    },
+    {
+     "game": "ANA @ VAN",
+     "start": "9:00 PM ET",
+     "bet": "Anaheim +2.5 (OT incl)",
+     "price": "-713",
+     "est": 0.859,
+     "bet365": null
+    },
+    {
+     "game": "EDM @ NJD",
+     "start": "7:30 PM ET",
+     "bet": "New Jersey +2.5 (OT incl)",
+     "price": "-794",
+     "est": 0.848,
+     "bet365": null
+    },
     {
      "game": "STL @ NYR",
      "start": "7:00 PM ET",
      "bet": "NY Rangers +2.5 (OT incl)",
      "price": "-613",
-     "est": 0.845
+     "est": 0.845,
+     "bet365": null
+    }
+   ],
+   "bet": "Montreal +2.5 (OT incl) + Minnesota +2.5 (OT incl) + Under 8.5 goals (OT incl) + Under 9.5 goals (OT incl) + Anaheim +2.5 (OT incl) + New Jersey +2.5 (OT incl) + NY Rangers +2.5 (OT incl)",
+   "short": "MTL +2.5, MIN +2.5, DAL-WSH U8.5, UTA-TOR U9.5, ANA +2.5, NJD +2.5, NYR +2.5",
+   "game": "WPG @ MTL / MIN @ PHI / DAL @ WSH / UTA @ TOR / ANA @ VAN / EDM @ NJD / STL @ NYR",
+   "price": "+135",
+   "decimal": 2.345,
+   "breakeven": 0.426,
+   "chance": 0.368,
+   "books": {
+    "pinnacle": "+135",
+    "bet365": null,
+    "best": "pinnacle",
+    "bet365_note": "bet365 alternate lines could not all be checked; the legs we did check were priced worse there"
+   },
+   "note": "7-leg parlay, every leg from a different game. Chance = product of each leg's estimate (games treated as independent). Picked by Agent 1; not yet reviewed by Agents 2 and 3."
+  },
+  {
+   "rank": 9,
+   "legs": [
+    {
+     "game": "WPG @ MTL",
+     "start": "7:00 PM ET",
+     "bet": "Montreal +2.5 (OT incl)",
+     "price": "-893",
+     "est": 0.898,
+     "bet365": "-1100"
+    },
+    {
+     "game": "MIN @ PHI",
+     "start": "7:00 PM ET",
+     "bet": "Minnesota +2.5 (OT incl)",
+     "price": "-971",
+     "est": 0.897,
+     "bet365": "-1200"
     },
     {
      "game": "DAL @ WSH",
      "start": "7:00 PM ET",
-     "bet": "Washington +2.5 (OT incl)",
-     "price": "-547",
-     "est": 0.843
-    }
-   ],
-   "bet": "NY Rangers +2.5 (OT incl) + Washington +2.5 (OT incl)",
-   "game": "STL @ NYR / DAL @ WSH",
-   "price": "-266",
-   "decimal": 1.376,
-   "breakeven": 0.727,
-   "chance": 0.712,
-   "note": "2-leg parlay from different games; chance = product of each leg's estimate (games treated as independent). Picked by Agent 1 only; not yet reviewed by Agents 2 and 3.",
-   "short": "NYR +2.5, WSH +2.5"
-  },
-  {
-   "rank": 10,
-   "legs": [
+     "bet": "Under 8.5 goals (OT incl)",
+     "price": "-660",
+     "est": 0.863,
+     "bet365": null
+    },
+    {
+     "game": "UTA @ TOR",
+     "start": "7:00 PM ET",
+     "bet": "Under 9.5 goals (OT incl)",
+     "price": "-892",
+     "est": 0.861,
+     "bet365": null
+    },
+    {
+     "game": "ANA @ VAN",
+     "start": "9:00 PM ET",
+     "bet": "Anaheim +2.5 (OT incl)",
+     "price": "-713",
+     "est": 0.859,
+     "bet365": null
+    },
+    {
+     "game": "EDM @ NJD",
+     "start": "7:30 PM ET",
+     "bet": "New Jersey +2.5 (OT incl)",
+     "price": "-794",
+     "est": 0.848,
+     "bet365": null
+    },
+    {
+     "game": "STL @ NYR",
+     "start": "7:00 PM ET",
+     "bet": "NY Rangers +2.5 (OT incl)",
+     "price": "-613",
+     "est": 0.845,
+     "bet365": null
+    },
     {
      "game": "DET @ TBL",
      "start": "7:00 PM ET",
      "bet": "Tampa Bay +1.5 (OT incl)",
      "price": "-798",
-     "est": 0.841
+     "est": 0.841,
+     "bet365": null
+    }
+   ],
+   "bet": "Montreal +2.5 (OT incl) + Minnesota +2.5 (OT incl) + Under 8.5 goals (OT incl) + Under 9.5 goals (OT incl) + Anaheim +2.5 (OT incl) + New Jersey +2.5 (OT incl) + NY Rangers +2.5 (OT incl) + Tampa Bay +1.5 (OT incl)",
+   "short": "MTL +2.5, MIN +2.5, DAL-WSH U8.5, UTA-TOR U9.5, ANA +2.5, NJD +2.5, NYR +2.5, TBL +1.5",
+   "game": "WPG @ MTL / MIN @ PHI / DAL @ WSH / UTA @ TOR / ANA @ VAN / EDM @ NJD / STL @ NYR / DET @ TBL",
+   "price": "+164",
+   "decimal": 2.639,
+   "breakeven": 0.379,
+   "chance": 0.309,
+   "books": {
+    "pinnacle": "+164",
+    "bet365": null,
+    "best": "pinnacle",
+    "bet365_note": "bet365 alternate lines could not all be checked; the legs we did check were priced worse there"
+   },
+   "note": "8-leg parlay, every leg from a different game. Chance = product of each leg's estimate (games treated as independent). Picked by Agent 1; not yet reviewed by Agents 2 and 3."
+  },
+  {
+   "rank": 10,
+   "legs": [
+    {
+     "game": "WPG @ MTL",
+     "start": "7:00 PM ET",
+     "bet": "Montreal +2.5 (OT incl)",
+     "price": "-893",
+     "est": 0.898,
+     "bet365": "-1100"
+    },
+    {
+     "game": "MIN @ PHI",
+     "start": "7:00 PM ET",
+     "bet": "Minnesota +2.5 (OT incl)",
+     "price": "-971",
+     "est": 0.897,
+     "bet365": "-1200"
+    },
+    {
+     "game": "DAL @ WSH",
+     "start": "7:00 PM ET",
+     "bet": "Under 8.5 goals (OT incl)",
+     "price": "-660",
+     "est": 0.863,
+     "bet365": null
+    },
+    {
+     "game": "UTA @ TOR",
+     "start": "7:00 PM ET",
+     "bet": "Under 9.5 goals (OT incl)",
+     "price": "-892",
+     "est": 0.861,
+     "bet365": null
     },
     {
      "game": "ANA @ VAN",
      "start": "9:00 PM ET",
-     "bet": "Under 9.5 goals (OT incl)",
-     "price": "-828",
-     "est": 0.841
+     "bet": "Anaheim +2.5 (OT incl)",
+     "price": "-713",
+     "est": 0.859,
+     "bet365": null
+    },
+    {
+     "game": "EDM @ NJD",
+     "start": "7:30 PM ET",
+     "bet": "New Jersey +2.5 (OT incl)",
+     "price": "-794",
+     "est": 0.848,
+     "bet365": null
+    },
+    {
+     "game": "STL @ NYR",
+     "start": "7:00 PM ET",
+     "bet": "NY Rangers +2.5 (OT incl)",
+     "price": "-613",
+     "est": 0.845,
+     "bet365": null
+    },
+    {
+     "game": "DET @ TBL",
+     "start": "7:00 PM ET",
+     "bet": "Tampa Bay +1.5 (OT incl)",
+     "price": "-798",
+     "est": 0.841,
+     "bet365": null
+    },
+    {
+     "game": "VGK @ PIT",
+     "start": "7:00 PM ET",
+     "bet": "Pittsburgh +2.5 (OT incl)",
+     "price": "-500",
+     "est": 0.837,
+     "bet365": null
+    },
+    {
+     "game": "CAR @ NSH",
+     "start": "8:00 PM ET",
+     "bet": "Carolina +1.5 (OT incl)",
+     "price": "-533",
+     "est": 0.814,
+     "bet365": null
     }
    ],
-   "bet": "Tampa Bay +1.5 (OT incl) + Under 9.5 goals (OT incl)",
-   "game": "DET @ TBL / ANA @ VAN",
-   "price": "-383",
-   "decimal": 1.261,
-   "breakeven": 0.793,
-   "chance": 0.708,
-   "note": "2-leg parlay from different games; chance = product of each leg's estimate (games treated as independent). Picked by Agent 1 only; not yet reviewed by Agents 2 and 3.",
-   "short": "TBL +1.5, ANA-VAN U9.5"
+   "bet": "Montreal +2.5 (OT incl) + Minnesota +2.5 (OT incl) + Under 8.5 goals (OT incl) + Under 9.5 goals (OT incl) + Anaheim +2.5 (OT incl) + New Jersey +2.5 (OT incl) + NY Rangers +2.5 (OT incl) + Tampa Bay +1.5 (OT incl) + Pittsburgh +2.5 (OT incl) + Carolina +1.5 (OT incl)",
+   "short": "MTL +2.5, MIN +2.5, DAL-WSH U8.5, UTA-TOR U9.5, ANA +2.5, NJD +2.5, NYR +2.5, TBL +1.5, PIT +2.5, CAR +1.5",
+   "game": "WPG @ MTL / MIN @ PHI / DAL @ WSH / UTA @ TOR / ANA @ VAN / EDM @ NJD / STL @ NYR / DET @ TBL / VGK @ PIT / CAR @ NSH",
+   "price": "+276",
+   "decimal": 3.762,
+   "breakeven": 0.266,
+   "chance": 0.211,
+   "books": {
+    "pinnacle": "+276",
+    "bet365": null,
+    "best": "pinnacle",
+    "bet365_note": "bet365 alternate lines could not all be checked; the legs we did check were priced worse there"
+   },
+   "note": "10-leg parlay, every leg from a different game. Chance = product of each leg's estimate (games treated as independent). Picked by Agent 1; not yet reviewed by Agents 2 and 3."
   }
  ],
- "parlay_note": "Ranked by chance to hit. Legs are Pinnacle alternate lines (bigger puck-line cushions, higher-total unders), all OT included, from different games. Pinnacle prices the parlay as the product of the legs; the slip may round a point or two differently."
+ "parlay_note": "Ranked by chance to hit, from the safest 2-leg up to a 10-leg longshot. Legs are alternate lines (bigger puck-line cushions, higher-total unders), all OT included, each from a different game. A parlay pays the legs' prices multiplied together; the slip may round a point or two differently."
 }
