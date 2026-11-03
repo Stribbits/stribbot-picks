@@ -106,6 +106,16 @@ footer { color: var(--muted); font-size: .8rem; border-top: 1px solid var(--line
 .legs li div { min-width: 0; }
 .legs li span { display: block; color: var(--muted); font-size: .76rem; }
 .legs li b { font-family: var(--f-num); font-weight: 600; white-space: nowrap; }
+/* Sportsbook price badges */
+.books { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.book { display: inline-flex; align-items: center; gap: 6px; font-size: .8rem; padding: 4px 10px; border-radius: 6px; border: 1px solid var(--line); background: var(--bg); color: var(--muted); }
+.book .bn { font-weight: 600; }
+.book b { font-family: var(--f-num); font-weight: 600; color: var(--ink); }
+.book.na b { color: var(--muted); font-weight: 400; font-family: var(--f-body); }
+.book.best { border-color: var(--ok); color: var(--ink); }
+.book .ck { color: var(--ok); font-weight: 700; }
+.book .ck:empty { display: none; }
+.books .note { flex-basis: 100%; }
 @media (prefers-reduced-motion: no-preference) { .bet, .row { transition: border-color .2s; } }
 </style>
 </head>
@@ -392,7 +402,7 @@ function renderBoard() {
     top.append(left, el('span', 'pill v-' + (r.verdict === 'Fun only' ? 'Fun' : r.verdict), r.verdict)); a.append(top);
     const figs = el('div', 'figs');
     const f = (lab, val) => { const d = el('div'); d.append(el('b', '', val), el('span', 'label', lab)); return d; };
-    figs.append(f('Price', r.price), f('Needs', pct(r.breakeven)), f('Estimate', `${Math.round(r.est_low * 100)}–${Math.round(r.est_high * 100)}%`)); a.append(figs);
+    figs.append(f('Price', r.price), f('Needs', pct(r.breakeven)), f('Estimate', `${Math.round(r.est_low * 100)}–${Math.round(r.est_high * 100)}%`)); a.append(figs); const bk1 = bookRow(r); if (bk1) a.append(bk1);
     const lo = .3, hi = .95, x = v => Math.max(0, Math.min(100, (v - lo) / (hi - lo) * 100));
     const rg = el('div', 'range'); rg.setAttribute('aria-hidden', 'true');
     const band = el('i', r.est_high > r.breakeven ? 'good' : ''); band.style.left = x(r.est_low) + '%'; band.style.width = Math.max(2, x(r.est_high) - x(r.est_low)) + '%';
@@ -418,6 +428,21 @@ function renderBoard() {
   }));
 }
 
+function bookRow(r) {
+const bk = r.books; if (!bk) return null;
+const row = el('div', 'books');
+[['pinnacle', 'Pinnacle'], ['bet365', 'bet365']].forEach(([k, n]) => {
+const p = bk[k], best = bk.best === k;
+const na = (bk[k + '_note'] || '').includes('checked') ? 'not checked' : 'not offered';
+const c = el('span', 'book' + (best ? ' best' : '') + (p ? '' : ' na'));
+c.append(el('span', 'ck', best ? '✓' : ''), el('span', 'bn', n), el('b', '', p || na));
+if (best) c.title = 'Better price: bet it here';
+row.append(c);
+});
+if (!bk.bet365 && bk.bet365_note) row.append(el('span', 'note', bk.bet365_note));
+return row;
+}
+
 function renderParlays() {
 const box = $('parlays');
 const list = card && Array.isArray(card.parlays) ? card.parlays.slice().sort((a, b) => a.rank - b.rank) : [];
@@ -430,11 +455,11 @@ left.append(el('div', 'rank', String(r.rank)));
 const t = el('div'); t.append(el('div', 'title', r.legs.length + '-leg parlay'), el('div', 'note', 'Every leg must win')); left.append(t);
 top.append(left, el('span', 'pill v-Fun', 'Parlay')); a.append(top);
 const ul = el('ul', 'legs');
-r.legs.forEach(l => { const li = el('li'); const d = el('div'); d.append(document.createTextNode(l.bet), el('span', '', l.game + ' · ' + l.start)); li.append(d, el('b', '', l.price)); ul.append(li); });
+r.legs.forEach(l => { const li = el('li'); const d = el('div'); d.append(document.createTextNode(l.bet), el('span', '', l.game + ' · ' + l.start + (l.bet365 ? ' · bet365 ' + l.bet365 : ''))); li.append(d, el('b', '', l.price)); ul.append(li); });
 a.append(ul);
 const figs = el('div', 'figs');
 const f = (lab, val) => { const d = el('div'); d.append(el('b', '', val), el('span', 'label', lab)); return d; };
-figs.append(f('Price', r.price), f('Needs', pct(r.breakeven)), f('Chance', pct(r.chance))); a.append(figs);
+figs.append(f('Price', r.price), f('Needs', pct(r.breakeven)), f('Chance', pct(r.chance))); a.append(figs); const bk2 = bookRow(r); if (bk2) a.append(bk2);
 if (r.note) a.append(el('p', 'obj', r.note));
 const label = 'Parlay: ' + (r.short || r.bet);
 const pl = el('div', 'place');
