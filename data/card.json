@@ -3,7 +3,7 @@
  "scanned": 1064,
  "ranking": "agreed best first, then chance to hit",
  "note": "Updated 3:10 PM ET: Steve banned assists unders again, so Coleman, Michkov, Tuch, Goncalves, Podkolzin and the other assists unders were removed and all three agents re-ranked. Prices re-checked on Pinnacle at 3:05 PM ET (St. Louis +1.5 moved -250 to -245). Agreed = in all three agents' final top 4: Carlsson over 0.5 points, McDavid over 0.5 assists, Toronto +1.5, Edmonton +1.5 (agreed best, not guaranteed). McDavid and Edmonton +1.5 are from the same game and both do better if Edmonton scores. Earlier in the debate Agent 2 mixed up Toronto's opponent (it is Utah) and Agent 3 said Oettinger, Jarry and Cossa were unconfirmed; Daily Faceoff lists all three as confirmed. No bets on Vegas, Colorado or Detroit (2nd night of a back-to-back). Excluded: all assists unders and player goals props (Steve's rules), Helleson (missed Oct 29), Tippett (missed Oct 15-Nov 1), Kindel (missed 2 games), Killorn, Weegar and Sanheim (recent power-play time jumps), Suzuki (injured), tiny samples; goalie saves not ranked. Max 3 bets per game; estimate = midpoint of Pinnacle no-vig and Agent 1's model. No pending bets to grade.",
- "updatedAt": "2026-11-03T20:10:00Z",
+ "updatedAt": "2026-11-03T20:45:00Z",
  "bets": [
   {
    "rank": 1,
@@ -195,5 +195,278 @@
    "analysts": "None found",
    "objection": "Est 68.8% is below the 70.6% break-even. 4 P in 16 GP; last 5 (Oct 22, 25, 27, 29, 31): 1,0,1,0,0. ~1.7 PP min. Anaheim allows 3.79 goals/gm, a high-event game."
   }
- ]
+ ],
+ "parlays": [
+  {
+   "rank": 1,
+   "legs": [
+    {
+     "game": "WPG @ MTL",
+     "start": "7:00 PM ET",
+     "bet": "Montreal +2.5 (OT incl)",
+     "price": "-893",
+     "est": 0.898
+    },
+    {
+     "game": "MIN @ PHI",
+     "start": "7:00 PM ET",
+     "bet": "Under 8.5 goals (OT incl)",
+     "price": "-609",
+     "est": 0.866
+    }
+   ],
+   "bet": "Montreal +2.5 (OT incl) + Under 8.5 goals (OT incl)",
+   "game": "WPG @ MTL / MIN @ PHI",
+   "price": "-339",
+   "decimal": 1.295,
+   "breakeven": 0.772,
+   "chance": 0.777,
+   "note": "2-leg parlay from different games; chance = product of each leg's estimate (games treated as independent). Picked by Agent 1 only; not yet reviewed by Agents 2 and 3.",
+   "short": "MTL +2.5, MIN-PHI U8.5"
+  },
+  {
+   "rank": 2,
+   "legs": [
+    {
+     "game": "WPG @ MTL",
+     "start": "7:00 PM ET",
+     "bet": "Montreal +2.5 (OT incl)",
+     "price": "-893",
+     "est": 0.898
+    },
+    {
+     "game": "DAL @ WSH",
+     "start": "7:00 PM ET",
+     "bet": "Under 8.5 goals (OT incl)",
+     "price": "-660",
+     "est": 0.863
+    }
+   ],
+   "bet": "Montreal +2.5 (OT incl) + Under 8.5 goals (OT incl)",
+   "game": "WPG @ MTL / DAL @ WSH",
+   "price": "-357",
+   "decimal": 1.28,
+   "breakeven": 0.781,
+   "chance": 0.774,
+   "note": "2-leg parlay from different games; chance = product of each leg's estimate (games treated as independent). Picked by Agent 1 only; not yet reviewed by Agents 2 and 3.",
+   "short": "MTL +2.5, DAL-WSH U8.5"
+  },
+  {
+   "rank": 3,
+   "legs": [
+    {
+     "game": "MIN @ PHI",
+     "start": "7:00 PM ET",
+     "bet": "Minnesota +2.5 (OT incl)",
+     "price": "-971",
+     "est": 0.897
+    },
+    {
+     "game": "DAL @ WSH",
+     "start": "7:00 PM ET",
+     "bet": "Under 8.5 goals (OT incl)",
+     "price": "-660",
+     "est": 0.863
+    }
+   ],
+   "bet": "Minnesota +2.5 (OT incl) + Under 8.5 goals (OT incl)",
+   "game": "MIN @ PHI / DAL @ WSH",
+   "price": "-370",
+   "decimal": 1.27,
+   "breakeven": 0.787,
+   "chance": 0.774,
+   "note": "2-leg parlay from different games; chance = product of each leg's estimate (games treated as independent). Picked by Agent 1 only; not yet reviewed by Agents 2 and 3.",
+   "short": "MIN +2.5, DAL-WSH U8.5"
+  },
+  {
+   "rank": 4,
+   "legs": [
+    {
+     "game": "MIN @ PHI",
+     "start": "7:00 PM ET",
+     "bet": "Minnesota +2.5 (OT incl)",
+     "price": "-971",
+     "est": 0.897
+    },
+    {
+     "game": "ANA @ VAN",
+     "start": "9:00 PM ET",
+     "bet": "Anaheim +2.5 (OT incl)",
+     "price": "-713",
+     "est": 0.859
+    }
+   ],
+   "bet": "Minnesota +2.5 (OT incl) + Anaheim +2.5 (OT incl)",
+   "game": "MIN @ PHI / ANA @ VAN",
+   "price": "-388",
+   "decimal": 1.258,
+   "breakeven": 0.795,
+   "chance": 0.77,
+   "note": "2-leg parlay from different games; chance = product of each leg's estimate (games treated as independent). Picked by Agent 1 only; not yet reviewed by Agents 2 and 3.",
+   "short": "MIN +2.5, ANA +2.5"
+  },
+  {
+   "rank": 5,
+   "legs": [
+    {
+     "game": "MIN @ PHI",
+     "start": "7:00 PM ET",
+     "bet": "Under 8.5 goals (OT incl)",
+     "price": "-609",
+     "est": 0.866
+    },
+    {
+     "game": "UTA @ TOR",
+     "start": "7:00 PM ET",
+     "bet": "Under 9.5 goals (OT incl)",
+     "price": "-892",
+     "est": 0.861
+    }
+   ],
+   "bet": "Under 8.5 goals (OT incl) + Under 9.5 goals (OT incl)",
+   "game": "MIN @ PHI / UTA @ TOR",
+   "price": "-339",
+   "decimal": 1.295,
+   "breakeven": 0.772,
+   "chance": 0.746,
+   "note": "2-leg parlay from different games; chance = product of each leg's estimate (games treated as independent). Picked by Agent 1 only; not yet reviewed by Agents 2 and 3.",
+   "short": "MIN-PHI U8.5, UTA-TOR U9.5"
+  },
+  {
+   "rank": 6,
+   "legs": [
+    {
+     "game": "UTA @ TOR",
+     "start": "7:00 PM ET",
+     "bet": "Under 9.5 goals (OT incl)",
+     "price": "-892",
+     "est": 0.861
+    },
+    {
+     "game": "ANA @ VAN",
+     "start": "9:00 PM ET",
+     "bet": "Anaheim +2.5 (OT incl)",
+     "price": "-713",
+     "est": 0.859
+    }
+   ],
+   "bet": "Under 9.5 goals (OT incl) + Anaheim +2.5 (OT incl)",
+   "game": "UTA @ TOR / ANA @ VAN",
+   "price": "-373",
+   "decimal": 1.268,
+   "breakeven": 0.789,
+   "chance": 0.739,
+   "note": "2-leg parlay from different games; chance = product of each leg's estimate (games treated as independent). Picked by Agent 1 only; not yet reviewed by Agents 2 and 3.",
+   "short": "UTA-TOR U9.5, ANA +2.5"
+  },
+  {
+   "rank": 7,
+   "legs": [
+    {
+     "game": "EDM @ NJD",
+     "start": "7:30 PM ET",
+     "bet": "New Jersey +2.5 (OT incl)",
+     "price": "-794",
+     "est": 0.848
+    },
+    {
+     "game": "STL @ NYR",
+     "start": "7:00 PM ET",
+     "bet": "NY Rangers +2.5 (OT incl)",
+     "price": "-613",
+     "est": 0.845
+    }
+   ],
+   "bet": "New Jersey +2.5 (OT incl) + NY Rangers +2.5 (OT incl)",
+   "game": "EDM @ NJD / STL @ NYR",
+   "price": "-323",
+   "decimal": 1.31,
+   "breakeven": 0.764,
+   "chance": 0.716,
+   "note": "2-leg parlay from different games; chance = product of each leg's estimate (games treated as independent). Picked by Agent 1 only; not yet reviewed by Agents 2 and 3.",
+   "short": "NJD +2.5, NYR +2.5"
+  },
+  {
+   "rank": 8,
+   "legs": [
+    {
+     "game": "EDM @ NJD",
+     "start": "7:30 PM ET",
+     "bet": "New Jersey +2.5 (OT incl)",
+     "price": "-794",
+     "est": 0.848
+    },
+    {
+     "game": "DAL @ WSH",
+     "start": "7:00 PM ET",
+     "bet": "Washington +2.5 (OT incl)",
+     "price": "-547",
+     "est": 0.843
+    }
+   ],
+   "bet": "New Jersey +2.5 (OT incl) + Washington +2.5 (OT incl)",
+   "game": "EDM @ NJD / DAL @ WSH",
+   "price": "-301",
+   "decimal": 1.332,
+   "breakeven": 0.751,
+   "chance": 0.715,
+   "note": "2-leg parlay from different games; chance = product of each leg's estimate (games treated as independent). Picked by Agent 1 only; not yet reviewed by Agents 2 and 3.",
+   "short": "NJD +2.5, WSH +2.5"
+  },
+  {
+   "rank": 9,
+   "legs": [
+    {
+     "game": "STL @ NYR",
+     "start": "7:00 PM ET",
+     "bet": "NY Rangers +2.5 (OT incl)",
+     "price": "-613",
+     "est": 0.845
+    },
+    {
+     "game": "DAL @ WSH",
+     "start": "7:00 PM ET",
+     "bet": "Washington +2.5 (OT incl)",
+     "price": "-547",
+     "est": 0.843
+    }
+   ],
+   "bet": "NY Rangers +2.5 (OT incl) + Washington +2.5 (OT incl)",
+   "game": "STL @ NYR / DAL @ WSH",
+   "price": "-266",
+   "decimal": 1.376,
+   "breakeven": 0.727,
+   "chance": 0.712,
+   "note": "2-leg parlay from different games; chance = product of each leg's estimate (games treated as independent). Picked by Agent 1 only; not yet reviewed by Agents 2 and 3.",
+   "short": "NYR +2.5, WSH +2.5"
+  },
+  {
+   "rank": 10,
+   "legs": [
+    {
+     "game": "DET @ TBL",
+     "start": "7:00 PM ET",
+     "bet": "Tampa Bay +1.5 (OT incl)",
+     "price": "-798",
+     "est": 0.841
+    },
+    {
+     "game": "ANA @ VAN",
+     "start": "9:00 PM ET",
+     "bet": "Under 9.5 goals (OT incl)",
+     "price": "-828",
+     "est": 0.841
+    }
+   ],
+   "bet": "Tampa Bay +1.5 (OT incl) + Under 9.5 goals (OT incl)",
+   "game": "DET @ TBL / ANA @ VAN",
+   "price": "-383",
+   "decimal": 1.261,
+   "breakeven": 0.793,
+   "chance": 0.708,
+   "note": "2-leg parlay from different games; chance = product of each leg's estimate (games treated as independent). Picked by Agent 1 only; not yet reviewed by Agents 2 and 3.",
+   "short": "TBL +1.5, ANA-VAN U9.5"
+  }
+ ],
+ "parlay_note": "Ranked by chance to hit. Legs are Pinnacle alternate lines (bigger puck-line cushions, higher-total unders), all OT included, from different games. Pinnacle prices the parlay as the product of the legs; the slip may round a point or two differently."
 }
