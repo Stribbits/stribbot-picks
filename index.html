@@ -255,17 +255,17 @@ function renderStandings() {
   allBets.forEach(b => { (by[b.uid] = by[b.uid] || []).push(b); });
   const rows = Object.keys({ ...by, ...players }).filter(uid => (by[uid] || []).length).map(uid => {
     const list = by[uid] || []; const t = tally(list);
-    return { uid, name: (players[uid] && players[uid].name) || 'Player', ...t, roi: t.staked ? t.pl / t.staked : 0 };
+    return { uid, name: (players[uid] && players[uid].name) || 'Player', ...t, roi: t.staked ? t.pl / t.staked : 0, wins: list.filter(b => b.result === 'Win').length, losses: list.filter(b => b.result === 'Loss').length };
   }).sort((a, b) => (b.pl - a.pl) || (b.roi - a.roi) || a.name.localeCompare(b.name));
   if (!rows.length) { box.replaceChildren(el('div', 'empty', 'No one has logged a bet yet. Sign in and place one to start the table.')); return; }
   const table = el('table'); const head = el('tr');
-  [['#', ''], ['Player', ''], ['W-L-P', ''], ['Profit', 'r'], ['Staked', 'r'], ['ROI', 'r'], ['Pending', 'r']].forEach(([h, c]) => head.append(el('th', c, h)));
+  [['#', ''], ['Player', ''], ['Wins', 'r'], ['Losses', 'r'], ['Profit', 'r']].forEach(([h, c]) => head.append(el('th', c, h)));
   const thead = el('thead'); thead.append(head); const tb = el('tbody');
   rows.forEach((r, i) => {
     const tr = el('tr', user && r.uid === user.uid ? 'me' : '');
     const n = el('td', 'n', r.name); if (user && r.uid === user.uid) n.append(el('span', 'you', 'you'));
     const p = el('td', 'r num ' + (r.pl > 0 ? 'pos' : r.pl < 0 ? 'neg' : ''), money(r.pl));
-    tr.append(el('td', 'num', String(i + 1)), n, el('td', 'num', r.rec), p, el('td', 'r num', '$' + r.staked.toFixed(2)), el('td', 'r num', r.staked ? (r.roi >= 0 ? '+' : '') + pct(r.roi) : '—'), el('td', 'r num', String(r.pend)));
+    tr.append(el('td', 'num', String(i + 1)), n, el('td', 'r num', String(r.wins)), el('td', 'r num', String(r.losses)), p);
     tb.append(tr);
   });
   table.append(thead, tb); box.replaceChildren(table);
