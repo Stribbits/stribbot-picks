@@ -121,20 +121,48 @@ footer { color: var(--muted); font-size: .8rem; border-top: 1px solid var(--line
 .tabs button[aria-selected="true"] { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 600; }
 .stand td.picks { white-space: normal; }
 .pk { display: inline-block; font-family: var(--f-num); background: var(--chip); border-radius: 6px; padding: 1px 7px; margin: 2px 4px 2px 0; font-size: .85rem; white-space: nowrap; }
+/* Header sign-in (top right) */
+.hdr { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; flex-wrap: wrap; }
+.hdr .brand { min-width: 0; flex: 1 1 320px; }
+.hdr .acct { flex: 0 1 auto; padding: 8px 12px; font-size: .85rem; }
+.hdr .acct .who { font-size: .85rem; }
+.hdr .acct button { padding: 5px 10px; font-size: .82rem; }
+.hdr .acct input { width: 130px; }
+/* Book buttons */
+.place .bookbtn { display: inline-flex; gap: 6px; align-items: center; }
+.place .bookbtn b { font-family: var(--f-num); font-weight: 600; }
+.place .pays { flex-basis: 100%; }
+/* Live tracker */
+.st { font-size: .72rem; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; padding: 3px 9px; border-radius: 999px; border: 1px solid currentColor; white-space: nowrap; color: var(--muted); }
+.st.win { color: var(--ok); } .st.lose { color: var(--bad); } .st.live { color: var(--warn); }
+.tlegs { list-style: none; margin: 6px 0 0; padding: 0; display: flex; flex-direction: column; gap: 3px; font-size: .82rem; color: var(--muted); }
+.tlegs li::before { content: "•"; margin-right: 6px; }
+.tlegs li.win { color: var(--ok); } .tlegs li.win::before { content: "✓"; }
+.tlegs li.lose { color: var(--bad); } .tlegs li.lose::before { content: "✗"; }
+.tlegs li.live { color: var(--ink); }
+.tlegs li b { font-weight: 600; color: var(--ink); }
 @media (prefers-reduced-motion: no-preference) { .bet, .row { transition: border-color .2s; } }
 </style>
 </head>
 <body>
 <div class="wrap">
-<header>
+<header class="hdr">
+<div class="brand">
 <h1>Strib<span>bot</span></h1>
 <p class="sub" id="takeaway">Loading tonight's board…</p>
+</div>
+<div class="acct" id="acct"><div class="who">Loading sign-in…</div></div>
 </header>
+
+<section aria-labelledby="trk-h">
+<h2 id="trk-h">Live tracker</h2>
+<p class="note" id="trk-note">Your bets from tonight's card. Live from 7 PM to 1 AM ET, refreshed every minute.</p>
+<div class="slip" id="tracker"><div class="empty">No bets to track yet. Place a bet from the card below.</div></div>
+</section>
 
 <section aria-labelledby="slip-h">
 <h2 id="slip-h">My bets</h2>
-<p class="note" id="slip-note">Tap Place bet on a card, or add your own bet below. Saved on this device only. Sign in to save them to your account and join the standings. Mark it Won, Lost or Push when the game ends.</p>
-<div class="acct" id="acct"><div class="who">Loading sign-in…</div></div>
+<p class="note" id="slip-note">Tap Place on Pinnacle or Place on bet365 on a card, or add your own bet below. Saved on this device only. Sign in to save them to your account and join the standings. Mark it Won, Lost or Push when the game ends.</p>
 <div class="migrate" id="migrate" hidden></div>
 <div class="strip" id="mystrip">
 <div class="stat"><span class="label">My W-L-P</span><b class="num" id="m-rec">0-0-0</b></div>
@@ -155,18 +183,14 @@ footer { color: var(--muted); font-size: .8rem; border-top: 1px solid var(--line
 
 <section aria-labelledby="stand-h">
 <h2 id="stand-h">Standings</h2>
-<div class="tabs" role="tablist" aria-label="Standings views">
-<button type="button" role="tab" id="tab-stand" aria-selected="true" aria-controls="pane-stand">Standings</button>
-<button type="button" role="tab" id="tab-night" aria-selected="false" aria-controls="pane-night">Tonight's bets</button>
-</div>
-<div id="pane-stand" role="tabpanel" aria-labelledby="tab-stand">
 <p class="note">Everyone who signs in, ranked by profit on settled bets. Each player marks their own results.</p>
 <div class="stand" id="stand"><div class="empty">Loading standings…</div></div>
-</div>
-<div id="pane-night" role="tabpanel" aria-labelledby="tab-night" hidden>
-<p class="note">What each signed-in player has placed from tonight's card. Numbers are card numbers from Tonight's top 10 and Top parlays, with the stake on each.</p>
+</section>
+
+<section aria-labelledby="night-h">
+<h2 id="night-h">Tonight's bets</h2>
+<p class="note">What each signed-in player has placed from tonight's card. Numbers are card numbers from Tonight's top 10 and Top parlays, with the stake and book on each.</p>
 <div class="stand" id="night"><div class="empty">Loading…</div></div>
-</div>
 </section>
 
 <section aria-labelledby="board-h">
@@ -181,7 +205,7 @@ footer { color: var(--muted); font-size: .8rem; border-top: 1px solid var(--line
 <div class="board" id="parlays"><div class="empty">No parlays posted yet.</div></div>
 </section>
 
-<footer>For entertainment only. Picks are estimates, not guarantees. Odds are Pinnacle prices at the time of posting and can move. 19+. Bet only what you can afford to lose.</footer>
+<footer>For entertainment only. Picks are estimates, not guarantees. Odds are Pinnacle and bet365 prices at the time of posting and can move. 19+. Bet only what you can afford to lose.</footer>
 </div>
 
 <script type="module">
@@ -195,6 +219,9 @@ const loadLocal = () => { try { return JSON.parse(localStorage.getItem(KEY) || '
 const saveLocal = (v) => { try { localStorage.setItem(KEY, JSON.stringify(v)); } catch (e) {} };
 const newId = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
 let card = null, mine = loadLocal();
+const BOOKS = { PIN: 'Pinnacle', B365: 'bet365' };
+const priceOf = (p) => { const [v, k] = String(p || '').split('|'); return { v, book: BOOKS[k] || '' }; };
+const priceTxt = (p) => { const o = priceOf(p); return o.v + (o.book ? ' ' + o.book : ''); };
 
 // ---- Cloud (Firebase): sign-in, per-player bets, standings ----
 const firebaseConfig = {
@@ -323,8 +350,8 @@ async function startCloud() {
   fa.onAuthStateChanged(auth, async (u) => {
     if (unsubMine) { unsubMine(); unsubMine = null; }
     user = u; cloudIds = new Map();
-    if (!u) { profile = null; mine = loadLocal(); $('slip-note').textContent = 'Tap Place bet on a card, or add your own bet below. Saved on this device only. Sign in to save them to your account and join the standings. Mark it Won, Lost or Push when the game ends.'; renderAcct(); renderMigrate(); renderAll(); return; }
-    $('slip-note').textContent = 'Tap Place bet on a card, or add your own bet below. Saved to your account, so they follow you to any device. Mark it Won, Lost or Push when the game ends.';
+    if (!u) { profile = null; mine = loadLocal(); $('slip-note').textContent = 'Tap Place on Pinnacle or Place on bet365 on a card, or add your own bet below. Saved on this device only. Sign in to save them to your account and join the standings. Mark it Won, Lost or Push when the game ends.'; renderAcct(); renderMigrate(); renderAll(); return; }
+    $('slip-note').textContent = 'Tap Place on Pinnacle or Place on bet365 on a card, or add your own bet below. Saved to your account, so they follow you to any device. Mark it Won, Lost or Push when the game ends.';
     mine = []; renderAll();
     try {
       const snap = await fs.getDoc(fs.doc(db, 'players', u.uid));
@@ -335,7 +362,7 @@ async function startCloud() {
     unsubMine = fs.onSnapshot(fs.collection(db, 'players', u.uid, 'bets'), s => {
       const list = []; cloudIds = new Map();
       s.forEach(d => { const b = { ...d.data(), id: d.id }; list.push(b); cloudIds.set(d.id, JSON.stringify(clean(b))); });
-      mine = list; renderMigrate(); renderAll();
+      mine = list; renderMigrate(); renderAll(); if (!live.at) pollLive();
     }, e => flash('Could not load your bets: ' + e.code));
   });
 }
@@ -368,7 +395,7 @@ function renderMine() {
   const rows = mine.slice().sort((a, b) => ((b.result === 'Pending') - (a.result === 'Pending')) || String(b.placedAt).localeCompare(String(a.placedAt)));
   box.replaceChildren(...rows.map(b => {
     const row = el('div', 'row'), w = el('div', 'what');
-    w.append(el('div', '', b.bet), el('div', 'meta', [b.date, b.game, b.price, '$' + b.stake.toFixed(2), b.custom ? 'custom' : ''].filter(Boolean).join(' · ')));
+    w.append(el('div', '', b.bet), el('div', 'meta', [b.date, b.game, priceTxt(b.price), '$' + b.stake.toFixed(2), b.custom ? 'custom' : ''].filter(Boolean).join(' · ')));
     const g = el('div', 'grade');
     const setRes = (res) => { save(mine.map(x => x.id === b.id ? { ...x, result: res } : x)); renderAll(); };
     if (b.result === 'Pending') {
@@ -426,22 +453,114 @@ function renderBoard() {
     const chips = el('div', 'chips');
     [['Agent 1', r.agent1], ['Agent 2', r.agent2], ['Agent 3', r.agent3], ['Analysts', r.analysts]].forEach(([k, v]) => { const c = el('span', 'chip'); c.append(el('em', '', k), document.createTextNode(v || '—')); chips.append(c); });
     a.append(chips, el('p', 'obj', 'Strongest objection: ' + (r.objection || '—')));
-    const pl = el('div', 'place');
-    const done = mine.find(b => b.date === card.date && b.bet === r.bet && b.game === r.game);
-    if (done) pl.append(el('span', 'placed', `Tracking $${done.stake.toFixed(2)} · ${done.result === 'Pending' ? 'pending' : done.result.toLowerCase()}`));
-    else {
-      const lab = el('label'); lab.append(document.createTextNode('$'));
-      const inp = el('input'); inp.type = 'number'; inp.min = '1'; inp.step = '0.5'; inp.value = '5'; inp.id = 'stake-' + r.rank; inp.setAttribute('aria-label', 'Stake for ' + r.bet); lab.append(inp);
-      const pays = el('span', 'pays'); const upd = () => { const s = parseFloat(inp.value) || 0; pays.textContent = `wins ${money(s * (r.decimal - 1))}`; };
-      inp.addEventListener('input', upd); upd();
-      const btn = el('button', 'primary', 'Place bet');
-      btn.addEventListener('click', () => { const s = parseFloat(inp.value); if (!(s > 0)) { pays.textContent = 'Enter a stake above $0'; return; }
-        save(mine.concat([{ id: newId(), date: card.date, game: r.game, bet: r.bet, price: r.price, decimal: r.decimal, stake: Math.round(s * 100) / 100, result: 'Pending', placedAt: new Date().toISOString() }]));
-        renderAll(); });
-      pl.append(lab, btn, pays);
-    }
+    const pl = placeRow(r, r.bet, r.game, mine.find(b => b.date === card.date && b.bet === r.bet && b.game === r.game));
     a.append(pl); return a;
   }));
+}
+
+function placeRow(r, betName, game, done) {
+const pl = el('div', 'place');
+if (done) { pl.append(el('span', 'placed', `Tracking $${done.stake.toFixed(2)}${priceOf(done.price).book ? ' on ' + priceOf(done.price).book : ''} · ${done.result === 'Pending' ? 'pending' : done.result.toLowerCase()}`)); return pl; }
+const bk = r.books || {};
+const opts = [['PIN', bk.pinnacle || r.price], ['B365', bk.bet365 || null]].map(([k, p]) => ({ k, p, o: p ? parseOdds(p) : null }));
+const lab = el('label'); lab.append(document.createTextNode('$'));
+const inp = el('input'); inp.type = 'number'; inp.min = '1'; inp.step = '0.5'; inp.value = '5'; inp.setAttribute('aria-label', 'Stake for ' + betName); lab.append(inp);
+const pays = el('span', 'pays');
+const upd = () => { const s = parseFloat(inp.value) || 0; pays.textContent = opts.filter(x => x.o).map(x => `${BOOKS[x.k]} wins ${money(s * (x.o.decimal - 1))}`).join(' · '); };
+inp.addEventListener('input', upd); upd();
+pl.append(lab);
+opts.forEach(x => {
+const btn = el('button', 'bookbtn' + ((bk.best || 'pinnacle') === (x.k === 'PIN' ? 'pinnacle' : 'bet365') && x.o ? ' primary' : ''));
+btn.append(document.createTextNode('Place on ' + BOOKS[x.k]), el('b', '', x.p || '—'));
+if (!x.o) { btn.disabled = true; btn.title = BOOKS[x.k] + ' does not have this price'; }
+btn.addEventListener('click', () => { const s = parseFloat(inp.value); if (!(s > 0)) { pays.textContent = 'Enter a stake above $0'; return; }
+save(mine.concat([{ id: newId(), date: card.date, game, bet: betName, price: x.o.price + '|' + x.k, decimal: Math.round(x.o.decimal * 1000) / 1000, stake: Math.round(s * 100) / 100, result: 'Pending', placedAt: new Date().toISOString() }]));
+renderAll(); });
+pl.append(btn);
+});
+pl.append(pays);
+return pl;
+}
+
+// ---- Live tracker (ESPN public scoreboard; 7 PM - 1 AM ET) ----
+const ESPN = 'https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/';
+const ESPN_AB = { NJD: 'NJ', TBL: 'TB', LAK: 'LA', SJS: 'SJ' };
+const eab = (x) => ESPN_AB[x] || x;
+const live = { events: [], box: {}, at: null, err: false };
+const etHour = () => Number(new Intl.DateTimeFormat('en-US', { timeZone: 'America/Toronto', hour: 'numeric', hourCycle: 'h23' }).format(new Date()));
+const inWindow = () => { const h = etHour(); return h >= 19 || h < 1; };
+const normName = (s) => String(s || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z]/gi, '').toLowerCase();
+function trackItems() {
+if (!card || !card.date) return [];
+return mine.filter(b => b.date === card.date).map(b => {
+const single = (card.bets || []).find(r => r.bet === b.bet && r.game === b.game);
+if (single && single.track) return { b, num: single.rank, name: single.bet, legs: [{ bet: single.bet, t: single.track }] };
+const par = (card.parlays || []).find(r => b.bet === 'Parlay: ' + (r.short || r.bet));
+if (par) return { b, num: par.rank, name: par.legs.length + '-leg parlay', parlay: true, legs: par.legs.map(l => ({ bet: l.bet + ' (' + l.game + ')', t: l.track })) };
+return null;
+}).filter(Boolean);
+}
+function findEv(t) { return live.events.find(e => { const c = e.competitions[0].competitors; const h = c.find(x => x.homeAway === 'home'), a = c.find(x => x.homeAway === 'away'); return h && a && h.team.abbreviation === eab(t.home) && a.team.abbreviation === eab(t.away); }); }
+function statOf(e, player, stat) {
+const box = live.box[e.id]; if (!box || !box.players) return null;
+const want = normName(player);
+for (const team of box.players) for (const g of team.statistics || []) for (const a of g.athletes || []) {
+if (normName(a.athlete && a.athlete.displayName) !== want) continue;
+const ix = (lab) => g.labels.indexOf(lab), val = (lab) => ix(lab) >= 0 ? Number(a.stats[ix(lab)]) || 0 : 0;
+if (stat === 'P') return val('G') + val('A');
+if (stat === 'A') return val('A');
+if (stat === 'S') return val('S');
+if (stat === 'SV') return val('SV');
+}
+return 0;
+}
+function evalLeg(t) {
+if (!t) return { state: 'pre', txt: 'Not tracked' };
+const e = findEv(t); if (!e) return { state: 'pre', txt: live.at ? 'Game not found yet' : 'Waiting for scores' };
+const st = e.status.type.state, fin = st === 'post', detail = e.status.type.shortDetail || '';
+if (st === 'pre') return { state: 'pre', txt: 'Starts ' + detail.replace(/^.*- /, '') };
+const c = e.competitions[0].competitors; const sc = (ab) => Number((c.find(x => x.team.abbreviation === eab(ab)) || {}).score) || 0;
+const as = sc(t.away), hs = sc(t.home), score = `${t.away} ${as} – ${hs} ${t.home} · ${detail}`;
+if (t.type === 'spread') { const me = sc(t.team), opp = t.team === t.home ? as : hs; const ok = me - opp + t.line > 0; return { state: fin ? (ok ? 'win' : 'lose') : 'live', txt: score + (fin ? '' : ok ? ' · covering' : ' · not covering') }; }
+if (t.type === 'total') { const sum = as + hs; const over = t.side === 'over'; if (sum > t.line) return { state: over ? 'win' : 'lose', txt: score + ` · ${sum} goals` }; return { state: fin ? (over ? 'lose' : 'win') : 'live', txt: score + ` · ${sum} goals, ${over ? 'needs over' : 'needs under'} ${t.line}` }; }
+if (t.type === 'player') { const v = statOf(e, t.player, t.stat); const nm = { P: 'pts', A: 'ast', S: 'shots', SV: 'saves' }[t.stat] || t.stat; const over = t.side === 'over';
+const need = over ? `needs ${Math.floor(t.line) + 1}+` : `needs under ${t.line}`;
+const base = `${t.player}: ${v == null ? '…' : v} ${nm} (${need}) · ${score}`;
+if (v != null && v > t.line) return { state: over ? 'win' : 'lose', txt: base };
+return { state: fin && v != null ? (over ? 'lose' : 'win') : 'live', txt: base }; }
+return { state: 'pre', txt: score };
+}
+async function pollLive() {
+const items = trackItems(); if (!items.length || !card) { renderTracker(); return; }
+try {
+const sb = await fetch(ESPN + 'scoreboard?dates=' + card.date.replace(/-/g, '')).then(r => r.json());
+live.events = sb.events || [];
+const need = new Set();
+items.forEach(it => it.legs.forEach(l => { if (l.t && l.t.type === 'player') { const e = findEv(l.t); if (e && e.status.type.state !== 'pre') need.add(e.id); } }));
+await Promise.all([...need].map(async id => { const s = await fetch(ESPN + 'summary?event=' + id).then(r => r.json()); live.box[id] = s.boxscore; }));
+live.at = new Date(); live.err = false;
+} catch (e) { live.err = true; }
+renderTracker();
+}
+function renderTracker() {
+const box = $('tracker'); if (!box) return;
+const items = trackItems();
+const when = live.at ? ' Last update ' + live.at.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' }) + '.' : '';
+$('trk-note').textContent = (inWindow() ? 'Live now: your bets from tonight\'s card, refreshed every minute until 1 AM ET.' : 'Your bets from tonight\'s card. Live tracking runs 7 PM to 1 AM ET.') + when + (live.err ? ' Scores could not be loaded; retrying.' : '');
+if (!items.length) { box.replaceChildren(el('div', 'empty', 'No bets to track yet. Place a bet from the card below.')); return; }
+const lab = { win: 'Hit', lose: 'Missed', live: 'Live', pre: 'Not started' };
+box.replaceChildren(...items.map(it => {
+const legs = it.legs.map(l => ({ ...evalLeg(l.t), bet: l.bet }));
+const state = legs.some(x => x.state === 'lose') ? 'lose' : legs.every(x => x.state === 'win') ? 'win' : legs.some(x => x.state === 'live' || x.state === 'win') ? 'live' : 'pre';
+const row = el('div', 'row'), w = el('div', 'what');
+const o = priceOf(it.b.price), d = Number(it.b.decimal) || 1;
+w.append(el('div', '', `#${it.num} ${it.name}`), el('div', 'meta', [`$${it.b.stake.toFixed(2)}`, o.v + (o.book ? ' on ' + o.book : ''), state === 'win' ? 'pays ' + money(it.b.stake * (d - 1)) : 'to win ' + money(it.b.stake * (d - 1))].join(' · ')));
+const ul = el('ul', 'tlegs');
+legs.forEach(x => { const li = el('li', x.state); if (it.parlay) { li.append(el('b', '', x.bet + ': ')); } li.append(document.createTextNode(x.txt)); ul.append(li); });
+w.append(ul);
+row.append(w, el('span', 'st ' + state, lab[state]));
+return row;
+}));
 }
 
 function bookRow(r) {
@@ -478,20 +597,7 @@ const f = (lab, val) => { const d = el('div'); d.append(el('b', '', val), el('sp
 figs.append(f('Price', r.price), f('Needs', pct(r.breakeven)), f('Chance', pct(r.chance))); a.append(figs); const bk2 = bookRow(r); if (bk2) a.append(bk2);
 if (r.note) a.append(el('p', 'obj', r.note));
 const label = 'Parlay: ' + (r.short || r.bet);
-const pl = el('div', 'place');
-const done = mine.find(b => b.date === card.date && b.bet === label);
-if (done) pl.append(el('span', 'placed', `Tracking $${done.stake.toFixed(2)} · ${done.result === 'Pending' ? 'pending' : done.result.toLowerCase()}`));
-else {
-const lab = el('label'); lab.append(document.createTextNode('$'));
-const inp = el('input'); inp.type = 'number'; inp.min = '1'; inp.step = '0.5'; inp.value = '5'; inp.setAttribute('aria-label', 'Stake for parlay ' + r.rank); lab.append(inp);
-const pays = el('span', 'pays'); const upd = () => { const s = parseFloat(inp.value) || 0; pays.textContent = `wins ${money(s * (r.decimal - 1))}`; };
-inp.addEventListener('input', upd); upd();
-const btn = el('button', 'primary', 'Place bet');
-btn.addEventListener('click', () => { const s = parseFloat(inp.value); if (!(s > 0)) { pays.textContent = 'Enter a stake above $0'; return; }
-save(mine.concat([{ id: newId(), date: card.date, game: r.game, bet: label, price: r.price, decimal: r.decimal, stake: Math.round(s * 100) / 100, result: 'Pending', placedAt: new Date().toISOString() }]));
-renderAll(); });
-pl.append(lab, btn, pays);
-}
+const pl = placeRow(r, label, r.game, mine.find(b => b.date === card.date && b.bet === label));
 a.append(pl); return a;
 }));
 }
@@ -527,12 +633,11 @@ tb.append(tr);
 });
 table.append(thead, tb); box.replaceChildren(table);
 }
-const TABS = [['tab-stand', 'pane-stand'], ['tab-night', 'pane-night']];
-TABS.forEach(([t]) => $(t).addEventListener('click', () => TABS.forEach(([t2, p2]) => { const on = t2 === t; $(t2).setAttribute('aria-selected', String(on)); $(p2).hidden = !on; })));
 
-const renderAll = () => { renderMine(); renderBoard(); renderParlays(); renderNight(); };
+const renderAll = () => { renderMine(); renderBoard(); renderParlays(); renderNight(); renderTracker(); };
 renderAll();
-fetch('data/card.json?t=' + Date.now()).then(r => r.json()).catch(() => null).then(c => { card = c; renderAll(); });
+fetch('data/card.json?t=' + Date.now()).then(r => r.json()).catch(() => null).then(c => { card = c; renderAll(); pollLive(); });
+setInterval(() => { if (inWindow()) pollLive(); }, 60000);
 startCloud();
 </script>
 </body>
