@@ -100,6 +100,12 @@ footer { color: var(--muted); font-size: .8rem; border-top: 1px solid var(--line
 .stand td.n { font-weight: 600; white-space: normal; min-width: 8ch; }
 .stand tr.me td { background: var(--chip); }
 .stand .you { font-size: .7rem; color: var(--accent); font-weight: 600; margin-left: 6px; text-transform: uppercase; letter-spacing: .06em; }
+/* Parlays */
+.legs { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.legs li { background: var(--chip); border-radius: 6px; padding: 7px 10px; font-size: .9rem; display: flex; justify-content: space-between; align-items: center; gap: 10px; min-width: 0; }
+.legs li div { min-width: 0; }
+.legs li span { display: block; color: var(--muted); font-size: .76rem; }
+.legs li b { font-family: var(--f-num); font-weight: 600; white-space: nowrap; }
 @media (prefers-reduced-motion: no-preference) { .bet, .row { transition: border-color .2s; } }
 </style>
 </head>
@@ -142,6 +148,12 @@ footer { color: var(--muted); font-size: .8rem; border-top: 1px solid var(--line
 <h2 id="board-h">Tonight's top 10</h2>
 <p class="note">Every Pinnacle bet on the slate is scanned and ranked by chance to hit. Stribbot Agents 1–3 each vote. "Agreed" means all three accept. Bar shows our estimated win range; the line is what the price needs.</p>
 <div class="board" id="board"><div class="empty">No board posted yet.</div></div>
+</section>
+
+<section aria-labelledby="par-h">
+<h2 id="par-h">Top 10 parlays</h2>
+<p class="note" id="par-note">Parlays built from the most likely bets on the slate, each leg from a different game, ranked by chance to hit.</p>
+<div class="board" id="parlays"><div class="empty">No parlays posted yet.</div></div>
 </section>
 
 <footer>For entertainment only. Picks are estimates, not guarantees. Odds are Pinnacle prices at the time of posting and can move. 19+. Bet only what you can afford to lose.</footer>
@@ -406,7 +418,44 @@ function renderBoard() {
   }));
 }
 
-const renderAll = () => { renderMine(); renderBoard(); };
+function renderParlays() {
+const box = $('parlays');
+const list = card && Array.isArray(card.parlays) ? card.parlays.slice().sort((a, b) => a.rank - b.rank) : [];
+if (!list.length) { box.replaceChildren(el('div', 'empty', 'No parlays posted yet.')); return; }
+if (card.parlay_note) $('par-note').textContent = card.parlay_note;
+box.replaceChildren(...list.map(r => {
+const a = el('article', 'bet');
+const top = el('div', 'top'), left = el('div'); left.style.display = 'flex'; left.style.gap = '10px';
+left.append(el('div', 'rank', String(r.rank)));
+const t = el('div'); t.append(el('div', 'title', r.legs.length + '-leg parlay'), el('div', 'note', 'Every leg must win')); left.append(t);
+top.append(left, el('span', 'pill v-Fun', 'Parlay')); a.append(top);
+const ul = el('ul', 'legs');
+r.legs.forEach(l => { const li = el('li'); const d = el('div'); d.append(document.createTextNode(l.bet), el('span', '', l.game + ' · ' + l.start)); li.append(d, el('b', '', l.price)); ul.append(li); });
+a.append(ul);
+const figs = el('div', 'figs');
+const f = (lab, val) => { const d = el('div'); d.append(el('b', '', val), el('span', 'label', lab)); return d; };
+figs.append(f('Price', r.price), f('Needs', pct(r.breakeven)), f('Chance', pct(r.chance))); a.append(figs);
+if (r.note) a.append(el('p', 'obj', r.note));
+const label = 'Parlay: ' + (r.short || r.bet);
+const pl = el('div', 'place');
+const done = mine.find(b => b.date === card.date && b.bet === label);
+if (done) pl.append(el('span', 'placed', `Tracking $${done.stake.toFixed(2)} · ${done.result === 'Pending' ? 'pending' : done.result.toLowerCase()}`));
+else {
+const lab = el('label'); lab.append(document.createTextNode('$'));
+const inp = el('input'); inp.type = 'number'; inp.min = '1'; inp.step = '0.5'; inp.value = '5'; inp.setAttribute('aria-label', 'Stake for parlay ' + r.rank); lab.append(inp);
+const pays = el('span', 'pays'); const upd = () => { const s = parseFloat(inp.value) || 0; pays.textContent = `wins ${money(s * (r.decimal - 1))}`; };
+inp.addEventListener('input', upd); upd();
+const btn = el('button', 'primary', 'Place bet');
+btn.addEventListener('click', () => { const s = parseFloat(inp.value); if (!(s > 0)) { pays.textContent = 'Enter a stake above $0'; return; }
+save(mine.concat([{ id: newId(), date: card.date, game: r.game, bet: label, price: r.price, decimal: r.decimal, stake: Math.round(s * 100) / 100, result: 'Pending', placedAt: new Date().toISOString() }]));
+renderAll(); });
+pl.append(lab, btn, pays);
+}
+a.append(pl); return a;
+}));
+}
+
+const renderAll = () => { renderMine(); renderBoard(); renderParlays(); };
 renderAll();
 fetch('data/card.json?t=' + Date.now()).then(r => r.json()).catch(() => null).then(c => { card = c; renderAll(); });
 startCloud();
