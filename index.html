@@ -7,13 +7,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;700&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
 <style>
-/* Layout: one column scoreboard — your bet slip first, then tonight's ranked board with a Place bet button on each card. */
+/* Layout: one column scoreboard — your bet slip first, then the standings, then tonight's ranked board with a Place bet button on each card. */
 :root {
---bg: #0B1320; --panel: #121C2C; --ink: #E6EDF5; --muted: #8FA0B5; --line: #24344C;
---accent: #FF4D5E; --ok: #4CC38A; --warn: #F0B04A; --bad: #FF6B6B; --chip: #1A263A; color-scheme: dark;
---f-display: "Barlow Condensed", "Arial Narrow", sans-serif;
---f-body: "IBM Plex Sans", system-ui, sans-serif;
---f-num: "IBM Plex Mono", ui-monospace, monospace;
+  --bg: #0B1320; --panel: #121C2C; --ink: #E6EDF5; --muted: #8FA0B5; --line: #24344C;
+  --accent: #FF4D5E; --ok: #4CC38A; --warn: #F0B04A; --bad: #FF6B6B; --chip: #1A263A; color-scheme: dark;
+  --f-display: "Barlow Condensed", "Arial Narrow", sans-serif;
+  --f-body: "IBM Plex Sans", system-ui, sans-serif;
+  --f-num: "IBM Plex Mono", ui-monospace, monospace;
 }
 html { -webkit-text-size-adjust: 100%; }
 body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--f-body); font-size: 15px; line-height: 1.45; }
@@ -82,6 +82,23 @@ button:disabled { opacity: .5; cursor: default; }
 .custom .act { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
 footer { color: var(--muted); font-size: .8rem; border-top: 1px solid var(--line); padding-top: 14px; }
 .x { border: 0; background: none; color: var(--muted); padding: 4px 6px; }
+/* Account bar + standings */
+.acct { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px 16px; display: flex; gap: 10px; align-items: center; justify-content: space-between; flex-wrap: wrap; }
+.acct .who { min-width: 0; font-size: .9rem; }
+.acct .who b { font-weight: 600; }
+.acct .acts { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.acct input { font: inherit; padding: 6px 8px; border: 1px solid var(--line); border-radius: 6px; background: var(--bg); color: var(--ink); width: 160px; max-width: 100%; }
+.acct .msg { font-size: .8rem; color: var(--warn); width: 100%; }
+.migrate { background: var(--chip); border: 1px dashed var(--warn); border-radius: 10px; padding: 12px 16px; display: flex; gap: 10px; align-items: center; justify-content: space-between; flex-wrap: wrap; font-size: .9rem; }
+.stand { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; overflow-x: auto; }
+.stand table { width: 100%; border-collapse: collapse; font-size: .9rem; }
+.stand th { text-align: left; font-weight: 500; font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); padding: 10px 12px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+.stand td { padding: 10px 12px; border-top: 1px solid var(--line); white-space: nowrap; }
+.stand tr:first-child td { border-top: 0; }
+.stand th.r, .stand td.r { text-align: right; }
+.stand td.n { font-weight: 600; white-space: normal; min-width: 8ch; }
+.stand tr.me td { background: var(--chip); }
+.stand .you { font-size: .7rem; color: var(--accent); font-weight: 600; margin-left: 6px; text-transform: uppercase; letter-spacing: .06em; }
 @media (prefers-reduced-motion: no-preference) { .bet, .row { transition: border-color .2s; } }
 </style>
 </head>
@@ -94,7 +111,9 @@ footer { color: var(--muted); font-size: .8rem; border-top: 1px solid var(--line
 
 <section aria-labelledby="slip-h">
 <h2 id="slip-h">My bets</h2>
-<p class="note">Tap Place bet on a card, or add your own bet below. Saved on this device only. Mark it Won, Lost or Push when the game ends.</p>
+<p class="note" id="slip-note">Tap Place bet on a card, or add your own bet below. Saved on this device only. Sign in to save them to your account and join the standings. Mark it Won, Lost or Push when the game ends.</p>
+<div class="acct" id="acct"><div class="who">Loading sign-in…</div></div>
+<div class="migrate" id="migrate" hidden></div>
 <div class="strip" id="mystrip">
 <div class="stat"><span class="label">My W-L-P</span><b class="num" id="m-rec">0-0-0</b></div>
 <div class="stat"><span class="label">My profit</span><b class="num" id="m-pl">$0.00</b></div>
@@ -112,6 +131,12 @@ footer { color: var(--muted); font-size: .8rem; border-top: 1px solid var(--line
 <div class="slip" id="slip"><div class="empty">No bets yet.</div></div>
 </section>
 
+<section aria-labelledby="stand-h">
+<h2 id="stand-h">Standings</h2>
+<p class="note">Everyone who signs in, ranked by profit on settled bets. Each player marks their own results.</p>
+<div class="stand" id="stand"><div class="empty">Loading standings…</div></div>
+</section>
+
 <section aria-labelledby="board-h">
 <h2 id="board-h">Tonight's top 10</h2>
 <p class="note">Every Pinnacle bet on the slate is scanned and ranked by chance to hit. Stribbot Agents 1–3 each vote. "Agreed" means all three accept. Bar shows our estimated win range; the line is what the price needs.</p>
@@ -121,127 +146,269 @@ footer { color: var(--muted); font-size: .8rem; border-top: 1px solid var(--line
 <footer>For entertainment only. Picks are estimates, not guarantees. Odds are Pinnacle prices at the time of posting and can move. 19+. Bet only what you can afford to lose.</footer>
 </div>
 
-<script>
-(() => {
+<script type="module">
 const $ = (id) => document.getElementById(id);
 const money = (v) => (v < 0 ? '−$' : v > 0 ? '+$' : '$') + Math.abs(v).toFixed(2);
 const pct = (v) => Math.round(v * 1000) / 10 + '%';
 const profitOf = (b) => b.result === 'Win' ? b.stake * (b.decimal - 1) : b.result === 'Loss' ? -b.stake : 0;
 const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
 const KEY = 'stribbot-my-bets';
-const load = () => { try { return JSON.parse(localStorage.getItem(KEY) || '[]'); } catch (e) { return []; } };
-const save = (v) => { try { localStorage.setItem(KEY, JSON.stringify(v)); } catch (e) {} };
+const loadLocal = () => { try { return JSON.parse(localStorage.getItem(KEY) || '[]'); } catch (e) { return []; } };
+const saveLocal = (v) => { try { localStorage.setItem(KEY, JSON.stringify(v)); } catch (e) {} };
 const newId = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
-let card = null, mine = load();
+let card = null, mine = loadLocal();
+
+// ---- Cloud (Firebase): sign-in, per-player bets, standings ----
+const firebaseConfig = {
+  apiKey: "AIzaSyBaoY7rTeQg-lVpICMz0kEFXJBjN_X9IAE",
+  authDomain: "stribbotcard.firebaseapp.com",
+  projectId: "stribbotcard",
+  storageBucket: "stribbotcard.firebasestorage.app",
+  messagingSenderId: "935126559507",
+  appId: "1:935126559507:web:e42e3f8225a4b66b3f88e6"
+};
+const FB = 'https://www.gstatic.com/firebasejs/10.12.2/';
+let fa = null, fs = null, auth = null, db = null;
+let user = null, profile = null, cloudIds = new Map(), unsubMine = null;
+let players = {}, allBets = [];
+
+const BET_FIELDS = ['id', 'date', 'game', 'bet', 'price', 'decimal', 'stake', 'result', 'placedAt', 'custom'];
+const clean = (b) => { const o = {}; BET_FIELDS.forEach(k => { if (b[k] !== undefined) o[k] = b[k]; }); o.custom = !!o.custom; o.game = o.game || ''; o.price = String(o.price || ''); o.date = String(o.date || ''); o.placedAt = String(o.placedAt || new Date().toISOString()); return o; };
+
+function save(list) {
+  mine = list;
+  if (!user) { saveLocal(list); return; }
+  const next = new Map(list.map(b => [b.id, JSON.stringify(clean(b))]));
+  const col = fs.collection(db, 'players', user.uid, 'bets');
+  next.forEach((json, id) => { if (cloudIds.get(id) !== json) fs.setDoc(fs.doc(col, id), JSON.parse(json)).catch(err => flash('Could not save: ' + err.code)); });
+  cloudIds.forEach((_, id) => { if (!next.has(id)) fs.deleteDoc(fs.doc(col, id)).catch(err => flash('Could not remove: ' + err.code)); });
+  cloudIds = next;
+}
+
+function flash(text) { const m = document.querySelector('#acct .msg') || $('acct').appendChild(el('div', 'msg')); m.textContent = text; }
+
+function renderAcct() {
+  const box = $('acct');
+  if (!auth) { box.replaceChildren(el('div', 'who', 'Sign-in is unavailable right now. Your bets are saved on this device.')); return; }
+  if (!user) {
+    const who = el('div', 'who', 'Sign in with Google to keep your bets on any device and appear in the standings.');
+    const btn = el('button', 'primary', 'Sign in with Google');
+    btn.addEventListener('click', signIn);
+    box.replaceChildren(who, el('div', 'acts')); box.lastChild.append(btn);
+    return;
+  }
+  const name = (profile && profile.name) || '…';
+  const who = el('div', 'who'); who.append('Signed in as ', el('b', '', name));
+  const acts = el('div', 'acts');
+  const ren = el('button', '', 'Change name');
+  ren.addEventListener('click', () => {
+    const inp = el('input'); inp.maxLength = 24; inp.value = name; inp.setAttribute('aria-label', 'Your name in the standings');
+    const ok = el('button', 'primary', 'Save'); const cancel = el('button', 'x', 'Cancel');
+    const done = async () => { const v = inp.value.trim().slice(0, 24); if (!v) { inp.focus(); return; } await setName(v); renderAcct(); };
+    ok.addEventListener('click', done); inp.addEventListener('keydown', e => { if (e.key === 'Enter') done(); });
+    cancel.addEventListener('click', renderAcct);
+    acts.replaceChildren(inp, ok, cancel); inp.focus(); inp.select();
+  });
+  const out = el('button', 'x', 'Sign out'); out.addEventListener('click', () => fa.signOut(auth));
+  acts.append(ren, out);
+  box.replaceChildren(who, acts);
+}
+
+async function signIn() {
+  const p = new fa.GoogleAuthProvider();
+  try { await fa.signInWithPopup(auth, p); }
+  catch (e) {
+    if (e.code === 'auth/popup-blocked' || e.code === 'auth/operation-not-supported-in-this-environment') { try { await fa.signInWithRedirect(auth, p); } catch (e2) { flash('Sign-in failed: ' + e2.code); } }
+    else if (e.code !== 'auth/popup-closed-by-user' && e.code !== 'auth/cancelled-popup-request') flash('Sign-in failed: ' + e.code);
+  }
+}
+
+async function setName(v) {
+  profile = { ...(profile || {}), name: v };
+  try { await fs.setDoc(fs.doc(db, 'players', user.uid), { name: v, updatedAt: new Date().toISOString() }, { merge: true }); }
+  catch (e) { flash('Could not save name: ' + e.code); }
+}
+
+function renderMigrate() {
+  const box = $('migrate'); const local = user ? loadLocal() : [];
+  const todo = local.filter(b => !cloudIds.has(b.id));
+  if (!user || !todo.length) { box.hidden = true; box.replaceChildren(); return; }
+  box.hidden = false;
+  const t = el('div', '', `${todo.length} bet${todo.length > 1 ? 's are' : ' is'} saved only on this device. Move ${todo.length > 1 ? 'them' : 'it'} to your account so ${todo.length > 1 ? 'they count' : 'it counts'} in the standings?`);
+  const btn = el('button', 'primary', 'Move to my account');
+  btn.addEventListener('click', async () => {
+    btn.disabled = true; btn.textContent = 'Moving…';
+    const col = fs.collection(db, 'players', user.uid, 'bets');
+    try {
+      await Promise.all(todo.map(b => { const c = clean({ ...b, id: b.id || newId() }); return fs.setDoc(fs.doc(col, c.id), c); }));
+      saveLocal([]); box.hidden = true;
+    } catch (e) { btn.disabled = false; btn.textContent = 'Move to my account'; flash('Could not move bets: ' + e.code); }
+  });
+  box.replaceChildren(t, btn);
+}
+
+function renderStandings() {
+  const box = $('stand');
+  if (!db) { box.replaceChildren(el('div', 'empty', 'Standings are unavailable right now.')); return; }
+  const by = {};
+  allBets.forEach(b => { (by[b.uid] = by[b.uid] || []).push(b); });
+  const rows = Object.keys({ ...by, ...players }).filter(uid => (by[uid] || []).length).map(uid => {
+    const list = by[uid] || []; const t = tally(list);
+    return { uid, name: (players[uid] && players[uid].name) || 'Player', ...t, roi: t.staked ? t.pl / t.staked : 0 };
+  }).sort((a, b) => (b.pl - a.pl) || (b.roi - a.roi) || a.name.localeCompare(b.name));
+  if (!rows.length) { box.replaceChildren(el('div', 'empty', 'No one has logged a bet yet. Sign in and place one to start the table.')); return; }
+  const table = el('table'); const head = el('tr');
+  [['#', ''], ['Player', ''], ['W-L-P', ''], ['Profit', 'r'], ['Staked', 'r'], ['ROI', 'r'], ['Pending', 'r']].forEach(([h, c]) => head.append(el('th', c, h)));
+  const thead = el('thead'); thead.append(head); const tb = el('tbody');
+  rows.forEach((r, i) => {
+    const tr = el('tr', user && r.uid === user.uid ? 'me' : '');
+    const n = el('td', 'n', r.name); if (user && r.uid === user.uid) n.append(el('span', 'you', 'you'));
+    const p = el('td', 'r num ' + (r.pl > 0 ? 'pos' : r.pl < 0 ? 'neg' : ''), money(r.pl));
+    tr.append(el('td', 'num', String(i + 1)), n, el('td', 'num', r.rec), p, el('td', 'r num', '$' + r.staked.toFixed(2)), el('td', 'r num', r.staked ? (r.roi >= 0 ? '+' : '') + pct(r.roi) : '—'), el('td', 'r num', String(r.pend)));
+    tb.append(tr);
+  });
+  table.append(thead, tb); box.replaceChildren(table);
+}
+
+async function startCloud() {
+  try {
+    const [app, A, F] = await Promise.all([import(FB + 'firebase-app.js'), import(FB + 'firebase-auth.js'), import(FB + 'firebase-firestore.js')]);
+    fa = A; fs = F;
+    const fbApp = app.initializeApp(firebaseConfig);
+    auth = A.getAuth(fbApp); db = F.getFirestore(fbApp);
+  } catch (e) { auth = null; db = null; renderAcct(); renderStandings(); return; }
+  renderAcct();
+  fs.onSnapshot(fs.collection(db, 'players'), s => { players = {}; s.forEach(d => { players[d.id] = d.data(); }); if (user) profile = players[user.uid] || profile; renderStandings(); renderAcct(); }, () => renderStandings());
+  fs.onSnapshot(fs.collectionGroup(db, 'bets'), s => { allBets = []; s.forEach(d => { const uid = d.ref.parent.parent && d.ref.parent.parent.id; if (uid) allBets.push({ ...d.data(), uid }); }); renderStandings(); }, () => renderStandings());
+  fa.getRedirectResult(auth).catch(e => flash('Sign-in failed: ' + e.code));
+  fa.onAuthStateChanged(auth, async (u) => {
+    if (unsubMine) { unsubMine(); unsubMine = null; }
+    user = u; cloudIds = new Map();
+    if (!u) { profile = null; mine = loadLocal(); $('slip-note').textContent = 'Tap Place bet on a card, or add your own bet below. Saved on this device only. Sign in to save them to your account and join the standings. Mark it Won, Lost or Push when the game ends.'; renderAcct(); renderMigrate(); renderAll(); return; }
+    $('slip-note').textContent = 'Tap Place bet on a card, or add your own bet below. Saved to your account, so they follow you to any device. Mark it Won, Lost or Push when the game ends.';
+    mine = []; renderAll();
+    try {
+      const snap = await fs.getDoc(fs.doc(db, 'players', u.uid));
+      if (snap.exists() && snap.data().name) profile = snap.data();
+      else await setName(((u.displayName || 'Player').split(' ')[0] || 'Player').slice(0, 24));
+    } catch (e) { flash('Could not load your profile: ' + e.code); }
+    renderAcct();
+    unsubMine = fs.onSnapshot(fs.collection(db, 'players', u.uid, 'bets'), s => {
+      const list = []; cloudIds = new Map();
+      s.forEach(d => { const b = { ...d.data(), id: d.id }; list.push(b); cloudIds.set(d.id, JSON.stringify(clean(b))); });
+      mine = list; renderMigrate(); renderAll();
+    }, e => flash('Could not load your bets: ' + e.code));
+  });
+}
 
 // Odds: American (-114, +107, 150) or decimal (1.51). Returns { decimal, price } or null.
 function parseOdds(raw) {
-const s = String(raw || '').trim().replace(/\s+/g, '').replace('−', '-');
-if (!/^[+-]?\d+(\.\d+)?$/.test(s)) return null;
-const v = parseFloat(s);
-if (Math.abs(v) >= 100) {
-const dec = v > 0 ? 1 + v / 100 : 1 + 100 / Math.abs(v);
-return { decimal: dec, price: (v > 0 ? '+' : '') + String(Math.round(v)) };
-}
-if (v > 1 && !/^[+-]/.test(s)) return { decimal: Math.round(v * 1000) / 1000, price: v.toFixed(2) };
-return null;
+  const s = String(raw || '').trim().replace(/\s+/g, '').replace('−', '-');
+  if (!/^[+-]?\d+(\.\d+)?$/.test(s)) return null;
+  const v = parseFloat(s);
+  if (Math.abs(v) >= 100) {
+    const dec = v > 0 ? 1 + v / 100 : 1 + 100 / Math.abs(v);
+    return { decimal: dec, price: (v > 0 ? '+' : '') + String(Math.round(v)) };
+  }
+  if (v > 1 && !/^[+-]/.test(s)) return { decimal: Math.round(v * 1000) / 1000, price: v.toFixed(2) };
+  return null;
 }
 
 function tally(list) {
-const settled = list.filter(b => b.result !== 'Pending');
-const n = (r) => list.filter(b => b.result === r).length;
-const staked = settled.reduce((s, b) => s + b.stake, 0), pl = settled.reduce((s, b) => s + profitOf(b), 0);
-return { rec: `${n('Win')}-${n('Loss')}-${n('Push')}`, staked, pl, pend: n('Pending') };
+  const settled = list.filter(b => b.result !== 'Pending');
+  const n = (r) => list.filter(b => b.result === r).length;
+  const staked = settled.reduce((s, b) => s + b.stake, 0), pl = settled.reduce((s, b) => s + profitOf(b), 0);
+  return { rec: `${n('Win')}-${n('Loss')}-${n('Push')}`, staked, pl, pend: n('Pending') };
 }
 function setPL(node, pl) { node.textContent = money(pl); node.className = 'num ' + (pl > 0 ? 'pos' : pl < 0 ? 'neg' : ''); }
 
 function renderMine() {
-const t = tally(mine); $('m-rec').textContent = t.rec; setPL($('m-pl'), t.pl);
-const box = $('slip');
-if (!mine.length) { box.replaceChildren(el('div', 'empty', 'No bets yet.')); return; }
-const rows = mine.slice().sort((a, b) => ((b.result === 'Pending') - (a.result === 'Pending')) || String(b.placedAt).localeCompare(String(a.placedAt)));
-box.replaceChildren(...rows.map(b => {
-const row = el('div', 'row'), w = el('div', 'what');
-w.append(el('div', '', b.bet), el('div', 'meta', [b.date, b.game, b.price, '$' + b.stake.toFixed(2), b.custom ? 'custom' : ''].filter(Boolean).join(' · ')));
-const g = el('div', 'grade');
-const setRes = (res) => { mine = mine.map(x => x.id === b.id ? { ...x, result: res } : x); save(mine); renderAll(); };
-if (b.result === 'Pending') {
-const mk = (lab, cls, res) => { const x = el('button', cls, lab); x.addEventListener('click', () => setRes(res)); return x; };
-const rm = el('button', 'x', 'Remove'); rm.addEventListener('click', () => { mine = mine.filter(x => x.id !== b.id); save(mine); renderAll(); });
-g.append(mk('Won', 'w', 'Win'), mk('Lost', 'l', 'Loss'), mk('Push', '', 'Push'), rm);
-} else {
-const p = profitOf(b);
-const undo = el('button', 'x', 'Undo'); undo.addEventListener('click', () => setRes('Pending'));
-g.append(el('span', 'res ' + (p > 0 ? 'pos' : p < 0 ? 'neg' : ''), (b.result === 'Push' ? 'Push ' : '') + money(p)), undo);
-if (b.custom) { const rm = el('button', 'x', 'Remove'); rm.addEventListener('click', () => { mine = mine.filter(x => x.id !== b.id); save(mine); renderAll(); }); g.append(rm); }
-}
-row.append(w, g); return row;
-}));
+  const t = tally(mine); $('m-rec').textContent = t.rec; setPL($('m-pl'), t.pl);
+  const box = $('slip');
+  if (!mine.length) { box.replaceChildren(el('div', 'empty', 'No bets yet.')); return; }
+  const rows = mine.slice().sort((a, b) => ((b.result === 'Pending') - (a.result === 'Pending')) || String(b.placedAt).localeCompare(String(a.placedAt)));
+  box.replaceChildren(...rows.map(b => {
+    const row = el('div', 'row'), w = el('div', 'what');
+    w.append(el('div', '', b.bet), el('div', 'meta', [b.date, b.game, b.price, '$' + b.stake.toFixed(2), b.custom ? 'custom' : ''].filter(Boolean).join(' · ')));
+    const g = el('div', 'grade');
+    const setRes = (res) => { save(mine.map(x => x.id === b.id ? { ...x, result: res } : x)); renderAll(); };
+    if (b.result === 'Pending') {
+      const mk = (lab, cls, res) => { const x = el('button', cls, lab); x.addEventListener('click', () => setRes(res)); return x; };
+      const rm = el('button', 'x', 'Remove'); rm.addEventListener('click', () => { save(mine.filter(x => x.id !== b.id)); renderAll(); });
+      g.append(mk('Won', 'w', 'Win'), mk('Lost', 'l', 'Loss'), mk('Push', '', 'Push'), rm);
+    } else {
+      const p = profitOf(b);
+      const undo = el('button', 'x', 'Undo'); undo.addEventListener('click', () => setRes('Pending'));
+      g.append(el('span', 'res ' + (p > 0 ? 'pos' : p < 0 ? 'neg' : ''), (b.result === 'Push' ? 'Push ' : '') + money(p)), undo);
+      if (b.custom) { const rm = el('button', 'x', 'Remove'); rm.addEventListener('click', () => { save(mine.filter(x => x.id !== b.id)); renderAll(); }); g.append(rm); }
+    }
+    row.append(w, g); return row;
+  }));
 }
 
 function customPreview() {
-const s = parseFloat($('c-stake').value), o = parseOdds($('c-odds').value);
-$('c-msg').textContent = (s > 0 && o) ? `wins ${money(s * (o.decimal - 1))} (decimal ${o.decimal.toFixed(2)})` : '';
+  const s = parseFloat($('c-stake').value), o = parseOdds($('c-odds').value);
+  $('c-msg').textContent = (s > 0 && o) ? `wins ${money(s * (o.decimal - 1))} (decimal ${o.decimal.toFixed(2)})` : '';
 }
 $('c-stake').addEventListener('input', customPreview);
 $('c-odds').addEventListener('input', customPreview);
 $('custom').addEventListener('submit', (e) => {
-e.preventDefault();
-const msg = $('c-msg');
-const s = parseFloat($('c-stake').value), o = parseOdds($('c-odds').value);
-if (!(s > 0)) { msg.textContent = 'Enter a stake above $0.'; $('c-stake').focus(); return; }
-if (!o) { msg.textContent = 'Enter odds like -114, +107 or 1.51.'; $('c-odds').focus(); return; }
-const name = $('c-bet').value.trim() || 'Custom bet';
-mine = mine.concat([{ id: newId(), date: new Date().toLocaleDateString('en-CA'), game: '', bet: name, price: o.price, decimal: o.decimal, stake: Math.round(s * 100) / 100, result: $('c-res').value, custom: true, placedAt: new Date().toISOString() }]);
-save(mine); renderAll();
-$('c-bet').value = ''; $('c-odds').value = ''; $('c-res').value = 'Pending';
-msg.textContent = 'Added.';
+  e.preventDefault();
+  const msg = $('c-msg');
+  const s = parseFloat($('c-stake').value), o = parseOdds($('c-odds').value);
+  if (!(s > 0)) { msg.textContent = 'Enter a stake above $0.'; $('c-stake').focus(); return; }
+  if (!o) { msg.textContent = 'Enter odds like -114, +107 or 1.51.'; $('c-odds').focus(); return; }
+  const name = $('c-bet').value.trim() || 'Custom bet';
+  save(mine.concat([{ id: newId(), date: new Date().toLocaleDateString('en-CA'), game: '', bet: name, price: o.price, decimal: o.decimal, stake: Math.round(s * 100) / 100, result: $('c-res').value, custom: true, placedAt: new Date().toISOString() }]));
+  renderAll();
+  $('c-bet').value = ''; $('c-odds').value = ''; $('c-res').value = 'Pending';
+  msg.textContent = 'Added.';
 });
 
 function renderBoard() {
-const box = $('board');
-if (!card || !Array.isArray(card.bets) || !card.bets.length) { box.replaceChildren(el('div', 'empty', 'No board posted yet.')); $('takeaway').textContent = 'No board posted yet.'; return; }
-const rows = card.bets.slice().sort((a, b) => a.rank - b.rank);
-const agreed = rows.filter(r => r.verdict === 'Agreed').length, fun = rows.filter(r => r.verdict === 'Fun only').length;
-$('takeaway').textContent = `${card.date}: ${card.scanned ? card.scanned.toLocaleString() + ' Pinnacle bets scanned. ' : ''}${agreed} agreed, ${fun} fun only, ${rows.length - agreed - fun} passed.`;
-box.replaceChildren(...rows.map(r => {
-const a = el('article', 'bet' + (r.verdict === 'Agreed' ? ' agreed' : ''));
-const top = el('div', 'top'), left = el('div'); left.style.display = 'flex'; left.style.gap = '10px';
-left.append(el('div', 'rank', String(r.rank)));
-const t = el('div'); t.append(el('div', 'title', r.bet), el('div', 'note', `${r.game} · ${r.start}`)); left.append(t);
-top.append(left, el('span', 'pill v-' + (r.verdict === 'Fun only' ? 'Fun' : r.verdict), r.verdict)); a.append(top);
-const figs = el('div', 'figs');
-const f = (lab, val) => { const d = el('div'); d.append(el('b', '', val), el('span', 'label', lab)); return d; };
-figs.append(f('Price', r.price), f('Needs', pct(r.breakeven)), f('Estimate', `${Math.round(r.est_low * 100)}–${Math.round(r.est_high * 100)}%`)); a.append(figs);
-const lo = .3, hi = .95, x = v => Math.max(0, Math.min(100, (v - lo) / (hi - lo) * 100));
-const rg = el('div', 'range'); rg.setAttribute('aria-hidden', 'true');
-const band = el('i', r.est_high > r.breakeven ? 'good' : ''); band.style.left = x(r.est_low) + '%'; band.style.width = Math.max(2, x(r.est_high) - x(r.est_low)) + '%';
-const be = el('u'); be.style.left = x(r.breakeven) + '%'; rg.append(band, be); a.append(rg);
-const chips = el('div', 'chips');
-[['Agent 1', r.agent1], ['Agent 2', r.agent2], ['Agent 3', r.agent3], ['Analysts', r.analysts]].forEach(([k, v]) => { const c = el('span', 'chip'); c.append(el('em', '', k), document.createTextNode(v || '—')); chips.append(c); });
-a.append(chips, el('p', 'obj', 'Strongest objection: ' + (r.objection || '—')));
-const pl = el('div', 'place');
-const done = mine.find(b => b.date === card.date && b.bet === r.bet && b.game === r.game);
-if (done) pl.append(el('span', 'placed', `Tracking $${done.stake.toFixed(2)} · ${done.result === 'Pending' ? 'pending' : done.result.toLowerCase()}`));
-else {
-const lab = el('label'); lab.append(document.createTextNode('$'));
-const inp = el('input'); inp.type = 'number'; inp.min = '1'; inp.step = '0.5'; inp.value = '5'; inp.id = 'stake-' + r.rank; inp.setAttribute('aria-label', 'Stake for ' + r.bet); lab.append(inp);
-const pays = el('span', 'pays'); const upd = () => { const s = parseFloat(inp.value) || 0; pays.textContent = `wins ${money(s * (r.decimal - 1))}`; };
-inp.addEventListener('input', upd); upd();
-const btn = el('button', 'primary', 'Place bet');
-btn.addEventListener('click', () => { const s = parseFloat(inp.value); if (!(s > 0)) { pays.textContent = 'Enter a stake above $0'; return; }
-mine = mine.concat([{ id: newId(), date: card.date, game: r.game, bet: r.bet, price: r.price, decimal: r.decimal, stake: Math.round(s * 100) / 100, result: 'Pending', placedAt: new Date().toISOString() }]);
-save(mine); renderAll(); });
-pl.append(lab, btn, pays);
-}
-a.append(pl); return a;
-}));
+  const box = $('board');
+  if (!card || !Array.isArray(card.bets) || !card.bets.length) { box.replaceChildren(el('div', 'empty', 'No board posted yet.')); $('takeaway').textContent = 'No board posted yet.'; return; }
+  const rows = card.bets.slice().sort((a, b) => a.rank - b.rank);
+  const agreed = rows.filter(r => r.verdict === 'Agreed').length, fun = rows.filter(r => r.verdict === 'Fun only').length;
+  $('takeaway').textContent = `${card.date}: ${card.scanned ? card.scanned.toLocaleString() + ' Pinnacle bets scanned. ' : ''}${agreed} agreed, ${fun} fun only, ${rows.length - agreed - fun} passed.`;
+  box.replaceChildren(...rows.map(r => {
+    const a = el('article', 'bet' + (r.verdict === 'Agreed' ? ' agreed' : ''));
+    const top = el('div', 'top'), left = el('div'); left.style.display = 'flex'; left.style.gap = '10px';
+    left.append(el('div', 'rank', String(r.rank)));
+    const t = el('div'); t.append(el('div', 'title', r.bet), el('div', 'note', `${r.game} · ${r.start}`)); left.append(t);
+    top.append(left, el('span', 'pill v-' + (r.verdict === 'Fun only' ? 'Fun' : r.verdict), r.verdict)); a.append(top);
+    const figs = el('div', 'figs');
+    const f = (lab, val) => { const d = el('div'); d.append(el('b', '', val), el('span', 'label', lab)); return d; };
+    figs.append(f('Price', r.price), f('Needs', pct(r.breakeven)), f('Estimate', `${Math.round(r.est_low * 100)}–${Math.round(r.est_high * 100)}%`)); a.append(figs);
+    const lo = .3, hi = .95, x = v => Math.max(0, Math.min(100, (v - lo) / (hi - lo) * 100));
+    const rg = el('div', 'range'); rg.setAttribute('aria-hidden', 'true');
+    const band = el('i', r.est_high > r.breakeven ? 'good' : ''); band.style.left = x(r.est_low) + '%'; band.style.width = Math.max(2, x(r.est_high) - x(r.est_low)) + '%';
+    const be = el('u'); be.style.left = x(r.breakeven) + '%'; rg.append(band, be); a.append(rg);
+    const chips = el('div', 'chips');
+    [['Agent 1', r.agent1], ['Agent 2', r.agent2], ['Agent 3', r.agent3], ['Analysts', r.analysts]].forEach(([k, v]) => { const c = el('span', 'chip'); c.append(el('em', '', k), document.createTextNode(v || '—')); chips.append(c); });
+    a.append(chips, el('p', 'obj', 'Strongest objection: ' + (r.objection || '—')));
+    const pl = el('div', 'place');
+    const done = mine.find(b => b.date === card.date && b.bet === r.bet && b.game === r.game);
+    if (done) pl.append(el('span', 'placed', `Tracking $${done.stake.toFixed(2)} · ${done.result === 'Pending' ? 'pending' : done.result.toLowerCase()}`));
+    else {
+      const lab = el('label'); lab.append(document.createTextNode('$'));
+      const inp = el('input'); inp.type = 'number'; inp.min = '1'; inp.step = '0.5'; inp.value = '5'; inp.id = 'stake-' + r.rank; inp.setAttribute('aria-label', 'Stake for ' + r.bet); lab.append(inp);
+      const pays = el('span', 'pays'); const upd = () => { const s = parseFloat(inp.value) || 0; pays.textContent = `wins ${money(s * (r.decimal - 1))}`; };
+      inp.addEventListener('input', upd); upd();
+      const btn = el('button', 'primary', 'Place bet');
+      btn.addEventListener('click', () => { const s = parseFloat(inp.value); if (!(s > 0)) { pays.textContent = 'Enter a stake above $0'; return; }
+        save(mine.concat([{ id: newId(), date: card.date, game: r.game, bet: r.bet, price: r.price, decimal: r.decimal, stake: Math.round(s * 100) / 100, result: 'Pending', placedAt: new Date().toISOString() }]));
+        renderAll(); });
+      pl.append(lab, btn, pays);
+    }
+    a.append(pl); return a;
+  }));
 }
 
 const renderAll = () => { renderMine(); renderBoard(); };
 renderAll();
 fetch('data/card.json?t=' + Date.now()).then(r => r.json()).catch(() => null).then(c => { card = c; renderAll(); });
-})();
+startCloud();
 </script>
 </body>
 </html>

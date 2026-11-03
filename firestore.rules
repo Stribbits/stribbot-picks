@@ -1,0 +1,35 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedInAs(uid) { return request.auth != null && request.auth.uid == uid; }
+    function validName(d) { return d.keys().hasOnly(['name', 'updatedAt']) && d.name is string && d.name.size() > 0 && d.name.size() <= 24; }
+    function validBet(d, id) {
+      return d.keys().hasOnly(['id', 'date', 'game', 'bet', 'price', 'decimal', 'stake', 'result', 'placedAt', 'custom'])
+        && d.id == id
+        && d.bet is string && d.bet.size() > 0 && d.bet.size() <= 160
+        && d.game is string && d.game.size() <= 60
+        && d.date is string && d.date.size() <= 20
+        && d.price is string && d.price.size() <= 12
+        && d.placedAt is string && d.placedAt.size() <= 40
+        && d.custom is bool
+        && d.decimal is number && d.decimal > 1 && d.decimal <= 101
+        && d.stake is number && d.stake > 0 && d.stake <= 1000
+        && d.result in ['Pending', 'Win', 'Loss', 'Push'];
+    }
+    // Anyone can read the standings; each player can only write their own name and bets.
+    match /players/{uid} {
+      allow read: if true;
+      allow create, update: if signedInAs(uid) && validName(request.resource.data);
+      allow delete: if signedInAs(uid);
+      match /bets/{betId} {
+        allow read: if true;
+        allow create, update: if signedInAs(uid) && validBet(request.resource.data, betId);
+        allow delete: if signedInAs(uid);
+      }
+    }
+    // Standings read every player's bets in one query.
+    match /{path=**}/bets/{betId} {
+      allow read: if true;
+    }
+  }
+}
