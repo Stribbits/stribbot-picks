@@ -141,6 +141,9 @@ footer { color: var(--muted); font-size: .8rem; border-top: 1px solid var(--line
 .tlegs li.lose { color: var(--bad); } .tlegs li.lose::before { content: "✗"; }
 .tlegs li.live { color: var(--ink); }
 .tlegs li b { font-weight: 600; color: var(--ink); }
+/* Past bets toggle */
+.pasttog { align-self: flex-start; font-size: .85rem; color: var(--muted); }
+.pasttog:hover { color: var(--ink); }
 @media (prefers-reduced-motion: no-preference) { .bet, .row { transition: border-color .2s; } }
 </style>
 </head>
@@ -179,6 +182,7 @@ footer { color: var(--muted); font-size: .8rem; border-top: 1px solid var(--line
 </form>
 </details>
 <div class="slip" id="slip"><div class="empty">No bets yet.</div></div>
+<button type="button" class="pasttog" id="past-toggle" hidden></button>
 </section>
 
 <section aria-labelledby="stand-h">
@@ -391,8 +395,19 @@ function setPL(node, pl) { node.textContent = money(pl); node.className = 'num '
 function renderMine() {
   const t = tally(mine); $('m-rec').textContent = t.rec; setPL($('m-pl'), t.pl);
   const box = $('slip');
-  if (!mine.length) { box.replaceChildren(el('div', 'empty', 'No bets yet.')); return; }
-  const rows = mine.slice().sort((a, b) => ((b.result === 'Pending') - (a.result === 'Pending')) || String(b.placedAt).localeCompare(String(a.placedAt)));
+  const tog = $('past-toggle');
+  if (!mine.length) { box.replaceChildren(el('div', 'empty', 'No bets yet.')); tog.hidden = true; return; }
+  const latest = card && card.date ? card.date : mine.map(b => String(b.date || '')).sort().pop();
+  const isPast = (b) => b.result !== 'Pending' && String(b.date || '') < latest;
+  const nPast = mine.filter(isPast).length;
+  let showPast = false; try { showPast = localStorage.getItem('stribbot-show-past') === '1'; } catch (e) {}
+  tog.hidden = !nPast;
+  tog.textContent = showPast ? 'Hide past bets' : `Show past bets (${nPast})`;
+  tog.setAttribute('aria-expanded', String(showPast));
+  tog.onclick = () => { try { localStorage.setItem('stribbot-show-past', showPast ? '0' : '1'); } catch (e) {} renderMine(); };
+  const shown = showPast ? mine : mine.filter(b => !isPast(b));
+  if (!shown.length) { box.replaceChildren(el('div', 'empty', `No bets for ${latest} yet. Your earlier bets are hidden.`)); return; }
+  const rows = shown.slice().sort((a, b) => ((b.result === 'Pending') - (a.result === 'Pending')) || String(b.placedAt).localeCompare(String(a.placedAt)));
   box.replaceChildren(...rows.map(b => {
     const row = el('div', 'row'), w = el('div', 'what');
     w.append(el('div', '', b.bet), el('div', 'meta', [b.date, b.game, priceTxt(b.price), '$' + b.stake.toFixed(2), b.custom ? 'custom' : ''].filter(Boolean).join(' · ')));
