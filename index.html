@@ -195,7 +195,7 @@ body.pip .tlegs { font-size: .76rem; }
 
 <section aria-labelledby="stand-h">
 <h2 id="stand-h">Standings</h2>
-<p class="note">Everyone who signs in, ranked by profit on settled bets. Each player marks their own results.</p>
+<p class="note">Everyone who signs in, ranked by profit on settled bets. Bets from the card are settled automatically from final scores.</p>
 <div class="stand" id="stand"><div class="empty">Loading standings…</div></div>
 </section>
 
@@ -224,6 +224,12 @@ body.pip .tlegs { font-size: .76rem; }
 const $ = (id) => document.getElementById(id);
 const money = (v) => (v < 0 ? '−$' : v > 0 ? '+$' : '$') + Math.abs(v).toFixed(2);
 const pct = (v) => Math.round(v * 1000) / 10 + '%';
+// Official results for card bets: from data/results.json (written by the daily run) and from live final scores.
+// Used to show everyone's pending card bets as settled in the standings; it never edits anyone's saved bets.
+const official = new Map();
+const okey = (date, bet) => String(date) + '|' + String(bet);
+const resOf = (b) => b.result !== 'Pending' ? b.result : (official.get(okey(b.date, b.bet)) || 'Pending');
+window.stribbotOfficial = official;
 const profitOf = (b) => b.result === 'Win' ? b.stake * (b.decimal - 1) : b.result === 'Loss' ? -b.stake : 0;
 const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
 const KEY = 'stribbot-my-bets';
@@ -329,7 +335,7 @@ renderNight();
   const box = $('stand');
   if (!db) { box.replaceChildren(el('div', 'empty', 'Standings are unavailable right now.')); return; }
   const by = {};
-  allBets.forEach(b => { (by[b.uid] = by[b.uid] || []).push(b); });
+  allBets.forEach(b0 => { const b = { ...b0, result: resOf(b0) }; (by[b.uid] = by[b.uid] || []).push(b); });
   const rows = Object.keys({ ...by, ...players }).filter(uid => (by[uid] || []).length).map(uid => {
     const list = by[uid] || []; const t = tally(list);
     return { uid, name: (players[uid] && players[uid].name) || 'Player', ...t, roi: t.staked ? t.pl / t.staked : 0, wins: list.filter(b => b.result === 'Win').length, losses: list.filter(b => b.result === 'Loss').length };
@@ -557,17 +563,38 @@ if (v != null && v > t.line) return { state: over ? 'win' : 'lose', txt: base };
 return { state: fin && v != null ? (over ? 'lose' : 'win') : 'live', txt: base }; }
 return { state: 'pre', txt: score };
 }
+function cardEntries() {
+if (!card || !card.date) return [];
+const out = [];
+(card.bets || []).forEach(r => { if (r.track) out.push({ bet: r.bet, parlay: false, legs: [r.track] }); });
+(card.parlays || []).forEach(r => out.push({ bet: 'Parlay: ' + (r.short || r.bet), parlay: true, legs: r.legs.map(l => l.track) }));
+(card.watch || []).forEach(r => out.push({ bet: r.bet, parlay: r.legs.length > 1, legs: r.legs.map(l => l.track) }));
+return out;
+}
+function updateOfficial() {
+let changed = false;
+cardEntries().forEach(en => {
+if (en.legs.some(t => !t)) return;
+if (!en.legs.every(t => { const e = findEv(t); return e && e.status.type.state === 'post'; })) return;
+const st = en.legs.map(t => evalLeg(t).state);
+const r = st.includes('lose') ? 'Loss' : st.every(x => x === 'win') ? 'Win' : (!en.parlay && st.every(x => x === 'push')) ? 'Push' : null;
+const k = okey(card.date, en.bet);
+if (r && official.get(k) !== r) { official.set(k, r); changed = true; }
+});
+if (changed) { renderStandings(); renderMine(); }
+}
+fetch('data/results.json?t=' + Date.now()).then(r => r.ok ? r.json() : []).catch(() => []).then(list => { (Array.isArray(list) ? list : []).forEach(x => { if (x && x.date && x.bet && ['Win', 'Loss', 'Push'].includes(x.result)) official.set(okey(x.date, x.bet), x.result); }); renderStandings(); renderMine(); });
 async function pollLive() {
-const items = trackItems(); if (!items.length || !card) { renderTracker(); return; }
+const items = trackItems(); const entries = cardEntries(); if (!entries.length) { renderTracker(); return; }
 try {
 const sb = await fetch(ESPN + 'scoreboard?dates=' + card.date.replace(/-/g, '')).then(r => r.json());
 live.events = sb.events || [];
 const need = new Set();
-items.forEach(it => it.legs.forEach(l => { if (l.t && l.t.type === 'player') { const e = findEv(l.t); if (e && e.status.type.state !== 'pre') need.add(e.id); } }));
+entries.forEach(en => en.legs.forEach(t => { if (t && t.type === 'player') { const e = findEv(t); if (e && e.status.type.state !== 'pre') need.add(e.id); } }));
 await Promise.all([...need].map(async id => { const s = await fetch(ESPN + 'summary?event=' + id).then(r => r.json()); live.box[id] = s.boxscore; }));
 live.at = new Date(); live.err = false;
 } catch (e) { live.err = true; }
-renderTracker();
+updateOfficial(); renderTracker();
 }
 let pipWin = null;
 // Bets the tracker has already settled in this browser (so an Undo is not re-settled)
