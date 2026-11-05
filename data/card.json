@@ -782,5 +782,162 @@
    "note": "5-leg parlay, every leg from a different game. Chance = product of leg estimates. Optional bigger parlay at plus-money-ish odds: five of tonight's highest-chance legs (each 85-89% on our estimates, which run optimistic). Agents 2 and 3 would both drop it."
   }
  ],
- "parlay_note": "Ranked by chance to hit. Mostly 2-leg parlays of tonight's safest lines (+2.5 and favourite +1.5 puck lines and 8.5 unders, OT included, each leg from a different game), one 3-leg and one optional 5-leg (-119). Chances multiply our leg estimates, which run optimistic on puck lines. All priced -300 or better. Prices re-checked at 4:17 PM ET; a parlay pays the legs' prices multiplied together."
+ "parlay_note": "Ranked by chance to hit. Mostly 2-leg parlays of tonight's safest lines (+2.5 and favourite +1.5 puck lines and 8.5 unders, OT included, each leg from a different game), one 3-leg and one optional 5-leg (-119). Chances multiply our leg estimates, which run optimistic on puck lines. All priced -300 or better. Prices re-checked at 4:17 PM ET; a parlay pays the legs' prices multiplied together.",
+ "watch": [
+  {
+   "bet": "bet365 parlay: 11 shot legs (3 SGPs + 3 singles)",
+   "name": "bet365 parlay: 11 shot legs, $5 to return $12.07",
+   "legs": [
+    {
+     "bet": "Rickard Rakell 1+ shots (BOS @ PIT)",
+     "track": {
+      "type": "player",
+      "away": "BOS",
+      "home": "PIT",
+      "player": "Rickard Rakell",
+      "stat": "S",
+      "line": 0.5,
+      "side": "over"
+     }
+    },
+    {
+     "bet": "David Pastrnak 2+ shots (BOS @ PIT)",
+     "track": {
+      "type": "player",
+      "away": "BOS",
+      "home": "PIT",
+      "player": "David Pastrnak",
+      "stat": "S",
+      "line": 1.5,
+      "side": "over"
+     }
+    },
+    {
+     "bet": "Bo Horvat 1+ shots (CAR @ NYI)",
+     "track": {
+      "type": "player",
+      "away": "CAR",
+      "home": "NYI",
+      "player": "Bo Horvat",
+      "stat": "S",
+      "line": 0.5,
+      "side": "over"
+     }
+    },
+    {
+     "bet": "Nikita Kucherov 1+ shots (CHI @ TBL)",
+     "track": {
+      "type": "player",
+      "away": "CHI",
+      "home": "TBL",
+      "player": "Nikita Kucherov",
+      "stat": "S",
+      "line": 0.5,
+      "side": "over"
+     }
+    },
+    {
+     "bet": "Brandon Hagel 1+ shots (CHI @ TBL)",
+     "track": {
+      "type": "player",
+      "away": "CHI",
+      "home": "TBL",
+      "player": "Brandon Hagel",
+      "stat": "S",
+      "line": 0.5,
+      "side": "over"
+     }
+    },
+    {
+     "bet": "Connor Bedard 2+ shots (CHI @ TBL)",
+     "track": {
+      "type": "player",
+      "away": "CHI",
+      "home": "TBL",
+      "player": "Connor Bedard",
+      "stat": "S",
+      "line": 1.5,
+      "side": "over"
+     }
+    },
+    {
+     "bet": "Brayden Point 1+ shots (CHI @ TBL)",
+     "track": {
+      "type": "player",
+      "away": "CHI",
+      "home": "TBL",
+      "player": "Brayden Point",
+      "stat": "S",
+      "line": 0.5,
+      "side": "over"
+     }
+    },
+    {
+     "bet": "Adam Fantilli 1+ shots (DAL @ CBJ)",
+     "track": {
+      "type": "player",
+      "away": "DAL",
+      "home": "CBJ",
+      "player": "Adam Fantilli",
+      "stat": "S",
+      "line": 0.5,
+      "side": "over"
+     }
+    },
+    {
+     "bet": "Alexis Lafreniere 1+ shots (PHI @ NYR)",
+     "track": {
+      "type": "player",
+      "away": "PHI",
+      "home": "NYR",
+      "player": "Alexis Lafreni\u00e8re",
+      "stat": "S",
+      "line": 0.5,
+      "side": "over"
+     }
+    },
+    {
+     "bet": "Josh Anderson 1+ shots (UTA @ MTL)",
+     "track": {
+      "type": "player",
+      "away": "UTA",
+      "home": "MTL",
+      "player": "Josh Anderson",
+      "stat": "S",
+      "line": 0.5,
+      "side": "over"
+     }
+    },
+    {
+     "bet": "Cole Caufield 1+ shots (UTA @ MTL)",
+     "track": {
+      "type": "player",
+      "away": "UTA",
+      "home": "MTL",
+      "player": "Cole Caufield",
+      "stat": "S",
+      "line": 0.5,
+      "side": "over"
+     }
+    }
+   ]
+  },
+  {
+   "bet": "bet365 EDM Oilers team total over 2.5",
+   "name": "bet365: Edmonton 3+ goals, $6.70 to return $8.41",
+   "legs": [
+    {
+     "bet": "Edmonton Oilers over 2.5 goals (ANA @ EDM)",
+     "track": {
+      "type": "teamtotal",
+      "away": "ANA",
+      "home": "EDM",
+      "team": "EDM",
+      "line": 2.5,
+      "side": "over"
+     }
+    }
+   ]
+  }
+ ]
 }
