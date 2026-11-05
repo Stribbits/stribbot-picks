@@ -2,8 +2,8 @@
  "date": "2026-11-05",
  "scanned": 970,
  "ranking": "agreed best first, then chance to hit",
- "note": "11-game slate; Chicago is on the 2nd night of a back-to-back (Soderblom in net), so no bets on Chicago. Pinnacle prices read 3:40 PM ET and re-checked 3:55 PM ET (no changes). Agreed = in all three agents' top 4: Montreal +2.5, Edmonton +1.5 and NY Rangers +1.5 (agreed best, not guaranteed). Agent 1's top 4 also had Boston +2.5; Agent 2's had Columbus +2.5; Agent 3's had Boston +2.5. Follow-up: Montreal starts Dobes (.853), not Fowler; both other agents kept MTL +2.5 in their top 4 but rate it fun only / pass on price. Goalies (Daily Faceoff, 4 PM ET): Woll, Garand, Varlamov, Binnington, Silovs, Dobes, DeSmith, Talbot, Skinner, Tomkins, Blackwood confirmed; Soderblom, Vasilevskiy, Tarasov, Hellebuyck, Cossa, Merilainen, Brossoit likely; Swayman, Bussi, Hart, Saros unconfirmed. Key absences: Larkin (suspended) and Gibson for DET, Heiskanen for DAL, Hyman/Jarry/Andersen for EDM, Demidov/Matheson for MTL, Shesterkin for NYR. Estimate = midpoint of Pinnacle no-vig and Agent 1's model; the goal model has no empty-net effect, so it runs high on +1.5/+2.5 lines (most of tonight's top picks show the model well above the market). Excluded: goals props and assists unders (Steve's rules), Chicago (back-to-back), singles shorter than -500, saves props (tiny goalie samples), players who missed recent games or tiny samples. Only Glass under 0.5 points made the top 10 among props. bet365 (read only): BOS +2.5 -650, TBL ML -470, CAR +2.5 -1300 (Pinnacle better on all); most bet365 alternate-spread markets would not open, so those prices were not checked. Totals on whole numbers push.",
- "updatedAt": "2026-11-05T20:57:31Z",
+ "note": "11-game slate; Chicago is on the 2nd night of a back-to-back (Soderblom in net), so no bets on Chicago. Pinnacle prices read 3:40 PM ET and re-checked 3:55 PM ET (no changes). Agreed = in all three agents' top 4: Montreal +2.5, Edmonton +1.5 and NY Rangers +1.5 (agreed best, not guaranteed). Agent 1's top 4 also had Boston +2.5; Agent 2's had Columbus +2.5; Agent 3's had Boston +2.5. Follow-up: Montreal starts Dobes (.853), not Fowler; both other agents kept MTL +2.5 in their top 4 but rate it fun only / pass on price. Goalies (Daily Faceoff, 4 PM ET): Woll, Garand, Varlamov, Binnington, Silovs, Dobes, DeSmith, Talbot, Skinner, Tomkins, Blackwood confirmed; Soderblom, Vasilevskiy, Tarasov, Hellebuyck, Cossa, Merilainen, Brossoit likely; Swayman, Bussi, Hart, Saros unconfirmed. Key absences: Larkin (suspended) and Gibson for DET, Heiskanen for DAL, Hyman/Jarry/Andersen for EDM, Demidov/Matheson for MTL, Shesterkin for NYR. Estimate = midpoint of Pinnacle no-vig and Agent 1's model; the goal model has no empty-net effect, so it runs high on +1.5/+2.5 lines (most of tonight's top picks show the model well above the market). Excluded: goals props and assists unders (Steve's rules), Chicago (back-to-back), singles shorter than -500, saves props (tiny goalie samples), players who missed recent games or tiny samples. Only Glass under 0.5 points made the top 10 among props. bet365 (read only, NHL Spread and Total tabs, 4:11 PM ET): every top-10 single and parlay leg priced except Glass (bet365 has no points unders). bet365 is slightly better on NY Rangers +1.5 (-400), Dallas +1.5 (-340) and Vegas +1.5 (-380); Pinnacle is better on everything else and on every parlay. Totals on whole numbers push.",
+ "updatedAt": "2026-11-05T21:12:00Z",
  "bets": [
   {
    "rank": 1,
@@ -25,9 +25,9 @@
    "objection": "Agreed best, not guaranteed. Loses only if Utah wins by 3+. Est 82.4% is above the 80.6% break-even, but the model (87.6%) is far more bullish than the market (77.2%) and has no empty-net effect. Suzuki and Dach return; Demidov and Matheson out. Montreal starts Dobes (.853, 4.05 GAA) rather than Fowler (.925); Utah's Cossa likely (.875).",
    "books": {
     "pinnacle": "-416",
-    "bet365": null,
+    "bet365": "-550",
     "best": "pinnacle",
-    "bet365_note": "bet365 alternate lines not checked: the Alternative Spread 2-Way market would not open on this game page"
+    "bet365_note": null
    },
    "track": {
     "type": "spread",
@@ -57,9 +57,9 @@
    "objection": "Agreed best, not guaranteed. Wins if Edmonton wins or loses by one. Est 82.1% vs 82.2% break-even (essentially at it). Anaheim starts backup Brossoit (.848 in 2 GP); Edmonton uses third-stringer Tomkins (1 NHL GP) with Jarry ill and Andersen out; Hyman out.",
    "books": {
     "pinnacle": "-463",
-    "bet365": null,
+    "bet365": "-500",
     "best": "pinnacle",
-    "bet365_note": "bet365 alternate lines not checked (only main lines were readable for this game)"
+    "bet365_note": null
    },
    "track": {
     "type": "spread",
@@ -89,9 +89,9 @@
    "objection": "Agreed best, not guaranteed. Wins if the Rangers win or lose by one. Est 81.7% vs 80.0% break-even, but the model (86.8%) is much more bullish than the market (76.6%) and ignores empty-net goals. Garand (.905) vs Woll (.899), both confirmed; Shesterkin out.",
    "books": {
     "pinnacle": "-401",
-    "bet365": null,
-    "best": "pinnacle",
-    "bet365_note": "bet365 alternate lines not checked (only main lines were readable for this game)"
+    "bet365": "-400",
+    "best": "bet365",
+    "bet365_note": null
    },
    "track": {
     "type": "spread",
@@ -118,10 +118,10 @@
    "agent2": "Fun only (not in its top 4)",
    "agent3": "Top-4 pick (1st); fun only",
    "analysts": "Covers moneyline picks: Bruins; Odds Shark computer: 3.20-3.20",
-   "objection": "Big model-market mismatch: the model gives 90.6%, Pinnacle no-vig only 79.6% (the market has this a pick'em despite BOS 11-4-1 vs PIT 5-8-2). Loses only if Pittsburgh wins by 3+. Malkin returns for PIT; Swayman projected but unconfirmed. bet365 is -650 (Pinnacle better).",
+   "objection": "Big model-market mismatch: the model gives 90.6%, Pinnacle no-vig only 79.6% (the market has this a pick'em despite BOS 11-4-1 vs PIT 5-8-2). Loses only if Pittsburgh wins by 3+. Malkin returns for PIT; Swayman projected but unconfirmed. bet365 is -600 (Pinnacle better).",
    "books": {
     "pinnacle": "-495",
-    "bet365": "-650",
+    "bet365": "-600",
     "best": "pinnacle",
     "bet365_note": null
    },
@@ -153,9 +153,9 @@
    "objection": "Est 81.1% is below the 81.6% break-even. Loses only if Dallas wins by 3+. Heiskanen out for Dallas; Talbot vs DeSmith both confirmed. Same game as Dallas +1.5 (correlated: both win unless Dallas wins by 3+ or Columbus wins by 2+).",
    "books": {
     "pinnacle": "-443",
-    "bet365": null,
+    "bet365": "-550",
     "best": "pinnacle",
-    "bet365_note": "bet365 alternate lines not checked: the Alternative Spread 2-Way market would not open on this game page"
+    "bet365_note": null
    },
    "track": {
     "type": "spread",
@@ -185,9 +185,9 @@
    "objection": "Est 79.9% vs 79.0% break-even, but the model does not know Larkin is suspended and Gibson is hurt; Detroit starts Tarasov. Model (84.2%) well above market (75.6%).",
    "books": {
     "pinnacle": "-377",
-    "bet365": null,
+    "bet365": "-500",
     "best": "pinnacle",
-    "bet365_note": "bet365 alternate lines not checked (only main lines were readable for this game)"
+    "bet365_note": null
    },
    "track": {
     "type": "spread",
@@ -249,9 +249,9 @@
    "objection": "Est 76.8% is below the 77.5% break-even. Wins if Dallas wins or loses by one. Heiskanen out. Same game as Columbus +2.5 (correlated exposure).",
    "books": {
     "pinnacle": "-345",
-    "bet365": null,
-    "best": "pinnacle",
-    "bet365_note": "bet365 alternate lines not checked (only main lines were readable for this game)"
+    "bet365": "-340",
+    "best": "bet365",
+    "bet365_note": null
    },
    "track": {
     "type": "spread",
@@ -281,9 +281,9 @@
    "objection": "Est 76.4% is well below the 79.4% break-even. Vegas goalie not confirmed (Hill projected, Hart listed). Detroit without Larkin and Gibson helps Vegas. Same game as Detroit +2.5.",
    "books": {
     "pinnacle": "-386",
-    "bet365": null,
-    "best": "pinnacle",
-    "bet365_note": "bet365 alternate lines not checked (only main lines were readable for this game)"
+    "bet365": "-380",
+    "best": "bet365",
+    "bet365_note": null
    },
    "track": {
     "type": "spread",
@@ -338,7 +338,7 @@
      "bet": "NY Rangers +2.5 (OT incl)",
      "price": "-761",
      "est": 0.892,
-     "bet365": null,
+     "bet365": "-950",
      "track": {
       "type": "spread",
       "away": "PHI",
@@ -353,7 +353,7 @@
      "bet": "Edmonton +2.5 (OT incl)",
      "price": "-850",
      "est": 0.89,
-     "bet365": null,
+     "bet365": "-1100",
      "track": {
       "type": "spread",
       "away": "ANA",
@@ -372,9 +372,9 @@
    "chance": 0.794,
    "books": {
     "pinnacle": "-378",
-    "bet365": null,
+    "bet365": "-486",
     "best": "pinnacle",
-    "bet365_note": "bet365 legs not all checked (alternate spread/total markets would not open for some games)"
+    "bet365_note": null
    },
    "note": "2-leg parlay, every leg from a different game. Chance = product of leg estimates. Agent 2 keeps it; Agent 3 would drop it (only 0.3 points above break-even on our estimates)."
   },
@@ -387,7 +387,7 @@
      "bet": "Carolina +2.5 (OT incl)",
      "price": "-963",
      "est": 0.888,
-     "bet365": "-1300",
+     "bet365": "-1200",
      "track": {
       "type": "spread",
       "away": "CAR",
@@ -402,7 +402,7 @@
      "bet": "Dallas +2.5 (OT incl)",
      "price": "-636",
      "est": 0.86,
-     "bet365": null,
+     "bet365": "-800",
      "track": {
       "type": "spread",
       "away": "DAL",
@@ -421,9 +421,9 @@
    "chance": 0.764,
    "books": {
     "pinnacle": "-360",
-    "bet365": null,
+    "bet365": "-457",
     "best": "pinnacle",
-    "bet365_note": "bet365 legs not all checked (alternate spread/total markets would not open for some games)"
+    "bet365_note": null
    },
    "note": "2-leg parlay, every leg from a different game. Chance = product of leg estimates. Agent 2 keeps it; Agent 3 would drop it (estimate below break-even)."
   },
@@ -436,7 +436,7 @@
      "bet": "Edmonton +2.5 (OT incl)",
      "price": "-850",
      "est": 0.89,
-     "bet365": null,
+     "bet365": "-1100",
      "track": {
       "type": "spread",
       "away": "ANA",
@@ -451,7 +451,7 @@
      "bet": "Under 8.5 goals (OT incl)",
      "price": "-637",
      "est": 0.85,
-     "bet365": null,
+     "bet365": "-800",
      "track": {
       "type": "total",
       "away": "DAL",
@@ -470,9 +470,9 @@
    "chance": 0.756,
    "books": {
     "pinnacle": "-341",
-    "bet365": null,
+    "bet365": "-440",
     "best": "pinnacle",
-    "bet365_note": "bet365 legs not all checked (alternate spread/total markets would not open for some games)"
+    "bet365_note": null
    },
    "note": "2-leg parlay, every leg from a different game. Chance = product of leg estimates. Agent 2 keeps it; Agent 3 would drop it (estimate below break-even)."
   },
@@ -485,7 +485,7 @@
      "bet": "NY Rangers +2.5 (OT incl)",
      "price": "-761",
      "est": 0.892,
-     "bet365": null,
+     "bet365": "-950",
      "track": {
       "type": "spread",
       "away": "PHI",
@@ -500,7 +500,7 @@
      "bet": "Colorado +1.5 (OT incl)",
      "price": "-575",
      "est": 0.823,
-     "bet365": null,
+     "bet365": "-600",
      "track": {
       "type": "spread",
       "away": "NSH",
@@ -519,9 +519,9 @@
    "chance": 0.734,
    "books": {
     "pinnacle": "-305",
-    "bet365": null,
+    "bet365": "-345",
     "best": "pinnacle",
-    "bet365_note": "bet365 legs not all checked (alternate spread/total markets would not open for some games)"
+    "bet365_note": null
    },
    "note": "2-leg parlay, every leg from a different game. Chance = product of leg estimates. Agents 2 and 3 would both drop it (below break-even once the model's empty-net optimism is discounted)."
   },
@@ -534,7 +534,7 @@
      "bet": "Vegas +2.5 (OT incl)",
      "price": "-718",
      "est": 0.855,
-     "bet365": null,
+     "bet365": "-900",
      "track": {
       "type": "spread",
       "away": "VGK",
@@ -549,7 +549,7 @@
      "bet": "Boston +2.5 (OT incl)",
      "price": "-495",
      "est": 0.851,
-     "bet365": "-650",
+     "bet365": "-600",
      "track": {
       "type": "spread",
       "away": "BOS",
@@ -568,9 +568,9 @@
    "chance": 0.728,
    "books": {
     "pinnacle": "-271",
-    "bet365": null,
+    "bet365": "-337",
     "best": "pinnacle",
-    "bet365_note": "bet365 legs not all checked (alternate spread/total markets would not open for some games)"
+    "bet365_note": null
    },
    "note": "2-leg parlay, every leg from a different game. Chance = product of leg estimates. Agents 2 and 3 would both drop it; BOS +2.5 has a big model-market gap."
   },
@@ -583,7 +583,7 @@
      "bet": "Carolina +2.5 (OT incl)",
      "price": "-963",
      "est": 0.888,
-     "bet365": "-1300",
+     "bet365": "-1200",
      "track": {
       "type": "spread",
       "away": "CAR",
@@ -598,7 +598,7 @@
      "bet": "New Jersey +1.5 (OT incl)",
      "price": "-593",
      "est": 0.818,
-     "bet365": null,
+     "bet365": "-650",
      "track": {
       "type": "spread",
       "away": "STL",
@@ -617,9 +617,9 @@
    "chance": 0.726,
    "books": {
     "pinnacle": "-345",
-    "bet365": null,
+    "bet365": "-400",
     "best": "pinnacle",
-    "bet365_note": "bet365 legs not all checked (alternate spread/total markets would not open for some games)"
+    "bet365_note": null
    },
    "note": "2-leg parlay, every leg from a different game. Chance = product of leg estimates. Agents 2 and 3 would both drop it (estimate well below break-even)."
   },
@@ -632,7 +632,7 @@
      "bet": "Boston +2.5 (OT incl)",
      "price": "-495",
      "est": 0.851,
-     "bet365": "-650",
+     "bet365": "-600",
      "track": {
       "type": "spread",
       "away": "BOS",
@@ -647,7 +647,7 @@
      "bet": "Montreal +2.5 (OT incl)",
      "price": "-416",
      "est": 0.824,
-     "bet365": null,
+     "bet365": "-550",
      "track": {
       "type": "spread",
       "away": "UTA",
@@ -666,9 +666,9 @@
    "chance": 0.701,
    "books": {
     "pinnacle": "-204",
-    "bet365": null,
+    "bet365": "-264",
     "best": "pinnacle",
-    "bet365_note": "bet365 legs not all checked (alternate spread/total markets would not open for some games)"
+    "bet365_note": null
    },
    "note": "2-leg parlay, every leg from a different game. Chance = product of leg estimates. Agent 3's only keeper (fun only); Agent 2 would drop it. Both legs lean on the optimistic +2.5 model."
   },
@@ -681,7 +681,7 @@
      "bet": "Vegas +2.5 (OT incl)",
      "price": "-718",
      "est": 0.855,
-     "bet365": null,
+     "bet365": "-900",
      "track": {
       "type": "spread",
       "away": "VGK",
@@ -696,7 +696,7 @@
      "bet": "Colorado +1.5 (OT incl)",
      "price": "-575",
      "est": 0.823,
-     "bet365": null,
+     "bet365": "-600",
      "track": {
       "type": "spread",
       "away": "NSH",
@@ -711,7 +711,7 @@
      "bet": "Under 8.5 goals (OT incl)",
      "price": "-581",
      "est": 0.838,
-     "bet365": null,
+     "bet365": "-700",
      "track": {
       "type": "total",
       "away": "PHI",
@@ -730,9 +730,9 @@
    "chance": 0.59,
    "books": {
     "pinnacle": "-176",
-    "bet365": null,
+    "bet365": "-208",
     "best": "pinnacle",
-    "bet365_note": "bet365 legs not all checked (alternate spread/total markets would not open for some games)"
+    "bet365_note": null
    },
    "note": "3-leg parlay, every leg from a different game. Chance = product of leg estimates. 3-leg. Agents 2 and 3 would both drop it (compounding risk)."
   },
@@ -745,7 +745,7 @@
      "bet": "NY Rangers +2.5 (OT incl)",
      "price": "-761",
      "est": 0.892,
-     "bet365": null,
+     "bet365": "-950",
      "track": {
       "type": "spread",
       "away": "PHI",
@@ -760,7 +760,7 @@
      "bet": "Edmonton +2.5 (OT incl)",
      "price": "-850",
      "est": 0.89,
-     "bet365": null,
+     "bet365": "-1100",
      "track": {
       "type": "spread",
       "away": "ANA",
@@ -775,7 +775,7 @@
      "bet": "Carolina +2.5 (OT incl)",
      "price": "-963",
      "est": 0.888,
-     "bet365": "-1300",
+     "bet365": "-1200",
      "track": {
       "type": "spread",
       "away": "CAR",
@@ -790,7 +790,7 @@
      "bet": "Dallas +2.5 (OT incl)",
      "price": "-636",
      "est": 0.86,
-     "bet365": null,
+     "bet365": "-800",
      "track": {
       "type": "spread",
       "away": "DAL",
@@ -805,7 +805,7 @@
      "bet": "Vegas +2.5 (OT incl)",
      "price": "-718",
      "est": 0.855,
-     "bet365": null,
+     "bet365": "-900",
      "track": {
       "type": "spread",
       "away": "VGK",
@@ -824,9 +824,9 @@
    "chance": 0.518,
    "books": {
     "pinnacle": "-119",
-    "bet365": null,
+    "bet365": "-158",
     "best": "pinnacle",
-    "bet365_note": "bet365 legs not all checked (alternate spread/total markets would not open for some games)"
+    "bet365_note": null
    },
    "note": "5-leg parlay, every leg from a different game. Chance = product of leg estimates. Optional bigger parlay: five of tonight's highest-chance legs (each 85-89% on our estimates, which run optimistic). Agents 2 and 3 would both drop it."
   }
