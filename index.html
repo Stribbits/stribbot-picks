@@ -133,6 +133,12 @@ footer { color: var(--muted); font-size: .8rem; border-top: 1px solid var(--line
 .place .bookbtn b { font-family: var(--f-num); font-weight: 600; }
 .place .pays { flex-basis: 100%; }
 /* Live tracker */
+.trkbar { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin: 0 0 10px; }
+.pipmsg { font-size: .8rem; color: var(--muted); }
+body.pip { margin: 0; padding: 8px; background: var(--bg); color: var(--ink); font-size: 13px; }
+body.pip .piphd { display: flex; justify-content: space-between; gap: 8px; font-size: .75rem; color: var(--muted); padding: 0 4px 6px; }
+body.pip .row { padding: 8px 10px; }
+body.pip .tlegs { font-size: .76rem; }
 .st { font-size: .72rem; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; padding: 3px 9px; border-radius: 999px; border: 1px solid currentColor; white-space: nowrap; color: var(--muted); }
 .st.win { color: var(--ok); } .st.lose { color: var(--bad); } .st.live { color: var(--warn); }
 .tlegs { list-style: none; margin: 6px 0 0; padding: 0; display: flex; flex-direction: column; gap: 3px; font-size: .82rem; color: var(--muted); }
@@ -160,6 +166,7 @@ footer { color: var(--muted); font-size: .8rem; border-top: 1px solid var(--line
 <section aria-labelledby="trk-h">
 <h2 id="trk-h">Live tracker</h2>
 <p class="note" id="trk-note">Your bets from tonight's card. Live from 7 PM to 1 AM ET, refreshed every minute.</p>
+<div class="trkbar"><button type="button" id="pip-btn">Pop out over games</button><span class="pipmsg" id="pip-msg" aria-live="polite"></span></div>
 <div class="slip" id="tracker"><div class="empty">No bets to track yet. Place a bet from the card below.</div></div>
 </section>
 
@@ -560,12 +567,36 @@ live.at = new Date(); live.err = false;
 } catch (e) { live.err = true; }
 renderTracker();
 }
+let pipWin = null;
+const trkBox = () => (pipWin && pipWin.document.getElementById('tracker')) || $('tracker');
+async function openPip() {
+const msg = $('pip-msg');
+if (pipWin) { pipWin.focus(); return; }
+if (!('documentPictureInPicture' in window)) { msg.textContent = 'Pop-out needs Chrome or Edge on a computer.'; return; }
+try { pipWin = await documentPictureInPicture.requestWindow({ width: 380, height: 520 }); }
+catch (e) { msg.textContent = 'Could not open the pop-out window.'; pipWin = null; return; }
+const d = pipWin.document;
+[...document.styleSheets].forEach(ss => {
+try { const st = d.createElement('style'); st.textContent = [...ss.cssRules].map(r => r.cssText).join('\n'); d.head.append(st); }
+catch (e) { if (ss.href) { const l = d.createElement('link'); l.rel = 'stylesheet'; l.href = ss.href; d.head.append(l); } }
+});
+[...document.documentElement.attributes].forEach(a => d.documentElement.setAttribute(a.name, a.value));
+d.title = 'Stribbot live'; d.body.className = 'pip';
+const hd = d.createElement('div'); hd.className = 'piphd'; hd.append(Object.assign(d.createElement('b'), { textContent: 'Stribbot live' }), Object.assign(d.createElement('span'), { id: 'pip-note' }));
+const box = $('tracker'); const ph = el('div', 'empty', 'The tracker is popped out. Close the small window to bring it back here.');
+box.replaceWith(ph); d.body.append(hd, box);
+msg.textContent = 'Popped out. For games, use borderless or windowed mode so it stays on top.';
+pipWin.addEventListener('pagehide', () => { ph.replaceWith(box); pipWin = null; msg.textContent = ''; renderTracker(); });
+renderTracker(); if (inWindow()) pollLive();
+}
+$('pip-btn').addEventListener('click', openPip);
 function renderTracker() {
-const box = $('tracker'); if (!box) return;
+const box = trkBox(); if (!box) return;
 const items = trackItems();
 const when = live.at ? ' Last update ' + live.at.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' }) + '.' : '';
 $('trk-note').textContent = (inWindow() ? 'Live now: your bets from tonight\'s card, refreshed every minute until 1 AM ET.' : 'Your bets from tonight\'s card. Live tracking runs 7 PM to 1 AM ET.') + when + (live.err ? ' Scores could not be loaded; retrying.' : '');
 if (!items.length) { box.replaceChildren(el('div', 'empty', 'No bets to track yet. Place a bet from the card below.')); return; }
+if (pipWin) { const pn = pipWin.document.getElementById('pip-note'); if (pn) pn.textContent = live.at ? 'Updated ' + live.at.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' }) : (inWindow() ? 'Loading scores…' : 'Live 7 PM to 1 AM ET'); }
 const lab = { win: 'Hit', lose: 'Missed', live: 'Live', pre: 'Not started' };
 box.replaceChildren(...items.map(it => {
 const legs = it.legs.map(l => ({ ...evalLeg(l.t), bet: l.bet }));
