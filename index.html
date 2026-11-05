@@ -197,7 +197,7 @@ body.pip .tlegs { font-size: .76rem; }
 
 <section aria-labelledby="stand-h">
 <h2 id="stand-h">Standings</h2>
-<p class="note">Everyone who signs in, ranked by profit on settled bets. Bets from the card are settled automatically from final scores. Stribbot's row is just for fun (no money bet): its wins and losses on every Agreed and Fun only single since Oct 27.</p>
+<p class="note">Everyone who signs in, ranked by profit on settled bets. Bets from the card are settled automatically from final scores. The two Stribbot rows are just for fun (no money bet): wins and losses on the card's Agreed singles, and on Agreed plus Fun only singles, since Oct 27.</p>
 <div class="stand" id="stand"><div class="empty">Loading standings…</div></div>
 </section>
 
@@ -352,7 +352,11 @@ renderNight();
     return { uid, name: (players[uid] && players[uid].name) || 'Player', ...t, roi: t.staked ? t.pl / t.staked : 0, wins: list.filter(b => b.result === 'Win').length, losses: list.filter(b => b.result === 'Loss').length };
   });
   const sb = stribbotBets();
-  if (sb.length) { const t = tally(sb); rows.push({ uid: 'stribbot', bot: true, name: 'Stribbot', ...t, roi: t.staked ? t.pl / t.staked : 0, wins: sb.filter(b => b.result === 'Win').length, losses: sb.filter(b => b.result === 'Loss').length }); }
+  const botRowOf = (uid, name, list, tip) => { const t = tally(list); return { uid, bot: true, name, tip, ...t, roi: t.staked ? t.pl / t.staked : 0, wins: list.filter(b => b.result === 'Win').length, losses: list.filter(b => b.result === 'Loss').length }; };
+  if (sb.length) {
+    rows.push(botRowOf('stribbot-agreed', 'Stribbot (Agreed only)', sb.filter(b => b.verdict === 'Agreed'), 'Every Agreed single on the card since Oct 27 (no money bet)'));
+    rows.push(botRowOf('stribbot-all', 'Stribbot (Agreed & Fun)', sb, 'Every Agreed and Fun only single on the card since Oct 27 (no money bet)'));
+  }
   rows.sort((a, b) => (b.pl - a.pl) || (b.roi - a.roi) || a.name.localeCompare(b.name));
   if (!rows.length) { box.replaceChildren(el('div', 'empty', 'No one has logged a bet yet. Sign in and place one to start the table.')); return; }
   const table = el('table'); const head = el('tr');
@@ -361,7 +365,7 @@ renderNight();
   const botRow = rows.filter(r => r.bot); rows = botRow.concat(rows.filter(r => !r.bot));
   rows.forEach((r, i) => {
     const tr = el('tr', user && r.uid === user.uid ? 'me' : '');
-    const n = el('td', 'n', r.name); if (user && r.uid === user.uid) n.append(el('span', 'you', 'you')); if (r.bot) { n.append(el('span', 'you bot', 'card')); n.title = 'Every Agreed and Fun only single on the card since Oct 27 (no money bet)'; }
+    const n = el('td', 'n', r.name); if (user && r.uid === user.uid) n.append(el('span', 'you', 'you')); if (r.bot) n.title = r.tip;
     const p = r.bot ? el('td', 'r nobet', '(No bet, fun only)') : el('td', 'r num ' + (r.pl > 0 ? 'pos' : r.pl < 0 ? 'neg' : ''), money(r.pl));
     tr.append(el('td', 'num', r.bot ? '–' : String(i + 1 - botRow.length)), n, el('td', 'r num', String(r.wins)), el('td', 'r num', String(r.losses)), p);
     tb.append(tr);
