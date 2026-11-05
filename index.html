@@ -512,6 +512,8 @@ const single = (card.bets || []).find(r => r.bet === b.bet && r.game === b.game)
 if (single && single.track) return { b, num: single.rank, name: single.bet, legs: [{ bet: single.bet, t: single.track }] };
 const par = (card.parlays || []).find(r => b.bet === 'Parlay: ' + (r.short || r.bet));
 if (par) return { b, num: par.rank, name: par.legs.length + '-leg parlay', parlay: true, legs: par.legs.map(l => ({ bet: l.bet + ' (' + l.game + ')', t: l.track })) };
+const wt = (card.watch || []).find(r => r.bet === b.bet);
+if (wt) return { b, num: null, name: wt.name || wt.bet, parlay: wt.legs.length > 1, legs: wt.legs.map(l => ({ bet: l.bet, t: l.track })) };
 return null;
 }).filter(Boolean);
 }
@@ -538,6 +540,7 @@ const c = e.competitions[0].competitors; const sc = (ab) => Number((c.find(x => 
 const as = sc(t.away), hs = sc(t.home), score = `${t.away} ${as} – ${hs} ${t.home} · ${detail}`;
 if (t.type === 'spread') { const me = sc(t.team), opp = t.team === t.home ? as : hs; const ok = me - opp + t.line > 0; return { state: fin ? (ok ? 'win' : 'lose') : 'live', txt: score + (fin ? '' : ok ? ' · covering' : ' · not covering') }; }
 if (t.type === 'total') { const sum = as + hs; const over = t.side === 'over'; if (sum > t.line) return { state: over ? 'win' : 'lose', txt: score + ` · ${sum} goals` }; return { state: fin ? (over ? 'lose' : 'win') : 'live', txt: score + ` · ${sum} goals, ${over ? 'needs over' : 'needs under'} ${t.line}` }; }
+if (t.type === 'reg') { const per = Number(e.status.period) || 0, ot = /OT|SO/.test(detail) || per > 3; if (ot) return { state: 'lose', txt: score + ' · went to overtime' }; return { state: fin ? 'win' : 'live', txt: score + (fin ? ' · ended in regulation' : ' · needs to end in regulation') }; }
 if (t.type === 'player') { const v = statOf(e, t.player, t.stat); const nm = { P: 'pts', A: 'ast', S: 'shots', SV: 'saves' }[t.stat] || t.stat; const over = t.side === 'over';
 const need = over ? `needs ${Math.floor(t.line) + 1}+` : `needs under ${t.line}`;
 const base = `${t.player}: ${v == null ? '…' : v} ${nm} (${need}) · ${score}`;
@@ -569,7 +572,7 @@ const legs = it.legs.map(l => ({ ...evalLeg(l.t), bet: l.bet }));
 const state = legs.some(x => x.state === 'lose') ? 'lose' : legs.every(x => x.state === 'win') ? 'win' : legs.some(x => x.state === 'live' || x.state === 'win') ? 'live' : 'pre';
 const row = el('div', 'row'), w = el('div', 'what');
 const o = priceOf(it.b.price), d = Number(it.b.decimal) || 1;
-w.append(el('div', '', `#${it.num} ${it.name}`), el('div', 'meta', [`$${it.b.stake.toFixed(2)}`, o.v + (o.book ? ' on ' + o.book : ''), state === 'win' ? 'pays ' + money(it.b.stake * (d - 1)) : 'to win ' + money(it.b.stake * (d - 1))].join(' · ')));
+w.append(el('div', '', (it.num != null ? `#${it.num} ` : '') + it.name), el('div', 'meta', [`$${it.b.stake.toFixed(2)}`, o.v + (o.book ? ' on ' + o.book : ''), state === 'win' ? 'pays ' + money(it.b.stake * (d - 1)) : 'to win ' + money(it.b.stake * (d - 1))].join(' · ')));
 const ul = el('ul', 'tlegs');
 legs.forEach(x => { const li = el('li', x.state); if (it.parlay) { li.append(el('b', '', x.bet + ': ')); } li.append(document.createTextNode(x.txt)); ul.append(li); });
 w.append(ul);
