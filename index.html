@@ -140,6 +140,7 @@ body.pip .piphd { display: flex; justify-content: space-between; gap: 8px; font-
 body.pip .row { padding: 8px 10px; }
 body.pip .tlegs { font-size: .76rem; }
 .st { font-size: .72rem; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; padding: 3px 9px; border-radius: 999px; border: 1px solid currentColor; white-space: nowrap; color: var(--muted); }
+.st.push, .st.void { color: var(--muted); } .tlegs li.void, .tlegs li.push { color: var(--muted); }
 .st.win { color: var(--ok); } .st.lose { color: var(--bad); } .st.live { color: var(--warn); }
 .tlegs { list-style: none; margin: 6px 0 0; padding: 0; display: flex; flex-direction: column; gap: 3px; font-size: .82rem; color: var(--muted); }
 .tlegs li::before { content: "•"; margin-right: 6px; }
@@ -172,7 +173,7 @@ body.pip .tlegs { font-size: .76rem; }
 
 <section aria-labelledby="slip-h">
 <h2 id="slip-h">My bets</h2>
-<p class="note" id="slip-note">Tap Place on Pinnacle or Place on bet365 on a card, or add your own bet below. Saved on this device only. Sign in to save them to your account and join the standings. Mark it Won, Lost or Push when the game ends.</p>
+<p class="note" id="slip-note">Tap Place on Pinnacle or Place on bet365 on a card, or add your own bet below. Saved on this device only. Sign in to save them to your account and join the standings. Bets from the card settle themselves when the game ends; mark custom bets Won, Lost or Push yourself.</p>
 <div class="migrate" id="migrate" hidden></div>
 <div class="strip" id="mystrip">
 <div class="stat"><span class="label">My W-L-P</span><b class="num" id="m-rec">0-0-0</b></div>
@@ -245,7 +246,7 @@ const firebaseConfig = {
 };
 const FB = 'https://www.gstatic.com/firebasejs/10.12.2/';
 let fa = null, fs = null, auth = null, db = null;
-let user = null, profile = null, cloudIds = new Map(), unsubMine = null;
+let user = null, profile = null, cloudIds = new Map(), unsubMine = null, minesReady = false;
 let players = {}, allBets = [];
 
 const BET_FIELDS = ['id', 'date', 'game', 'bet', 'price', 'decimal', 'stake', 'result', 'placedAt', 'custom'];
@@ -353,16 +354,16 @@ async function startCloud() {
     fa = A; fs = F;
     const fbApp = app.initializeApp(firebaseConfig);
     auth = A.getAuth(fbApp); db = F.getFirestore(fbApp);
-  } catch (e) { auth = null; db = null; renderAcct(); renderStandings(); return; }
+  } catch (e) { auth = null; db = null; minesReady = true; renderAcct(); renderStandings(); renderTracker(); return; }
   renderAcct();
   fs.onSnapshot(fs.collection(db, 'players'), s => { players = {}; s.forEach(d => { players[d.id] = d.data(); }); if (user) profile = players[user.uid] || profile; renderStandings(); renderAcct(); }, () => renderStandings());
   fs.onSnapshot(fs.collectionGroup(db, 'bets'), s => { allBets = []; s.forEach(d => { const uid = d.ref.parent.parent && d.ref.parent.parent.id; if (uid) allBets.push({ ...d.data(), uid }); }); renderStandings(); }, () => renderStandings());
   fa.getRedirectResult(auth).catch(e => flash('Sign-in failed: ' + e.code));
   fa.onAuthStateChanged(auth, async (u) => {
     if (unsubMine) { unsubMine(); unsubMine = null; }
-    user = u; cloudIds = new Map();
-    if (!u) { profile = null; mine = loadLocal(); $('slip-note').textContent = 'Tap Place on Pinnacle or Place on bet365 on a card, or add your own bet below. Saved on this device only. Sign in to save them to your account and join the standings. Mark it Won, Lost or Push when the game ends.'; renderAcct(); renderMigrate(); renderAll(); return; }
-    $('slip-note').textContent = 'Tap Place on Pinnacle or Place on bet365 on a card, or add your own bet below. Saved to your account, so they follow you to any device. Mark it Won, Lost or Push when the game ends.';
+    user = u; cloudIds = new Map(); minesReady = false;
+    if (!u) { profile = null; mine = loadLocal(); minesReady = true; $('slip-note').textContent = 'Tap Place on Pinnacle or Place on bet365 on a card, or add your own bet below. Saved on this device only. Sign in to save them to your account and join the standings. Bets from the card settle themselves when the game ends; mark custom bets Won, Lost or Push yourself.'; renderAcct(); renderMigrate(); renderAll(); return; }
+    $('slip-note').textContent = 'Tap Place on Pinnacle or Place on bet365 on a card, or add your own bet below. Saved to your account, so they follow you to any device. Bets from the card settle themselves when the game ends; mark custom bets Won, Lost or Push yourself.';
     mine = []; renderAll();
     try {
       const snap = await fs.getDoc(fs.doc(db, 'players', u.uid));
@@ -373,7 +374,7 @@ async function startCloud() {
     unsubMine = fs.onSnapshot(fs.collection(db, 'players', u.uid, 'bets'), s => {
       const list = []; cloudIds = new Map();
       s.forEach(d => { const b = { ...d.data(), id: d.id }; list.push(b); cloudIds.set(d.id, JSON.stringify(clean(b))); });
-      mine = list; renderMigrate(); renderAll(); if (!live.at) pollLive();
+      mine = list; minesReady = true; renderMigrate(); renderAll(); if (!live.at) pollLive();
     }, e => flash('Could not load your bets: ' + e.code));
   });
 }
@@ -536,7 +537,7 @@ if (stat === 'A') return val('A');
 if (stat === 'S') return val('S');
 if (stat === 'SV') return val('SV');
 }
-return 0;
+return null;
 }
 function evalLeg(t) {
 if (!t) return { state: 'pre', txt: 'Not tracked' };
@@ -546,11 +547,12 @@ if (st === 'pre') return { state: 'pre', txt: 'Starts ' + detail.replace(/^.*- /
 const c = e.competitions[0].competitors; const sc = (ab) => Number((c.find(x => x.team.abbreviation === eab(ab)) || {}).score) || 0;
 const as = sc(t.away), hs = sc(t.home), score = `${t.away} ${as} – ${hs} ${t.home} · ${detail}`;
 if (t.type === 'spread') { const me = sc(t.team), opp = t.team === t.home ? as : hs; const ok = me - opp + t.line > 0; return { state: fin ? (ok ? 'win' : 'lose') : 'live', txt: score + (fin ? '' : ok ? ' · covering' : ' · not covering') }; }
-if (t.type === 'total') { const sum = as + hs; const over = t.side === 'over'; if (sum > t.line) return { state: over ? 'win' : 'lose', txt: score + ` · ${sum} goals` }; return { state: fin ? (over ? 'lose' : 'win') : 'live', txt: score + ` · ${sum} goals, ${over ? 'needs over' : 'needs under'} ${t.line}` }; }
+if (t.type === 'total') { const sum = as + hs; const over = t.side === 'over'; if (fin && sum === t.line) return { state: 'push', txt: score + ` · ${sum} goals, push` }; if (sum > t.line) return { state: over ? 'win' : 'lose', txt: score + ` · ${sum} goals` }; return { state: fin ? (over ? 'lose' : 'win') : 'live', txt: score + ` · ${sum} goals, ${over ? 'needs over' : 'needs under'} ${t.line}` }; }
 if (t.type === 'reg') { const per = Number(e.status.period) || 0, ot = /OT|SO/.test(detail) || per > 3; if (ot) return { state: 'lose', txt: score + ' · went to overtime' }; return { state: fin ? 'win' : 'live', txt: score + (fin ? ' · ended in regulation' : ' · needs to end in regulation') }; }
 if (t.type === 'player') { const v = statOf(e, t.player, t.stat); const nm = { P: 'pts', A: 'ast', S: 'shots', SV: 'saves' }[t.stat] || t.stat; const over = t.side === 'over';
 const need = over ? `needs ${Math.floor(t.line) + 1}+` : `needs under ${t.line}`;
 const base = `${t.player}: ${v == null ? '…' : v} ${nm} (${need}) · ${score}`;
+if (fin && v == null) return { state: 'void', txt: `${t.player}: not in the box score (did not play? usually void) · ${score}` };
 if (v != null && v > t.line) return { state: over ? 'win' : 'lose', txt: base };
 return { state: fin && v != null ? (over ? 'lose' : 'win') : 'live', txt: base }; }
 return { state: 'pre', txt: score };
@@ -568,6 +570,10 @@ live.at = new Date(); live.err = false;
 renderTracker();
 }
 let pipWin = null;
+// Bets the tracker has already settled in this browser (so an Undo is not re-settled)
+const AUTO_KEY = 'stribbot-auto-settled';
+const autoDone = new Set((() => { try { return JSON.parse(localStorage.getItem(AUTO_KEY)) || []; } catch (e) { return []; } })());
+const saveAuto = () => { try { localStorage.setItem(AUTO_KEY, JSON.stringify([...autoDone].slice(-300))); } catch (e) {} };
 const trkBox = () => (pipWin && pipWin.document.getElementById('tracker')) || $('tracker');
 async function openPip() {
 const msg = $('pip-msg');
@@ -597,10 +603,13 @@ const when = live.at ? ' Last update ' + live.at.toLocaleTimeString([], { hour: 
 $('trk-note').textContent = (inWindow() ? 'Live now: your bets from tonight\'s card, refreshed every minute until 1 AM ET.' : 'Your bets from tonight\'s card. Live tracking runs 7 PM to 1 AM ET.') + when + (live.err ? ' Scores could not be loaded; retrying.' : '');
 if (!items.length) { box.replaceChildren(el('div', 'empty', 'No bets to track yet. Place a bet from the card below.')); return; }
 if (pipWin) { const pn = pipWin.document.getElementById('pip-note'); if (pn) pn.textContent = live.at ? 'Updated ' + live.at.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' }) : (inWindow() ? 'Loading scores…' : 'Live 7 PM to 1 AM ET'); }
-const lab = { win: 'Hit', lose: 'Missed', live: 'Live', pre: 'Not started' };
+const lab = { win: 'Hit', lose: 'Missed', live: 'Live', pre: 'Not started', push: 'Push', void: 'Check' };
+const settle = [];
 box.replaceChildren(...items.map(it => {
 const legs = it.legs.map(l => ({ ...evalLeg(l.t), bet: l.bet }));
-const state = legs.some(x => x.state === 'lose') ? 'lose' : legs.every(x => x.state === 'win') ? 'win' : legs.some(x => x.state === 'live' || x.state === 'win') ? 'live' : 'pre';
+const state = legs.some(x => x.state === 'lose') ? 'lose' : legs.every(x => x.state === 'win') ? 'win' : (!it.parlay && legs.every(x => x.state === 'push')) ? 'push' : legs.some(x => x.state === 'void' || x.state === 'push') && legs.every(x => x.state !== 'live' && x.state !== 'pre') ? 'void' : legs.some(x => x.state === 'live' || x.state === 'win') ? 'live' : 'pre';
+const allFinal = it.legs.every(l => { const e = l.t && findEv(l.t); return e && e.status.type.state === 'post'; });
+if (allFinal && it.b.result === 'Pending' && !autoDone.has(it.b.id) && ['win', 'lose', 'push'].includes(state)) settle.push([it.b.id, { win: 'Win', lose: 'Loss', push: 'Push' }[state]]);
 const row = el('div', 'row'), w = el('div', 'what');
 const o = priceOf(it.b.price), d = Number(it.b.decimal) || 1;
 w.append(el('div', '', (it.num != null ? `#${it.num} ` : '') + it.name), el('div', 'meta', [`$${it.b.stake.toFixed(2)}`, o.v + (o.book ? ' on ' + o.book : ''), state === 'win' ? 'pays ' + money(it.b.stake * (d - 1)) : 'to win ' + money(it.b.stake * (d - 1))].join(' · ')));
@@ -610,6 +619,7 @@ w.append(ul);
 row.append(w, el('span', 'st ' + state, lab[state]));
 return row;
 }));
+if (settle.length && minesReady) { settle.forEach(([id]) => autoDone.add(id)); saveAuto(); save(mine.map(x => { const r = settle.find(([id]) => id === x.id); return r ? { ...x, result: r[1] } : x; })); renderAll(); }
 }
 
 function bookRow(r) {
