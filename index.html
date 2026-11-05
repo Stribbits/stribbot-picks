@@ -99,6 +99,7 @@ footer { color: var(--muted); font-size: .8rem; border-top: 1px solid var(--line
 .stand th.r, .stand td.r { text-align: right; }
 .stand td.n { font-weight: 600; white-space: normal; min-width: 8ch; }
 .stand tr.me td { background: var(--chip); }
+.stand td.nobet { color: var(--muted); font-size: .8rem; white-space: nowrap; }
 .stand .you.bot { color: var(--muted); }
 .stand .you { font-size: .7rem; color: var(--accent); font-weight: 600; margin-left: 6px; text-transform: uppercase; letter-spacing: .06em; }
 /* Parlays */
@@ -196,7 +197,7 @@ body.pip .tlegs { font-size: .76rem; }
 
 <section aria-labelledby="stand-h">
 <h2 id="stand-h">Standings</h2>
-<p class="note">Everyone who signs in, ranked by profit on settled bets. Bets from the card are settled automatically from final scores. Stribbot plays every Agreed and Fun only single on the card at $5 each, counted from Oct 27.</p>
+<p class="note">Everyone who signs in, ranked by profit on settled bets. Bets from the card are settled automatically from final scores. Stribbot's row is just for fun (no money bet): its wins and losses on every Agreed and Fun only single since Oct 27.</p>
 <div class="stand" id="stand"><div class="empty">Loading standings…</div></div>
 </section>
 
@@ -357,11 +358,12 @@ renderNight();
   const table = el('table'); const head = el('tr');
   [['#', ''], ['Player', ''], ['Wins', 'r'], ['Losses', 'r'], ['Profit', 'r']].forEach(([h, c]) => head.append(el('th', c, h)));
   const thead = el('thead'); thead.append(head); const tb = el('tbody');
+  const botRow = rows.filter(r => r.bot); rows = rows.filter(r => !r.bot).concat(botRow);
   rows.forEach((r, i) => {
     const tr = el('tr', user && r.uid === user.uid ? 'me' : '');
-    const n = el('td', 'n', r.name); if (user && r.uid === user.uid) n.append(el('span', 'you', 'you')); if (r.bot) { n.append(el('span', 'you bot', 'card')); n.title = 'Every Agreed and Fun only single on the card since Oct 27, $5 flat stake'; }
-    const p = el('td', 'r num ' + (r.pl > 0 ? 'pos' : r.pl < 0 ? 'neg' : ''), money(r.pl));
-    tr.append(el('td', 'num', String(i + 1)), n, el('td', 'r num', String(r.wins)), el('td', 'r num', String(r.losses)), p);
+    const n = el('td', 'n', r.name); if (user && r.uid === user.uid) n.append(el('span', 'you', 'you')); if (r.bot) { n.append(el('span', 'you bot', 'card')); n.title = 'Every Agreed and Fun only single on the card since Oct 27 (no money bet)'; }
+    const p = r.bot ? el('td', 'r nobet', '(No bet, fun only)') : el('td', 'r num ' + (r.pl > 0 ? 'pos' : r.pl < 0 ? 'neg' : ''), money(r.pl));
+    tr.append(el('td', 'num', r.bot ? '–' : String(i + 1)), n, el('td', 'r num', String(r.wins)), el('td', 'r num', String(r.losses)), p);
     tb.append(tr);
   });
   table.append(thead, tb); box.replaceChildren(table);
