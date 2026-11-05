@@ -197,7 +197,7 @@ body.pip .tlegs { font-size: .76rem; }
 
 <section aria-labelledby="stand-h">
 <h2 id="stand-h">Standings</h2>
-<p class="note">Everyone who signs in, ranked by profit on settled bets. Bets from the card are settled automatically from final scores. Stribbot's row is just for fun (no money bet): its wins and losses on every Agreed and Fun only single since Oct 27.</p>
+<p class="note">Everyone who signs in, ranked by profit on settled bets. Bets from the card are settled automatically from final scores. Stribbot's row is just for fun (no money bet): its wins and losses on every Agreed single, plus Fun only singles where all 3 agents said fun only, since Oct 27.</p>
 <div class="stand" id="stand"><div class="empty">Loading standings…</div></div>
 </section>
 
@@ -332,13 +332,14 @@ function renderMigrate() {
   box.replaceChildren(t, btn);
 }
 
-// Stribbot's own record: every Agreed / Fun only single on the card since 2026-10-27 at a flat $5.
+// Stribbot's own record: every Agreed single, plus Fun only singles where all 3 agents said fun only, since 2026-10-27 (no money bet).
 // History comes from data/stribbot.json (written by the daily run); tonight's card is added live.
 let stribbotHist = [];
 fetch('data/stribbot.json?t=' + Date.now()).then(r => r.ok ? r.json() : []).catch(() => []).then(l => { stribbotHist = Array.isArray(l) ? l : []; renderStandings(); });
 function stribbotBets() {
 const list = stribbotHist.slice(); const seen = new Set(list.map(b => okey(b.date, b.bet)));
-if (card && card.date >= '2026-10-27') (card.bets || []).forEach(r => { if (!['Agreed', 'Fun only'].includes(r.verdict) || seen.has(okey(card.date, r.bet))) return; list.push({ date: card.date, game: r.game, bet: r.bet, price: r.price, decimal: r.decimal, stake: 5, result: official.get(okey(card.date, r.bet)) || 'Pending', verdict: r.verdict }); });
+const allFun = (r) => ['agent1', 'agent2', 'agent3'].every(k => /fun only/i.test(r[k] || '') && !/\bpass\b/i.test(r[k] || ''));
+if (card && card.date >= '2026-10-27') (card.bets || []).forEach(r => { if (!(r.verdict === 'Agreed' || (r.verdict === 'Fun only' && allFun(r))) || seen.has(okey(card.date, r.bet))) return; list.push({ date: card.date, game: r.game, bet: r.bet, price: r.price, decimal: r.decimal, stake: 5, result: official.get(okey(card.date, r.bet)) || 'Pending', verdict: r.verdict }); });
 return list;
 }
 function renderStandings() {
@@ -361,7 +362,7 @@ renderNight();
   const botRow = rows.filter(r => r.bot); rows = rows.filter(r => !r.bot).concat(botRow);
   rows.forEach((r, i) => {
     const tr = el('tr', user && r.uid === user.uid ? 'me' : '');
-    const n = el('td', 'n', r.name); if (user && r.uid === user.uid) n.append(el('span', 'you', 'you')); if (r.bot) { n.append(el('span', 'you bot', 'card')); n.title = 'Every Agreed and Fun only single on the card since Oct 27 (no money bet)'; }
+    const n = el('td', 'n', r.name); if (user && r.uid === user.uid) n.append(el('span', 'you', 'you')); if (r.bot) { n.append(el('span', 'you bot', 'card')); n.title = 'Agreed singles plus Fun only singles all 3 agents rated fun only, since Oct 27 (no money bet)'; }
     const p = r.bot ? el('td', 'r nobet', '(No bet, fun only)') : el('td', 'r num ' + (r.pl > 0 ? 'pos' : r.pl < 0 ? 'neg' : ''), money(r.pl));
     tr.append(el('td', 'num', r.bot ? '–' : String(i + 1)), n, el('td', 'r num', String(r.wins)), el('td', 'r num', String(r.losses)), p);
     tb.append(tr);
