@@ -603,5 +603,127 @@
    "note": "4-leg parlay, every leg from a different game. Chance = product of each leg's estimate. Optional bigger parlay: Agent 2 would drop it (more legs, unconfirmed goalies), Agent 3 skips on price. Fun only."
   }
  ],
- "parlay_note": "Ranked by chance to hit. Mostly 2-leg parlays of tonight's safest lines (+2.5 / favourite +1.5 puck lines and a high-total under, OT included, each from a different game), plus one optional 4-leg for a bigger payout. Prices re-checked at 2:35 PM ET; a parlay pays the legs' prices multiplied together."
+ "parlay_note": "Ranked by chance to hit. Mostly 2-leg parlays of tonight's safest lines (+2.5 / favourite +1.5 puck lines and a high-total under, OT included, each from a different game), plus one optional 4-leg for a bigger payout. Prices re-checked at 2:35 PM ET; a parlay pays the legs' prices multiplied together.",
+ "watch": [
+  {
+   "bet": "bet365 SGP x2: CHI-FLA + OTT-BUF shots",
+   "name": "bet365 parlay: 2 same-game parlays (7 shot legs)",
+   "legs": [
+    {
+     "bet": "Connor Bedard 2+ shots (CHI @ FLA)",
+     "track": {
+      "type": "player",
+      "away": "CHI",
+      "home": "FLA",
+      "player": "Connor Bedard",
+      "stat": "S",
+      "line": 1.5,
+      "side": "over"
+     }
+    },
+    {
+     "bet": "Sam Reinhart 1+ shots (CHI @ FLA)",
+     "track": {
+      "type": "player",
+      "away": "CHI",
+      "home": "FLA",
+      "player": "Sam Reinhart",
+      "stat": "S",
+      "line": 0.5,
+      "side": "over"
+     }
+    },
+    {
+     "bet": "Brady Tkachuk 2+ shots (CHI @ FLA)",
+     "track": {
+      "type": "player",
+      "away": "CHI",
+      "home": "FLA",
+      "player": "Brady Tkachuk",
+      "stat": "S",
+      "line": 1.5,
+      "side": "over"
+     }
+    },
+    {
+     "bet": "Tage Thompson 2+ shots (OTT @ BUF)",
+     "track": {
+      "type": "player",
+      "away": "OTT",
+      "home": "BUF",
+      "player": "Tage Thompson",
+      "stat": "S",
+      "line": 1.5,
+      "side": "over"
+     }
+    },
+    {
+     "bet": "Rasmus Dahlin 1+ shots (OTT @ BUF)",
+     "track": {
+      "type": "player",
+      "away": "OTT",
+      "home": "BUF",
+      "player": "Rasmus Dahlin",
+      "stat": "S",
+      "line": 0.5,
+      "side": "over"
+     }
+    },
+    {
+     "bet": "Jack Quinn 1+ shots (OTT @ BUF)",
+     "track": {
+      "type": "player",
+      "away": "OTT",
+      "home": "BUF",
+      "player": "Jack Quinn",
+      "stat": "S",
+      "line": 0.5,
+      "side": "over"
+     }
+    },
+    {
+     "bet": "Zach Benson 1+ shots (OTT @ BUF)",
+     "track": {
+      "type": "player",
+      "away": "OTT",
+      "home": "BUF",
+      "player": "Zach Benson",
+      "stat": "S",
+      "line": 0.5,
+      "side": "over"
+     }
+    }
+   ]
+  },
+  {
+   "bet": "bet365 3-leg: CHI-FLA, CGY-SEA, SJ-LA end in regulation",
+   "name": "bet365 3-leg parlay: games end in regulation",
+   "legs": [
+    {
+     "bet": "CHI @ FLA ends in regulation",
+     "track": {
+      "type": "reg",
+      "away": "CHI",
+      "home": "FLA"
+     }
+    },
+    {
+     "bet": "CGY @ SEA ends in regulation",
+     "track": {
+      "type": "reg",
+      "away": "CGY",
+      "home": "SEA"
+     }
+    },
+    {
+     "bet": "SJS @ LAK ends in regulation",
+     "track": {
+      "type": "reg",
+      "away": "SJS",
+      "home": "LAK"
+     }
+    }
+   ]
+  }
+ ]
 }
