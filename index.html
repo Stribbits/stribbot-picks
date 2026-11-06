@@ -135,6 +135,11 @@ footer { color: var(--muted); font-size: .8rem; border-top: 1px solid var(--line
 .place .bookbtn { display: inline-flex; gap: 6px; align-items: center; }
 .place .bookbtn b { font-family: var(--f-num); font-weight: 600; }
 .place .pays { flex-basis: 100%; }
+.place .adjbtn { font-size: .85rem; padding: 6px 10px; }
+.place .adjbox { flex-basis: 100%; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; padding: 8px; border: 1px dashed var(--line); border-radius: 6px; }
+.place .adjbox[hidden] { display: none; }
+.place .adjbox input { width: 80px; }
+.place .bookbtn.adjusted b { text-decoration: underline dotted; }
 .place .statbtn { margin-left: auto; display: inline-flex; align-items: center; text-decoration: none; font-size: .9rem; border-radius: 6px; border: 1px solid var(--line); background: var(--panel); color: var(--ink); padding: 7px 12px; }
 .place .statbtn:hover { border-color: var(--accent); }
 /* Live tracker */
@@ -515,24 +520,47 @@ const pl = el('div', 'place');
 const statBtn = () => { if (!r.stats_url) return null; const a = el('a', 'statbtn', 'Stat line'); a.href = r.stats_url; a.target = '_blank'; a.rel = 'noopener'; a.title = 'Open the stats behind this bet on NHL.com'; return a; };
 if (done) { pl.append(el('span', 'placed', `Tracking $${done.stake.toFixed(2)}${priceOf(done.price).book ? ' on ' + priceOf(done.price).book : ''} · ${done.result === 'Pending' ? 'pending' : done.result.toLowerCase()}`)); const sb0 = statBtn(); if (sb0) pl.append(sb0); return pl; }
 const bk = r.books || {};
-const opts = [['PIN', bk.pinnacle || r.price], ['B365', bk.bet365 || null]].map(([k, p]) => ({ k, p, o: p ? parseOdds(p) : null }));
+const okey2 = 'stribbot-odds|' + card.date + '|' + betName + '|' + (game || '');
+let ov = {}; try { ov = JSON.parse(localStorage.getItem(okey2) || '{}') || {}; } catch (e) { ov = {}; }
+const opts = [['PIN', bk.pinnacle || r.price], ['B365', bk.bet365 || null]].map(([k, p]) => { const q = (ov[k] && parseOdds(ov[k])) ? ov[k] : p; return { k, orig: p, p: q, o: q ? parseOdds(q) : null }; });
+const mineOdds = (x) => x.p && x.p !== x.orig;
 const lab = el('label'); lab.append(document.createTextNode('$'));
 const inp = el('input'); inp.type = 'number'; inp.min = '1'; inp.step = '0.5'; inp.value = '5'; inp.setAttribute('aria-label', 'Stake for ' + betName); lab.append(inp);
 const pays = el('span', 'pays');
-const upd = () => { const s = parseFloat(inp.value) || 0; pays.textContent = opts.filter(x => x.o).map(x => `${BOOKS[x.k]} wins ${money(s * (x.o.decimal - 1))}`).join(' · '); };
-inp.addEventListener('input', upd); upd();
+const upd = () => { const s = parseFloat(inp.value) || 0; pays.textContent = opts.filter(x => x.o).map(x => `${BOOKS[x.k]}${mineOdds(x) ? ' (your odds)' : ''} wins ${money(s * (x.o.decimal - 1))}`).join(' · '); };
+inp.addEventListener('input', upd);
 pl.append(lab);
+const btns = {};
+const setBtn = (x) => { const btn = btns[x.k]; btn.replaceChildren(document.createTextNode('Place on ' + BOOKS[x.k]), el('b', '', x.p || '—')); btn.disabled = !x.o; btn.title = !x.o ? BOOKS[x.k] + ' does not have this price' : (mineOdds(x) ? 'Your adjusted odds (card: ' + (x.orig || 'none') + ')' : ''); btn.classList.toggle('adjusted', !!mineOdds(x)); };
 opts.forEach(x => {
 const btn = el('button', 'bookbtn' + ((bk.best || 'pinnacle') === (x.k === 'PIN' ? 'pinnacle' : 'bet365') && x.o ? ' primary' : ''));
-btn.append(document.createTextNode('Place on ' + BOOKS[x.k]), el('b', '', x.p || '—'));
-if (!x.o) { btn.disabled = true; btn.title = BOOKS[x.k] + ' does not have this price'; }
+btns[x.k] = btn; setBtn(x);
 btn.addEventListener('click', () => { const s = parseFloat(inp.value); if (!(s > 0)) { pays.textContent = 'Enter a stake above $0'; return; }
 save(mine.concat([{ id: newId(), date: card.date, game, bet: betName, price: x.o.price + '|' + x.k, decimal: Math.round(x.o.decimal * 1000) / 1000, stake: Math.round(s * 100) / 100, result: 'Pending', placedAt: new Date().toISOString() }]));
 renderAll(); });
 pl.append(btn);
 });
+const adj = el('button', 'adjbtn', 'Adjust odds'); adj.type = 'button'; adj.title = 'Change the odds for yourself only (saved on this device)';
+const box = el('div', 'adjbox'); box.hidden = true;
+const fields = {};
+opts.forEach(x => { const l = el('label'); l.append(document.createTextNode(BOOKS[x.k] + ' ')); const f = el('input'); f.type = 'text'; f.inputMode = 'text'; f.placeholder = x.orig || '-110 or 1.91'; f.value = x.p || ''; f.setAttribute('aria-label', BOOKS[x.k] + ' odds for ' + betName); fields[x.k] = f; l.append(f); box.append(l); });
+const msg = el('span', 'pays');
+const saveB = el('button', 'primary', 'Save'); saveB.type = 'button';
+const resetB = el('button', '', 'Reset to card'); resetB.type = 'button';
+saveB.addEventListener('click', () => {
+  const next = {};
+  for (const x of opts) { const v = fields[x.k].value.trim(); if (!v || v === x.orig) continue; if (!parseOdds(v)) { msg.textContent = 'Enter odds like -220, +150 or 1.45'; fields[x.k].focus(); return; } next[x.k] = v; }
+  try { if (Object.keys(next).length) localStorage.setItem(okey2, JSON.stringify(next)); else localStorage.removeItem(okey2); } catch (e) {}
+  opts.forEach(x => { x.p = next[x.k] || x.orig; x.o = x.p ? parseOdds(x.p) : null; setBtn(x); });
+  upd(); box.hidden = true; msg.textContent = '';
+});
+resetB.addEventListener('click', () => { try { localStorage.removeItem(okey2); } catch (e) {} opts.forEach(x => { x.p = x.orig; x.o = x.p ? parseOdds(x.p) : null; fields[x.k].value = x.p || ''; setBtn(x); }); upd(); box.hidden = true; msg.textContent = ''; });
+box.append(saveB, resetB, msg);
+adj.addEventListener('click', () => { box.hidden = !box.hidden; if (!box.hidden) fields.B365 && fields.B365.focus(); });
+pl.append(adj);
+upd();
 const sb = statBtn(); if (sb) pl.append(sb);
-pl.append(pays);
+pl.append(pays, box);
 return pl;
 }
 
