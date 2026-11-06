@@ -48,6 +48,7 @@ section { display: flex; flex-direction: column; gap: 14px; }
 .chip { font-size: .78rem; background: var(--chip); border-radius: 6px; padding: 2px 8px; }
 .chip em { font-style: normal; color: var(--muted); margin-right: 4px; }
 .obj { font-size: .85rem; color: var(--muted); margin: 0; }
+.why { font-size: .88rem; color: var(--ink); margin: 0; padding-left: 8px; border-left: 3px solid var(--accent); }
 .place { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; border-top: 1px dashed var(--line); padding-top: 10px; }
 .place label { display: flex; align-items: center; gap: 4px; font-size: .85rem; color: var(--muted); }
 .place input { width: 64px; font: inherit; font-family: var(--f-num); padding: 6px 8px; border: 1px solid var(--line); border-radius: 6px; background: var(--bg); color: var(--ink); }
@@ -501,6 +502,7 @@ function renderBoard() {
     const chips = el('div', 'chips');
     [['Agent 1', r.agent1], ['Agent 2', r.agent2], ['Agent 3', r.agent3], ['Analysts', r.analysts]].forEach(([k, v]) => { const c = el('span', 'chip'); c.append(el('em', '', k), document.createTextNode(v || '—')); chips.append(c); });
     a.append(chips, el('p', 'obj', 'Strongest objection: ' + (r.objection || '—')));
+    if (r.why) a.append(el('p', 'why', 'In short: ' + r.why));
     const pl = placeRow(r, r.bet, r.game, mine.find(b => b.date === card.date && b.bet === r.bet && b.game === r.game));
     a.append(pl); return a;
   }));
@@ -701,6 +703,7 @@ const figs = el('div', 'figs');
 const f = (lab, val) => { const d = el('div'); d.append(el('b', '', val), el('span', 'label', lab)); return d; };
 figs.append(f('Price', r.price), f('Needs', pct(r.breakeven)), f('Chance', pct(r.chance))); a.append(figs); const bk2 = bookRow(r); if (bk2) a.append(bk2);
 if (r.note) a.append(el('p', 'obj', r.note));
+if (r.why) a.append(el('p', 'why', 'In short: ' + r.why));
 const label = 'Parlay: ' + (r.short || r.bet);
 const pl = placeRow(r, label, r.game, mine.find(b => b.date === card.date && b.bet === label));
 a.append(pl); return a;
