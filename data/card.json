@@ -36,7 +36,8 @@
     "line": 7.5,
     "side": "under"
    },
-   "why": "Minnesota allows just 2.24 goals a game with Wallstedt in net (.920, 2.06 GAA), and San Jose scores only 2.59 a game, so 8+ goals would be unusual."
+   "why": "Minnesota allows just 2.24 goals a game with Wallstedt in net (.920, 2.06 GAA), and San Jose scores only 2.59 a game, so 8+ goals would be unusual.",
+   "stats_url": "https://www.nhl.com/gamecenter/sjs-vs-min/2026/11/06/2026020263"
   },
   {
    "rank": 2,
@@ -69,7 +70,8 @@
     "team": "MIN",
     "line": -0.5
    },
-   "why": "Minnesota (11-3-3, +1.05 goals a game) has Wallstedt (.920) against Askarov (.887) and a San Jose team giving up 3.59 a game."
+   "why": "Minnesota (11-3-3, +1.05 goals a game) has Wallstedt (.920) against Askarov (.887) and a San Jose team giving up 3.59 a game.",
+   "stats_url": "https://www.nhl.com/gamecenter/sjs-vs-min/2026/11/06/2026020263"
   },
   {
    "rank": 3,
@@ -104,7 +106,8 @@
     "line": 1.5,
     "side": "under"
    },
-   "why": "Columbus allows only 3.00 goals a game and Thompson needs 2+ points to lose this, which he's done in 2 of his last 5."
+   "why": "Columbus allows only 3.00 goals a game and Thompson needs 2+ points to lose this, which he's done in 2 of his last 5.",
+   "stats_url": "https://www.nhl.com/player/8479420"
   },
   {
    "rank": 4,
@@ -139,7 +142,8 @@
     "line": 0.5,
     "side": "under"
    },
-   "why": "Calgary scores just 2.44 goals a game, and Nemec has no points in 5 straight with almost no power-play time."
+   "why": "Calgary scores just 2.44 goals a game, and Nemec has no points in 5 straight with almost no power-play time.",
+   "stats_url": "https://www.nhl.com/player/8483495"
   },
   {
    "rank": 5,
@@ -172,7 +176,8 @@
     "team": "SJS",
     "line": 2.5
    },
-   "why": "Minnesota wins by about one goal a game on average and is missing Faber and Spurgeon on defence, so a 3+ goal win isn't likely."
+   "why": "Minnesota wins by about one goal a game on average and is missing Faber and Spurgeon on defence, so a 3+ goal win isn't likely.",
+   "stats_url": "https://www.nhl.com/gamecenter/sjs-vs-min/2026/11/06/2026020263"
   },
   {
    "rank": 6,
@@ -207,7 +212,8 @@
     "line": 0.5,
     "side": "under"
    },
-   "why": "Calgary scores just 2.44 goals a game, and Parekh is a third-pair defenceman with 5 points in 16 games."
+   "why": "Calgary scores just 2.44 goals a game, and Parekh is a third-pair defenceman with 5 points in 16 games.",
+   "stats_url": "https://www.nhl.com/player/8484768"
   },
   {
    "rank": 7,
@@ -242,7 +248,8 @@
     "line": 0.5,
     "side": "under"
    },
-   "why": "Calgary scores just 2.44 goals a game, and Sharangovich has 5 points in 16 games with almost no power-play time."
+   "why": "Calgary scores just 2.44 goals a game, and Sharangovich has 5 points in 16 games with almost no power-play time.",
+   "stats_url": "https://www.nhl.com/player/8481068"
   },
   {
    "rank": 8,
@@ -277,7 +284,8 @@
     "line": 0.5,
     "side": "under"
    },
-   "why": "Doan has just 3 points in 15 games on Buffalo's 2nd line, against a Columbus team allowing 3.00 goals a game."
+   "why": "Doan has just 3 points in 15 games on Buffalo's 2nd line, against a Columbus team allowing 3.00 goals a game.",
+   "stats_url": "https://www.nhl.com/player/8482659"
   },
   {
    "rank": 9,
@@ -312,7 +320,8 @@
     "line": 2.5,
     "side": "under"
    },
-   "why": "Benson averages 2.4 shots a game, so 2 or fewer is his normal night (but he's just moved up to the top line)."
+   "why": "Benson averages 2.4 shots a game, so 2 or fewer is his normal night (but he's just moved up to the top line).",
+   "stats_url": "https://www.nhl.com/player/8484145"
   }
  ],
  "parlays": [
