@@ -196,7 +196,7 @@
    "agent2": "Top-4 pick; fun only",
    "agent3": "Top-4 pick; fun only (gap too big to trust)",
    "analysts": "Covers moneyline picks: Ducks",
-   "objection": "Est 66.2% vs 60.8% break-even, but the model (75.7%) is far above the market (56.7%). 3rd pair with Kuznetsov, PP2 (2.1 min last 5 vs 2.5 before). Points last 5 (oldest first): Oct 28 0, Oct 30 0, Oct 31 1, Nov 2 0, Nov 4 0 (matches NHL.com); 0.31 pts/gm. Correlated with Sharangovich and Nemec (all need Calgary to score little).",
+   "objection": "Est 66.2% vs 60.8% break-even, but the model (75.7%) is far above the market (56.7%). 3rd pair with Kuznetsov at even strength, but he quarterbacks Calgary's 1st power-play unit (about 2-2.5 PP minutes a game), so any Calgary power-play goal can give him an assist. Points last 5 (oldest first): Oct 28 0, Oct 30 0, Oct 31 1, Nov 2 0, Nov 4 0 (matches NHL.com); 0.31 pts/gm. Correlated with Sharangovich and Nemec (all need Calgary to score little).",
    "books": {
     "pinnacle": "-155",
     "bet365": null,
@@ -212,7 +212,7 @@
     "line": 0.5,
     "side": "under"
    },
-   "why": "Calgary scores just 2.44 goals a game, and Parekh is a third-pair defenceman with 5 points in 16 games.",
+   "why": "Calgary scores just 2.44 goals a game and Parekh has 5 points in 16 games, but he's on the 1st power-play unit, so a Calgary PP goal could beat this.",
    "stats_url": "https://www.nhl.com/player/8484768"
   },
   {
@@ -232,7 +232,7 @@
    "agent2": "Top-4 pick; fun only",
    "agent3": "Top-4 pick; fun only",
    "analysts": "Covers moneyline picks: Ducks",
-   "objection": "Est 64.3% vs 61.5% break-even. 2nd line (Sharangovich-Frost-Suniev), little PP time (0.5 min last 5). Points last 5 (oldest first): Oct 28 0, Oct 30 0, Oct 31 0, Nov 2 0, Nov 4 1 (matches NHL.com); 0.31 pts/gm this season, 0.37 last. Anaheim is on a back-to-back; Dostal unconfirmed. Correlated with Parekh and Nemec.",
+   "objection": "Est 64.3% vs 61.5% break-even. 2nd line (Sharangovich-Frost-Suniev), 2nd power-play unit but little PP time (0.5 min a game over his last 5). Points last 5 (oldest first): Oct 28 0, Oct 30 0, Oct 31 0, Nov 2 0, Nov 4 1 (matches NHL.com); 0.31 pts/gm this season, 0.37 last. Anaheim is on a back-to-back; Dostal unconfirmed. Correlated with Parekh and Nemec.",
    "books": {
     "pinnacle": "-160",
     "bet365": null,
