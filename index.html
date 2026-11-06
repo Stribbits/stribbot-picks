@@ -135,6 +135,8 @@ footer { color: var(--muted); font-size: .8rem; border-top: 1px solid var(--line
 .place .bookbtn { display: inline-flex; gap: 6px; align-items: center; }
 .place .bookbtn b { font-family: var(--f-num); font-weight: 600; }
 .place .pays { flex-basis: 100%; }
+.place .statbtn { margin-left: auto; display: inline-flex; align-items: center; text-decoration: none; font-size: .9rem; border-radius: 6px; border: 1px solid var(--line); background: var(--panel); color: var(--ink); padding: 7px 12px; }
+.place .statbtn:hover { border-color: var(--accent); }
 /* Live tracker */
 .trkbar { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin: 0 0 10px; }
 .pipmsg { font-size: .8rem; color: var(--muted); }
@@ -510,7 +512,8 @@ function renderBoard() {
 
 function placeRow(r, betName, game, done) {
 const pl = el('div', 'place');
-if (done) { pl.append(el('span', 'placed', `Tracking $${done.stake.toFixed(2)}${priceOf(done.price).book ? ' on ' + priceOf(done.price).book : ''} · ${done.result === 'Pending' ? 'pending' : done.result.toLowerCase()}`)); return pl; }
+const statBtn = () => { if (!r.stats_url) return null; const a = el('a', 'statbtn', 'Stat line'); a.href = r.stats_url; a.target = '_blank'; a.rel = 'noopener'; a.title = 'Open the stats behind this bet on NHL.com'; return a; };
+if (done) { pl.append(el('span', 'placed', `Tracking $${done.stake.toFixed(2)}${priceOf(done.price).book ? ' on ' + priceOf(done.price).book : ''} · ${done.result === 'Pending' ? 'pending' : done.result.toLowerCase()}`)); const sb0 = statBtn(); if (sb0) pl.append(sb0); return pl; }
 const bk = r.books || {};
 const opts = [['PIN', bk.pinnacle || r.price], ['B365', bk.bet365 || null]].map(([k, p]) => ({ k, p, o: p ? parseOdds(p) : null }));
 const lab = el('label'); lab.append(document.createTextNode('$'));
@@ -528,6 +531,7 @@ save(mine.concat([{ id: newId(), date: card.date, game, bet: betName, price: x.o
 renderAll(); });
 pl.append(btn);
 });
+const sb = statBtn(); if (sb) pl.append(sb);
 pl.append(pays);
 return pl;
 }
