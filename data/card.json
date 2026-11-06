@@ -35,7 +35,8 @@
     "home": "MIN",
     "line": 7.5,
     "side": "under"
-   }
+   },
+   "why": "All three agents' top pick: needs 7 goals or fewer with both starters confirmed; small payout ($5 wins $1.82, $1.85 on bet365) and a thin edge."
   },
   {
    "rank": 2,
@@ -67,7 +68,8 @@
     "home": "MIN",
     "team": "MIN",
     "line": -0.5
-   }
+   },
+   "why": "High chance to hit, but the price is a bit too steep for the risk and $5 only wins $1.86."
   },
   {
    "rank": 3,
@@ -101,7 +103,8 @@
     "stat": "P",
     "line": 1.5,
     "side": "under"
-   }
+   },
+   "why": "Usually hits, but he's a 1.2-points-a-game star, the price is too steep, and $5 only wins $2.04."
   },
   {
    "rank": 4,
@@ -135,7 +138,8 @@
     "stat": "P",
     "line": 0.5,
     "side": "under"
-   }
+   },
+   "why": "No points in 5 straight, but he plays big top-pair minutes; slightly overpriced for $2.27 on $5."
   },
   {
    "rank": 5,
@@ -167,7 +171,8 @@
     "home": "MIN",
     "team": "SJS",
     "line": 2.5
-   }
+   },
+   "why": "Only loses if Minnesota wins by 3 or more; fairly priced, and $5 wins $2.60."
   },
   {
    "rank": 6,
@@ -201,7 +206,8 @@
     "stat": "P",
     "line": 0.5,
     "side": "under"
-   }
+   },
+   "why": "Third-pair defenceman with 1 point in his last 5; best payout on the card ($5 wins $3.23), but the model is far more confident than the market."
   },
   {
    "rank": 7,
@@ -235,7 +241,8 @@
     "stat": "P",
     "line": 0.5,
     "side": "under"
-   }
+   },
+   "why": "1 point in his last 5 and little power-play time; fair price ($5 wins $3.13), but it wins or loses with Parekh on Calgary scoring little."
   },
   {
    "rank": 8,
@@ -269,7 +276,8 @@
     "stat": "P",
     "line": 0.5,
     "side": "under"
-   }
+   },
+   "why": "Cold this season (0.20 points a game) but scored 0.63 a game last year; slightly overpriced for $2.94 on $5."
   },
   {
    "rank": 9,
@@ -303,7 +311,8 @@
     "stat": "S",
     "line": 2.5,
     "side": "under"
-   }
+   },
+   "why": "The price is OK, but he's gone over in 4 of his last 5 games and just moved up to the top line."
   }
  ],
  "parlays": [
@@ -354,7 +363,8 @@
     "best": "bet365",
     "bet365_note": null
    },
-   "note": "2-leg parlay, every leg from a different game. Chance = product of leg estimates. Agent 2 keeps it; Agent 3 would drop it (estimate below break-even). bet365 pays slightly more on this one."
+   "note": "2-leg parlay, every leg from a different game. Chance = product of leg estimates. Agent 2 keeps it; Agent 3 would drop it (estimate below break-even). bet365 pays slightly more on this one.",
+   "why": "Both home favourites just need to win or lose by no more than one; about 70% to hit, but slightly overpriced ($5 wins $1.87)."
   },
   {
    "rank": 2,
@@ -403,7 +413,8 @@
     "best": "pinnacle",
     "bet365_note": null
    },
-   "note": "2-leg parlay, every leg from a different game. Chance = product of leg estimates. Agents 2 and 3 would both drop it (below break-even; leans on Calgary)."
+   "note": "2-leg parlay, every leg from a different game. Chance = product of leg estimates. Agents 2 and 3 would both drop it (below break-even; leans on Calgary).",
+   "why": "Buffalo wins or loses by one, and Calgary doesn't lose by 3+; about 67% to hit, $5 wins $2.04."
   },
   {
    "rank": 3,
@@ -452,7 +463,8 @@
     "best": "pinnacle",
     "bet365_note": null
    },
-   "note": "2-leg parlay, every leg from a different game. Chance = product of leg estimates. Agents 2 and 3 would both drop it (below break-even; leans on Calgary)."
+   "note": "2-leg parlay, every leg from a different game. Chance = product of leg estimates. Agents 2 and 3 would both drop it (below break-even; leans on Calgary).",
+   "why": "Minnesota and Calgary each win or lose by one; about 65% to hit, $5 wins $2.24."
   },
   {
    "rank": 4,
@@ -516,7 +528,8 @@
     "best": "pinnacle",
     "bet365_note": null
    },
-   "note": "3-leg parlay, every leg from a different game. Chance = product of leg estimates. 3-leg, one leg from each game. Agents 2 and 3 would both drop it (54% chance)."
+   "note": "3-leg parlay, every leg from a different game. Chance = product of leg estimates. 3-leg, one leg from each game. Agents 2 and 3 would both drop it (54% chance).",
+   "why": "One leg from every game for a bigger payout ($5 wins $3.76), but only about a 54% chance."
   }
  ],
  "parlay_note": "Ranked by chance to hit. Only 3 games tonight, so at most one parlay per pair of games: three 2-leg parlays and one 3-leg, all -300 or better, built from the slate's safest lines (Buffalo, Minnesota and Calgary puck lines, OT included, plus the SJS-MIN under). Chances multiply our leg estimates, which run optimistic on puck lines. Prices re-checked at 3:29 PM ET; a parlay pays the legs' prices multiplied together."
