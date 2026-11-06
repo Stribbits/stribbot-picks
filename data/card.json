@@ -1,329 +1,307 @@
 {
- "date": "2026-11-05",
- "scanned": 970,
+ "date": "2026-11-06",
+ "scanned": 334,
  "ranking": "agreed best first, then chance to hit",
- "note": "Rebuilt at 4:25 PM ET under Steve's new rule: no single or parlay priced shorter than -300 (the earlier -400s card risked $4+ to win $1). Whole-number totals were left out of the ranking because a push is not a win. 11-game slate; Chicago is on the 2nd night of a back-to-back (Soderblom in net), so no bets on Chicago. Pinnacle prices re-checked at 4:17 PM ET (Boston +1.5 moved -266 to -277, St. Louis +2.5 -274 to -270). Agreed = in all three agents' top 4: Boston +1.5, St. Louis +2.5 and Montreal +1.5 (agreed best, not guaranteed). Agent 1 and Agent 2 also had NY Islanders +2.5; Agent 3 had Cirelli under 2.5 shots. Goalies (Daily Faceoff, 4:20 PM ET): Woll, Garand, Varlamov, Binnington, Silovs, Dobes, DeSmith, Talbot, Skinner, Tomkins, Blackwood confirmed; Soderblom, Vasilevskiy, Tarasov, Hellebuyck, Cossa, Merilainen, Brossoit likely; Swayman, Bussi, Hart, Saros unconfirmed. Key absences: Larkin (suspended) and Gibson for DET, Heiskanen for DAL, Hyman/Jarry/Andersen for EDM, Demidov/Matheson for MTL, Barzal/Romanov/Pulock for NYI, Marchessault for NSH, Morrissey for WPG. Estimate = midpoint of Pinnacle no-vig and Agent 1's model; the goal model has no empty-net effect, so it runs high on +1.5/+2.5 lines (every top pick shows the model well above the market). Excluded: goals props and assists unders (Steve's rules), Chicago, Denver Barkey under 1.5 shots (PP time jumped from ~2.4 to ~4.0 min = role flag), saves props, players who missed recent games or tiny samples. bet365 (read only, Spread and Total tabs, 4:20 PM ET): bet365 is better on Boston +1.5 (-260 vs Pinnacle -277); Pinnacle is better on every other pick and every parlay; bet365 has no shots unders.",
- "updatedAt": "2026-11-05T21:20:15Z",
+ "note": "3-game slate. Columbus and Anaheim are on the 2nd night of a back-to-back, so no bets on them, their players, or totals in their games. Steve's price limit: nothing (single or parlay) shorter than -300, so short lines like Buffalo +2.5 (-908), Minnesota +1.5 (-775) and Calgary +2.5 (-635) only appear inside parlays. Pinnacle prices read 3:24 PM ET and re-checked 3:29 PM ET (no changes). Agreed = in all three agents' top 4: SJS-MIN Under 7.5 only (agreed best, not guaranteed). Agent 1's top 4 (pure chance to hit) also had Minnesota ML, Thompson and Nemec unders, all below break-even; Agents 2 and 3 both picked San Jose +2.5, Parekh and Sharangovich. Goalies (Daily Faceoff): Greaves, Luukkonen, Askarov, Wallstedt, Wolf confirmed; Dostal unconfirmed. Key absences: Faber, Spurgeon and both Folignos for MIN; Wennberg for SJS; Huberdeau for CGY. Kulich returns for BUF. Estimate = midpoint of Pinnacle no-vig and Agent 1's model; the goal model has no empty-net effect. Three Calgary point unders are correlated (all need Calgary to score little). Excluded: goals props and assists unders (Steve's rules), Matt Boldy under 1.5 points (PP time jumped 3.9 to 4.8 min), Celebrini over 0.5 points (slump), whole-number totals (pushes), saves props. Max 3 bets per game, so only 9 singles. bet365 (read only, 3:27 PM ET): Under 7.5 is slightly better there (-270); Pinnacle better on the rest; bet365 has no points or shots unders.",
+ "updatedAt": "2026-11-06T20:30:45Z",
  "bets": [
   {
    "rank": 1,
-   "date": "2026-11-05",
-   "game": "BOS @ PIT",
-   "start": "7:00 PM ET",
-   "bet": "Boston +1.5 (OT incl)",
-   "price": "-277",
-   "decimal": 1.361,
-   "breakeven": 0.735,
-   "est_low": 0.704,
-   "est_high": 0.822,
+   "date": "2026-11-06",
+   "game": "SJS @ MIN",
+   "start": "8:00 PM ET",
+   "bet": "Under 7.5 goals (OT incl)",
+   "price": "-274",
+   "decimal": 1.365,
+   "breakeven": 0.733,
+   "est_low": 0.705,
+   "est_high": 0.768,
    "method": "Poisson goal model / Pinnacle no-vig",
    "verdict": "Agreed",
-   "agent1": "Top-4 pick; accept small single (est 76.3% above 73.5% break-even)",
-   "agent2": "Top-4 pick; fun only (Swayman unconfirmed)",
-   "agent3": "Top-4 pick (1st); fun only",
-   "analysts": "Covers moneyline picks: Bruins; Odds Shark computer: 3.20-3.20",
-   "objection": "Agreed best, not guaranteed. Wins if Boston wins or loses by one. Est 76.3% vs 73.5% break-even, but the model (82.2%) is far above the market (70.4%): Pinnacle has this a pick'em despite BOS 11-4-1 vs PIT 5-8-2. Swayman projected but unconfirmed; Malkin returns for PIT. Price moved from -266 to -277 at 4:17 PM ET; bet365 has it at -260 (better).",
+   "agent1": "Top-4 pick (1st); accept small single (est 73.6% vs 73.3% break-even)",
+   "agent2": "Top-4 pick (1st); accept small single",
+   "agent3": "Top-4 pick (1st); fun only (only 0.3 points above break-even)",
+   "analysts": "Covers moneyline picks: Wild",
+   "objection": "Agreed best, not guaranteed. Wins at 7 goals or fewer (OT/shootout included). Est 73.6% vs 73.3% break-even: a thin margin. Askarov and Wallstedt both confirmed; Minnesota is without defensemen Faber and Spurgeon, which could open the game up. bet365 -270 is slightly better.",
    "books": {
-    "pinnacle": "-277",
-    "bet365": "-260",
+    "pinnacle": "-274",
+    "bet365": "-270",
     "best": "bet365",
     "bet365_note": null
    },
    "track": {
-    "type": "spread",
-    "away": "BOS",
-    "home": "PIT",
-    "team": "BOS",
-    "line": 1.5
+    "type": "total",
+    "away": "SJS",
+    "home": "MIN",
+    "line": 7.5,
+    "side": "under"
    }
   },
   {
    "rank": 2,
-   "date": "2026-11-05",
-   "game": "STL @ NJD",
-   "start": "7:00 PM ET",
-   "bet": "St. Louis +2.5 (OT incl)",
-   "price": "-270",
-   "decimal": 1.37,
-   "breakeven": 0.73,
-   "est_low": 0.7,
-   "est_high": 0.799,
+   "date": "2026-11-06",
+   "game": "SJS @ MIN",
+   "start": "8:00 PM ET",
+   "bet": "Minnesota ML (OT incl)",
+   "price": "-269",
+   "decimal": 1.372,
+   "breakeven": 0.729,
+   "est_low": 0.709,
+   "est_high": 0.733,
    "method": "Poisson goal model / Pinnacle no-vig",
-   "verdict": "Agreed",
-   "agent1": "Top-4 pick; accept small single (est 74.9% above 73.0% break-even)",
-   "agent2": "Top-4 pick; fun only",
-   "agent3": "Top-4 pick (2nd); fun only",
-   "analysts": "Covers moneyline picks: Devils (also in their ML combo)",
-   "objection": "Agreed best, not guaranteed. Loses only if New Jersey wins by 3+. Est 74.9% vs 73.0% break-even; model (79.9%) well above market (70.0%). Binnington confirmed, Parayko returns; Hellebuyck likely for NJD. NJD 10-5-0 and +9 goal difference.",
+   "verdict": "Pass",
+   "agent1": "Top-4 pick; fun only (est 72.1% below 72.9% break-even)",
+   "agent2": "Pass (below break-even)",
+   "agent3": "Pass (Faber and Spurgeon out)",
+   "analysts": "Covers moneyline picks: Wild (also in their ML combo)",
+   "objection": "Est 72.1% is below the 72.9% break-even. MIN 11-3-3 (56 GF/38 GA) vs SJS 7-9-1 (44/61), but Minnesota is missing Faber and Spurgeon on defence. bet365 -280 (Pinnacle better).",
    "books": {
-    "pinnacle": "-270",
-    "bet365": "-320",
+    "pinnacle": "-269",
+    "bet365": "-280",
     "best": "pinnacle",
     "bet365_note": null
    },
    "track": {
     "type": "spread",
-    "away": "STL",
-    "home": "NJD",
-    "team": "STL",
-    "line": 2.5
+    "away": "SJS",
+    "home": "MIN",
+    "team": "MIN",
+    "line": -0.5
    }
   },
   {
    "rank": 3,
-   "date": "2026-11-05",
-   "game": "UTA @ MTL",
+   "date": "2026-11-06",
+   "game": "CBJ @ BUF",
    "start": "7:00 PM ET",
-   "bet": "Montreal +1.5 (OT incl)",
-   "price": "-231",
-   "decimal": 1.433,
-   "breakeven": 0.698,
-   "est_low": 0.677,
-   "est_high": 0.781,
-   "method": "Poisson goal model / Pinnacle no-vig",
-   "verdict": "Agreed",
-   "agent1": "Top-4 pick; accept small single (est 72.9% above 69.8% break-even)",
-   "agent2": "Top-4 pick; fun only",
-   "agent3": "Top-4 pick (3rd); fun only",
-   "analysts": "Covers moneyline picks: Canadiens (also in their ML combo); Odds Shark computer: UTA 3.31-3.17",
-   "objection": "Agreed best, not guaranteed. Underdog +1.5: wins if Montreal wins or loses by one. Est 72.9% vs 69.8% break-even; model (78.1%) far above market (67.7%). Montreal starts Dobes (.853, 4.05 GAA) rather than Fowler; Utah's Cossa likely (.875). Suzuki and Dach return; Demidov and Matheson out.",
-   "books": {
-    "pinnacle": "-231",
-    "bet365": "-240",
-    "best": "pinnacle",
-    "bet365_note": null
-   },
-   "track": {
-    "type": "spread",
-    "away": "UTA",
-    "home": "MTL",
-    "team": "MTL",
-    "line": 1.5
-   }
-  },
-  {
-   "rank": 4,
-   "date": "2026-11-05",
-   "game": "CAR @ NYI",
-   "start": "7:00 PM ET",
-   "bet": "NY Islanders +2.5 (OT incl)",
-   "price": "-295",
-   "decimal": 1.339,
-   "breakeven": 0.747,
-   "est_low": 0.716,
-   "est_high": 0.808,
-   "method": "Poisson goal model / Pinnacle no-vig",
-   "verdict": "Fun only",
-   "agent1": "Top-4 pick; accept small single (est 76.2% above 74.7% break-even)",
-   "agent2": "Top-4 pick (1st); accept small single",
-   "agent3": "Pass (small edge, Barzal out)",
-   "analysts": "Covers moneyline picks: Hurricanes",
-   "objection": "Loses only if Carolina wins by 3+. Est 76.2% vs 74.7% break-even; model (80.8%) above market (71.6%). Varlamov confirmed vs Bussi unconfirmed; NYI without Barzal, Romanov, Pulock and Maccelli; CAR 12-3-2.",
-   "books": {
-    "pinnacle": "-295",
-    "bet365": "-370",
-    "best": "pinnacle",
-    "bet365_note": null
-   },
-   "track": {
-    "type": "spread",
-    "away": "CAR",
-    "home": "NYI",
-    "team": "NYI",
-    "line": 2.5
-   }
-  },
-  {
-   "rank": 5,
-   "date": "2026-11-05",
-   "game": "VAN @ WPG",
-   "start": "7:00 PM ET",
-   "bet": "Vancouver +2.5 (OT incl)",
-   "price": "-247",
-   "decimal": 1.405,
-   "breakeven": 0.712,
-   "est_low": 0.683,
-   "est_high": 0.81,
-   "method": "Poisson goal model / Pinnacle no-vig",
-   "verdict": "Fun only",
-   "agent1": "Fun only (est 74.6% above 71.2% break-even, but a 12.7-point model-market gap)",
-   "agent2": "Fun only",
-   "agent3": "Pass (VAN 3-13-1, gap too suspect)",
-   "analysts": "Covers moneyline picks: Jets",
-   "objection": "Big model-market mismatch: model 81.0% vs market 68.3%. Vancouver is 3-13-1 with 77 goals allowed, but Winnipeg is 5-8-3 with 39 goals for; Morrissey out for WPG. Merilainen likely vs Skinner confirmed. Loses only if Winnipeg wins by 3+.",
-   "books": {
-    "pinnacle": "-247",
-    "bet365": "-300",
-    "best": "pinnacle",
-    "bet365_note": null
-   },
-   "track": {
-    "type": "spread",
-    "away": "VAN",
-    "home": "WPG",
-    "team": "VAN",
-    "line": 2.5
-   }
-  },
-  {
-   "rank": 6,
-   "date": "2026-11-05",
-   "game": "NSH @ COL",
-   "start": "9:30 PM ET",
-   "bet": "Nashville +2.5 (OT incl)",
-   "price": "-239",
-   "decimal": 1.418,
-   "breakeven": 0.705,
-   "est_low": 0.677,
-   "est_high": 0.758,
-   "method": "Poisson goal model / Pinnacle no-vig",
-   "verdict": "Fun only",
-   "agent1": "Fun only (est 71.8% just above 70.5% break-even)",
-   "agent2": "Fun only",
-   "agent3": "Pass (Colorado offense)",
-   "analysts": "Covers moneyline picks: Avalanche",
-   "objection": "Est 71.8% vs 70.5% break-even. Loses only if Colorado wins by 3+. Saros projected by NHL.com but unconfirmed on Daily Faceoff; Blackwood confirmed. Marchessault out for NSH. Late game (9:30 PM ET).",
-   "books": {
-    "pinnacle": "-239",
-    "bet365": "-290",
-    "best": "pinnacle",
-    "bet365_note": null
-   },
-   "track": {
-    "type": "spread",
-    "away": "NSH",
-    "home": "COL",
-    "team": "NSH",
-    "line": 2.5
-   }
-  },
-  {
-   "rank": 7,
-   "date": "2026-11-05",
-   "game": "CHI @ TBL",
-   "start": "7:00 PM ET",
-   "bet": "Anthony Cirelli under 2.5 shots",
-   "price": "-242",
-   "decimal": 1.413,
-   "breakeven": 0.708,
-   "est_low": 0.661,
-   "est_high": 0.759,
+   "bet": "Tage Thompson under 1.5 points",
+   "price": "-245",
+   "decimal": 1.408,
+   "breakeven": 0.71,
+   "est_low": 0.665,
+   "est_high": 0.699,
    "method": "Pinnacle no-vig / blended Poisson points model",
-   "verdict": "Fun only",
-   "agent1": "Fun only (est 71.0% vs 70.8% break-even)",
-   "agent2": "Fun only",
-   "agent3": "Top-4 pick (4th); fun only",
-   "analysts": "None found",
-   "objection": "Est 71.0% is only just above the 70.8% break-even. Needs 2 shots or fewer. 1.57 SOG/gm this season (14 GP), 1.76 last season; 3+ shots in 3 of 14 games. Shots last 5 (oldest first): Oct 23 1, Oct 24 2, Oct 29 1, Oct 31 0, Nov 3 5 (matches NHL.com). PP time steady (~2 min). Risk: Chicago is on a back-to-back, so Tampa may have the puck a lot.",
+   "verdict": "Pass",
+   "agent1": "Top-4 pick; fun only (est 68.2% below 71.0% break-even)",
+   "agent2": "Pass (below break-even)",
+   "agent3": "Pass (multi-point risk)",
+   "analysts": "Covers moneyline picks: Sabres",
+   "objection": "Est 68.2% is below the 71.0% break-even. Needs 0 or 1 point. 1.20 pts/gm this season; points last 5 (oldest first): Oct 24 0, Oct 27 1, Oct 29 5, Oct 31 2, Nov 4 1 (matches NHL.com). 1st line and PP1 (3.2 min last 5 vs 3.7 before). Columbus is on a back-to-back with Greaves in net.",
    "books": {
-    "pinnacle": "-242",
+    "pinnacle": "-245",
     "bet365": null,
     "best": "pinnacle",
     "bet365_note": "bet365 does not offer this market"
    },
    "track": {
     "type": "player",
-    "away": "CHI",
-    "home": "TBL",
-    "player": "Anthony Cirelli",
-    "stat": "S",
-    "line": 2.5,
+    "away": "CBJ",
+    "home": "BUF",
+    "player": "Tage Thompson",
+    "stat": "P",
+    "line": 1.5,
+    "side": "under"
+   }
+  },
+  {
+   "rank": 4,
+   "date": "2026-11-06",
+   "game": "ANA @ CGY",
+   "start": "8:00 PM ET",
+   "bet": "Simon Nemec under 0.5 points",
+   "price": "-220",
+   "decimal": 1.455,
+   "breakeven": 0.688,
+   "est_low": 0.641,
+   "est_high": 0.707,
+   "method": "Pinnacle no-vig / blended Poisson points model",
+   "verdict": "Pass",
+   "agent1": "Top-4 pick; fun only (est 67.4% below 68.8% break-even)",
+   "agent2": "Pass (below break-even)",
+   "agent3": "Pass (top-pair minutes)",
+   "analysts": "Covers moneyline picks: Ducks",
+   "objection": "Est 67.4% is below the 68.8% break-even. 0 points in his last 5 (Oct 28, Oct 30, Oct 31, Nov 2, Nov 4; matches NHL.com), 0.31 pts/gm in 16 GP, top pair with Bahl, PP time down (0.6 min last 5 vs 1.1). Same Calgary-scoring-low exposure as Parekh and Sharangovich.",
+   "books": {
+    "pinnacle": "-220",
+    "bet365": null,
+    "best": "pinnacle",
+    "bet365_note": "bet365 does not offer this market"
+   },
+   "track": {
+    "type": "player",
+    "away": "ANA",
+    "home": "CGY",
+    "player": "Simon Nemec",
+    "stat": "P",
+    "line": 0.5,
+    "side": "under"
+   }
+  },
+  {
+   "rank": 5,
+   "date": "2026-11-06",
+   "game": "SJS @ MIN",
+   "start": "8:00 PM ET",
+   "bet": "San Jose +2.5 (OT incl)",
+   "price": "-192",
+   "decimal": 1.521,
+   "breakeven": 0.658,
+   "est_low": 0.632,
+   "est_high": 0.701,
+   "method": "Poisson goal model / Pinnacle no-vig",
+   "verdict": "Fun only",
+   "agent1": "Fun only (est 66.7% above 65.8% break-even)",
+   "agent2": "Top-4 pick; fun only",
+   "agent3": "Top-4 pick; fun only",
+   "analysts": "Covers moneyline picks: Wild",
+   "objection": "Loses only if Minnesota wins by 3+. Est 66.7% vs 65.8% break-even; model (70.1%) above market (63.2%) and has no empty-net effect. Minnesota missing Faber and Spurgeon helps San Jose. bet365 -230 (Pinnacle better).",
+   "books": {
+    "pinnacle": "-192",
+    "bet365": "-230",
+    "best": "pinnacle",
+    "bet365_note": null
+   },
+   "track": {
+    "type": "spread",
+    "away": "SJS",
+    "home": "MIN",
+    "team": "SJS",
+    "line": 2.5
+   }
+  },
+  {
+   "rank": 6,
+   "date": "2026-11-06",
+   "game": "ANA @ CGY",
+   "start": "8:00 PM ET",
+   "bet": "Zayne Parekh under 0.5 points",
+   "price": "-155",
+   "decimal": 1.645,
+   "breakeven": 0.608,
+   "est_low": 0.567,
+   "est_high": 0.757,
+   "method": "Pinnacle no-vig / blended Poisson points model",
+   "verdict": "Fun only",
+   "agent1": "Accept small single (est 66.2% above 60.8% break-even), but a 19-point model-market gap",
+   "agent2": "Top-4 pick; fun only",
+   "agent3": "Top-4 pick; fun only (gap too big to trust)",
+   "analysts": "Covers moneyline picks: Ducks",
+   "objection": "Est 66.2% vs 60.8% break-even, but the model (75.7%) is far above the market (56.7%). 3rd pair with Kuznetsov, PP2 (2.1 min last 5 vs 2.5 before). Points last 5 (oldest first): Oct 28 0, Oct 30 0, Oct 31 1, Nov 2 0, Nov 4 0 (matches NHL.com); 0.31 pts/gm. Correlated with Sharangovich and Nemec (all need Calgary to score little).",
+   "books": {
+    "pinnacle": "-155",
+    "bet365": null,
+    "best": "pinnacle",
+    "bet365_note": "bet365 does not offer this market"
+   },
+   "track": {
+    "type": "player",
+    "away": "ANA",
+    "home": "CGY",
+    "player": "Zayne Parekh",
+    "stat": "P",
+    "line": 0.5,
+    "side": "under"
+   }
+  },
+  {
+   "rank": 7,
+   "date": "2026-11-06",
+   "game": "ANA @ CGY",
+   "start": "8:00 PM ET",
+   "bet": "Yegor Sharangovich under 0.5 points",
+   "price": "-160",
+   "decimal": 1.625,
+   "breakeven": 0.615,
+   "est_low": 0.575,
+   "est_high": 0.711,
+   "method": "Pinnacle no-vig / blended Poisson points model",
+   "verdict": "Fun only",
+   "agent1": "Accept small single (est 64.3% above 61.5% break-even)",
+   "agent2": "Top-4 pick; fun only",
+   "agent3": "Top-4 pick; fun only",
+   "analysts": "Covers moneyline picks: Ducks",
+   "objection": "Est 64.3% vs 61.5% break-even. 2nd line (Sharangovich-Frost-Suniev), little PP time (0.5 min last 5). Points last 5 (oldest first): Oct 28 0, Oct 30 0, Oct 31 0, Nov 2 0, Nov 4 1 (matches NHL.com); 0.31 pts/gm this season, 0.37 last. Anaheim is on a back-to-back; Dostal unconfirmed. Correlated with Parekh and Nemec.",
+   "books": {
+    "pinnacle": "-160",
+    "bet365": null,
+    "best": "pinnacle",
+    "bet365_note": "bet365 does not offer this market"
+   },
+   "track": {
+    "type": "player",
+    "away": "ANA",
+    "home": "CGY",
+    "player": "Yegor Sharangovich",
+    "stat": "P",
+    "line": 0.5,
     "side": "under"
    }
   },
   {
    "rank": 8,
-   "date": "2026-11-05",
-   "game": "ANA @ EDM",
-   "start": "8:00 PM ET",
-   "bet": "Anaheim +2.5 (OT incl)",
-   "price": "-263",
-   "decimal": 1.38,
-   "breakeven": 0.725,
-   "est_low": 0.695,
-   "est_high": 0.711,
-   "method": "Poisson goal model / Pinnacle no-vig",
+   "date": "2026-11-06",
+   "game": "CBJ @ BUF",
+   "start": "7:00 PM ET",
+   "bet": "Josh Doan under 0.5 points",
+   "price": "-170",
+   "decimal": 1.588,
+   "breakeven": 0.63,
+   "est_low": 0.586,
+   "est_high": 0.659,
+   "method": "Pinnacle no-vig / blended Poisson points model",
    "verdict": "Pass",
-   "agent1": "Fun only (est 70.3% below 72.5% break-even)",
+   "agent1": "Fun only (est 62.3% below 63.0% break-even)",
    "agent2": "Pass (below break-even)",
-   "agent3": "Pass (Brossoit .848)",
-   "analysts": "Covers moneyline picks: Oilers",
-   "objection": "Est 70.3% is below the 72.5% break-even. Anaheim starts backup Brossoit (.848); Edmonton uses third-stringer Tomkins. Loses if Edmonton wins by 3+.",
+   "agent3": "Pass (0.63 pts/gm last season)",
+   "analysts": "Covers moneyline picks: Sabres",
+   "objection": "Est 62.3% is below the 63.0% break-even. 0.20 pts/gm this season (15 GP) but 0.63 last season; 2nd line with Ostlund and Quinn. Points last 5 (oldest first): Oct 24 1, Oct 27 0, Oct 29 0, Oct 31 0, Nov 4 0 (matches NHL.com).",
    "books": {
-    "pinnacle": "-263",
-    "bet365": "-320",
+    "pinnacle": "-170",
+    "bet365": null,
     "best": "pinnacle",
-    "bet365_note": null
+    "bet365_note": "bet365 does not offer this market"
    },
    "track": {
-    "type": "spread",
-    "away": "ANA",
-    "home": "EDM",
-    "team": "ANA",
-    "line": 2.5
+    "type": "player",
+    "away": "CBJ",
+    "home": "BUF",
+    "player": "Josh Doan",
+    "stat": "P",
+    "line": 0.5,
+    "side": "under"
    }
   },
   {
    "rank": 9,
-   "date": "2026-11-05",
-   "game": "DAL @ CBJ",
+   "date": "2026-11-06",
+   "game": "CBJ @ BUF",
    "start": "7:00 PM ET",
-   "bet": "Columbus +1.5 (OT incl)",
-   "price": "-237",
-   "decimal": 1.422,
-   "breakeven": 0.703,
-   "est_low": 0.681,
-   "est_high": 0.719,
-   "method": "Poisson goal model / Pinnacle no-vig",
+   "bet": "Zach Benson under 2.5 shots",
+   "price": "-155",
+   "decimal": 1.645,
+   "breakeven": 0.608,
+   "est_low": 0.567,
+   "est_high": 0.655,
+   "method": "Pinnacle no-vig / negative binomial shots model",
    "verdict": "Pass",
-   "agent1": "Fun only (est 70.0% just below 70.3% break-even)",
-   "agent2": "Pass (below break-even)",
-   "agent3": "Pass (no edge)",
-   "analysts": "Covers moneyline picks: Stars (also in their ML combo)",
-   "objection": "Est 70.0% is just below the 70.3% break-even. Underdog +1.5: wins if Columbus wins or loses by one. Heiskanen out for Dallas; Talbot vs DeSmith both confirmed.",
+   "agent1": "Fun only (est 61.1% just above 60.8% break-even)",
+   "agent2": "Pass (over in 4 of last 5)",
+   "agent3": "Pass (promoted to the Thompson line)",
+   "analysts": "None found",
+   "objection": "Est 61.1% vs 60.8% break-even, but shots last 5 (oldest first): Oct 24 2, Oct 27 5, Oct 29 3, Oct 31 4, Nov 4 3 (matches NHL.com), over 2.5 in 4 of 5. 2.4 SOG/gm this season, 1.78 last season; now on the 1st line with Krebs and Thompson.",
    "books": {
-    "pinnacle": "-237",
-    "bet365": "-240",
+    "pinnacle": "-155",
+    "bet365": null,
     "best": "pinnacle",
-    "bet365_note": null
+    "bet365_note": "bet365 does not offer this market"
    },
    "track": {
-    "type": "spread",
-    "away": "DAL",
-    "home": "CBJ",
-    "team": "CBJ",
-    "line": 1.5
-   }
-  },
-  {
-   "rank": 10,
-   "date": "2026-11-05",
-   "game": "BOS @ PIT",
-   "start": "7:00 PM ET",
-   "bet": "Under 7.5 goals (OT incl)",
-   "price": "-258",
-   "decimal": 1.388,
-   "breakeven": 0.721,
-   "est_low": 0.694,
-   "est_high": 0.698,
-   "method": "Poisson goal model / Pinnacle no-vig",
-   "verdict": "Pass",
-   "agent1": "Fun only (est 69.6% below 72.1% break-even)",
-   "agent2": "Pass (below break-even)",
-   "agent3": "Pass (below break-even)",
-   "analysts": "Odds Shark computer: 3.20-3.20 (6.4 goals)",
-   "objection": "Est 69.6% is below the 72.1% break-even. Wins at 7 goals or fewer (OT/shootout included). Same game as Boston +1.5.",
-   "books": {
-    "pinnacle": "-258",
-    "bet365": "-270",
-    "best": "pinnacle",
-    "bet365_note": null
-   },
-   "track": {
-    "type": "total",
-    "away": "BOS",
-    "home": "PIT",
-    "line": 7.5,
+    "type": "player",
+    "away": "CBJ",
+    "home": "BUF",
+    "player": "Zach Benson",
+    "stat": "S",
+    "line": 2.5,
     "side": "under"
    }
   }
@@ -333,611 +311,213 @@
    "rank": 1,
    "legs": [
     {
-     "game": "PHI @ NYR",
+     "game": "CBJ @ BUF",
      "start": "7:00 PM ET",
-     "bet": "NY Rangers +2.5 (OT incl)",
-     "price": "-761",
-     "est": 0.892,
-     "bet365": "-950",
+     "bet": "Buffalo +1.5 (OT incl)",
+     "price": "-463",
+     "est": 0.795,
+     "bet365": "-450",
      "track": {
       "type": "spread",
-      "away": "PHI",
-      "home": "NYR",
-      "team": "NYR",
-      "line": 2.5
+      "away": "CBJ",
+      "home": "BUF",
+      "team": "BUF",
+      "line": 1.5
      }
     },
     {
-     "game": "BOS @ PIT",
-     "start": "7:00 PM ET",
-     "bet": "Boston +2.5 (OT incl)",
-     "price": "-498",
-     "est": 0.851,
-     "bet365": "-600",
+     "game": "SJS @ MIN",
+     "start": "8:00 PM ET",
+     "bet": "Minnesota +1.5 (OT incl)",
+     "price": "-775",
+     "est": 0.876,
+     "bet365": "-750",
      "track": {
       "type": "spread",
-      "away": "BOS",
-      "home": "PIT",
-      "team": "BOS",
-      "line": 2.5
+      "away": "SJS",
+      "home": "MIN",
+      "team": "MIN",
+      "line": 1.5
      }
     }
    ],
-   "bet": "NY Rangers +2.5 (OT incl) + Boston +2.5 (OT incl)",
-   "short": "NYR +2.5, BOS +2.5",
-   "game": "PHI @ NYR / BOS @ PIT",
-   "price": "-279",
-   "decimal": 1.359,
-   "breakeven": 0.736,
-   "chance": 0.759,
+   "bet": "Buffalo +1.5 (OT incl) + Minnesota +1.5 (OT incl)",
+   "short": "BUF +1.5, MIN +1.5",
+   "game": "CBJ @ BUF / SJS @ MIN",
+   "price": "-268",
+   "decimal": 1.373,
+   "breakeven": 0.728,
+   "chance": 0.696,
    "books": {
-    "pinnacle": "-279",
-    "bet365": "-345",
-    "best": "pinnacle",
+    "pinnacle": "-268",
+    "bet365": "-260",
+    "best": "bet365",
     "bet365_note": null
    },
-   "note": "2-leg parlay, every leg from a different game. Chance = product of leg estimates. Agent 3's only keeper (fun only); Agent 2 keeps it too."
+   "note": "2-leg parlay, every leg from a different game. Chance = product of leg estimates. Agent 2 keeps it; Agent 3 would drop it (estimate below break-even). bet365 pays slightly more on this one."
   },
   {
    "rank": 2,
    "legs": [
     {
-     "game": "ANA @ EDM",
-     "start": "8:00 PM ET",
-     "bet": "Edmonton +2.5 (OT incl)",
-     "price": "-850",
-     "est": 0.89,
-     "bet365": "-1100",
+     "game": "CBJ @ BUF",
+     "start": "7:00 PM ET",
+     "bet": "Buffalo +1.5 (OT incl)",
+     "price": "-463",
+     "est": 0.795,
+     "bet365": "-450",
      "track": {
       "type": "spread",
-      "away": "ANA",
-      "home": "EDM",
-      "team": "EDM",
-      "line": 2.5
+      "away": "CBJ",
+      "home": "BUF",
+      "team": "BUF",
+      "line": 1.5
      }
     },
     {
-     "game": "UTA @ MTL",
-     "start": "7:00 PM ET",
-     "bet": "Montreal +2.5 (OT incl)",
-     "price": "-416",
-     "est": 0.824,
-     "bet365": "-550",
+     "game": "ANA @ CGY",
+     "start": "8:00 PM ET",
+     "bet": "Calgary +2.5 (OT incl)",
+     "price": "-635",
+     "est": 0.838,
+     "bet365": "-850",
      "track": {
       "type": "spread",
-      "away": "UTA",
-      "home": "MTL",
-      "team": "MTL",
+      "away": "ANA",
+      "home": "CGY",
+      "team": "CGY",
       "line": 2.5
      }
     }
    ],
-   "bet": "Edmonton +2.5 (OT incl) + Montreal +2.5 (OT incl)",
-   "short": "EDM +2.5, MTL +2.5",
-   "game": "ANA @ EDM / UTA @ MTL",
-   "price": "-259",
-   "decimal": 1.386,
-   "breakeven": 0.721,
-   "chance": 0.733,
+   "bet": "Buffalo +1.5 (OT incl) + Calgary +2.5 (OT incl)",
+   "short": "BUF +1.5, CGY +2.5",
+   "game": "CBJ @ BUF / ANA @ CGY",
+   "price": "-245",
+   "decimal": 1.407,
+   "breakeven": 0.71,
+   "chance": 0.666,
    "books": {
-    "pinnacle": "-259",
-    "bet365": "-346",
+    "pinnacle": "-245",
+    "bet365": "-273",
     "best": "pinnacle",
     "bet365_note": null
    },
-   "note": "2-leg parlay, every leg from a different game. Chance = product of leg estimates. Agent 2 keeps it; Agent 3 would pass (thin margin once the model's empty-net optimism is discounted)."
+   "note": "2-leg parlay, every leg from a different game. Chance = product of leg estimates. Agents 2 and 3 would both drop it (below break-even; leans on Calgary)."
   },
   {
    "rank": 3,
    "legs": [
     {
-     "game": "CAR @ NYI",
-     "start": "7:00 PM ET",
-     "bet": "Carolina +2.5 (OT incl)",
-     "price": "-965",
-     "est": 0.888,
-     "bet365": "-1200",
+     "game": "SJS @ MIN",
+     "start": "8:00 PM ET",
+     "bet": "Minnesota +1.5 (OT incl)",
+     "price": "-775",
+     "est": 0.876,
+     "bet365": "-750",
      "track": {
       "type": "spread",
-      "away": "CAR",
-      "home": "NYI",
-      "team": "CAR",
-      "line": 2.5
+      "away": "SJS",
+      "home": "MIN",
+      "team": "MIN",
+      "line": 1.5
      }
     },
     {
-     "game": "UTA @ MTL",
-     "start": "7:00 PM ET",
-     "bet": "Montreal +2.5 (OT incl)",
-     "price": "-416",
-     "est": 0.824,
-     "bet365": "-550",
+     "game": "ANA @ CGY",
+     "start": "8:00 PM ET",
+     "bet": "Calgary +1.5 (OT incl)",
+     "price": "-354",
+     "est": 0.744,
+     "bet365": "-380",
      "track": {
       "type": "spread",
-      "away": "UTA",
-      "home": "MTL",
-      "team": "MTL",
-      "line": 2.5
+      "away": "ANA",
+      "home": "CGY",
+      "team": "CGY",
+      "line": 1.5
      }
     }
    ],
-   "bet": "Carolina +2.5 (OT incl) + Montreal +2.5 (OT incl)",
-   "short": "CAR +2.5, MTL +2.5",
-   "game": "CAR @ NYI / UTA @ MTL",
-   "price": "-271",
-   "decimal": 1.369,
-   "breakeven": 0.731,
-   "chance": 0.732,
+   "bet": "Minnesota +1.5 (OT incl) + Calgary +1.5 (OT incl)",
+   "short": "MIN +1.5, CGY +1.5",
+   "game": "SJS @ MIN / ANA @ CGY",
+   "price": "-223",
+   "decimal": 1.448,
+   "breakeven": 0.691,
+   "chance": 0.652,
    "books": {
-    "pinnacle": "-271",
-    "bet365": "-357",
+    "pinnacle": "-223",
+    "bet365": "-232",
     "best": "pinnacle",
     "bet365_note": null
    },
-   "note": "2-leg parlay, every leg from a different game. Chance = product of leg estimates. Agent 2 keeps it; Agent 3 would pass (estimate barely above break-even)."
+   "note": "2-leg parlay, every leg from a different game. Chance = product of leg estimates. Agents 2 and 3 would both drop it (below break-even; leans on Calgary)."
   },
   {
    "rank": 4,
    "legs": [
     {
-     "game": "ANA @ EDM",
-     "start": "8:00 PM ET",
-     "bet": "Edmonton +1.5 (OT incl)",
-     "price": "-463",
-     "est": 0.821,
-     "bet365": "-500",
-     "track": {
-      "type": "spread",
-      "away": "ANA",
-      "home": "EDM",
-      "team": "EDM",
-      "line": 1.5
-     }
-    },
-    {
-     "game": "PHI @ NYR",
+     "game": "CBJ @ BUF",
      "start": "7:00 PM ET",
-     "bet": "NY Rangers +2.5 (OT incl)",
-     "price": "-761",
-     "est": 0.892,
-     "bet365": "-950",
-     "track": {
-      "type": "spread",
-      "away": "PHI",
-      "home": "NYR",
-      "team": "NYR",
-      "line": 2.5
-     }
-    }
-   ],
-   "bet": "Edmonton +1.5 (OT incl) + NY Rangers +2.5 (OT incl)",
-   "short": "EDM +1.5, NYR +2.5",
-   "game": "ANA @ EDM / PHI @ NYR",
-   "price": "-266",
-   "decimal": 1.376,
-   "breakeven": 0.727,
-   "chance": 0.732,
-   "books": {
-    "pinnacle": "-266",
-    "bet365": "-306",
-    "best": "pinnacle",
-    "bet365_note": null
-   },
-   "note": "2-leg parlay, every leg from a different game. Chance = product of leg estimates. Agent 2 keeps it; Agent 3 would pass."
-  },
-  {
-   "rank": 5,
-   "legs": [
-    {
-     "game": "BOS @ PIT",
-     "start": "7:00 PM ET",
-     "bet": "Boston +2.5 (OT incl)",
-     "price": "-498",
-     "est": 0.851,
-     "bet365": "-600",
-     "track": {
-      "type": "spread",
-      "away": "BOS",
-      "home": "PIT",
-      "team": "BOS",
-      "line": 2.5
-     }
-    },
-    {
-     "game": "DAL @ CBJ",
-     "start": "7:00 PM ET",
-     "bet": "Dallas +2.5 (OT incl)",
-     "price": "-636",
-     "est": 0.86,
-     "bet365": "-800",
-     "track": {
-      "type": "spread",
-      "away": "DAL",
-      "home": "CBJ",
-      "team": "DAL",
-      "line": 2.5
-     }
-    }
-   ],
-   "bet": "Boston +2.5 (OT incl) + Dallas +2.5 (OT incl)",
-   "short": "BOS +2.5, DAL +2.5",
-   "game": "BOS @ PIT / DAL @ CBJ",
-   "price": "-257",
-   "decimal": 1.39,
-   "breakeven": 0.72,
-   "chance": 0.732,
-   "books": {
-    "pinnacle": "-257",
-    "bet365": "-320",
-    "best": "pinnacle",
-    "bet365_note": null
-   },
-   "note": "2-leg parlay, every leg from a different game. Chance = product of leg estimates. Agent 2 keeps it; Agent 3 would pass."
-  },
-  {
-   "rank": 6,
-   "legs": [
-    {
-     "game": "VGK @ DET",
-     "start": "7:00 PM ET",
-     "bet": "Vegas +2.5 (OT incl)",
-     "price": "-718",
-     "est": 0.855,
-     "bet365": "-900",
-     "track": {
-      "type": "spread",
-      "away": "VGK",
-      "home": "DET",
-      "team": "VGK",
-      "line": 2.5
-     }
-    },
-    {
-     "game": "NSH @ COL",
-     "start": "9:30 PM ET",
-     "bet": "Colorado +1.5 (OT incl)",
-     "price": "-575",
-     "est": 0.823,
-     "bet365": "-600",
-     "track": {
-      "type": "spread",
-      "away": "NSH",
-      "home": "COL",
-      "team": "COL",
-      "line": 1.5
-     }
-    }
-   ],
-   "bet": "Vegas +2.5 (OT incl) + Colorado +1.5 (OT incl)",
-   "short": "VGK +2.5, COL +1.5",
-   "game": "VGK @ DET / NSH @ COL",
-   "price": "-296",
-   "decimal": 1.337,
-   "breakeven": 0.748,
-   "chance": 0.704,
-   "books": {
-    "pinnacle": "-296",
-    "bet365": "-337",
-    "best": "pinnacle",
-    "bet365_note": null
-   },
-   "note": "2-leg parlay, every leg from a different game. Chance = product of leg estimates. Agents 2 and 3 would both drop it (below break-even; two unconfirmed-goalie spots)."
-  },
-  {
-   "rank": 7,
-   "legs": [
-    {
-     "game": "CAR @ NYI",
-     "start": "7:00 PM ET",
-     "bet": "Carolina +2.5 (OT incl)",
-     "price": "-965",
-     "est": 0.888,
-     "bet365": "-1200",
-     "track": {
-      "type": "spread",
-      "away": "CAR",
-      "home": "NYI",
-      "team": "CAR",
-      "line": 2.5
-     }
-    },
-    {
-     "game": "DAL @ CBJ",
-     "start": "7:00 PM ET",
-     "bet": "Under 8.5 goals (OT incl)",
-     "price": "-637",
-     "est": 0.85,
-     "bet365": "-800",
-     "track": {
-      "type": "total",
-      "away": "DAL",
-      "home": "CBJ",
-      "line": 8.5,
-      "side": "under"
-     }
-    },
-    {
-     "game": "PHI @ NYR",
-     "start": "7:00 PM ET",
-     "bet": "Under 8.5 goals (OT incl)",
-     "price": "-581",
-     "est": 0.838,
-     "bet365": "-700",
-     "track": {
-      "type": "total",
-      "away": "PHI",
-      "home": "NYR",
-      "line": 8.5,
-      "side": "under"
-     }
-    }
-   ],
-   "bet": "Carolina +2.5 (OT incl) + Under 8.5 goals (OT incl) + Under 8.5 goals (OT incl)",
-   "short": "CAR +2.5, DAL-CBJ U8.5, PHI-NYR U8.5",
-   "game": "CAR @ NYI / DAL @ CBJ / PHI @ NYR",
-   "price": "-201",
-   "decimal": 1.497,
-   "breakeven": 0.668,
-   "chance": 0.633,
-   "books": {
-    "pinnacle": "-201",
-    "bet365": "-255",
-    "best": "pinnacle",
-    "bet365_note": null
-   },
-   "note": "3-leg parlay, every leg from a different game. Chance = product of leg estimates. 3-leg (both unders are half-goal lines, no push). Agents 2 and 3 would both drop it (63% chance)."
-  },
-  {
-   "rank": 8,
-   "legs": [
-    {
-     "game": "PHI @ NYR",
-     "start": "7:00 PM ET",
-     "bet": "NY Rangers +2.5 (OT incl)",
-     "price": "-761",
-     "est": 0.892,
-     "bet365": "-950",
-     "track": {
-      "type": "spread",
-      "away": "PHI",
-      "home": "NYR",
-      "team": "NYR",
-      "line": 2.5
-     }
-    },
-    {
-     "game": "ANA @ EDM",
-     "start": "8:00 PM ET",
-     "bet": "Edmonton +2.5 (OT incl)",
-     "price": "-850",
-     "est": 0.89,
+     "bet": "Buffalo +2.5 (OT incl)",
+     "price": "-908",
+     "est": 0.88,
      "bet365": "-1100",
      "track": {
       "type": "spread",
+      "away": "CBJ",
+      "home": "BUF",
+      "team": "BUF",
+      "line": 2.5
+     }
+    },
+    {
+     "game": "SJS @ MIN",
+     "start": "8:00 PM ET",
+     "bet": "Under 7.5 goals (OT incl)",
+     "price": "-274",
+     "est": 0.736,
+     "bet365": "-270",
+     "track": {
+      "type": "total",
+      "away": "SJS",
+      "home": "MIN",
+      "line": 7.5,
+      "side": "under"
+     }
+    },
+    {
+     "game": "ANA @ CGY",
+     "start": "8:00 PM ET",
+     "bet": "Calgary +2.5 (OT incl)",
+     "price": "-635",
+     "est": 0.838,
+     "bet365": "-850",
+     "track": {
+      "type": "spread",
       "away": "ANA",
-      "home": "EDM",
-      "team": "EDM",
-      "line": 2.5
-     }
-    },
-    {
-     "game": "CAR @ NYI",
-     "start": "7:00 PM ET",
-     "bet": "Carolina +2.5 (OT incl)",
-     "price": "-965",
-     "est": 0.888,
-     "bet365": "-1200",
-     "track": {
-      "type": "spread",
-      "away": "CAR",
-      "home": "NYI",
-      "team": "CAR",
-      "line": 2.5
-     }
-    },
-    {
-     "game": "DAL @ CBJ",
-     "start": "7:00 PM ET",
-     "bet": "Dallas +2.5 (OT incl)",
-     "price": "-636",
-     "est": 0.86,
-     "bet365": "-800",
-     "track": {
-      "type": "spread",
-      "away": "DAL",
-      "home": "CBJ",
-      "team": "DAL",
-      "line": 2.5
-     }
-    },
-    {
-     "game": "VGK @ DET",
-     "start": "7:00 PM ET",
-     "bet": "Vegas +2.5 (OT incl)",
-     "price": "-718",
-     "est": 0.855,
-     "bet365": "-900",
-     "track": {
-      "type": "spread",
-      "away": "VGK",
-      "home": "DET",
-      "team": "VGK",
+      "home": "CGY",
+      "team": "CGY",
       "line": 2.5
      }
     }
    ],
-   "bet": "NY Rangers +2.5 (OT incl) + Edmonton +2.5 (OT incl) + Carolina +2.5 (OT incl) + Dallas +2.5 (OT incl) + Vegas +2.5 (OT incl)",
-   "short": "NYR +2.5, EDM +2.5, CAR +2.5, DAL +2.5, VGK +2.5",
-   "game": "PHI @ NYR / ANA @ EDM / CAR @ NYI / DAL @ CBJ / VGK @ DET",
-   "price": "-119",
-   "decimal": 1.84,
-   "breakeven": 0.544,
-   "chance": 0.518,
+   "bet": "Buffalo +2.5 (OT incl) + Under 7.5 goals (OT incl) + Calgary +2.5 (OT incl)",
+   "short": "BUF +2.5, SJS-MIN U7.5, CGY +2.5",
+   "game": "CBJ @ BUF / SJS @ MIN / ANA @ CGY",
+   "price": "-133",
+   "decimal": 1.754,
+   "breakeven": 0.57,
+   "chance": 0.543,
    "books": {
-    "pinnacle": "-119",
-    "bet365": "-158",
+    "pinnacle": "-133",
+    "bet365": "-149",
     "best": "pinnacle",
     "bet365_note": null
    },
-   "note": "5-leg parlay, every leg from a different game. Chance = product of leg estimates. Optional bigger parlay at plus-money-ish odds: five of tonight's highest-chance legs (each 85-89% on our estimates, which run optimistic). Agents 2 and 3 would both drop it."
+   "note": "3-leg parlay, every leg from a different game. Chance = product of leg estimates. 3-leg, one leg from each game. Agents 2 and 3 would both drop it (54% chance)."
   }
  ],
- "parlay_note": "Ranked by chance to hit. Mostly 2-leg parlays of tonight's safest lines (+2.5 and favourite +1.5 puck lines and 8.5 unders, OT included, each leg from a different game), one 3-leg and one optional 5-leg (-119). Chances multiply our leg estimates, which run optimistic on puck lines. All priced -300 or better. Prices re-checked at 4:17 PM ET; a parlay pays the legs' prices multiplied together.",
- "watch": [
-  {
-   "bet": "bet365 parlay: 11 shot legs (3 SGPs + 3 singles)",
-   "name": "bet365 parlay: 11 shot legs, $5 to return $12.07",
-   "legs": [
-    {
-     "bet": "Rickard Rakell 1+ shots (BOS @ PIT)",
-     "track": {
-      "type": "player",
-      "away": "BOS",
-      "home": "PIT",
-      "player": "Rickard Rakell",
-      "stat": "S",
-      "line": 0.5,
-      "side": "over"
-     }
-    },
-    {
-     "bet": "David Pastrnak 2+ shots (BOS @ PIT)",
-     "track": {
-      "type": "player",
-      "away": "BOS",
-      "home": "PIT",
-      "player": "David Pastrnak",
-      "stat": "S",
-      "line": 1.5,
-      "side": "over"
-     }
-    },
-    {
-     "bet": "Bo Horvat 1+ shots (CAR @ NYI)",
-     "track": {
-      "type": "player",
-      "away": "CAR",
-      "home": "NYI",
-      "player": "Bo Horvat",
-      "stat": "S",
-      "line": 0.5,
-      "side": "over"
-     }
-    },
-    {
-     "bet": "Nikita Kucherov 1+ shots (CHI @ TBL)",
-     "track": {
-      "type": "player",
-      "away": "CHI",
-      "home": "TBL",
-      "player": "Nikita Kucherov",
-      "stat": "S",
-      "line": 0.5,
-      "side": "over"
-     }
-    },
-    {
-     "bet": "Brandon Hagel 1+ shots (CHI @ TBL)",
-     "track": {
-      "type": "player",
-      "away": "CHI",
-      "home": "TBL",
-      "player": "Brandon Hagel",
-      "stat": "S",
-      "line": 0.5,
-      "side": "over"
-     }
-    },
-    {
-     "bet": "Connor Bedard 2+ shots (CHI @ TBL)",
-     "track": {
-      "type": "player",
-      "away": "CHI",
-      "home": "TBL",
-      "player": "Connor Bedard",
-      "stat": "S",
-      "line": 1.5,
-      "side": "over"
-     }
-    },
-    {
-     "bet": "Brayden Point 1+ shots (CHI @ TBL)",
-     "track": {
-      "type": "player",
-      "away": "CHI",
-      "home": "TBL",
-      "player": "Brayden Point",
-      "stat": "S",
-      "line": 0.5,
-      "side": "over"
-     }
-    },
-    {
-     "bet": "Adam Fantilli 1+ shots (DAL @ CBJ)",
-     "track": {
-      "type": "player",
-      "away": "DAL",
-      "home": "CBJ",
-      "player": "Adam Fantilli",
-      "stat": "S",
-      "line": 0.5,
-      "side": "over"
-     }
-    },
-    {
-     "bet": "Alexis Lafreniere 1+ shots (PHI @ NYR)",
-     "track": {
-      "type": "player",
-      "away": "PHI",
-      "home": "NYR",
-      "player": "Alexis Lafreni\u00e8re",
-      "stat": "S",
-      "line": 0.5,
-      "side": "over"
-     }
-    },
-    {
-     "bet": "Josh Anderson 1+ shots (UTA @ MTL)",
-     "track": {
-      "type": "player",
-      "away": "UTA",
-      "home": "MTL",
-      "player": "Josh Anderson",
-      "stat": "S",
-      "line": 0.5,
-      "side": "over"
-     }
-    },
-    {
-     "bet": "Cole Caufield 1+ shots (UTA @ MTL)",
-     "track": {
-      "type": "player",
-      "away": "UTA",
-      "home": "MTL",
-      "player": "Cole Caufield",
-      "stat": "S",
-      "line": 0.5,
-      "side": "over"
-     }
-    }
-   ]
-  },
-  {
-   "bet": "bet365 EDM Oilers team total over 2.5",
-   "name": "bet365: Edmonton 3+ goals, $6.70 to return $8.41",
-   "legs": [
-    {
-     "bet": "Edmonton Oilers over 2.5 goals (ANA @ EDM)",
-     "track": {
-      "type": "teamtotal",
-      "away": "ANA",
-      "home": "EDM",
-      "team": "EDM",
-      "line": 2.5,
-      "side": "over"
-     }
-    }
-   ]
-  }
- ]
+ "parlay_note": "Ranked by chance to hit. Only 3 games tonight, so at most one parlay per pair of games: three 2-leg parlays and one 3-leg, all -300 or better, built from the slate's safest lines (Buffalo, Minnesota and Calgary puck lines, OT included, plus the SJS-MIN under). Chances multiply our leg estimates, which run optimistic on puck lines. Prices re-checked at 3:29 PM ET; a parlay pays the legs' prices multiplied together."
 }

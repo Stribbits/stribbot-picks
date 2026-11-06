@@ -548,5 +548,75 @@
   "stake": 5,
   "result": "Loss",
   "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-05",
+  "game": "BOS @ PIT",
+  "bet": "Boston +1.5 (OT incl)",
+  "price": "-277",
+  "decimal": 1.361,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Agreed"
+ },
+ {
+  "date": "2026-11-05",
+  "game": "STL @ NJD",
+  "bet": "St. Louis +2.5 (OT incl)",
+  "price": "-270",
+  "decimal": 1.37,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Agreed"
+ },
+ {
+  "date": "2026-11-05",
+  "game": "UTA @ MTL",
+  "bet": "Montreal +1.5 (OT incl)",
+  "price": "-231",
+  "decimal": 1.433,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Agreed"
+ },
+ {
+  "date": "2026-11-05",
+  "game": "CAR @ NYI",
+  "bet": "NY Islanders +2.5 (OT incl)",
+  "price": "-295",
+  "decimal": 1.339,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-05",
+  "game": "VAN @ WPG",
+  "bet": "Vancouver +2.5 (OT incl)",
+  "price": "-247",
+  "decimal": 1.405,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-05",
+  "game": "NSH @ COL",
+  "bet": "Nashville +2.5 (OT incl)",
+  "price": "-239",
+  "decimal": 1.418,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-05",
+  "game": "CHI @ TBL",
+  "bet": "Anthony Cirelli under 2.5 shots",
+  "price": "-242",
+  "decimal": 1.413,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Fun only"
  }
 ]
