@@ -29,7 +29,9 @@
     "pinnacle": "-222",
     "bet365": "-230",
     "best": "pinnacle",
-    "bet365_note": null
+    "bet365_note": null,
+    "pinnacle_url": "https://www.pinnacle.ca/en/hockey/nhl/new-york-rangers-vs-seattle-kraken/1639750985/",
+    "bet365_url": "https://www.on.bet365.ca/#/AC/B17/C20836572/D19/E27184024/F19/I0/"
    },
    "track": {
     "type": "spread",
@@ -63,7 +65,9 @@
     "pinnacle": "-240",
     "bet365": "-280",
     "best": "pinnacle",
-    "bet365_note": null
+    "bet365_note": null,
+    "pinnacle_url": "https://www.pinnacle.ca/en/hockey/nhl/detroit-red-wings-vs-colorado-avalanche/1639760607/",
+    "bet365_url": "https://www.on.bet365.ca/#/AC/B17/C20836572/D19/E27184032/F19/I0/"
    },
    "track": {
     "type": "spread",
@@ -97,7 +101,9 @@
     "pinnacle": "-289",
     "bet365": "-300",
     "best": "pinnacle",
-    "bet365_note": null
+    "bet365_note": null,
+    "pinnacle_url": "https://www.pinnacle.ca/en/hockey/nhl/chicago-blackhawks-vs-carolina-hurricanes/1639756367/",
+    "bet365_url": "https://www.on.bet365.ca/#/AC/B17/C20836572/D19/E27184028/F19/I0/"
    },
    "track": {
     "type": "total",
@@ -131,7 +137,9 @@
     "pinnacle": "-300",
     "bet365": "-310",
     "best": "pinnacle",
-    "bet365_note": null
+    "bet365_note": null,
+    "pinnacle_url": "https://www.pinnacle.ca/en/hockey/nhl/montreal-canadiens-vs-toronto-maple-leafs/1639746938/",
+    "bet365_url": "https://www.on.bet365.ca/#/AC/B17/C20836572/D19/E27184026/F19/I0/"
    },
    "track": {
     "type": "spread",
@@ -165,7 +173,9 @@
     "pinnacle": "-275",
     "bet365": "-290",
     "best": "pinnacle",
-    "bet365_note": null
+    "bet365_note": null,
+    "pinnacle_url": "https://www.pinnacle.ca/en/hockey/nhl/detroit-red-wings-vs-colorado-avalanche/1639760607/",
+    "bet365_url": "https://www.on.bet365.ca/#/AC/B17/C20836572/D19/E27184032/F19/I0/"
    },
    "track": {
     "type": "total",
@@ -199,7 +209,9 @@
     "pinnacle": "-237",
     "bet365": "-245",
     "best": "pinnacle",
-    "bet365_note": null
+    "bet365_note": null,
+    "pinnacle_url": "https://www.pinnacle.ca/en/hockey/nhl/utah-mammoth-vs-ottawa-senators/1639746939/",
+    "bet365_url": "https://www.on.bet365.ca/#/AC/B17/C20836572/D19/E27184025/F19/I0/"
    },
    "track": {
     "type": "spread",
@@ -233,7 +245,9 @@
     "pinnacle": "-238",
     "bet365": "-240",
     "best": "pinnacle",
-    "bet365_note": null
+    "bet365_note": null,
+    "pinnacle_url": "https://www.pinnacle.ca/en/hockey/nhl/pittsburgh-penguins-vs-los-angeles-kings/1639756388/",
+    "bet365_url": "https://www.on.bet365.ca/#/AC/B17/C20836572/D19/E27184031/F19/I0/"
    },
    "track": {
     "type": "spread",
@@ -267,7 +281,9 @@
     "pinnacle": "-200",
     "bet365": "-210",
     "best": "pinnacle",
-    "bet365_note": null
+    "bet365_note": null,
+    "pinnacle_url": "https://www.pinnacle.ca/en/hockey/nhl/new-jersey-devils-vs-new-york-islanders/1639747001/",
+    "bet365_url": "https://www.on.bet365.ca/#/AC/B17/C20836572/D19/E27184027/F19/I0/"
    },
    "track": {
     "type": "spread",
@@ -301,7 +317,9 @@
     "pinnacle": "-154",
     "bet365": "-175",
     "best": "pinnacle",
-    "bet365_note": null
+    "bet365_note": null,
+    "pinnacle_url": "https://www.pinnacle.ca/en/hockey/nhl/new-york-rangers-vs-seattle-kraken/1639750985/",
+    "bet365_url": "https://www.on.bet365.ca/#/AC/B17/C20836572/D19/E27184024/F19/I0/"
    },
    "track": {
     "type": "total",
@@ -335,7 +353,9 @@
     "pinnacle": "-121",
     "bet365": null,
     "best": "pinnacle",
-    "bet365_note": "bet365 does not offer this market"
+    "bet365_note": "bet365 does not offer this market",
+    "pinnacle_url": "https://www.pinnacle.ca/en/hockey/nhl/san-jose-sharks-vs-dallas-stars/1639756368/",
+    "bet365_url": null
    },
    "track": {
     "type": "player",
@@ -365,7 +385,9 @@
       "home": "NYI",
       "team": "NJD",
       "line": 2.5
-     }
+     },
+     "pinnacle_url": "https://www.pinnacle.ca/en/hockey/nhl/new-jersey-devils-vs-new-york-islanders/1639747001/",
+     "bet365_url": "https://www.on.bet365.ca/#/AC/B17/C20836572/D19/E27184027/F19/I0/"
     },
     {
      "game": "MTL @ TOR",
@@ -380,7 +402,9 @@
       "home": "TOR",
       "team": "MTL",
       "line": 2.5
-     }
+     },
+     "pinnacle_url": "https://www.pinnacle.ca/en/hockey/nhl/montreal-canadiens-vs-toronto-maple-leafs/1639746938/",
+     "bet365_url": "https://www.on.bet365.ca/#/AC/B17/C20836572/D19/E27184026/F19/I0/"
     }
    ],
    "bet": "New Jersey +2.5 (OT incl) + Montreal +2.5 (OT incl)",
@@ -415,7 +439,9 @@
       "home": "DAL",
       "line": 8.5,
       "side": "under"
-     }
+     },
+     "pinnacle_url": "https://www.pinnacle.ca/en/hockey/nhl/san-jose-sharks-vs-dallas-stars/1639756368/",
+     "bet365_url": "https://www.on.bet365.ca/#/AC/B17/C20836572/D19/E27184029/F19/I0/"
     },
     {
      "game": "PIT @ LAK",
@@ -430,7 +456,9 @@
       "home": "LAK",
       "team": "LAK",
       "line": 2.5
-     }
+     },
+     "pinnacle_url": "https://www.pinnacle.ca/en/hockey/nhl/pittsburgh-penguins-vs-los-angeles-kings/1639756388/",
+     "bet365_url": "https://www.on.bet365.ca/#/AC/B17/C20836572/D19/E27184031/F19/I0/"
     }
    ],
    "bet": "Under 8.5 goals (OT incl) + Los Angeles +2.5 (OT incl)",
@@ -465,7 +493,9 @@
       "home": "MIN",
       "team": "TBL",
       "line": 2.5
-     }
+     },
+     "pinnacle_url": "https://www.pinnacle.ca/en/hockey/nhl/tampa-bay-lightning-vs-minnesota-wild/1639756366/",
+     "bet365_url": "https://www.on.bet365.ca/#/AC/B17/C20836572/D19/E27184030/F19/I0/"
     },
     {
      "game": "MTL @ TOR",
@@ -480,7 +510,9 @@
       "home": "TOR",
       "team": "MTL",
       "line": 2.5
-     }
+     },
+     "pinnacle_url": "https://www.pinnacle.ca/en/hockey/nhl/montreal-canadiens-vs-toronto-maple-leafs/1639746938/",
+     "bet365_url": "https://www.on.bet365.ca/#/AC/B17/C20836572/D19/E27184026/F19/I0/"
     }
    ],
    "bet": "Tampa Bay +2.5 (OT incl) + Montreal +2.5 (OT incl)",
@@ -515,7 +547,9 @@
       "home": "DAL",
       "team": "DAL",
       "line": 1.5
-     }
+     },
+     "pinnacle_url": "https://www.pinnacle.ca/en/hockey/nhl/san-jose-sharks-vs-dallas-stars/1639756368/",
+     "bet365_url": "https://www.on.bet365.ca/#/AC/B17/C20836572/D19/E27184029/F19/I0/"
     },
     {
      "game": "UTA @ OTT",
@@ -530,7 +564,9 @@
       "home": "OTT",
       "team": "OTT",
       "line": 2.5
-     }
+     },
+     "pinnacle_url": "https://www.pinnacle.ca/en/hockey/nhl/utah-mammoth-vs-ottawa-senators/1639746939/",
+     "bet365_url": "https://www.on.bet365.ca/#/AC/B17/C20836572/D19/E27184025/F19/I0/"
     }
    ],
    "bet": "Dallas +1.5 (OT incl) + Ottawa +2.5 (OT incl)",
@@ -565,7 +601,9 @@
       "home": "MIN",
       "team": "TBL",
       "line": 2.5
-     }
+     },
+     "pinnacle_url": "https://www.pinnacle.ca/en/hockey/nhl/tampa-bay-lightning-vs-minnesota-wild/1639756366/",
+     "bet365_url": "https://www.on.bet365.ca/#/AC/B17/C20836572/D19/E27184030/F19/I0/"
     },
     {
      "game": "UTA @ OTT",
@@ -580,7 +618,9 @@
       "home": "OTT",
       "team": "UTA",
       "line": 2.5
-     }
+     },
+     "pinnacle_url": "https://www.pinnacle.ca/en/hockey/nhl/utah-mammoth-vs-ottawa-senators/1639746939/",
+     "bet365_url": "https://www.on.bet365.ca/#/AC/B17/C20836572/D19/E27184025/F19/I0/"
     }
    ],
    "bet": "Tampa Bay +2.5 (OT incl) + Utah +2.5 (OT incl)",
@@ -615,7 +655,9 @@
       "home": "NYI",
       "team": "NJD",
       "line": 2.5
-     }
+     },
+     "pinnacle_url": "https://www.pinnacle.ca/en/hockey/nhl/new-jersey-devils-vs-new-york-islanders/1639747001/",
+     "bet365_url": "https://www.on.bet365.ca/#/AC/B17/C20836572/D19/E27184027/F19/I0/"
     },
     {
      "game": "UTA @ OTT",
@@ -630,7 +672,9 @@
       "home": "OTT",
       "team": "OTT",
       "line": 2.5
-     }
+     },
+     "pinnacle_url": "https://www.pinnacle.ca/en/hockey/nhl/utah-mammoth-vs-ottawa-senators/1639746939/",
+     "bet365_url": "https://www.on.bet365.ca/#/AC/B17/C20836572/D19/E27184025/F19/I0/"
     }
    ],
    "bet": "New Jersey +2.5 (OT incl) + Ottawa +2.5 (OT incl)",
@@ -665,7 +709,9 @@
       "home": "DAL",
       "line": 8.5,
       "side": "under"
-     }
+     },
+     "pinnacle_url": "https://www.pinnacle.ca/en/hockey/nhl/san-jose-sharks-vs-dallas-stars/1639756368/",
+     "bet365_url": "https://www.on.bet365.ca/#/AC/B17/C20836572/D19/E27184029/F19/I0/"
     },
     {
      "game": "UTA @ OTT",
@@ -680,7 +726,9 @@
       "home": "OTT",
       "team": "UTA",
       "line": 2.5
-     }
+     },
+     "pinnacle_url": "https://www.pinnacle.ca/en/hockey/nhl/utah-mammoth-vs-ottawa-senators/1639746939/",
+     "bet365_url": "https://www.on.bet365.ca/#/AC/B17/C20836572/D19/E27184025/F19/I0/"
     },
     {
      "game": "VAN @ EDM",
@@ -695,7 +743,9 @@
       "home": "EDM",
       "line": 9.5,
       "side": "under"
-     }
+     },
+     "pinnacle_url": "https://www.pinnacle.ca/en/hockey/nhl/vancouver-canucks-vs-edmonton-oilers/1639760613/",
+     "bet365_url": null
     }
    ],
    "bet": "Under 8.5 goals (OT incl) + Utah +2.5 (OT incl) + Under 9.5 goals (OT incl)",
