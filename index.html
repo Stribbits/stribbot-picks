@@ -142,6 +142,7 @@ footer { color: var(--muted); font-size: .8rem; border-top: 1px solid var(--line
 .place .bookbtn.adjusted b { text-decoration: underline dotted; }
 .place .statbtn { margin-left: auto; display: inline-flex; align-items: center; text-decoration: none; font-size: .9rem; border-radius: 6px; border: 1px solid var(--line); background: var(--panel); color: var(--ink); padding: 7px 12px; }
 .place .statbtn:hover { border-color: var(--accent); }
+.place .statbtn.openbtn { margin-left: 0; }
 /* Live tracker */
 .trkbar { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin: 0 0 10px; }
 .pipmsg { font-size: .8rem; color: var(--muted); }
@@ -533,17 +534,18 @@ const upd = () => { const s = parseFloat(inp.value) || 0; pays.textContent = opt
 inp.addEventListener('input', upd);
 pl.append(lab);
 const btns = {};
+const bookUrl = (k) => { let url = k === 'PIN' ? (bk.pinnacle_url || r.pinnacle_url) : (bk.bet365_url || r.bet365_url); if (!url) return null; if (k === 'PIN') { let site = 'ca'; try { site = localStorage.getItem('stribbot-pinsite') || 'ca'; } catch (e) {} url = url.replace(/^https:\/\/(www\.)?pinnacle\.(ca|com)\//, 'https://www.pinnacle.' + (site === 'com' ? 'com' : 'ca') + '/'); } return /^https:\/\/(www\.)?(pinnacle\.com|pinnacle\.ca|on\.bet365\.ca)\//.test(url) ? url : null; };
 const setBtn = (x) => { const btn = btns[x.k]; btn.replaceChildren(document.createTextNode('Place on ' + BOOKS[x.k]), el('b', '', x.p || '—')); btn.disabled = !x.o; btn.title = !x.o ? BOOKS[x.k] + ' does not have this price' : (mineOdds(x) ? 'Your adjusted odds (card: ' + (x.orig || 'none') + ')' : ''); btn.classList.toggle('adjusted', !!mineOdds(x)); };
 opts.forEach(x => {
 const btn = el('button', 'bookbtn' + ((bk.best || 'pinnacle') === (x.k === 'PIN' ? 'pinnacle' : 'bet365') && x.o ? ' primary' : ''));
 btns[x.k] = btn; setBtn(x);
 btn.addEventListener('click', () => { const s = parseFloat(inp.value); if (!(s > 0)) { pays.textContent = 'Enter a stake above $0'; return; }
-let url = x.k === 'PIN' ? (bk.pinnacle_url || r.pinnacle_url) : (bk.bet365_url || r.bet365_url);
-if (url && x.k === 'PIN') { let site = 'ca'; try { site = localStorage.getItem('stribbot-pinsite') || 'ca'; } catch (e) {} url = url.replace(/^https:\/\/(www\.)?pinnacle\.(ca|com)\//, 'https://www.pinnacle.' + (site === 'com' ? 'com' : 'ca') + '/'); }
-if (url && /^https:\/\/(www\.)?(pinnacle\.com|pinnacle\.ca|on\.bet365\.ca)\//.test(url)) { try { const lk = document.createElement('a'); lk.href = url; lk.target = '_blank'; lk.rel = 'noopener noreferrer'; lk.referrerPolicy = 'no-referrer'; document.body.append(lk); lk.click(); lk.remove(); } catch (e) {} }
+const url = bookUrl(x.k);
+if (url) { try { const lk = document.createElement('a'); lk.href = url; lk.target = '_blank'; lk.rel = 'noopener noreferrer'; lk.referrerPolicy = 'no-referrer'; document.body.append(lk); lk.click(); lk.remove(); } catch (e) {} }
 save(mine.concat([{ id: newId(), date: card.date, game, bet: betName, price: x.o.price + '|' + x.k, decimal: Math.round(x.o.decimal * 1000) / 1000, stake: Math.round(s * 100) / 100, result: 'Pending', placedAt: new Date().toISOString() }]));
 renderAll(); });
 pl.append(btn);
+if (bookUrl(x.k)) { const op = el('a', 'statbtn openbtn', 'Open on ' + BOOKS[x.k]); op.href = bookUrl(x.k); op.target = '_blank'; op.rel = 'noopener noreferrer'; op.referrerPolicy = 'no-referrer'; op.title = 'Open this game on ' + BOOKS[x.k] + ' without tracking a bet'; op.addEventListener('click', () => { const u = bookUrl(x.k); if (u) op.href = u; }); pl.append(op); }
 });
 const adj = el('button', 'adjbtn', 'Adjust odds'); adj.type = 'button'; adj.title = 'Change the odds for yourself only (saved on this device)';
 const box = el('div', 'adjbox'); box.hidden = true;
