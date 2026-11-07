@@ -1,75 +1,77 @@
 {
  "date": "2026-11-07",
- "scanned": 1012,
+ "scanned": 822,
  "ranking": "agreed best first, then chance to hit",
- "note": "Run by hand at 3 PM ET (the 1 PM scheduled run did not start because the computer was offline). 10 games left after the early games (FLA-WSH, STL-NSH). San Jose and Minnesota are on the 2nd night of a back-to-back (allowed now; the model lowers them a bit). Agreed = in all three agents' top 4: Detroit +2.5 and Seattle +1.5 (agreed best, not guaranteed; both have big model-market gaps). Agents 2 and 3 also both picked NY Islanders +1.5 and Ottawa +1.5. LESSONS APPLIED from the Nov 6 review: (1) every game now adjusts for the starting goalies (regressed save %), and player points props for the opponent's expected goals; (2) Weegar and DeAngelo points unders were removed because their power-play time just jumped (both now on PP2); (3) Kucherov and Johnston points unders were removed because they face back-to-back teams; (4) points-under estimates are capped at the market when the model is 10+ points higher. Goalies: Korpisalo (NYR, season debut, confirmed), Daccord/Grubauer (SEA, unconfirmed), Fowler-Bobrovsky, Allen-Sorokin, Vejmelka-Ersson, Knight-Kochetkov, Hildeby-Pickard (both backups), Nedeljkovic-Oettinger, Tarasov-Blackwood (Gibson injured), Murashov-Kuemper, Merilainen-Levi. Lineups and power-play units checked on RotoWire; injuries from NHL.com previews. Estimate = midpoint of Pinnacle no-vig and Agent 1's model; the model has no empty-net effect. Excluded: goals props and assists unders (Steve's rules), anything shorter than -300, whole-number totals. Pinnacle prices re-checked 3:16 PM ET (Seattle +1.5 -218 to -222). bet365 (read only): Tampa-Minnesota under 7.5 is slightly better there (-260); Pinnacle better on everything else.",
- "updatedAt": "2026-11-07T20:19:26Z",
+ "note": "9 games priced (NYR @ SEA left out: it starts at 5 PM ET, too soon after the agent debate for a full re-check; VAN @ EDM had no Pinnacle player props posted). San Jose and Minnesota are on the 2nd night of a back-to-back (allowed now; the goal model lowers their scoring and raises goals against). Agreed = in all three agents' top 4: Weegar under 0.5 points and Toronto +1.5 (agreed best, not guaranteed; both sit about 0.1-0.2 points below break-even). Lessons from the Nov 6 review that changed picks: Detroit +2.5 (-241) was the top chance on paper but was removed because Colorado has won by 3+ in 8 of 17 (the big-underdog +2.5 lesson); no points unders on Tampa Bay or Dallas players because they face tired back-to-back teams; points unders were checked against the opponent's defence and the model's gap to the market (Weegar's 9-point gap is flagged). Removed for power-play role jumps: DeAngelo, Hamilton, Heineman, Doughty unders; Suzuki left out (just back from missing games). Pinnacle prices read 3:15-3:20 PM ET and re-checked before publishing (Pittsburgh +1.5 moved -236 to -238, Minnesota +1.5 -216 to -214, Pens-Kings under -299 to -297). Period markets were not fully scanned. bet365's Points tab would not load, so Stutzle has no bet365 price.",
+ "updatedAt": "2026-11-07T20:31:50Z",
  "bets": [
   {
    "rank": 1,
    "date": "2026-11-07",
-   "game": "DET @ COL",
-   "start": "9:00 PM ET",
-   "bet": "Detroit +2.5 (OT incl)",
-   "price": "-241",
-   "decimal": 1.415,
-   "breakeven": 0.707,
-   "est_low": 0.678,
-   "est_high": 0.818,
-   "method": "Poisson goal model with goalie adjustment / Pinnacle no-vig",
+   "game": "UTA @ OTT",
+   "start": "7:00 PM ET",
+   "bet": "Mackenzie Weegar under 0.5 points",
+   "price": "-243",
+   "decimal": 1.412,
+   "breakeven": 0.708,
+   "est_low": 0.662,
+   "est_high": 0.752,
+   "method": "Poisson points model (blended season means, opponent-adjusted) / Pinnacle no-vig",
    "verdict": "Agreed",
-   "agent1": "Top-4 pick (1st); accept small single (est 74.8% vs 70.7% break-even)",
-   "agent2": "Top-4 pick (1st); fun only",
-   "agent3": "Top-4 pick (2nd); fun only",
-   "analysts": "Covers moneyline picks: Avalanche (also in their ML combo)",
-   "objection": "Agreed best, not guaranteed. Loses only if Colorado wins by 3+. Big model-market gap: the market prices a Colorado 3+ goal win at 32%, the model at 18% (Tarasov .929 in net for Detroit). Detroit is without Larkin (suspended) and Gibson (injured). bet365 -280 (Pinnacle better).",
-   "why": "Detroit starts Tarasov (.929 save %) and Colorado allows 3.29 goals a game, so a 3+ goal Avalanche win would take a big night.",
-   "stats_url": "https://www.nhl.com/gamecenter/det-vs-col/2026/11/07/2026020274",
+   "agent1": "Accept small single; top-4 pick (est 70.7% vs 70.8% break-even)",
+   "agent2": "Fun only; top-4 pick (one tenth below break-even; Utah power play is the risk)",
+   "agent3": "Fun only; top-4 pick (1st)",
+   "analysts": "No named analyst pick found on this prop.",
+   "objection": "Agreed best, not guaranteed. Est 70.7% vs 70.8% break-even (just below). He plays 22-25 minutes on the top pair with Sergachev and Utah has the NHL's best power play (38.3%); he is on PP2 (RotoWire, Daily Faceoff), averaging 0.5 PP minutes a game with no recent jump. The model (75%) is 9 points above Pinnacle (66%), close to the gap the Nov 6 review warned about. Wins if he gets 0 points.",
+   "why": "Weegar has 4 points in 17 games (0.24 a game, 0.35 last season) and none in his last 5, and he only sees the second power-play unit.",
+   "stats_url": "https://www.nhl.com/player/8477346",
    "books": {
-    "pinnacle": "-241",
-    "bet365": "-280",
+    "pinnacle": "-243",
+    "bet365": null,
     "best": "pinnacle",
-    "bet365_note": null
+    "bet365_note": "bet365 does not offer this market"
    },
    "track": {
-    "type": "spread",
-    "away": "DET",
-    "home": "COL",
-    "team": "DET",
-    "line": 2.5
+    "type": "player",
+    "away": "UTA",
+    "home": "OTT",
+    "player": "Mackenzie Weegar",
+    "stat": "P",
+    "line": 0.5,
+    "side": "under"
    }
   },
   {
    "rank": 2,
    "date": "2026-11-07",
-   "game": "NYR @ SEA",
-   "start": "5:00 PM ET",
-   "bet": "Seattle +1.5 (OT incl)",
-   "price": "-222",
-   "decimal": 1.45,
-   "breakeven": 0.689,
-   "est_low": 0.668,
-   "est_high": 0.811,
-   "method": "Poisson goal model with goalie adjustment / Pinnacle no-vig",
+   "game": "MTL @ TOR",
+   "start": "7:00 PM ET",
+   "bet": "Toronto +1.5 (OT incl)",
+   "price": "-235",
+   "decimal": 1.426,
+   "breakeven": 0.701,
+   "est_low": 0.68,
+   "est_high": 0.718,
+   "method": "Poisson goal model with empty-net adjustment / Pinnacle no-vig",
    "verdict": "Agreed",
-   "agent1": "Top-4 pick (2nd); accept small single (est 74.0% vs 68.9% break-even)",
-   "agent2": "Top-4 pick (2nd); fun only",
-   "agent3": "Top-4 pick (1st); fun only",
-   "analysts": "Covers moneyline picks: Rangers",
-   "objection": "Agreed best, not guaranteed. Wins if Seattle wins or loses by one. Big model-market gap (model 81%, market 67%), driven by Korpisalo making his season debut for the Rangers (confirmed). Seattle starter unconfirmed (Daccord or Grubauer, both about .886-.889). Moved from -218 to -222 by 3:16 PM. bet365 -230 (Pinnacle better).",
-   "why": "Seattle (9-5-1) only loses this by 2+ goals, and New York starts Korpisalo in his first game of the season after a training-camp injury.",
-   "stats_url": "https://www.nhl.com/gamecenter/nyr-vs-sea/2026/11/07/2026020267",
+   "agent1": "Accept small single; top-4 pick",
+   "agent2": "Fun only; top-4 pick (1st)",
+   "agent3": "Fun only; top-4 pick (2nd)",
+   "analysts": "Covers game preview: Leafs moneyline.",
+   "objection": "Agreed best, not guaranteed. Est 69.9% vs 70.1% break-even (just below). Montreal is the favourite with the hotter goalie (Fowler .925, confirmed) vs Bobrovsky (.889, confirmed). Loses only if Montreal wins by 2+, and a late empty-net goal can turn a 1-goal game into 2. bet365 -240 is slightly worse.",
+   "why": "Montreal has won by 2+ in only 3 of 16 games and Toronto has lost by 2+ in only 2 of 17, so Toronto covers on a win or a one-goal loss.",
+   "stats_url": "https://www.nhl.com/gamecenter/mtl-vs-tor/2026/11/07/2026020268",
    "books": {
-    "pinnacle": "-222",
-    "bet365": "-230",
+    "pinnacle": "-235",
+    "bet365": "-240",
     "best": "pinnacle",
     "bet365_note": null
    },
    "track": {
     "type": "spread",
-    "away": "NYR",
-    "home": "SEA",
-    "team": "SEA",
+    "away": "MTL",
+    "home": "TOR",
+    "team": "TOR",
     "line": 1.5
    }
   },
@@ -82,16 +84,16 @@
    "price": "-289",
    "decimal": 1.346,
    "breakeven": 0.743,
-   "est_low": 0.715,
-   "est_high": 0.758,
-   "method": "Poisson goal model with goalie adjustment / Pinnacle no-vig",
+   "est_low": 0.696,
+   "est_high": 0.715,
+   "method": "Poisson goal model / Pinnacle no-vig",
    "verdict": "Pass",
-   "agent1": "Top-4 pick; fun only (est 73.7% vs 74.3% break-even)",
-   "agent2": "Pass (below break-even)",
-   "agent3": "Pass (no edge)",
-   "analysts": "Covers moneyline picks: Hurricanes",
-   "objection": "Est 73.7% is just below the 74.3% break-even. Carolina (69 goals in 18) can run up a score on its own. bet365 -300 (Pinnacle better).",
-   "why": "Chicago scores just 2.18 goals a game and Kochetkov (.922) is in Carolina's net, so 8+ goals would be unusual.",
+   "agent1": "Accept small single; top-4 pick",
+   "agent2": "Pass (3.7 points below break-even; Chicago's defence makes a blowout possible)",
+   "agent3": "Pass (Chicago allows 3.94 a game and loses big often)",
+   "analysts": "No named analyst pick found on this total.",
+   "objection": "Est 70.6% vs 74.3% break-even (below). Carolina can carry it alone: Chicago allows 3.94 a game and has lost by 3+ in 9 of 17. Kochetkov likely but not confirmed; Knight expected for Chicago. bet365 -300 is slightly worse.",
+   "why": "Chicago scores a league-low 2.18 a game and Carolina allows 2.33 with Kochetkov (.922, 1.64 GAA); only 3 of 17 Chicago games had 8+ goals.",
    "stats_url": "https://www.nhl.com/gamecenter/chi-vs-car/2026/11/07/2026020271",
    "books": {
     "pinnacle": "-289",
@@ -110,35 +112,37 @@
   {
    "rank": 4,
    "date": "2026-11-07",
-   "game": "DET @ COL",
-   "start": "9:00 PM ET",
-   "bet": "Under 7.5 goals (OT incl)",
-   "price": "-273",
-   "decimal": 1.366,
-   "breakeven": 0.732,
-   "est_low": 0.705,
-   "est_high": 0.736,
-   "method": "Poisson goal model with goalie adjustment / Pinnacle no-vig",
-   "verdict": "Pass",
-   "agent1": "Top-4 pick; fun only (est 72.1% vs 73.2% break-even)",
-   "agent2": "Pass (below break-even; correlated with Detroit +2.5)",
-   "agent3": "Pass (Colorado offence)",
-   "analysts": "Covers moneyline picks: Avalanche",
-   "objection": "Est 72.1% is below the 73.2% break-even and it rides with Detroit +2.5 (both want a low-scoring Colorado night). bet365 -290 (Pinnacle better).",
-   "why": "Tarasov (.929) is in Detroit's net and Detroit scores only 2.88 goals a game.",
-   "stats_url": "https://www.nhl.com/gamecenter/det-vs-col/2026/11/07/2026020274",
+   "game": "UTA @ OTT",
+   "start": "7:00 PM ET",
+   "bet": "Tim Stutzle over 0.5 points",
+   "price": "-240",
+   "decimal": 1.417,
+   "breakeven": 0.706,
+   "est_low": 0.66,
+   "est_high": 0.715,
+   "method": "Poisson points model (blended season means, opponent-adjusted) / Pinnacle no-vig",
+   "verdict": "Fun only",
+   "agent1": "Fun only (est 68.8% vs 70.6% break-even)",
+   "agent2": "Fun only (Ottawa's league-worst power play)",
+   "agent3": "Fun only; top-4 pick (3rd)",
+   "analysts": "No named analyst pick found on this prop.",
+   "objection": "Est 68.8% vs 70.6% break-even (below). Ottawa's power play is the NHL's worst (12.1%), and he was held pointless in 2 of his last 5. Same game as Weegar under and Ottawa +1.5 (a Stutzle point helps Ottawa +1.5 and can hurt nothing else here).",
+   "why": "Stutzle centres Ottawa's top line and PP1 with 22 points in 17 games (1.29 a game), and Utah allows 3.47 a game with Vejmelka (.872) in net.",
+   "stats_url": "https://www.nhl.com/player/8482116",
    "books": {
-    "pinnacle": "-273",
-    "bet365": "-290",
+    "pinnacle": "-240",
+    "bet365": null,
     "best": "pinnacle",
-    "bet365_note": null
+    "bet365_note": "checked: bet365 Points tab would not load (\"Unable to display this content\")"
    },
    "track": {
-    "type": "total",
-    "away": "DET",
-    "home": "COL",
-    "line": 7.5,
-    "side": "under"
+    "type": "player",
+    "away": "UTA",
+    "home": "OTT",
+    "player": "Tim Stützle",
+    "stat": "P",
+    "line": 0.5,
+    "side": "over"
    }
   },
   {
@@ -151,15 +155,15 @@
    "decimal": 1.422,
    "breakeven": 0.703,
    "est_low": 0.681,
-   "est_high": 0.727,
-   "method": "Poisson goal model with goalie adjustment / Pinnacle no-vig",
+   "est_high": 0.693,
+   "method": "Poisson goal model with empty-net adjustment / Pinnacle no-vig",
    "verdict": "Fun only",
-   "agent1": "Fun only (est 70.4% vs 70.3% break-even)",
-   "agent2": "Top-4 pick (4th); fun only",
-   "agent3": "Top-4 pick (4th); pass on price (0.1-point edge)",
-   "analysts": "Covers moneyline picks: Mammoth (also in their ML combo)",
-   "objection": "Est 70.4% vs 70.3% break-even, essentially at it. Utah's Vejmelka (.872) vs Ottawa's Ersson (.880); Ottawa without Ullmark and Greig. bet365 -245 (Pinnacle better).",
-   "why": "Ottawa and Utah have identical 10-6-1 records and Ottawa is at home, so it only loses this by losing by 2+.",
+   "agent1": "Accept small single; top-4 pick",
+   "agent2": "Accept small single after follow-up (top-4, 2nd)",
+   "agent3": "Fun only after follow-up (was Pass)",
+   "analysts": "No named analyst pick found on this game.",
+   "objection": "Est 68.7% vs 70.3% break-even (below). Ottawa has lost by 2+ in 6 of 17. Ersson (confirmed) is .880 on the season. Correlated with the other two Ottawa-Utah picks. bet365 -245 is worse.",
+   "why": "Utah has won by 2+ in only 5 of 17, and Ersson has stopped 46 of 48 in his last two starts (Oct 31, Nov 4) against Vejmelka (.872).",
    "stats_url": "https://www.nhl.com/gamecenter/uta-vs-ott/2026/11/07/2026020269",
    "books": {
     "pinnacle": "-237",
@@ -180,37 +184,105 @@
    "date": "2026-11-07",
    "game": "PIT @ LAK",
    "start": "9:00 PM ET",
-   "bet": "Pittsburgh +1.5 (OT incl)",
-   "price": "-236",
-   "decimal": 1.424,
-   "breakeven": 0.702,
-   "est_low": 0.681,
-   "est_high": 0.718,
-   "method": "Poisson goal model with goalie adjustment / Pinnacle no-vig",
+   "bet": "Under 7.5 goals (OT incl)",
+   "price": "-297",
+   "decimal": 1.337,
+   "breakeven": 0.748,
+   "est_low": 0.646,
+   "est_high": 0.72,
+   "method": "Poisson goal model / Pinnacle no-vig",
    "verdict": "Pass",
-   "agent1": "Fun only (est 70.0% vs 70.2% break-even)",
-   "agent2": "Pass (Kuemper edge)",
-   "agent3": "Pass (goalie uncertainty)",
-   "analysts": "Covers moneyline picks: Kings",
-   "objection": "Est 70.0% is just below the 70.2% break-even. Murashov (.871) vs Kuemper (.885). Malkin moves up to Crosby's line. bet365 -240 (Pinnacle better).",
-   "why": "Los Angeles scores just 3.07 goals a game and has won only 5 of 14, and Pittsburgh only loses this by 2+.",
+   "agent1": "Fun only (model only 64.6%)",
+   "agent2": "Pass (6.5 points below break-even)",
+   "agent3": "Pass (high recent totals)",
+   "analysts": "Covers game preview: Kings moneyline (not a total pick).",
+   "objection": "Est 68.3% vs 74.8% break-even (well below). Big mismatch: Pinnacle no-vig 72% but our model only 65%, and 8+ goals happened in 5 of 14 Kings games and 7 of 16 Penguins games. Murashov (.871) and Kuemper (.885) are both struggling. bet365 -300 is slightly worse.",
+   "why": "Both teams sit near league average in scoring (3.13 and 3.07 a game), so it usually takes a breakdown in goal to reach 8.",
    "stats_url": "https://www.nhl.com/gamecenter/pit-vs-lak/2026/11/07/2026020275",
    "books": {
-    "pinnacle": "-236",
-    "bet365": "-240",
+    "pinnacle": "-297",
+    "bet365": "-300",
+    "best": "pinnacle",
+    "bet365_note": null
+   },
+   "track": {
+    "type": "total",
+    "away": "PIT",
+    "home": "LAK",
+    "line": 7.5,
+    "side": "under"
+   }
+  },
+  {
+   "rank": 7,
+   "date": "2026-11-07",
+   "game": "DET @ COL",
+   "start": "9:00 PM ET",
+   "bet": "Under 7.5 goals (OT incl)",
+   "price": "-273",
+   "decimal": 1.366,
+   "breakeven": 0.732,
+   "est_low": 0.662,
+   "est_high": 0.705,
+   "method": "Poisson goal model / Pinnacle no-vig",
+   "verdict": "Pass",
+   "agent1": "Fun only (Detroit goalie unclear)",
+   "agent2": "Pass (unclear Detroit goalie, Colorado 4.00 a game)",
+   "agent3": "Pass (Colorado scoring, unresolved Detroit starter)",
+   "analysts": "No named analyst pick found on this total.",
+   "objection": "Est 68.3% vs 73.2% break-even (below). Detroit's goalie is unclear: Daily Faceoff lists Tarasov (.929, unconfirmed), RotoWire lists Gibson (.860, day-to-day). Colorado scores 4.00 a game and 6 of its 17 games reached 8+. bet365 -290 is slightly worse.",
+   "why": "Detroit scores only 2.76 a game without Larkin (injured) and Blackwood (confirmed) is in Colorado's net, so Colorado would need to carry most of 8 goals.",
+   "stats_url": "https://www.nhl.com/gamecenter/det-vs-col/2026/11/07/2026020274",
+   "books": {
+    "pinnacle": "-273",
+    "bet365": "-290",
+    "best": "pinnacle",
+    "bet365_note": null
+   },
+   "track": {
+    "type": "total",
+    "away": "DET",
+    "home": "COL",
+    "line": 7.5,
+    "side": "under"
+   }
+  },
+  {
+   "rank": 8,
+   "date": "2026-11-07",
+   "game": "TBL @ MIN",
+   "start": "8:00 PM ET",
+   "bet": "Minnesota +1.5 (OT incl)",
+   "price": "-214",
+   "decimal": 1.467,
+   "breakeven": 0.682,
+   "est_low": 0.661,
+   "est_high": 0.704,
+   "method": "Poisson goal model with empty-net adjustment / Pinnacle no-vig",
+   "verdict": "Fun only",
+   "agent1": "Fun only",
+   "agent2": "Fun only; top-4 pick (3rd)",
+   "agent3": "Fun only; top-4 pick (4th)",
+   "analysts": "No named analyst pick found on this game.",
+   "objection": "Minnesota is on the 2nd night of a back-to-back (beat San Jose 4-1 at home last night) and starts backup Pickard (.833 in 2 games, confirmed); Faber is out. Tampa Bay has won by 2+ in 8 of 15. Est 68.2% vs 68.2% break-even (level). bet365 -220 is worse.",
+   "why": "Minnesota has lost by 2+ only once in 18 games and allows a league-best 2.17 a game, and Tampa starts its backup too (Hildeby).",
+   "stats_url": "https://www.nhl.com/gamecenter/tbl-vs-min/2026/11/07/2026020273",
+   "books": {
+    "pinnacle": "-214",
+    "bet365": "-220",
     "best": "pinnacle",
     "bet365_note": null
    },
    "track": {
     "type": "spread",
-    "away": "PIT",
-    "home": "LAK",
-    "team": "PIT",
+    "away": "TBL",
+    "home": "MIN",
+    "team": "MIN",
     "line": 1.5
    }
   },
   {
-   "rank": 7,
+   "rank": 9,
    "date": "2026-11-07",
    "game": "TBL @ MIN",
    "start": "8:00 PM ET",
@@ -218,16 +290,16 @@
    "price": "-265",
    "decimal": 1.377,
    "breakeven": 0.726,
-   "est_low": 0.68,
+   "est_low": 0.662,
    "est_high": 0.699,
-   "method": "Poisson goal model with goalie adjustment / Pinnacle no-vig",
+   "method": "Poisson goal model / Pinnacle no-vig",
    "verdict": "Pass",
-   "agent1": "Fun only (est 69.0% vs 72.6% break-even)",
-   "agent2": "Pass (two backup goalies)",
-   "agent3": "Pass (Hildeby and Pickard)",
-   "analysts": "Covers moneyline picks: Lightning",
-   "objection": "Est 69.0% is below the 72.6% break-even. Both teams start backups: Hildeby (.885) and Pickard (.833 in 2 games), and Minnesota is on the 2nd night of a back-to-back. bet365 -260 is slightly better.",
-   "why": "Minnesota allows just 2.17 goals a game, the fewest on the slate, which keeps a lid on the total.",
+   "agent1": "Fun only",
+   "agent2": "Pass (two backups add risk)",
+   "agent3": "Pass (two backup goalies)",
+   "analysts": "No named analyst pick found on this total.",
+   "objection": "Est 68.1% vs 72.6% break-even (below). Both teams start backups (Hildeby, Pickard .833) and Minnesota is on the 2nd night of a back-to-back. Tampa Bay scores 3.73 a game. Same game as Minnesota +1.5. bet365 -260 is better.",
+   "why": "Minnesota allows a league-low 2.17 a game and only 1 of its 18 games has reached 8 goals.",
    "stats_url": "https://www.nhl.com/gamecenter/tbl-vs-min/2026/11/07/2026020273",
    "books": {
     "pinnacle": "-265",
@@ -244,104 +316,36 @@
    }
   },
   {
-   "rank": 8,
-   "date": "2026-11-07",
-   "game": "TBL @ MIN",
-   "start": "8:00 PM ET",
-   "bet": "Minnesota +1.5 (OT incl)",
-   "price": "-216",
-   "decimal": 1.463,
-   "breakeven": 0.684,
-   "est_low": 0.663,
-   "est_high": 0.714,
-   "method": "Poisson goal model with goalie adjustment / Pinnacle no-vig",
-   "verdict": "Fun only",
-   "agent1": "Fun only (est 68.9% vs 68.4% break-even)",
-   "agent2": "Fun only",
-   "agent3": "Pass (back-to-back and Pickard)",
-   "analysts": "Covers moneyline picks: Lightning",
-   "objection": "Est 68.9% vs 68.4% break-even. Minnesota is on the 2nd night of a back-to-back (won 4-1 vs San Jose last night) and starts backup Pickard (.833); Tampa also starts backup Hildeby. bet365 -220 (Pinnacle better).",
-   "why": "Minnesota (12-3-3) has the best record on the slate and only loses this by 2+, even on the second night of a back-to-back.",
-   "stats_url": "https://www.nhl.com/gamecenter/tbl-vs-min/2026/11/07/2026020273",
-   "books": {
-    "pinnacle": "-216",
-    "bet365": "-220",
-    "best": "pinnacle",
-    "bet365_note": null
-   },
-   "track": {
-    "type": "spread",
-    "away": "TBL",
-    "home": "MIN",
-    "team": "MIN",
-    "line": 1.5
-   }
-  },
-  {
-   "rank": 9,
-   "date": "2026-11-07",
-   "game": "NJD @ NYI",
-   "start": "7:00 PM ET",
-   "bet": "NY Islanders +1.5 (OT incl)",
-   "price": "-200",
-   "decimal": 1.5,
-   "breakeven": 0.667,
-   "est_low": 0.647,
-   "est_high": 0.729,
-   "method": "Poisson goal model with goalie adjustment / Pinnacle no-vig",
-   "verdict": "Fun only",
-   "agent1": "Fun only (est 68.8% vs 66.7% break-even)",
-   "agent2": "Top-4 pick (3rd); fun only",
-   "agent3": "Top-4 pick (3rd); fun only",
-   "analysts": "Covers moneyline picks: Devils (also in their ML combo)",
-   "objection": "Est 68.8% vs 66.7% break-even; model (72.9%) above market (64.7%). Islanders without Barzal, Pulock and Romanov. bet365 -210 (Pinnacle better).",
-   "why": "New Jersey starts backup Jake Allen (.887) against Sorokin (.911), and the Islanders only lose this by 2+.",
-   "stats_url": "https://www.nhl.com/gamecenter/njd-vs-nyi/2026/11/07/2026020270",
-   "books": {
-    "pinnacle": "-200",
-    "bet365": "-210",
-    "best": "pinnacle",
-    "bet365_note": null
-   },
-   "track": {
-    "type": "spread",
-    "away": "NJD",
-    "home": "NYI",
-    "team": "NYI",
-    "line": 1.5
-   }
-  },
-  {
    "rank": 10,
    "date": "2026-11-07",
-   "game": "MTL @ TOR",
-   "start": "7:00 PM ET",
-   "bet": "Toronto +1.5 (OT incl)",
-   "price": "-235",
-   "decimal": 1.426,
-   "breakeven": 0.701,
-   "est_low": 0.68,
-   "est_high": 0.696,
-   "method": "Poisson goal model with goalie adjustment / Pinnacle no-vig",
+   "game": "PIT @ LAK",
+   "start": "9:00 PM ET",
+   "bet": "Pittsburgh +1.5 (OT incl)",
+   "price": "-238",
+   "decimal": 1.42,
+   "breakeven": 0.704,
+   "est_low": 0.666,
+   "est_high": 0.682,
+   "method": "Poisson goal model with empty-net adjustment / Pinnacle no-vig",
    "verdict": "Pass",
-   "agent1": "Fun only (est 68.8% vs 70.1% break-even)",
-   "agent2": "Pass (Fowler)",
-   "agent3": "Pass (below break-even)",
-   "analysts": "Covers moneyline picks: Leafs",
-   "objection": "Est 68.8% is below the 70.1% break-even. Montreal starts Fowler (.925); Toronto gets Tavares back. bet365 -240 (Pinnacle better).",
-   "why": "Toronto gets Tavares back and is at home, so it only loses this by losing by 2+.",
-   "stats_url": "https://www.nhl.com/gamecenter/mtl-vs-tor/2026/11/07/2026020268",
+   "agent1": "Fun only",
+   "agent2": "Pass (Kuemper gives LA the goalie edge)",
+   "agent3": "Pass (Murashov .871, five multi-goal losses)",
+   "analysts": "Covers game preview: Kings moneyline.",
+   "objection": "Est 67.4% vs 70.4% break-even (below). Pittsburgh has lost by 2+ in 5 of 16 and Murashov (.871, confirmed) has struggled; Covers backs the Kings. Same game as the Pens-Kings under. bet365 -235 is slightly better.",
+   "why": "The Kings have won by 2+ in only 3 of 14 and are close to a coin flip with Pittsburgh (Pinnacle -119), so Pittsburgh covers on any win or one-goal loss.",
+   "stats_url": "https://www.nhl.com/gamecenter/pit-vs-lak/2026/11/07/2026020275",
    "books": {
-    "pinnacle": "-235",
-    "bet365": "-240",
-    "best": "pinnacle",
+    "pinnacle": "-238",
+    "bet365": "-235",
+    "best": "bet365",
     "bet365_note": null
    },
    "track": {
     "type": "spread",
-    "away": "MTL",
-    "home": "TOR",
-    "team": "TOR",
+    "away": "PIT",
+    "home": "LAK",
+    "team": "PIT",
     "line": 1.5
    }
   }
@@ -351,61 +355,11 @@
    "rank": 1,
    "legs": [
     {
-     "game": "SJS @ DAL",
-     "start": "8:00 PM ET",
-     "bet": "Dallas +1.5 (OT incl)",
-     "price": "-886",
-     "est": 0.876,
-     "bet365": "-850",
-     "track": {
-      "type": "spread",
-      "away": "SJS",
-      "home": "DAL",
-      "team": "DAL",
-      "line": 1.5
-     }
-    },
-    {
-     "game": "NYR @ SEA",
-     "start": "5:00 PM ET",
-     "bet": "Seattle +2.5 (OT incl)",
-     "price": "-422",
-     "est": 0.835,
-     "bet365": "-500",
-     "track": {
-      "type": "spread",
-      "away": "NYR",
-      "home": "SEA",
-      "team": "SEA",
-      "line": 2.5
-     }
-    }
-   ],
-   "bet": "Dallas +1.5 (OT incl) + Seattle +2.5 (OT incl)",
-   "short": "DAL +1.5, SEA +2.5",
-   "game": "SJS @ DAL / NYR @ SEA",
-   "price": "-266",
-   "decimal": 1.377,
-   "breakeven": 0.726,
-   "chance": 0.731,
-   "books": {
-    "pinnacle": "-266",
-    "bet365": "-293",
-    "best": "pinnacle",
-    "bet365_note": null
-   },
-   "note": "2-leg parlay, every leg from a different game. Chance = product of leg estimates. Agents 2 and 3 both keep it (fun only).",
-   "why": "Dallas hosts a tired San Jose (2nd night of a back-to-back) and Seattle faces Korpisalo in his season debut; Dallas only loses this by 2+, Seattle by 3+."
-  },
-  {
-   "rank": 2,
-   "legs": [
-    {
      "game": "NJD @ NYI",
      "start": "7:00 PM ET",
      "bet": "New Jersey +2.5 (OT incl)",
      "price": "-728",
-     "est": 0.858,
+     "est": 0.85,
      "bet365": "-900",
      "track": {
       "type": "spread",
@@ -416,146 +370,96 @@
      }
     },
     {
+     "game": "SJS @ DAL",
+     "start": "8:00 PM ET",
+     "bet": "Under 8.5 goals (OT incl)",
+     "price": "-513",
+     "est": 0.835,
+     "bet365": "-500",
+     "track": {
+      "type": "total",
+      "away": "SJS",
+      "home": "DAL",
+      "line": 8.5,
+      "side": "under"
+     }
+    }
+   ],
+   "bet": "New Jersey +2.5 (OT incl) + Under 8.5 goals (OT incl)",
+   "short": "NJD +2.5, SJS-DAL U8.5",
+   "game": "NJD @ NYI / SJS @ DAL",
+   "price": "-278",
+   "decimal": 1.359,
+   "breakeven": 0.736,
+   "chance": 0.71,
+   "books": {
+    "pinnacle": "-278",
+    "bet365": "-300",
+    "best": "pinnacle",
+    "bet365_note": null
+   },
+   "note": "2-leg parlay, every leg from a different game. Chance = product of leg estimates (71.0% vs 73.6% break-even). Agent 2 keeps it; Agent 3 keeps it as fun only.",
+   "why": "New Jersey only loses this by losing by 3+, which the Islanders (2.80 goals a game, no Barzal) rarely manage; Dallas allows 2.25 a game with Oettinger (.909) and tired San Jose scores 2.44, so 9+ goals would be rare."
+  },
+  {
+   "rank": 2,
+   "legs": [
+    {
+     "game": "SJS @ DAL",
+     "start": "8:00 PM ET",
+     "bet": "Dallas +1.5 (OT incl)",
+     "price": "-886",
+     "est": 0.859,
+     "bet365": "-850",
+     "track": {
+      "type": "spread",
+      "away": "SJS",
+      "home": "DAL",
+      "team": "DAL",
+      "line": 1.5
+     }
+    },
+    {
      "game": "MTL @ TOR",
      "start": "7:00 PM ET",
-     "bet": "Montreal +2.5 (OT incl)",
-     "price": "-534",
-     "est": 0.843,
-     "bet365": "-650",
+     "bet": "Toronto +2.5 (OT incl)",
+     "price": "-437",
+     "est": 0.813,
+     "bet365": "-550",
      "track": {
       "type": "spread",
       "away": "MTL",
       "home": "TOR",
-      "team": "MTL",
+      "team": "TOR",
       "line": 2.5
      }
     }
    ],
-   "bet": "New Jersey +2.5 (OT incl) + Montreal +2.5 (OT incl)",
-   "short": "NJD +2.5, MTL +2.5",
-   "game": "NJD @ NYI / MTL @ TOR",
-   "price": "-285",
-   "decimal": 1.35,
-   "breakeven": 0.741,
-   "chance": 0.723,
+   "bet": "Dallas +1.5 (OT incl) + Toronto +2.5 (OT incl)",
+   "short": "DAL +1.5, TOR +2.5",
+   "game": "SJS @ DAL / MTL @ TOR",
+   "price": "-272",
+   "decimal": 1.368,
+   "breakeven": 0.731,
+   "chance": 0.698,
    "books": {
-    "pinnacle": "-285",
-    "bet365": "-355",
+    "pinnacle": "-272",
+    "bet365": "-312",
     "best": "pinnacle",
     "bet365_note": null
    },
-   "note": "2-leg parlay, every leg from a different game. Chance = product of leg estimates. Agent 2 keeps it; Agent 3 would drop it (below break-even).",
-   "why": "New Jersey (11-5-0) and Montreal (10-3-3) are both winning teams; each only loses this by losing by 3+."
+   "note": "2-leg parlay, every leg from a different game. Chance = product of leg estimates (69.8% vs 73.1% break-even). Agent 2 keeps it; Agent 3 keeps it as fun only.",
+   "why": "Dallas hosts a tired San Jose (2nd night of a back-to-back) and only misses if it loses by 2+; Montreal has won by 3+ only twice in 16 games."
   },
   {
    "rank": 3,
-   "legs": [
-    {
-     "game": "TBL @ MIN",
-     "start": "8:00 PM ET",
-     "bet": "Tampa Bay +2.5 (OT incl)",
-     "price": "-642",
-     "est": 0.85,
-     "bet365": "-750",
-     "track": {
-      "type": "spread",
-      "away": "TBL",
-      "home": "MIN",
-      "team": "TBL",
-      "line": 2.5
-     }
-    },
-    {
-     "game": "MTL @ TOR",
-     "start": "7:00 PM ET",
-     "bet": "Montreal +2.5 (OT incl)",
-     "price": "-534",
-     "est": 0.843,
-     "bet365": "-650",
-     "track": {
-      "type": "spread",
-      "away": "MTL",
-      "home": "TOR",
-      "team": "MTL",
-      "line": 2.5
-     }
-    }
-   ],
-   "bet": "Tampa Bay +2.5 (OT incl) + Montreal +2.5 (OT incl)",
-   "short": "TBL +2.5, MTL +2.5",
-   "game": "TBL @ MIN / MTL @ TOR",
-   "price": "-269",
-   "decimal": 1.372,
-   "breakeven": 0.729,
-   "chance": 0.717,
-   "books": {
-    "pinnacle": "-269",
-    "bet365": "-325",
-    "best": "pinnacle",
-    "bet365_note": null
-   },
-   "note": "2-leg parlay, every leg from a different game. Chance = product of leg estimates. Agent 2 keeps it; Agent 3 would drop it.",
-   "why": "Tampa Bay (10-3-2) and Montreal (10-3-3) are among the best teams tonight; each only loses this by losing by 3+."
-  },
-  {
-   "rank": 4,
-   "legs": [
-    {
-     "game": "TBL @ MIN",
-     "start": "8:00 PM ET",
-     "bet": "Tampa Bay +2.5 (OT incl)",
-     "price": "-642",
-     "est": 0.85,
-     "bet365": "-750",
-     "track": {
-      "type": "spread",
-      "away": "TBL",
-      "home": "MIN",
-      "team": "TBL",
-      "line": 2.5
-     }
-    },
-    {
-     "game": "PIT @ LAK",
-     "start": "9:00 PM ET",
-     "bet": "Los Angeles +2.5 (OT incl)",
-     "price": "-589",
-     "est": 0.841,
-     "bet365": "-700",
-     "track": {
-      "type": "spread",
-      "away": "PIT",
-      "home": "LAK",
-      "team": "LAK",
-      "line": 2.5
-     }
-    }
-   ],
-   "bet": "Tampa Bay +2.5 (OT incl) + Los Angeles +2.5 (OT incl)",
-   "short": "TBL +2.5, LAK +2.5",
-   "game": "TBL @ MIN / PIT @ LAK",
-   "price": "-284",
-   "decimal": 1.352,
-   "breakeven": 0.74,
-   "chance": 0.715,
-   "books": {
-    "pinnacle": "-284",
-    "bet365": "-339",
-    "best": "pinnacle",
-    "bet365_note": null
-   },
-   "note": "2-leg parlay, every leg from a different game. Chance = product of leg estimates. Agent 2 keeps it; Agent 3 would drop it.",
-   "why": "Tampa faces Minnesota's backup Pickard and the Kings are at home against a 5-9-2 Pittsburgh; each only loses this by 3+."
-  },
-  {
-   "rank": 5,
    "legs": [
     {
      "game": "NJD @ NYI",
      "start": "7:00 PM ET",
      "bet": "New Jersey +2.5 (OT incl)",
      "price": "-728",
-     "est": 0.858,
+     "est": 0.85,
      "bet365": "-900",
      "track": {
       "type": "spread",
@@ -570,7 +474,7 @@
      "start": "7:00 PM ET",
      "bet": "Utah +2.5 (OT incl)",
      "price": "-565",
-     "est": 0.833,
+     "est": 0.821,
      "bet365": "-650",
      "track": {
       "type": "spread",
@@ -587,40 +491,40 @@
    "price": "-295",
    "decimal": 1.339,
    "breakeven": 0.747,
-   "chance": 0.715,
+   "chance": 0.698,
    "books": {
     "pinnacle": "-295",
     "bet365": "-355",
     "best": "pinnacle",
     "bet365_note": null
    },
-   "note": "2-leg parlay, every leg from a different game. Chance = product of leg estimates. Agent 2 keeps it; Agent 3 would drop it.",
-   "why": "New Jersey and Utah are both winning teams in close-matchup games; each only loses this by 3+."
+   "note": "2-leg parlay, every leg from a different game. Chance = product of leg estimates (69.8% vs 74.7% break-even). Agent 2 keeps it; Agent 3 would drop it (below break-even).",
+   "why": "New Jersey only loses this by losing by 3+, which the Islanders (2.80 goals a game, no Barzal) rarely manage; Utah has lost by 3+ only 3 times in 17."
   },
   {
-   "rank": 6,
+   "rank": 4,
    "legs": [
     {
-     "game": "NYR @ SEA",
-     "start": "5:00 PM ET",
-     "bet": "Seattle +2.5 (OT incl)",
-     "price": "-422",
+     "game": "SJS @ DAL",
+     "start": "8:00 PM ET",
+     "bet": "Under 8.5 goals (OT incl)",
+     "price": "-513",
      "est": 0.835,
      "bet365": "-500",
      "track": {
-      "type": "spread",
-      "away": "NYR",
-      "home": "SEA",
-      "team": "SEA",
-      "line": 2.5
+      "type": "total",
+      "away": "SJS",
+      "home": "DAL",
+      "line": 8.5,
+      "side": "under"
      }
     },
     {
      "game": "PIT @ LAK",
      "start": "9:00 PM ET",
      "bet": "Los Angeles +2.5 (OT incl)",
-     "price": "-589",
-     "est": 0.841,
+     "price": "-586",
+     "est": 0.834,
      "bet365": "-700",
      "track": {
       "type": "spread",
@@ -631,31 +535,31 @@
      }
     }
    ],
-   "bet": "Seattle +2.5 (OT incl) + Los Angeles +2.5 (OT incl)",
-   "short": "SEA +2.5, LAK +2.5",
-   "game": "NYR @ SEA / PIT @ LAK",
-   "price": "-224",
-   "decimal": 1.447,
-   "breakeven": 0.691,
-   "chance": 0.702,
+   "bet": "Under 8.5 goals (OT incl) + Los Angeles +2.5 (OT incl)",
+   "short": "SJS-DAL U8.5, LAK +2.5",
+   "game": "SJS @ DAL / PIT @ LAK",
+   "price": "-251",
+   "decimal": 1.399,
+   "breakeven": 0.715,
+   "chance": 0.696,
    "books": {
-    "pinnacle": "-224",
+    "pinnacle": "-251",
     "bet365": "-269",
     "best": "pinnacle",
     "bet365_note": null
    },
-   "note": "2-leg parlay, every leg from a different game. Chance = product of leg estimates. Agent 3 keeps it (fun only); Agent 2 would drop it.",
-   "why": "Seattle faces Korpisalo in his season debut and the Kings host a 5-9-2 Pittsburgh; each only loses this by 3+."
+   "note": "2-leg parlay, every leg from a different game. Chance = product of leg estimates (69.6% vs 71.5% break-even). Agent 2 keeps it; Agent 3 keeps it as fun only.",
+   "why": "Dallas allows 2.25 a game with Oettinger (.909) and tired San Jose scores 2.44, so 9+ goals would be rare; the Kings have lost by 3+ in 3 of 14 and are the favourite at home."
   },
   {
-   "rank": 7,
+   "rank": 5,
    "legs": [
     {
      "game": "SJS @ DAL",
      "start": "8:00 PM ET",
      "bet": "Dallas +1.5 (OT incl)",
      "price": "-886",
-     "est": 0.876,
+     "est": 0.859,
      "bet365": "-850",
      "track": {
       "type": "spread",
@@ -668,9 +572,109 @@
     {
      "game": "UTA @ OTT",
      "start": "7:00 PM ET",
+     "bet": "Ottawa +2.5 (OT incl)",
+     "price": "-438",
+     "est": 0.805,
+     "bet365": "-550",
+     "track": {
+      "type": "spread",
+      "away": "UTA",
+      "home": "OTT",
+      "team": "OTT",
+      "line": 2.5
+     }
+    }
+   ],
+   "bet": "Dallas +1.5 (OT incl) + Ottawa +2.5 (OT incl)",
+   "short": "DAL +1.5, OTT +2.5",
+   "game": "SJS @ DAL / UTA @ OTT",
+   "price": "-273",
+   "decimal": 1.367,
+   "breakeven": 0.732,
+   "chance": 0.691,
+   "books": {
+    "pinnacle": "-273",
+    "bet365": "-312",
+    "best": "pinnacle",
+    "bet365_note": null
+   },
+   "note": "2-leg parlay, every leg from a different game. Chance = product of leg estimates (69.1% vs 73.2% break-even). Agent 2 keeps it; Agent 3 would drop it (below break-even).",
+   "why": "Dallas hosts a tired San Jose (2nd night of a back-to-back) and only misses if it loses by 2+; Utah has won by 3+ only 3 times in 17."
+  },
+  {
+   "rank": 6,
+   "legs": [
+    {
+     "game": "PIT @ LAK",
+     "start": "9:00 PM ET",
+     "bet": "Los Angeles +2.5 (OT incl)",
+     "price": "-586",
+     "est": 0.834,
+     "bet365": "-700",
+     "track": {
+      "type": "spread",
+      "away": "PIT",
+      "home": "LAK",
+      "team": "LAK",
+      "line": 2.5
+     }
+    },
+    {
+     "game": "TBL @ MIN",
+     "start": "8:00 PM ET",
+     "bet": "Tampa Bay +2.5 (OT incl)",
+     "price": "-648",
+     "est": 0.828,
+     "bet365": "-750",
+     "track": {
+      "type": "spread",
+      "away": "TBL",
+      "home": "MIN",
+      "team": "TBL",
+      "line": 2.5
+     }
+    }
+   ],
+   "bet": "Los Angeles +2.5 (OT incl) + Tampa Bay +2.5 (OT incl)",
+   "short": "LAK +2.5, TBL +2.5",
+   "game": "PIT @ LAK / TBL @ MIN",
+   "price": "-285",
+   "decimal": 1.351,
+   "breakeven": 0.74,
+   "chance": 0.69,
+   "books": {
+    "pinnacle": "-285",
+    "bet365": "-339",
+    "best": "pinnacle",
+    "bet365_note": null
+   },
+   "note": "2-leg parlay, every leg from a different game. Chance = product of leg estimates (69.0% vs 74.0% break-even). Agent 2 keeps it; Agent 3 would drop it (below break-even).",
+   "why": "The Kings have lost by 3+ in 3 of 14 and are the favourite at home; Tampa Bay faces a tired Minnesota team with backup Pickard in net."
+  },
+  {
+   "rank": 7,
+   "legs": [
+    {
+     "game": "TBL @ MIN",
+     "start": "8:00 PM ET",
+     "bet": "Tampa Bay +2.5 (OT incl)",
+     "price": "-648",
+     "est": 0.828,
+     "bet365": "-750",
+     "track": {
+      "type": "spread",
+      "away": "TBL",
+      "home": "MIN",
+      "team": "TBL",
+      "line": 2.5
+     }
+    },
+    {
+     "game": "UTA @ OTT",
+     "start": "7:00 PM ET",
      "bet": "Utah +2.5 (OT incl)",
      "price": "-565",
-     "est": 0.833,
+     "est": 0.821,
      "bet365": "-650",
      "track": {
       "type": "spread",
@@ -679,39 +683,74 @@
       "team": "UTA",
       "line": 2.5
      }
-    },
-    {
-     "game": "VAN @ EDM",
-     "start": "10:00 PM ET",
-     "bet": "Under 9.5 goals (OT incl)",
-     "price": "-679",
-     "est": 0.823,
-     "bet365": "-750",
-     "track": {
-      "type": "total",
-      "away": "VAN",
-      "home": "EDM",
-      "line": 9.5,
-      "side": "under"
-     }
     }
    ],
-   "bet": "Dallas +1.5 (OT incl) + Utah +2.5 (OT incl) + Under 9.5 goals (OT incl)",
-   "short": "DAL +1.5, UTA +2.5, VAN-EDM U9.5",
-   "game": "SJS @ DAL / UTA @ OTT / VAN @ EDM",
-   "price": "-199",
-   "decimal": 1.503,
-   "breakeven": 0.665,
-   "chance": 0.601,
+   "bet": "Tampa Bay +2.5 (OT incl) + Utah +2.5 (OT incl)",
+   "short": "TBL +2.5, UTA +2.5",
+   "game": "TBL @ MIN / UTA @ OTT",
+   "price": "-279",
+   "decimal": 1.359,
+   "breakeven": 0.736,
+   "chance": 0.68,
    "books": {
-    "pinnacle": "-199",
-    "bet365": "-217",
+    "pinnacle": "-279",
+    "bet365": "-325",
     "best": "pinnacle",
     "bet365_note": null
    },
-   "note": "3-leg parlay, every leg from a different game. Chance = product of leg estimates. 3-leg. Agents 2 and 3 would both drop it (60% chance).",
-   "why": "Dallas hosts a tired San Jose, Utah only loses by 3+, and Vancouver-Edmonton needs 10+ goals to beat the under."
+   "note": "2-leg parlay, every leg from a different game. Chance = product of leg estimates (68.0% vs 73.6% break-even). Agent 2 keeps it; Agent 3 would drop it (below break-even).",
+   "why": "Tampa Bay faces a tired Minnesota team with backup Pickard in net; Utah has lost by 3+ only 3 times in 17."
+  },
+  {
+   "rank": 8,
+   "legs": [
+    {
+     "game": "MTL @ TOR",
+     "start": "7:00 PM ET",
+     "bet": "Toronto +2.5 (OT incl)",
+     "price": "-437",
+     "est": 0.813,
+     "bet365": "-550",
+     "track": {
+      "type": "spread",
+      "away": "MTL",
+      "home": "TOR",
+      "team": "TOR",
+      "line": 2.5
+     }
+    },
+    {
+     "game": "UTA @ OTT",
+     "start": "7:00 PM ET",
+     "bet": "Ottawa +2.5 (OT incl)",
+     "price": "-438",
+     "est": 0.805,
+     "bet365": "-550",
+     "track": {
+      "type": "spread",
+      "away": "UTA",
+      "home": "OTT",
+      "team": "OTT",
+      "line": 2.5
+     }
+    }
+   ],
+   "bet": "Toronto +2.5 (OT incl) + Ottawa +2.5 (OT incl)",
+   "short": "TOR +2.5, OTT +2.5",
+   "game": "MTL @ TOR / UTA @ OTT",
+   "price": "-196",
+   "decimal": 1.509,
+   "breakeven": 0.663,
+   "chance": 0.654,
+   "books": {
+    "pinnacle": "-196",
+    "bet365": "-252",
+    "best": "pinnacle",
+    "bet365_note": null
+   },
+   "note": "2-leg parlay, every leg from a different game. Chance = product of leg estimates (65.4% vs 66.3% break-even). Agent 2 would drop it (chance only 65%); Agent 3 keeps it as fun only.",
+   "why": "Montreal has won by 3+ only twice in 16 games; Utah has won by 3+ only 3 times in 17."
   }
  ],
- "parlay_note": "Ranked by chance to hit. 2-leg parlays of the slate's safest lines (+2.5 and favourite +1.5 puck lines, OT included, each leg from a different game) plus one 3-leg, all -300 or better. Chances multiply our leg estimates, which run optimistic on puck lines. Prices re-checked at 3:16 PM ET; a parlay pays the legs' prices multiplied together."
+ "parlay_note": "Ranked by chance to hit. Eight 2-leg parlays, every leg from a different game, all -300 or better on Pinnacle, built from the slate's safest alternate lines. Chances multiply our leg estimates, which run optimistic on puck lines; all are below break-even. Agent 2 kept P1-P7 and dropped the 65% Toronto/Ottawa +2.5 pair; Agent 3 would keep only P1, P2, P4 and P8 as fun only. Two 3-leg parlays (about 50% chance) were dropped by both agents. bet365 prices most of these shorter than -300. A parlay pays the legs' prices multiplied together."
 }
