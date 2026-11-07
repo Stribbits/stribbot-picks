@@ -184,6 +184,7 @@ body.pip .tlegs { font-size: .76rem; }
 <section aria-labelledby="slip-h">
 <h2 id="slip-h">My bets</h2>
 <p class="note" id="slip-note">Tap Place on Pinnacle or Place on bet365 on a card (it opens that game on the book and tracks the bet), or add your own bet below. Saved on this device only. Sign in to save them to your account and join the standings. Bets from the card settle themselves when the game ends; mark custom bets Won, Lost or Push yourself.</p>
+<p class="note"><label>My Pinnacle site: <select id="pin-site" aria-label="Which Pinnacle site your account is on"><option value="ca">pinnacle.ca (Ontario)</option><option value="com">pinnacle.com (Quebec and elsewhere)</option></select></label> Place on Pinnacle opens this one. Saved on this device.</p>
 <div class="migrate" id="migrate" hidden></div>
 <div class="strip" id="mystrip">
 <div class="stat"><span class="label">My W-L-P</span><b class="num" id="m-rec">0-0-0</b></div>
@@ -515,6 +516,7 @@ function renderBoard() {
   }));
 }
 
+(() => { const s = document.getElementById('pin-site'); if (!s) return; try { s.value = localStorage.getItem('stribbot-pinsite') || 'ca'; } catch (e) {} s.addEventListener('change', () => { try { localStorage.setItem('stribbot-pinsite', s.value); } catch (e) {} }); })();
 function placeRow(r, betName, game, done) {
 const pl = el('div', 'place');
 const statBtn = () => { if (!r.stats_url) return null; const a = el('a', 'statbtn', 'Stat line'); a.href = r.stats_url; a.target = '_blank'; a.rel = 'noopener'; a.title = 'Open the stats behind this bet on NHL.com'; return a; };
@@ -537,7 +539,7 @@ const btn = el('button', 'bookbtn' + ((bk.best || 'pinnacle') === (x.k === 'PIN'
 btns[x.k] = btn; setBtn(x);
 btn.addEventListener('click', () => { const s = parseFloat(inp.value); if (!(s > 0)) { pays.textContent = 'Enter a stake above $0'; return; }
 let url = x.k === 'PIN' ? (bk.pinnacle_url || r.pinnacle_url) : (bk.bet365_url || r.bet365_url);
-if (url && x.k === 'PIN') url = url.replace(/^https:\/\/(www\.)?pinnacle\.ca\//, 'https://www.pinnacle.com/');
+if (url && x.k === 'PIN') { let site = 'ca'; try { site = localStorage.getItem('stribbot-pinsite') || 'ca'; } catch (e) {} url = url.replace(/^https:\/\/(www\.)?pinnacle\.(ca|com)\//, 'https://www.pinnacle.' + (site === 'com' ? 'com' : 'ca') + '/'); }
 if (url && /^https:\/\/(www\.)?(pinnacle\.com|pinnacle\.ca|on\.bet365\.ca)\//.test(url)) { try { const lk = document.createElement('a'); lk.href = url; lk.target = '_blank'; lk.rel = 'noopener noreferrer'; lk.referrerPolicy = 'no-referrer'; document.body.append(lk); lk.click(); lk.remove(); } catch (e) {} }
 save(mine.concat([{ id: newId(), date: card.date, game, bet: betName, price: x.o.price + '|' + x.k, decimal: Math.round(x.o.decimal * 1000) / 1000, stake: Math.round(s * 100) / 100, result: 'Pending', placedAt: new Date().toISOString() }]));
 renderAll(); });
