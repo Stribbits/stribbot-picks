@@ -54,6 +54,10 @@ section { display: flex; flex-direction: column; gap: 14px; }
 .prob { text-align: right; }
 .prob b { font-family: var(--f-display); font-size: 2rem; line-height: 1; }
 .prob small { display: block; color: var(--muted); font-size: .68rem; letter-spacing: .06em; text-transform: uppercase; }
+.verdict { margin-top: 6px; display: inline-block; min-width: 92px; text-align: center; font-family: var(--f-display); font-weight: 700; font-size: 1.05rem; letter-spacing: .06em; text-transform: uppercase; padding: 4px 10px; border-radius: 6px; border: 2px solid currentColor; }
+.v-buy { color: var(--ok); background: rgba(76,195,138,.12); } .v-nobuy { color: var(--warn); background: rgba(240,176,74,.10); } .v-sell { color: var(--bad); background: rgba(255,107,107,.12); }
+.legend { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; font-size: .85rem; color: var(--muted); }
+.legend .verdict { margin: 0; font-size: .85rem; min-width: 0; padding: 2px 8px; }
 .bar { height: 6px; background: var(--chip); border-radius: 99px; overflow: hidden; position: relative; }
 .bar i { display: block; height: 100%; border-radius: 99px; }
 .bar::after { content: ""; position: absolute; left: 50%; top: -2px; bottom: -2px; width: 1px; background: var(--muted); opacity: .6; }
@@ -144,9 +148,10 @@ footer a { color: var(--muted); }
 <section id="stocks">
   <h2>Top 10 stocks to buy</h2>
   <p class="sub">Ranked by blended chance of being higher on Dec 7. Each card shows the three separate estimates: Team (our 5 agents), Perplexity and ChatGPT. The line in the middle of each bar marks 50%. US prices are in USD and TSX prices in CAD; the price is the Nov 6 close unless noted.</p>
+  <div class="legend"><span class="verdict v-buy">Buy</span> buy signal is met now <span class="verdict v-nobuy">No Buy</span> wait for the trigger on the card <span class="verdict v-sell">Sell</span> exit level hit: get out if you hold it <span>· Based on Nov 6–7 prices; re-check Monday open, and after Tuesday's CPI.</span></div>
   <div class="board" id="stockBoard"></div>
   <div class="panel">
-    <h3>Most-bought, but not top-10: NVDA · ~51%</h3>
+    <h3>Most-bought, but not top-10: NVDA · ~51% <span class="verdict v-nobuy" style="margin-left:8px;font-size:.85rem;min-width:0">No Buy</span></h3>
     <p class="txt">Nvidia is the stock retail trades most, and all three sources discussed it. It closed at <span class="num">$186.64</span>, down ~23% from its 52-week high, and it broke below its 200-day moving average. Earnings on <b>Nov 17</b> (confirmed) make the month close to a binary bet, and data-center policy risk hangs over the whole group. <b>Buy signal:</b> a close back above $190–195, ideally after earnings. <b>Exit:</b> a close below $170–178. Every source said the same thing: don't buy a full position before Nov 17.</p>
   </div>
 </section>
@@ -154,6 +159,7 @@ footer a { color: var(--muted); }
 <section id="crypto">
   <h2>Top 10 crypto</h2>
   <p class="sub">All prices are from CoinGecko, ~11 pm ET Nov 7. Every coin sits at a coin flip or below. Fear is extreme, ETF money is leaving and a Fed hike is likely. One weak point for the bulls: over the past year, 62% of "extreme fear" days were followed by a higher price 30 days later. The sample is small, so it counts as weak evidence only.</p>
+  <div class="legend"><span class="verdict v-buy">Buy</span> buy signal is met now <span class="verdict v-nobuy">No Buy</span> wait for the trigger on the card <span class="verdict v-sell">Sell</span> exit level hit: get out if you hold it <span>· Based on Nov 6–7 prices; re-check Monday open, and after Tuesday's CPI.</span></div>
   <div class="board" id="cryptoBoard"></div>
 </section>
 
@@ -161,7 +167,7 @@ footer a { color: var(--muted); }
   <h2>Meme tokens (lottery-ticket tier)</h2>
   <p class="sub">None of these made the top 10. All three sources put every meme token below 45%. CoinGecko studied 18.67M pump.fun launches: 68.7% stopped trading on launch day, and only 4.55% were still trading after 90 days.</p>
   <div class="tablewrap"><table>
-    <thead><tr><th>Token</th><th>Price</th><th>Est. chance higher</th><th>Why people buy it</th><th>Red flags</th><th>Rule</th></tr></thead>
+    <thead><tr><th>Signal</th><th>Token</th><th>Price</th><th>Est. chance higher</th><th>Why people buy it</th><th>Red flags</th><th>Rule</th></tr></thead>
     <tbody id="memeRows"></tbody>
   </table></div>
   <div class="panel">
@@ -305,86 +311,86 @@ footer a { color: var(--muted); }
 
 <script>
 const STOCKS = [
-  { t:"CW", n:"Curtiss-Wright · NYSE", p:"$463.47", pn:"Nov 6 close (+6.8% on the day)", est:59, team:62, px:60, gpt:58, tags:[["All 3 agree","t-ok"],["Defense","t-blue"]],
+  { t:"CW", v:"Buy", n:"Curtiss-Wright · NYSE", p:"$463.47", pn:"Nov 6 close (+6.8% on the day)", est:59, team:62, px:60, gpt:58, tags:[["All 3 agree","t-ok"],["Defense","t-blue"]],
     why:"Q3 adjusted EPS $3.94 (+16%), orders +15%, backlog $4.6B. FY EPS guidance raised to $15.40–15.60. $352M bought back in Q3. No AI exposure and no earnings in the window.",
     risk:"Still −15.9% YTD, so this may be a weak stock bouncing. Part of the raise is already in the gap.",
     buy:"A pullback that holds above ~$434 (the pre-gap close).", sell:"A close below $434 (gap filled)." },
-  { t:"ABNB", n:"Airbnb · Nasdaq", p:"~$190", pn:"Nov 6 close, computed from its +11.7% move", est:59, team:61, px:56, gpt:59, tags:[["All 3 agree","t-ok"],["Post-earnings drift","t-blue"]],
+  { t:"ABNB", v:"Buy", n:"Airbnb · Nasdaq", p:"~$190", pn:"Nov 6 close, computed from its +11.7% move", est:59, team:61, px:56, gpt:59, tags:[["All 3 agree","t-ok"],["Post-earnings drift","t-blue"]],
     why:"Revenue $4.87B vs $4.75B expected, EPS $3.16 vs $2.85. Nights booked +16%, up from 10%. Outlook raised, plus a new buyback of up to $12B. No AI exposure.",
     risk:"Already up ~12% on the news (Perplexity's main objection). Travel spending suffers if rates rise. Part of the beat came from a lower tax rate.",
     buy:"Holds above ~$180 on a pullback.", sell:"A close below $170.50 (earnings gap fully filled)." },
-  { t:"FTS", n:"Fortis · TSX", p:"C$84.91", pn:"latest quote (InvestSMART)", est:57, team:61, px:57, gpt:56, tags:[["TFSA-friendly","t-ok"],["Low beta 0.41","t-blue"],["Dividend","t-blue"]],
+  { t:"FTS", v:"No Buy", n:"Fortis · TSX", p:"C$84.91", pn:"latest quote (InvestSMART)", est:57, team:61, px:57, gpt:56, tags:[["TFSA-friendly","t-ok"],["Low beta 0.41","t-blue"],["Dividend","t-blue"]],
     why:"Regulated utility, the lowest-volatility name here. Quarterly dividend rising to 66.5¢ (~3% yield). 52-week high on Nov 5.",
     risk:"Up ~9% in three weeks, so it's stretched. Rate hikes from the BoC and Fed hurt utilities. Ex-dividend Nov 17 knocks ~0.8% off the price.",
     buy:"A pullback toward C$81–82.", sell:"A close below C$79, or a hawkish BoC surprise." },
-  { t:"ABBV", n:"AbbVie · NYSE", p:"$291.31", pn:"Nov 6 close", est:57, team:60, px:55, gpt:57, tags:[["Uptrend","t-ok"],["No earnings in window","t-blue"]],
+  { t:"ABBV", v:"No Buy", n:"AbbVie · NYSE", p:"$291.31", pn:"Nov 6 close", est:57, team:60, px:55, gpt:57, tags:[["Uptrend","t-ok"],["No earnings in window","t-blue"]],
     why:"Above its 50-day ($271.9) and 200-day ($238.9), RSI ~60. 52-week high $302.93 on Nov 5. FY EPS guidance raised to $13.95–13.99. Health care is where the market is hiding.",
     risk:"Drug-pricing policy under the new Congress. MACD is below its signal line. No near-term catalyst.",
     buy:"A close above $302.93 on volume, or a pullback that holds $277–284.", sell:"A close below ~$272 (50-day) or −8% from entry." },
-  { t:"LLY", n:"Eli Lilly · NYSE", p:"$1,354", pn:"Nov 6 close", est:55, team:58, px:52, gpt:54, tags:[["Uptrend","t-ok"],["Expensive","t-warn"]],
+  { t:"LLY", v:"No Buy", n:"Eli Lilly · NYSE", p:"$1,354", pn:"Nov 6 close", est:55, team:58, px:52, gpt:54, tags:[["Uptrend","t-ok"],["Expensive","t-warn"]],
     why:"Q3 revenue +39% to $24.4B, FY guidance raised to $91–92B. Well above both moving averages. All-time high $1,453 on Nov 5.",
     risk:"~40× forward earnings. Friday's drop came on heavy volume, which can mean big holders are selling. Both AIs rated it lower than the team.",
     buy:"A close above $1,399, or a hold of ~$1,331.", sell:"A close below $1,300 or −8% from entry." },
-  { t:"CBOE", n:"Cboe Global Markets · Cboe", p:"$335.53", pn:"Oct 30 close — refresh", est:55, team:61, px:52, gpt:53, tags:[["Volatility hedge","t-blue"],["Stale price","t-warn"]],
+  { t:"CBOE", v:"No Buy", n:"Cboe Global Markets · Cboe", p:"$335.53", pn:"Oct 30 close — refresh", est:55, team:61, px:52, gpt:53, tags:[["Volatility hedge","t-blue"],["Stale price","t-warn"]],
     why:"EPS $3.63 vs $3.42. Organic growth guidance raised to high-teens and the buyback lifted to ~$1B. Earns more when markets are choppy, which partly offsets a falling market.",
     risk:"If volatility fades, so does the tailwind. Both AIs said our 61% assumed too much.",
     buy:"Holding above $335.", sell:"A close below ~$314 (pre-earnings level)." },
-  { t:"RY", n:"Royal Bank of Canada · TSX", p:"C$284.16", pn:"Nov 6 close", est:54, team:56, px:50, gpt:54, tags:[["Earnings Dec 3","t-warn"],["TFSA-friendly","t-ok"]],
+  { t:"RY", v:"Buy", n:"Royal Bank of Canada · TSX", p:"C$284.16", pn:"Nov 6 close", est:54, team:56, px:50, gpt:54, tags:[["Earnings Dec 3","t-warn"],["TFSA-friendly","t-ok"]],
     why:"Highest-quality Canadian bank, ~7% below its 2026 high. Canada held up better than the US this week.",
     risk:"Q4 results on Dec 3 make it a binary bet just before the deadline. Canadian unemployment is rising (6.7%) while the BoC hikes. Perplexity would swap it for ENB.",
     buy:"Holding above C$275, or wait for the Dec 3 results.", sell:"A close below C$270, or a miss on Dec 3." },
-  { t:"AEM", n:"Agnico Eagle · TSX", p:"C$270.75", pn:"Nov 6 close (+2.2%)", est:54, team:53, px:null, gpt:55, tags:[["Split","t-warn"],["Gold","t-blue"]],
+  { t:"AEM", v:"No Buy", n:"Agnico Eagle · TSX", p:"C$270.75", pn:"Nov 6 close (+2.2%)", est:54, team:53, px:null, gpt:55, tags:[["Split","t-warn"],["Gold","t-blue"]],
     why:"Gold rose ~5% on the week and miners carried the TSX. Strong Q3 cash flow. ChatGPT's preferred Canadian pick.",
     risk:"Our technical agent excluded it: below its 50- and 200-day lines on NYSE, and gold in CAD is in a downtrend. 22% below its 2026 high and very volatile.",
     buy:"A close above C$275–280 with gold firming.", sell:"A close below C$255." },
-  { t:"MRNA", n:"Moderna · Nasdaq", p:"$254.19", pn:"Nov 6 close", est:53, team:54, px:53, gpt:51, tags:[["Guidance raised","t-ok"],["Volatile","t-warn"]],
+  { t:"MRNA", v:"No Buy", n:"Moderna · Nasdaq", p:"$254.19", pn:"Nov 6 close", est:53, team:54, px:53, gpt:51, tags:[["Guidance raised","t-ok"],["Volatile","t-warn"]],
     why:"First profit in two years. 2026 revenue-growth guidance raised to 15–25% from as much as 10%. Positive late-stage oncology data. Not tied to AI.",
     risk:"Up 10%+ on the news already. Biotech re-ratings fade fast and outcomes swing widely. ChatGPT would swap it out.",
     buy:"Holds Friday's level through Tuesday's CPI.", sell:"−8% from entry (rule of thumb; no verified support level)." },
-  { t:"NET", n:"Cloudflare · NYSE", p:"~$275.71", pn:"Nov 6 intraday", est:53, team:57, px:51, gpt:52, tags:[["Analysts split","t-warn"],["Growth","t-blue"]],
+  { t:"NET", v:"No Buy", n:"Cloudflare · NYSE", p:"~$275.71", pn:"Nov 6 intraday", est:53, team:57, px:51, gpt:52, tags:[["Analysts split","t-warn"],["Growth","t-blue"]],
     why:"Revenue +39% to $782.5M, its fastest growth in ~4 years. Q4 guide $845M vs $798M expected. KeyBanc Overweight (PT $375), BofA Buy (PT $380).",
     risk:"Guggenheim stays at Sell (PT $190) on valuation. It's an AI-adjacent software stock in an AI selloff, up ~11% already, with 44 moves of more than 5% in the past year.",
     buy:"Holds Friday's gap.", sell:"A close below ~$250." }
 ];
 
 const CRYPTO = [
-  { t:"BTC", n:"Bitcoin", p:"$75,840", est:51, team:51, px:49, gpt:52, tags:[["All 3 rank #1","t-ok"]],
+  { t:"BTC", v:"No Buy", n:"Bitcoin", p:"$75,840", est:51, team:51, px:49, gpt:52, tags:[["All 3 rank #1","t-ok"]],
     why:"Extreme fear (F&G 25), leverage flushed (~$1.27B liquidated), funding flat, still above its 200-day ($73.2k). The bear-cycle bottom is due around now by several analysts' calendars.",
     risk:"Record ETF outflows (−$1.28B on the week). A Dec Fed hike is likely, plus hot-CPI risk. Wintermute's downside targets are $73k, then $68k.",
     buy:"A daily close above $77.7–78.4k, or 2+ days of ETF inflows.", sell:"A daily close below $73.2k (200-day). Take profits at $81–82k, then $85–87k." },
-  { t:"ETH", n:"Ethereum", p:"$2,236", est:48, team:47, px:48, gpt:49, tags:[["Liquid","t-blue"]],
+  { t:"ETH", v:"No Buy", n:"Ethereum", p:"$2,236", est:48, team:47, px:48, gpt:49, tags:[["Liquid","t-blue"]],
     why:"Held up best of the top five this week. MACD has crossed up, and a whale placed a ~$45M rebound bet. Tom Lee says a floor is near.",
     risk:"Six straight weeks of ETF outflows, −17.6% over 30 days, and the Glamsterdam upgrade is paused.",
     buy:"A close above $2,310, then $2,400.", sell:"A daily close below $2,156 (200-day)." },
-  { t:"BNB", n:"BNB", p:"$695.55", est:48, team:48, px:47, gpt:50, tags:[["Smallest weekly drop","t-blue"]],
+  { t:"BNB", v:"No Buy", n:"BNB", p:"$695.55", est:48, team:48, px:47, gpt:50, tags:[["Smallest weekly drop","t-blue"]],
     why:"Only −1.4% on the week. Binance says 98% of the hack losses are replenished, and a BNB Chain mainnet upgrade is targeted for late November.",
     risk:"Exchange and regulatory tail risk after the $6.3B Binance hack on Oct 29.",
     buy:"A close above $715.", sell:"A close below ~$650." },
-  { t:"SOL", n:"Solana", p:"$89.24", est:47, team:47, px:46, gpt:49, tags:[["Catalysts in window","t-blue"],["Oversold","t-warn"]],
+  { t:"SOL", v:"No Buy", n:"Solana", p:"$89.24", est:47, team:47, px:46, gpt:49, tags:[["Catalysts in window","t-blue"],["Oversold","t-warn"]],
     why:"RSI ~31 (oversold), sitting on its 200-day (~$89), funding negative. Breakpoint runs Nov 15–17, and the SEC must rule on the JitoSOL ETF by Nov 15.",
     risk:"−19% over 30 days, record SOL ETF outflows, a death cross is near and China's central bank is pushing back. The upgrade in October was a sell-the-news event.",
     buy:"Holds $88, then a daily close above $95.", sell:"A daily close below $85 (next stop ~$75). Consider trimming into Breakpoint." },
-  { t:"TRX", n:"Tron", p:"$0.3204", est:47, team:48, px:45, gpt:49, tags:[["Low volatility","t-blue"],["Thin data","t-warn"]],
+  { t:"TRX", v:"No Buy", n:"Tron", p:"$0.3204", est:47, team:48, px:45, gpt:49, tags:[["Low volatility","t-blue"],["Thin data","t-warn"]],
     why:"Rose 1% while the market fell (Nov 6). Its stablecoin-transfer use gives it steadier demand.",
     risk:"We found almost no technical data. Low volatility doesn't mean it will go up.",
     buy:"Only if it keeps outperforming BTC.", sell:"If it underperforms BTC for a full week." },
-  { t:"HYPE", n:"Hyperliquid", p:"$77.48", est:47, team:49, px:45, gpt:47, tags:[["Unlock Dec 6","t-bad"],["Buybacks","t-ok"]],
+  { t:"HYPE", v:"No Buy", n:"Hyperliquid", p:"$77.48", est:47, team:49, px:45, gpt:47, tags:[["Unlock Dec 6","t-bad"],["Buybacks","t-ok"]],
     why:"Revenue of ~$69M in 30 days funds daily buybacks (~21K HYPE burned in 24h). Elysium L2 mainnet on Nov 9. Still above its 200-day (~$67.8).",
     risk:"A ~9.9M HYPE contributor unlock lands Dec 6, the day before our deadline. Whales are net short, and there are $612M of leveraged longs below the price.",
     buy:"Reclaims $81–82.7.", sell:"A close below $74.36. Plan to be out before Dec 6." },
-  { t:"XRP", n:"XRP", p:"$1.16", est:45, team:46, px:45, gpt:46, tags:[["Whales accumulating","t-blue"]],
+  { t:"XRP", v:"No Buy", n:"XRP", p:"$1.16", est:45, team:46, px:45, gpt:46, tags:[["Whales accumulating","t-blue"]],
     why:"Wallets holding 1M+ XRP hit a 2026 high (Santiment). It's near the $1.00 yearly floor after −17% in 30 days.",
     risk:"The only top-five coin below its 200-day ($1.27). ETF flows are zero and the CLARITY Act is stalled. Binance reserves rose by 280M XRP.",
     buy:"A close above $1.27–1.30.", sell:"A daily close below $1.16 (tight) or $1.00 (yearly floor)." },
-  { t:"ZEC", n:"Zcash", p:"$1,264", est:45, team:47, px:42, gpt:46, tags:[["Sell-the-news risk","t-warn"]],
+  { t:"ZEC", v:"No Buy", n:"Zcash", p:"$1,264", est:45, team:47, px:42, gpt:46, tags:[["Sell-the-news risk","t-warn"]],
     why:"The NU7 upgrade went live Nov 6 (blocks 75s → 25s). Long-term uptrend, with the 200-day at ~$766.",
     risk:"Fell after the testnet launch. ETF outflows and long liquidations. Longer term, EU rules from 2027 could force privacy-coin delistings.",
     buy:"A close above ~$1,316 (50-day).", sell:"A daily close below $1,030." },
-  { t:"LINK", n:"Chainlink", p:"$10.76", est:44, team:45, px:null, gpt:44, tags:[["Has ETFs","t-blue"]],
+  { t:"LINK", v:"No Buy", n:"Chainlink", p:"$10.76", est:44, team:45, px:null, gpt:44, tags:[["Has ETFs","t-blue"]],
     why:"Oracle infrastructure for tokenized assets, with ETFs (GLNK, CLNK). ChatGPT swapped it in for PEPE.",
     risk:"No dated catalyst found. Moves with the market.",
     buy:"A close above $12.", sell:"If BTC closes below $73.2k." },
-  { t:"DOGE", n:"Dogecoin", p:"$0.0713", est:42, team:41, px:40, gpt:43, tags:[["At exit level","t-bad"]],
+  { t:"DOGE", v:"Sell", n:"Dogecoin", p:"$0.0713", est:42, team:41, px:40, gpt:43, tags:[["At exit level","t-bad"]],
     why:"The most liquid meme coin with the lowest rug risk. A rebound candidate if BTC recovers.",
     risk:"Below all its moving averages, with crowded longs (Binance long/short 2.7). Already at the team's exit level ($0.0715).",
     buy:"Wait until BTC reclaims $77.7k and DOGE closes back above its Nov 4 level on rising volume.", sell:"Already at the exit line ($0.0715). Don't hold below it." }
@@ -400,13 +406,14 @@ const MEMES = [
   ["TRUMP (SOL)","$1.18","~33%","All-time low on Nov 5, oversold.","9.6% supply unlock in November. Hit hard by the midterm results.","Not before the unlock. Stop below $1.12."]
 ];
 
+function vc(v){ return v==='Buy'?'v-buy':v==='Sell'?'v-sell':'v-nobuy'; }
 function color(p){ return p>=56?'var(--ok)':p>=50?'var(--warn)':'var(--bad)'; }
 function card(x,i){
   const v = (lbl,val)=>`<div><span>${lbl}</span><b>${val==null?'—':val+'%'}</b></div>`;
   return `<article class="card ${(i<3&&x.est>=55)?'top3':''}">
     <div class="head"><div class="rank">${i+1}</div>
       <div class="who"><div class="tk">${x.t}</div><div class="nm">${x.n}</div></div>
-      <div class="prob"><b style="color:${color(x.est)}">~${x.est}%</b><small>est. higher Dec 7</small></div></div>
+      <div class="prob"><b style="color:${color(x.est)}">~${x.est}%</b><small>est. higher Dec 7</small><span class="verdict ${vc(x.v)}">${x.v}</span></div></div>
     <div class="bar"><i style="width:${x.est}%;background:${color(x.est)}"></i></div>
     <div class="price"><span>Price <span class="num">${x.p}</span></span><span>${x.pn||'CoinGecko ~11pm ET Nov 7'}</span></div>
     <div class="votes">${v('Team',x.team)}${v('Perplexity',x.px)}${v('ChatGPT',x.gpt)}</div>
@@ -418,7 +425,7 @@ function card(x,i){
 }
 document.getElementById('stockBoard').innerHTML = STOCKS.map(card).join('');
 document.getElementById('cryptoBoard').innerHTML = CRYPTO.map(card).join('');
-document.getElementById('memeRows').innerHTML = MEMES.map(r=>`<tr><td><b>${r[0]}</b></td><td class="num">${r[1]}</td><td class="num neg">${r[2]}</td><td>${r[3]}</td><td>${r[4]}</td><td>${r[5]}</td></tr>`).join('');
+document.getElementById('memeRows').innerHTML = MEMES.map(r=>`<tr><td><span class="verdict v-nobuy" style="margin:0;min-width:0;font-size:.8rem">No Buy</span></td><td><b>${r[0]}</b></td><td class="num">${r[1]}</td><td class="num neg">${r[2]}</td><td>${r[3]}</td><td>${r[4]}</td><td>${r[5]}</td></tr>`).join('');
 </script>
 </body>
 </html>
