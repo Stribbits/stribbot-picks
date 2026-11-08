@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Stribbot Markets — Stocks &amp; Crypto Card</title>
+<meta name="description" content="Stribbot research card: top 10 stocks and top 10 crypto ranked by estimated chance of being higher by Dec 7, 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;700&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+:root {
+  --bg: #0B1320; --panel: #121C2C; --panel2: #0F1826; --ink: #E6EDF5; --muted: #8FA0B5; --line: #24344C;
+  --accent: #FF4D5E; --ok: #4CC38A; --warn: #F0B04A; --bad: #FF6B6B; --chip: #1A263A; --blue: #6AA9FF;
+  color-scheme: dark;
+  --f-display: "Barlow Condensed", "Arial Narrow", sans-serif;
+  --f-body: "IBM Plex Sans", system-ui, sans-serif;
+  --f-num: "IBM Plex Mono", ui-monospace, monospace;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--f-body); font-size: 15px; line-height: 1.45; }
+a { color: var(--blue); }
+.wrap { max-width: 1040px; margin: 0 auto; padding-block: 24px 56px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: flex; flex-direction: column; gap: 30px; }
+h1 { font-family: var(--f-display); font-weight: 700; font-size: clamp(2.2rem, 6vw, 3.2rem); letter-spacing: .02em; text-transform: uppercase; margin: 0; line-height: 1; }
+h1 span { color: var(--accent); }
+h2 { font-family: var(--f-display); font-weight: 700; font-size: 1.6rem; letter-spacing: .03em; text-transform: uppercase; margin: 0; }
+h3 { font-family: var(--f-display); font-weight: 700; font-size: 1.15rem; letter-spacing: .04em; text-transform: uppercase; margin: 0; color: var(--muted); }
+.sub { color: var(--muted); margin: 6px 0 0; max-width: 72ch; }
+.label { font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.num { font-family: var(--f-num); font-variant-numeric: tabular-nums; }
+section { display: flex; flex-direction: column; gap: 14px; }
+.pos { color: var(--ok); } .neg { color: var(--bad); } .warn { color: var(--warn); }
+
+.banner { border: 1px solid var(--warn); background: rgba(240,176,74,.07); border-radius: 10px; padding: 12px 16px; font-size: .9rem; }
+.banner b { color: var(--warn); }
+
+.strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+.stat { background: var(--panel); padding: 12px 14px; display: flex; flex-direction: column; gap: 3px; }
+.stat b { font-family: var(--f-display); font-size: 1.6rem; font-weight: 700; line-height: 1; }
+.stat small { color: var(--muted); font-size: .78rem; }
+
+.tabs { display: flex; gap: 8px; flex-wrap: wrap; position: sticky; top: 0; z-index: 5; background: var(--bg); padding: 8px 0; border-bottom: 1px solid var(--line); }
+.tabs a { text-decoration: none; color: var(--ink); background: var(--chip); border: 1px solid var(--line); padding: 6px 12px; border-radius: 999px; font-size: .85rem; font-weight: 600; }
+.tabs a:hover { border-color: var(--accent); }
+
+.board { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 310px), 1fr)); gap: 12px; }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 16px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.card.top3 { border-color: var(--ok); box-shadow: inset 4px 0 0 var(--ok); }
+.head { display: flex; justify-content: space-between; gap: 10px; align-items: flex-start; }
+.rank { font-family: var(--f-display); font-size: 2rem; font-weight: 700; color: var(--muted); line-height: .9; min-width: 1.3em; }
+.who { flex: 1; min-width: 0; }
+.tk { font-family: var(--f-display); font-weight: 700; font-size: 1.45rem; letter-spacing: .03em; line-height: 1; }
+.nm { color: var(--muted); font-size: .85rem; }
+.prob { text-align: right; }
+.prob b { font-family: var(--f-display); font-size: 2rem; line-height: 1; }
+.prob small { display: block; color: var(--muted); font-size: .68rem; letter-spacing: .06em; text-transform: uppercase; }
+.bar { height: 6px; background: var(--chip); border-radius: 99px; overflow: hidden; position: relative; }
+.bar i { display: block; height: 100%; border-radius: 99px; }
+.bar::after { content: ""; position: absolute; left: 50%; top: -2px; bottom: -2px; width: 1px; background: var(--muted); opacity: .6; }
+.price { display: flex; justify-content: space-between; gap: 8px; font-size: .85rem; color: var(--muted); flex-wrap: wrap; }
+.price .num { color: var(--ink); }
+.votes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+.votes div { background: var(--panel2); border: 1px solid var(--line); border-radius: 6px; padding: 5px 6px; text-align: center; }
+.votes span { display: block; font-size: .62rem; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.votes b { font-family: var(--f-num); font-size: .85rem; }
+.txt { font-size: .88rem; margin: 0; }
+.txt b { color: var(--ink); }
+.why b { color: var(--ok); } .risk b { color: var(--bad); }
+.sig { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.sig div { border-radius: 8px; padding: 8px 10px; font-size: .82rem; }
+.sig .buy { background: rgba(76,195,138,.08); border: 1px solid rgba(76,195,138,.35); }
+.sig .sell { background: rgba(255,107,107,.07); border: 1px solid rgba(255,107,107,.35); }
+.sig span { display: block; font-size: .66rem; letter-spacing: .08em; text-transform: uppercase; font-weight: 600; margin-bottom: 2px; }
+.sig .buy span { color: var(--ok); } .sig .sell span { color: var(--bad); }
+.tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.tag { font-size: .68rem; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; padding: 2px 8px; border-radius: 999px; border: 1px solid currentColor; }
+.t-ok { color: var(--ok); } .t-warn { color: var(--warn); } .t-bad { color: var(--bad); } .t-blue { color: var(--blue); } .t-muted { color: var(--muted); }
+
+.panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; }
+.panel ul { margin: 6px 0 0; padding-left: 18px; }
+.panel li { margin: 4px 0; }
+.cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 12px; }
+
+table { width: 100%; border-collapse: collapse; font-size: .86rem; }
+th, td { text-align: left; padding: 8px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-size: .68rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+.tablewrap { overflow-x: auto; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; }
+
+.dates { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); gap: 8px; }
+.date { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; font-size: .85rem; }
+.date b { font-family: var(--f-num); color: var(--accent); display: block; font-size: .8rem; }
+footer { color: var(--muted); font-size: .8rem; border-top: 1px solid var(--line); padding-top: 16px; }
+footer a { color: var(--muted); }
+@media (max-width: 640px) { .tabs { flex-wrap: nowrap; overflow-x: auto; } .tabs a { white-space: nowrap; } .strip { grid-template-columns: repeat(2, 1fr); } .sig { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="label">Stribbot research card · built Sat Nov 7, 2026 · horizon: higher by Sun Dec 7, 2026</div>
+  <h1>Stribbot <span>Markets</span></h1>
+  <p class="sub">Top 10 stocks and top 10 crypto, ranked by estimated chance of being higher one month from now. Ten research agents (five on stocks, five on crypto) did the digging. Then ChatGPT and Perplexity each built their own list and argued with ours. The final numbers blend all three.</p>
+</header>
+
+<div class="banner">
+  <b>Read this first.</b> These percentages are <b>rough judgments, not a model</b>. For scale, a typical large-cap stock ends a random month higher roughly 55–60% of the time. So our #1 stock (~59%) is only a little better than picking at random, and a broad index fund (XIU on the TSX, or VFV) gets similar odds without picking anything. Crypto is worse right now: every coin we looked at is a coin flip or below. This is research, not financial advice, and we are not licensed advisors. Refresh prices before you trade.
+</div>
+
+<section id="market">
+  <h2>Market backdrop</h2>
+  <div class="strip">
+    <div class="stat"><span class="label">S&amp;P 500</span><b class="num">7,376.86</b><small class="neg">−2.7% wk</small></div>
+    <div class="stat"><span class="label">Nasdaq</span><b class="num">24,579</b><small class="neg">−3.4% wk · correction</small></div>
+    <div class="stat"><span class="label">S&amp;P/TSX</span><b class="num">35,789</b><small>≈ flat wk</small></div>
+    <div class="stat"><span class="label">VIX</span><b class="num">25.6</b><small class="warn">elevated</small></div>
+    <div class="stat"><span class="label">US 10-yr</span><b class="num">4.86%</b><small>rising</small></div>
+    <div class="stat"><span class="label">Dec Fed hike odds</span><b class="num">~77–80%</b><small class="neg">a hike, not a cut</small></div>
+    <div class="stat"><span class="label">Bitcoin</span><b class="num">$75.8k</b><small class="neg">−8.8% 30d</small></div>
+    <div class="stat"><span class="label">Crypto Fear &amp; Greed</span><b class="num">25</b><small class="neg">extreme fear</small></div>
+  </div>
+  <div class="panel">
+    <ul>
+      <li><b>Thu Nov 5 crash:</b> the S&amp;P fell 4.4% and the Nasdaq 5.5%, the worst day since April 2025, and the chip index lost ~12%. The trigger was the Democratic sweep of Congress, which raised fears of curbs on AI data centers. Friday brought only a partial bounce.</li>
+      <li><b>Retail sold, didn't buy the dip.</b> Vanda Research logged the heaviest single-stock net selling by retail since March 2020. The only dip-buying went into the leveraged ETFs TQQQ and SOXL.</li>
+      <li><b>Rates are going up.</b> October jobs came in at +165K vs ~60K expected, and futures price ~77–80% odds of a Fed <i>hike</i> on Dec 9. The Bank of Canada already hiked to 2.5% on Oct 28.</li>
+      <li><b>Leadership is defensive.</b> Health care, insurance, utilities and gold have held up. AI infrastructure, chips, memory and storage are being dumped.</li>
+      <li><b>Crypto:</b> BTC ETFs lost ~$1.28B this week, the worst week since June. Stablecoin supply had its steepest weekly drop of 2026, and BTC sits right at short-term holders' cost basis (~$76k). Leverage has been flushed (~$1.27B of liquidations), which can set up a squeeze, but money is still leaving.</li>
+    </ul>
+  </div>
+</section>
+
+<nav class="tabs">
+  <a href="#stocks">Top 10 stocks</a>
+  <a href="#crypto">Top 10 crypto</a>
+  <a href="#memes">Meme tokens</a>
+  <a href="#wallet">Solscan wallet</a>
+  <a href="#sell">When to sell</a>
+  <a href="#avoid">Avoid list</a>
+  <a href="#dates">Key dates</a>
+  <a href="#debate">AI debate</a>
+</nav>
+
+<section id="stocks">
+  <h2>Top 10 stocks to buy</h2>
+  <p class="sub">Ranked by blended chance of being higher on Dec 7. Each card shows the three separate estimates: Team (our 5 agents), Perplexity and ChatGPT. The line in the middle of each bar marks 50%. US prices are in USD and TSX prices in CAD; the price is the Nov 6 close unless noted.</p>
+  <div class="board" id="stockBoard"></div>
+  <div class="panel">
+    <h3>Most-bought, but not top-10: NVDA · ~51%</h3>
+    <p class="txt">Nvidia is the stock retail trades most, and all three sources discussed it. It closed at <span class="num">$186.64</span>, down ~23% from its 52-week high, and it broke below its 200-day moving average. Earnings on <b>Nov 17</b> (confirmed) make the month close to a binary bet, and data-center policy risk hangs over the whole group. <b>Buy signal:</b> a close back above $190–195, ideally after earnings. <b>Exit:</b> a close below $170–178. Every source said the same thing: don't buy a full position before Nov 17.</p>
+  </div>
+</section>
+
+<section id="crypto">
+  <h2>Top 10 crypto</h2>
+  <p class="sub">All prices are from CoinGecko, ~11 pm ET Nov 7. Every coin sits at a coin flip or below. Fear is extreme, ETF money is leaving and a Fed hike is likely. One weak point for the bulls: over the past year, 62% of "extreme fear" days were followed by a higher price 30 days later. The sample is small, so it counts as weak evidence only.</p>
+  <div class="board" id="cryptoBoard"></div>
+</section>
+
+<section id="memes">
+  <h2>Meme tokens (lottery-ticket tier)</h2>
+  <p class="sub">None of these made the top 10. All three sources put every meme token below 45%. CoinGecko studied 18.67M pump.fun launches: 68.7% stopped trading on launch day, and only 4.55% were still trading after 90 days.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Token</th><th>Price</th><th>Est. chance higher</th><th>Why people buy it</th><th>Red flags</th><th>Rule</th></tr></thead>
+    <tbody id="memeRows"></tbody>
+  </table></div>
+  <div class="panel">
+    <h3>Meme exit rules (exit on any one)</h3>
+    <ul>
+      <li>Hard stop at <b>−20%</b> from entry (−15% for small caps). Take profit in thirds at +25%, +50% and +100%, and move the stop to break-even after the first third.</li>
+      <li>A dev or team wallet sells or sends tokens to an exchange. The top-10 holders' share rises. Liquidity is pulled. Mint or freeze authority hasn't been revoked. The holder count starts falling.</li>
+      <li>Volume falls by half or more for several days: sell into strength, don't wait for the chart.</li>
+      <li><b>Macro gate:</b> if SOL closes below ~$85–88 or BTC closes below $73.2k, cut Solana meme exposure by at least half.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="wallet">
+  <h2>The Solscan wallet you sent</h2>
+  <div class="panel">
+    <p class="txt"><span class="num">5YRgrP3m…XRJQUzij</span> is labelled <b>"slingoor" on Pump.fun</b>, the handle of a well-known Solana memecoin trader. Solscan tags it as a <b>Token Creator</b>, and it has funded <b>4,758 other accounts</b>. What I found on Nov 7, ~11 pm ET:</p>
+    <ul>
+      <li><b>Shown "net worth" of ~$9.04M, but almost none of it can be sold.</b> The SOL balance is about $0.93. 395 tokens make up the rest.</li>
+      <li><b>~73% of that value is one token:</b> "Big Titty Coin", ticker <b>BTC</b>, mint <span class="num">C5xph2…L6pump</span>. The wallet holds ~619M of the 1B supply, about 62%, shown at ~$6.6M. DEX Screener shows only <b>~$390K of liquidity</b> for that token. Selling even a sliver would crash the price, so the $6.6M is paper value.</li>
+      <li>The other big holdings are joke pump.fun tokens using real tickers: "LTC", "NVDA", "BNB", "XRP", "XBT". Each is a huge share of its own supply.</li>
+      <li>New tokens land in this wallet <b>every minute or so</b>, over 225,000 balance changes in all. That looks like people airdropping coins to a famous wallet so their token appears to be "held by slingoor". That's a known memecoin promotion trick.</li>
+    </ul>
+    <p class="txt"><b>Verdict:</b> don't copy-trade this wallet's holdings. Seeing a token here is not an endorsement, and anything sent here can be dumped on whoever buys after. If you want to follow slingoor, watch his <i>buy transactions</i> (swaps he signs himself), not the token list. Even then you'd be buying after him.</p>
+  </div>
+</section>
+
+<section id="sell">
+  <h2>When to sell: rules for what you already hold</h2>
+  <p class="sub">I don't know which stocks or coins you currently own. Send me the list and I'll add exact exit levels for each one. Until then, these are standard practitioner rules the agents agreed on.</p>
+  <div class="cols">
+    <div class="panel">
+      <h3>Stocks</h3>
+      <ul>
+        <li><b>Set the stop before you buy:</b> 7–8% below entry. Never average down on a loser. A TFSA loss isn't tax-deductible, so the stop is your only protection.</li>
+        <li><b>Once you're up ~10%:</b> move the stop to break-even, then trail it ~10% below the highest close (~15% for volatile names).</li>
+        <li><b>Moving averages:</b> exit on a close below the 50-day on heavy volume, and always exit on a close below the 200-day. Act on closing prices, not intraday dips.</li>
+        <li><b>Earnings gap down</b> of more than 5% that doesn't recover by the close: sell. A gap up that later fills: exit.</li>
+        <li><b>Take partial profits</b> (⅓–½) at +15–20%, or when RSI goes above 75 and the price is more than 15% above the 50-day.</li>
+        <li><b>Right now:</b> with VIX above 25 and the S&amp;P under pressure, use smaller sizes, tighter stops and earlier profits.</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>Crypto</h3>
+      <ul>
+        <li><b>Buy only when two of these are true:</b> price reclaims a broken level; funding is flat or negative while price holds; whales are adding while exchange balances fall; ETF flows have turned positive for 2+ days.</li>
+        <li><b>Take-profit ladder:</b> sell 25% at +20–25% (majors) or 2× (memes), another 25% at the next resistance, and trail the rest.</li>
+        <li><b>Trailing stop:</b> majors exit on a daily close below the 50-day or ~12–15% off the high. Memes exit on a close below the 20-day or ~25–30% off the high.</li>
+        <li><b>Overheating:</b> if funding runs several times the normal 0.01%/8h for days while open interest climbs faster than price, trim. Most liquidation cascades start there.</li>
+        <li><b>Macro gate:</b> a BTC daily close below <span class="num">$73.2k</span> (the 200-day) or a confirmed Dec hike means halve alt and meme exposure.</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>Canada / TFSA notes</h3>
+      <ul>
+        <li>Wealthsimple charges <b>1.5% on each currency conversion</b> (non-USD-account clients). A one-month round trip into a US stock costs ~3%, which can wipe out the whole expected gain. For short trades, prefer TSX names or CDRs.</li>
+        <li>The 15% US dividend withholding tax is <b>not recoverable in a TFSA</b>.</li>
+        <li>Ex-dividend dates lower the price mechanically: ENB on Nov 13 (97¢), FTS on Nov 17 (66.5¢).</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="avoid">
+  <h2>Avoid list: heavily traded, poor odds</h2>
+  <div class="cols">
+    <div class="panel">
+      <h3>Stocks</h3>
+      <ul>
+        <li><b>Broken charts after earnings:</b> DKNG (−21%), AXON (−18%), TEAM (−15%), MCHP (−13%), FIS (−24%, guidance cut and CFO exit).</li>
+        <li><b>AI infra under policy fire:</b> CoreWeave (reports Nov 10), NBIS, ORCL. Memory and storage: MU, SNDK, STX, WDC (STX and WDC −28% on the week).</li>
+        <li><b>Leveraged ETFs</b> SOXL and TQQQ. Their daily reset erodes value in choppy markets.</li>
+        <li><b>Crowded speculative names:</b> IONQ, OKLO, IREN, QNT. GOGO (+71% one-day pop). SPCX.</li>
+        <li><b>Disputed:</b> GOOGL and AMZN. Both missed on Q3 EPS. ChatGPT still sees AMZN at ~55% because AWS is growing 39%. Perplexity and our team say no.</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>Crypto</h3>
+      <ul>
+        <li><b>Big unlocks in the window:</b> MON (Nov 24, ~140% of market cap per CryptoRank), Pieverse (Nov 14), ZRO (Nov 20), CRO and ARB (Nov 16), TRUMP (9.6% of supply in November), HYPE (Dec 6).</li>
+        <li><b>Market caps with no real trading</b> (you can't actually sell): BABYCLAW, APES, YZY, COCO, CWIF.</li>
+        <li><b>Fake ticker clones:</b> several fake PENGU and COOK mints. Always check the mint on CoinGecko or Solscan.</li>
+        <li><b>Fresh vertical pumps:</b> DACITY (#1 trending, +83% in 24h, no safety data). Any pump.fun launch without a passing RugCheck.</li>
+        <li><b>Influencer-promoted launches.</b> Bubblemaps (Nov 6) caught influencers selling from hidden wallets into their followers' buys.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="dates">
+  <h2>Key dates, Nov 9 – Dec 9</h2>
+  <div class="dates">
+    <div class="date"><b>Mon Nov 9</b>Fed speakers. Earnings from CEG, KKR, Barrick and OXY. Hyperliquid's Elysium mainnet.</div>
+    <div class="date"><b>Tue Nov 10 · 8:30 ET</b><span class="warn">October CPI, the big one.</span> CoreWeave earnings. Hydro One Q3.</div>
+    <div class="date"><b>Thu Nov 12</b>Cisco and Applied Materials earnings, the AI-capex read.</div>
+    <div class="date"><b>Fri Nov 13</b>October PPI. ENB ex-dividend.</div>
+    <div class="date"><b>Sun Nov 15</b>SEC deadline on the VanEck JitoSOL staking ETF.</div>
+    <div class="date"><b>Nov 15–17</b>Solana Breakpoint, London. Watch for a sell-the-news move.</div>
+    <div class="date"><b>Tue Nov 17</b><span class="warn">NVDA earnings.</span> FTS ex-dividend.</div>
+    <div class="date"><b>Mon Nov 24</b>MON token unlock (large).</div>
+    <div class="date"><b>Nov 26–27</b>US Thanksgiving. Deribit BTC expiry (max pain ~$80k).</div>
+    <div class="date"><b>Mon Nov 30</b>Trump Media noteholder deadline (up to $1B; it moved 4,259 BTC).</div>
+    <div class="date"><b>Thu Dec 3</b><span class="warn">RBC Q4 earnings</span> (confirmed).</div>
+    <div class="date"><b>Fri Dec 4</b>November US jobs report (date not verified).</div>
+    <div class="date"><b>Sun Dec 6</b>HYPE contributor unlock (~9.9M HYPE).</div>
+    <div class="date"><b>Wed Dec 9</b>FOMC and Bank of Canada decisions. Hike risk for both.</div>
+  </div>
+</section>
+
+<section id="debate">
+  <h2>The AI debate: where we agreed and disagreed</h2>
+  <div class="cols">
+    <div class="panel">
+      <h3>Agreed</h3>
+      <ul>
+        <li><b>CW and ABNB</b> are the strongest stock setups: fresh beat-and-raise quarters, buybacks and no AI exposure. Fortis is the best low-beta pick.</li>
+        <li><b>Crypto is a coin flip at best.</b> All three put BTC first and every meme token under 45%.</li>
+        <li><b>Don't go full size on NVDA</b> before Nov 17, and <b>be out of HYPE</b> before the Dec 6 unlock.</li>
+        <li><b>Tuesday's CPI</b> probably matters more for Dec 7 than any single company's news.</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>Disagreed</h3>
+      <ul>
+        <li><b>The "already priced in" problem.</b> Perplexity's main critique was that ABNB, NET and LLY already jumped on their news, so our original odds were too high. We lowered them.</li>
+        <li><b>GOOGL and AMZN.</b> ChatGPT originally ranked GOOGL #1 and AMZN #3. After the debate it dropped GOOGL but kept AMZN (~55%). Perplexity conceded both. Our team excluded both on the EPS misses. Sources also disagree on GOOGL's exact EPS figure.</li>
+        <li><b>AEM.</b> ChatGPT wants it in the top 10. Our technical agent excluded it because it was below its moving averages. Kept at #8 with a "split" tag.</li>
+        <li><b>RY.</b> Perplexity puts it at ~50% because of Dec 3 earnings and suggests ENB instead. ChatGPT keeps it at 54%.</li>
+        <li><b>Crypto order.</b> Both AIs said HYPE at #2 was too high because of the Dec 6 unlock, so it moved down. ChatGPT swapped PEPE for LINK. Perplexity cut ZEC to ~42%.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p><b>Method.</b> On Nov 7, 2026, ten agents researched with web search only. <b>Stocks:</b> retail flow, macro and news, technicals, analysts and insiders, and TSX plus a red team. <b>Crypto:</b> majors and macro, the Solana ecosystem plus this wallet, meme tokens, catalysts and unlocks, and on-chain and derivatives data. I read the wallet directly on Solscan and DEX Screener. ChatGPT and Perplexity each built an independent list, then critiqued ours. The final estimate blends Team, Perplexity and ChatGPT. Some prices could not be re-verified (CBOE is the Oct 30 close; ABNB is computed from its % move; NET is intraday). Refresh everything before trading.</p>
+  <p><b>Main sources:</b> <a href="https://cappnotes.substack.com/p/closing-look-friday-november-6-2026">CappNotes Nov 6 close</a> · <a href="https://finance.yahoo.com/markets/article/retail-traders-dump-257-million-in-stocks-in-5th-biggest-selling-day-since-2020-025640023.html">Yahoo: retail selling</a> · <a href="https://www.investmentnews.com/equities/nasdaq-enters-correction-as-ai-stocks-sink-after-midterm-elections/268903">InvestmentNews: Nasdaq correction</a> · <a href="https://www.bnnbloomberg.ca/markets/tsx/2026/11/06/sptsx-composite-up-more-than-100-points-us-stock-markets-mixed/">BNN: TSX Nov 6</a> · <a href="https://www.marketscreener.com/news/curtiss-wright-reports-third-quarter-2026-financial-results-and-raises-full-year-2026-guidance-ce785fdfd18af323">Curtiss-Wright Q3</a> · <a href="https://247wallst.com/cards/airbnb-q3-2026-earnings-abnb-01m6preqjfxp9989tfpqgtmzd5">Airbnb Q3</a> · <a href="https://us.trendlyne.com/us/equity/technical-analysis/ABBV/1402760/abbvie-inc/">ABBV technicals</a> · <a href="https://www.tradingview.com/news/seekingalpha:f07c1d25f094b:0-cloudflare-climbs-as-analysts-highlight-its-biggest-earnings-beat-in-years/">Cloudflare analysts</a> · <a href="https://www.investing.com/news/transcripts/earnings-call-transcript-cboe-beats-q3-2026-forecasts-shares-jump-68-93CH-4989464">Cboe Q3</a> · <a href="https://www.moneysense.ca/?p=373514">MoneySense: Wealthsimple FX fee</a> · <a href="https://www.coindesk.com/daybook-us/2026/11/06/over-usd1-billion-in-bullish-bets-liquidated-while-etf-flows-suggest-no-help-in-spot-market">CoinDesk: liquidations &amp; ETF flows</a> · <a href="https://crypto.news/bitcoin-price-76000-etf-outflows-75000-support/">crypto.news: BTC ETF outflows</a> · <a href="https://blockchainreporter.net/stablecoin-supply-sharpest-week-2026/">Stablecoin supply</a> · <a href="https://tokenomist.ai/hyperliquid">Tokenomist: HYPE unlocks</a> · <a href="https://cryptoticker.io/en/staking-etf-sec-decision-deadline/">JitoSOL ETF deadline</a> · <a href="https://cryptopotato.com/nearly-70-of-pump-fun-tokens-die-on-launch-day-coingecko/">pump.fun survival study</a> · <a href="https://solscan.io/account/5YRgrP3mjGzrzirYYN5HAQH19cTYREYwGxW6XRJQUzij">Solscan wallet</a> · <a href="https://dexscreener.com/solana/C5xph2yL6gMdxmuLGxJBkGpmuDFfyi5fqkBNhvL6pump">DEX Screener: wallet's top token</a></p>
+  <p>Not financial advice. Probabilities are subjective estimates and will be wrong often. Never risk money you can't afford to lose. · <a href="../">Stribbot NHL picks</a></p>
+</footer>
+</div>
+
+<script>
+const STOCKS = [
+  { t:"CW", n:"Curtiss-Wright · NYSE", p:"$463.47", pn:"Nov 6 close (+6.8% on the day)", est:59, team:62, px:60, gpt:58, tags:[["All 3 agree","t-ok"],["Defense","t-blue"]],
+    why:"Q3 adjusted EPS $3.94 (+16%), orders +15%, backlog $4.6B. FY EPS guidance raised to $15.40–15.60. $352M bought back in Q3. No AI exposure and no earnings in the window.",
+    risk:"Still −15.9% YTD, so this may be a weak stock bouncing. Part of the raise is already in the gap.",
+    buy:"A pullback that holds above ~$434 (the pre-gap close).", sell:"A close below $434 (gap filled)." },
+  { t:"ABNB", n:"Airbnb · Nasdaq", p:"~$190", pn:"Nov 6 close, computed from its +11.7% move", est:59, team:61, px:56, gpt:59, tags:[["All 3 agree","t-ok"],["Post-earnings drift","t-blue"]],
+    why:"Revenue $4.87B vs $4.75B expected, EPS $3.16 vs $2.85. Nights booked +16%, up from 10%. Outlook raised, plus a new buyback of up to $12B. No AI exposure.",
+    risk:"Already up ~12% on the news (Perplexity's main objection). Travel spending suffers if rates rise. Part of the beat came from a lower tax rate.",
+    buy:"Holds above ~$180 on a pullback.", sell:"A close below $170.50 (earnings gap fully filled)." },
+  { t:"FTS", n:"Fortis · TSX", p:"C$84.91", pn:"latest quote (InvestSMART)", est:57, team:61, px:57, gpt:56, tags:[["TFSA-friendly","t-ok"],["Low beta 0.41","t-blue"],["Dividend","t-blue"]],
+    why:"Regulated utility, the lowest-volatility name here. Quarterly dividend rising to 66.5¢ (~3% yield). 52-week high on Nov 5.",
+    risk:"Up ~9% in three weeks, so it's stretched. Rate hikes from the BoC and Fed hurt utilities. Ex-dividend Nov 17 knocks ~0.8% off the price.",
+    buy:"A pullback toward C$81–82.", sell:"A close below C$79, or a hawkish BoC surprise." },
+  { t:"ABBV", n:"AbbVie · NYSE", p:"$291.31", pn:"Nov 6 close", est:57, team:60, px:55, gpt:57, tags:[["Uptrend","t-ok"],["No earnings in window","t-blue"]],
+    why:"Above its 50-day ($271.9) and 200-day ($238.9), RSI ~60. 52-week high $302.93 on Nov 5. FY EPS guidance raised to $13.95–13.99. Health care is where the market is hiding.",
+    risk:"Drug-pricing policy under the new Congress. MACD is below its signal line. No near-term catalyst.",
+    buy:"A close above $302.93 on volume, or a pullback that holds $277–284.", sell:"A close below ~$272 (50-day) or −8% from entry." },
+  { t:"LLY", n:"Eli Lilly · NYSE", p:"$1,354", pn:"Nov 6 close", est:55, team:58, px:52, gpt:54, tags:[["Uptrend","t-ok"],["Expensive","t-warn"]],
+    why:"Q3 revenue +39% to $24.4B, FY guidance raised to $91–92B. Well above both moving averages. All-time high $1,453 on Nov 5.",
+    risk:"~40× forward earnings. Friday's drop came on heavy volume, which can mean big holders are selling. Both AIs rated it lower than the team.",
+    buy:"A close above $1,399, or a hold of ~$1,331.", sell:"A close below $1,300 or −8% from entry." },
+  { t:"CBOE", n:"Cboe Global Markets · Cboe", p:"$335.53", pn:"Oct 30 close — refresh", est:55, team:61, px:52, gpt:53, tags:[["Volatility hedge","t-blue"],["Stale price","t-warn"]],
+    why:"EPS $3.63 vs $3.42. Organic growth guidance raised to high-teens and the buyback lifted to ~$1B. Earns more when markets are choppy, which partly offsets a falling market.",
+    risk:"If volatility fades, so does the tailwind. Both AIs said our 61% assumed too much.",
+    buy:"Holding above $335.", sell:"A close below ~$314 (pre-earnings level)." },
+  { t:"RY", n:"Royal Bank of Canada · TSX", p:"C$284.16", pn:"Nov 6 close", est:54, team:56, px:50, gpt:54, tags:[["Earnings Dec 3","t-warn"],["TFSA-friendly","t-ok"]],
+    why:"Highest-quality Canadian bank, ~7% below its 2026 high. Canada held up better than the US this week.",
+    risk:"Q4 results on Dec 3 make it a binary bet just before the deadline. Canadian unemployment is rising (6.7%) while the BoC hikes. Perplexity would swap it for ENB.",
+    buy:"Holding above C$275, or wait for the Dec 3 results.", sell:"A close below C$270, or a miss on Dec 3." },
+  { t:"AEM", n:"Agnico Eagle · TSX", p:"C$270.75", pn:"Nov 6 close (+2.2%)", est:54, team:53, px:null, gpt:55, tags:[["Split","t-warn"],["Gold","t-blue"]],
+    why:"Gold rose ~5% on the week and miners carried the TSX. Strong Q3 cash flow. ChatGPT's preferred Canadian pick.",
+    risk:"Our technical agent excluded it: below its 50- and 200-day lines on NYSE, and gold in CAD is in a downtrend. 22% below its 2026 high and very volatile.",
+    buy:"A close above C$275–280 with gold firming.", sell:"A close below C$255." },
+  { t:"MRNA", n:"Moderna · Nasdaq", p:"$254.19", pn:"Nov 6 close", est:53, team:54, px:53, gpt:51, tags:[["Guidance raised","t-ok"],["Volatile","t-warn"]],
+    why:"First profit in two years. 2026 revenue-growth guidance raised to 15–25% from as much as 10%. Positive late-stage oncology data. Not tied to AI.",
+    risk:"Up 10%+ on the news already. Biotech re-ratings fade fast and outcomes swing widely. ChatGPT would swap it out.",
+    buy:"Holds Friday's level through Tuesday's CPI.", sell:"−8% from entry (rule of thumb; no verified support level)." },
+  { t:"NET", n:"Cloudflare · NYSE", p:"~$275.71", pn:"Nov 6 intraday", est:53, team:57, px:51, gpt:52, tags:[["Analysts split","t-warn"],["Growth","t-blue"]],
+    why:"Revenue +39% to $782.5M, its fastest growth in ~4 years. Q4 guide $845M vs $798M expected. KeyBanc Overweight (PT $375), BofA Buy (PT $380).",
+    risk:"Guggenheim stays at Sell (PT $190) on valuation. It's an AI-adjacent software stock in an AI selloff, up ~11% already, with 44 moves of more than 5% in the past year.",
+    buy:"Holds Friday's gap.", sell:"A close below ~$250." }
+];
+
+const CRYPTO = [
+  { t:"BTC", n:"Bitcoin", p:"$75,840", est:51, team:51, px:49, gpt:52, tags:[["All 3 rank #1","t-ok"]],
+    why:"Extreme fear (F&G 25), leverage flushed (~$1.27B liquidated), funding flat, still above its 200-day ($73.2k). The bear-cycle bottom is due around now by several analysts' calendars.",
+    risk:"Record ETF outflows (−$1.28B on the week). A Dec Fed hike is likely, plus hot-CPI risk. Wintermute's downside targets are $73k, then $68k.",
+    buy:"A daily close above $77.7–78.4k, or 2+ days of ETF inflows.", sell:"A daily close below $73.2k (200-day). Take profits at $81–82k, then $85–87k." },
+  { t:"ETH", n:"Ethereum", p:"$2,236", est:48, team:47, px:48, gpt:49, tags:[["Liquid","t-blue"]],
+    why:"Held up best of the top five this week. MACD has crossed up, and a whale placed a ~$45M rebound bet. Tom Lee says a floor is near.",
+    risk:"Six straight weeks of ETF outflows, −17.6% over 30 days, and the Glamsterdam upgrade is paused.",
+    buy:"A close above $2,310, then $2,400.", sell:"A daily close below $2,156 (200-day)." },
+  { t:"BNB", n:"BNB", p:"$695.55", est:48, team:48, px:47, gpt:50, tags:[["Smallest weekly drop","t-blue"]],
+    why:"Only −1.4% on the week. Binance says 98% of the hack losses are replenished, and a BNB Chain mainnet upgrade is targeted for late November.",
+    risk:"Exchange and regulatory tail risk after the $6.3B Binance hack on Oct 29.",
+    buy:"A close above $715.", sell:"A close below ~$650." },
+  { t:"SOL", n:"Solana", p:"$89.24", est:47, team:47, px:46, gpt:49, tags:[["Catalysts in window","t-blue"],["Oversold","t-warn"]],
+    why:"RSI ~31 (oversold), sitting on its 200-day (~$89), funding negative. Breakpoint runs Nov 15–17, and the SEC must rule on the JitoSOL ETF by Nov 15.",
+    risk:"−19% over 30 days, record SOL ETF outflows, a death cross is near and China's central bank is pushing back. The upgrade in October was a sell-the-news event.",
+    buy:"Holds $88, then a daily close above $95.", sell:"A daily close below $85 (next stop ~$75). Consider trimming into Breakpoint." },
+  { t:"TRX", n:"Tron", p:"$0.3204", est:47, team:48, px:45, gpt:49, tags:[["Low volatility","t-blue"],["Thin data","t-warn"]],
+    why:"Rose 1% while the market fell (Nov 6). Its stablecoin-transfer use gives it steadier demand.",
+    risk:"We found almost no technical data. Low volatility doesn't mean it will go up.",
+    buy:"Only if it keeps outperforming BTC.", sell:"If it underperforms BTC for a full week." },
+  { t:"HYPE", n:"Hyperliquid", p:"$77.48", est:47, team:49, px:45, gpt:47, tags:[["Unlock Dec 6","t-bad"],["Buybacks","t-ok"]],
+    why:"Revenue of ~$69M in 30 days funds daily buybacks (~21K HYPE burned in 24h). Elysium L2 mainnet on Nov 9. Still above its 200-day (~$67.8).",
+    risk:"A ~9.9M HYPE contributor unlock lands Dec 6, the day before our deadline. Whales are net short, and there are $612M of leveraged longs below the price.",
+    buy:"Reclaims $81–82.7.", sell:"A close below $74.36. Plan to be out before Dec 6." },
+  { t:"XRP", n:"XRP", p:"$1.16", est:45, team:46, px:45, gpt:46, tags:[["Whales accumulating","t-blue"]],
+    why:"Wallets holding 1M+ XRP hit a 2026 high (Santiment). It's near the $1.00 yearly floor after −17% in 30 days.",
+    risk:"The only top-five coin below its 200-day ($1.27). ETF flows are zero and the CLARITY Act is stalled. Binance reserves rose by 280M XRP.",
+    buy:"A close above $1.27–1.30.", sell:"A daily close below $1.16 (tight) or $1.00 (yearly floor)." },
+  { t:"ZEC", n:"Zcash", p:"$1,264", est:45, team:47, px:42, gpt:46, tags:[["Sell-the-news risk","t-warn"]],
+    why:"The NU7 upgrade went live Nov 6 (blocks 75s → 25s). Long-term uptrend, with the 200-day at ~$766.",
+    risk:"Fell after the testnet launch. ETF outflows and long liquidations. Longer term, EU rules from 2027 could force privacy-coin delistings.",
+    buy:"A close above ~$1,316 (50-day).", sell:"A daily close below $1,030." },
+  { t:"LINK", n:"Chainlink", p:"$10.76", est:44, team:45, px:null, gpt:44, tags:[["Has ETFs","t-blue"]],
+    why:"Oracle infrastructure for tokenized assets, with ETFs (GLNK, CLNK). ChatGPT swapped it in for PEPE.",
+    risk:"No dated catalyst found. Moves with the market.",
+    buy:"A close above $12.", sell:"If BTC closes below $73.2k." },
+  { t:"DOGE", n:"Dogecoin", p:"$0.0713", est:42, team:41, px:40, gpt:43, tags:[["At exit level","t-bad"]],
+    why:"The most liquid meme coin with the lowest rug risk. A rebound candidate if BTC recovers.",
+    risk:"Below all its moving averages, with crowded longs (Binance long/short 2.7). Already at the team's exit level ($0.0715).",
+    buy:"Wait until BTC reclaims $77.7k and DOGE closes back above its Nov 4 level on rising volume.", sell:"Already at the exit line ($0.0715). Don't hold below it." }
+];
+
+const MEMES = [
+  ["PUMP (SOL)","$0.003666","~42%","50% of net revenue buys back and burns PUMP. Trending on CoinGecko.","Fee wallets sent 76,111 SOL to Kraken Nov 6. 1.47% unlock in November. Influencer-payment allegations.","Buy above $0.0041–0.0044. Exit if more fee-wallet SOL hits exchanges."],
+  ["BONK (SOL)","~$0.0000028","~41%","Solana's flagship meme, top pick for both AIs.","Low momentum, −3.6% in 24h.","Only after a breakout on rising volume. −20% stop."],
+  ["PENGU (SOL)","$0.006345","~40%","The largest Solana meme by liquidity ($39M/day), 564K holders.","−12.6% in 7d, at the bottom of its range. Fake PENGU mints are circulating.","Buy above $0.00722 (50-day). Stop on a close below $0.0063, about where it is now."],
+  ["PEPE (ETH)","$0.00000489","~39%","The CoinDesk meme index rose 4% Nov 6 while majors fell.","The top 10 wallets hold ~41% of supply.","Exit below $0.00000432. Take profit at $0.0000052."],
+  ["WIF (SOL)","$0.161","~38%","An established brand.","Likely in a long downtrend. Weak.","Wait. −15% stop if you're in."],
+  ["FARTCOIN (SOL)","$0.1169","~36%","Viral attention.","Low volume for its market cap, so slippage risk.","Wait. −15% stop if you're in."],
+  ["TRUMP (SOL)","$1.18","~33%","All-time low on Nov 5, oversold.","9.6% supply unlock in November. Hit hard by the midterm results.","Not before the unlock. Stop below $1.12."]
+];
+
+function color(p){ return p>=56?'var(--ok)':p>=50?'var(--warn)':'var(--bad)'; }
+function card(x,i){
+  const v = (lbl,val)=>`<div><span>${lbl}</span><b>${val==null?'—':val+'%'}</b></div>`;
+  return `<article class="card ${(i<3&&x.est>=55)?'top3':''}">
+    <div class="head"><div class="rank">${i+1}</div>
+      <div class="who"><div class="tk">${x.t}</div><div class="nm">${x.n}</div></div>
+      <div class="prob"><b style="color:${color(x.est)}">~${x.est}%</b><small>est. higher Dec 7</small></div></div>
+    <div class="bar"><i style="width:${x.est}%;background:${color(x.est)}"></i></div>
+    <div class="price"><span>Price <span class="num">${x.p}</span></span><span>${x.pn||'CoinGecko ~11pm ET Nov 7'}</span></div>
+    <div class="votes">${v('Team',x.team)}${v('Perplexity',x.px)}${v('ChatGPT',x.gpt)}</div>
+    <div class="tags">${x.tags.map(([a,c])=>`<span class="tag ${c}">${a}</span>`).join('')}</div>
+    <p class="txt why"><b>Why:</b> ${x.why}</p>
+    <p class="txt risk"><b>How it fails:</b> ${x.risk}</p>
+    <div class="sig"><div class="buy"><span>Buy signal</span>${x.buy}</div><div class="sell"><span>Sell / exit</span>${x.sell}</div></div>
+  </article>`;
+}
+document.getElementById('stockBoard').innerHTML = STOCKS.map(card).join('');
+document.getElementById('cryptoBoard').innerHTML = CRYPTO.map(card).join('');
+document.getElementById('memeRows').innerHTML = MEMES.map(r=>`<tr><td><b>${r[0]}</b></td><td class="num">${r[1]}</td><td class="num neg">${r[2]}</td><td>${r[3]}</td><td>${r[4]}</td><td>${r[5]}</td></tr>`).join('');
+</script>
+</body>
+</html>
