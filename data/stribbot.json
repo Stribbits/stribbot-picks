@@ -658,5 +658,105 @@
   "stake": 5,
   "result": "Win",
   "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-07",
+  "game": "NYR @ SEA",
+  "bet": "Seattle +1.5 (OT incl)",
+  "price": "-222",
+  "decimal": 1.45,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Agreed"
+ },
+ {
+  "date": "2026-11-07",
+  "game": "DET @ COL",
+  "bet": "Detroit +2.5 (OT incl)",
+  "price": "-240",
+  "decimal": 1.417,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Agreed"
+ },
+ {
+  "date": "2026-11-07",
+  "game": "CHI @ CAR",
+  "bet": "Under 7.5 goals (OT incl)",
+  "price": "-289",
+  "decimal": 1.346,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Agreed"
+ },
+ {
+  "date": "2026-11-07",
+  "game": "MTL @ TOR",
+  "bet": "Montreal +1.5 (OT incl)",
+  "price": "-300",
+  "decimal": 1.333,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Agreed"
+ },
+ {
+  "date": "2026-11-07",
+  "game": "DET @ COL",
+  "bet": "Under 7.5 goals (OT incl)",
+  "price": "-275",
+  "decimal": 1.364,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-07",
+  "game": "UTA @ OTT",
+  "bet": "Ottawa +1.5 (OT incl)",
+  "price": "-237",
+  "decimal": 1.422,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-07",
+  "game": "PIT @ LAK",
+  "bet": "Pittsburgh +1.5 (OT incl)",
+  "price": "-238",
+  "decimal": 1.42,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-07",
+  "game": "NJD @ NYI",
+  "bet": "NY Islanders +1.5 (OT incl)",
+  "price": "-200",
+  "decimal": 1.5,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-07",
+  "game": "NYR @ SEA",
+  "bet": "Over 5.5 goals (OT incl)",
+  "price": "-154",
+  "decimal": 1.649,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-07",
+  "game": "SJS @ DAL",
+  "bet": "Jamie Benn under 1.5 shots",
+  "price": "-121",
+  "decimal": 1.826,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Fun only"
  }
 ]
