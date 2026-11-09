@@ -1,0 +1,56 @@
+{
+  "name": "Stribbot paper portfolio",
+  "started": "2026-11-09",
+  "note": "Fake money. Entries at the card's Nov 6 prices. US buys pay Wealthsimple's 1.5% FX fee; selling US stocks would cost another 1.5%. TSX trades are commission-free.",
+  "fx_fee": 0.015,
+  "usdcad": 1.411,
+  "usdcad_date": "2026-11-06",
+  "trades": [
+    {
+      "ticker": "CW",
+      "name": "Curtiss-Wright",
+      "ccy": "USD",
+      "entry": 463.47,
+      "entry_note": "Nov 6 close",
+      "shares": 0.753109,
+      "stop": 434.0,
+      "target": null,
+      "exit_rule": "Close below $434 (gap filled)",
+      "last": 463.47,
+      "last_date": "2026-11-06",
+      "status": "open",
+      "cost_cad": 500.0
+    },
+    {
+      "ticker": "ABNB",
+      "name": "Airbnb",
+      "ccy": "USD",
+      "entry": 190.0,
+      "entry_note": "Nov 6 close, estimated from +11.7% move \u2014 will correct to official close",
+      "shares": 1.83707,
+      "stop": 170.5,
+      "target": null,
+      "exit_rule": "Close below $170.50 (gap filled)",
+      "last": 190.0,
+      "last_date": "2026-11-06",
+      "status": "open",
+      "cost_cad": 500.0
+    },
+    {
+      "ticker": "FTS",
+      "name": "Fortis",
+      "ccy": "CAD",
+      "entry": 84.91,
+      "entry_note": "latest quote used on the card",
+      "shares": 5.888588,
+      "stop": 79.0,
+      "target": null,
+      "exit_rule": "Close below C$79; ex-dividend Nov 17 (66.5\u00a2/share)",
+      "last": 84.91,
+      "last_date": "2026-11-06",
+      "status": "open",
+      "cost_cad": 500.0
+    }
+  ],
+  "dividends": []
+}

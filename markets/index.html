@@ -111,6 +111,16 @@ footer a { color: var(--muted); }
   <b>Read this first.</b> These percentages are <b>rough judgments, not a model</b>. For scale, a typical large-cap stock ends a random month higher roughly 55–60% of the time. So our #1 stock (~59%) is only a little better than picking at random, and a broad index fund (XIU on the TSX, or VFV) gets similar odds without picking anything. Crypto is worse right now: every coin we looked at is a coin flip or below. This is research, not financial advice, and we are not licensed advisors. Refresh prices before you trade.
 </div>
 
+<section id="paper">
+  <h2>Paper portfolio <span class="tag t-blue" style="vertical-align:middle">Fake money</span></h2>
+  <p class="sub" id="paperNote"></p>
+  <div class="strip" id="paperStats"></div>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Stock</th><th>Shares</th><th>Entry</th><th>Last</th><th>Change</th><th>Worth (CAD)</th><th>If sold now</th><th>P/L if sold</th><th>Exit rule</th></tr></thead>
+    <tbody id="paperRows"></tbody>
+  </table></div>
+</section>
+
 <section id="market">
   <h2>Market backdrop</h2>
   <div class="strip">
@@ -135,6 +145,7 @@ footer a { color: var(--muted); }
 </section>
 
 <nav class="tabs">
+  <a href="#paper">Paper portfolio</a>
   <a href="#stocks">Top 10 stocks</a>
   <a href="#crypto">Top 10 crypto</a>
   <a href="#memes">Meme tokens</a>
@@ -425,6 +436,33 @@ function card(x,i){
 }
 document.getElementById('stockBoard').innerHTML = STOCKS.map(card).join('');
 document.getElementById('cryptoBoard').innerHTML = CRYPTO.map(card).join('');
+
+async function paper(){
+  try{
+    const d = await (await fetch('../data/paper.json?'+Date.now())).json();
+    const fmt=n=>'C$'+n.toFixed(2);
+    let cost=0, worth=0, sold=0, rows='';
+    for(const t of d.trades){
+      const toCad = t.ccy==='USD' ? d.usdcad : 1;
+      const w = t.shares*t.last*toCad;
+      const s = t.ccy==='USD' ? w*(1-d.fx_fee) : w;
+      const pl = s - t.cost_cad, ch = (t.last/t.entry-1)*100;
+      cost+=t.cost_cad; worth+=w; sold+=s;
+      const sym = t.ccy==='USD'?'$':'C$';
+      rows += `<tr><td><b>${t.ticker}</b><br><small style="color:var(--muted)">${t.name}</small></td><td class="num">${t.shares.toFixed(4)}</td><td class="num">${sym}${t.entry.toFixed(2)}<br><small style="color:var(--muted)">${t.entry_note}</small></td><td class="num">${sym}${t.last.toFixed(2)}<br><small style="color:var(--muted)">${t.last_date}</small></td><td class="num ${ch>=0?'pos':'neg'}">${ch>=0?'+':''}${ch.toFixed(2)}%</td><td class="num">${fmt(w)}</td><td class="num">${fmt(s)}</td><td class="num ${pl>=0?'pos':'neg'}">${pl>=0?'+':''}${fmt(pl)}</td><td>${t.exit_rule}</td></tr>`;
+    }
+    const div = (d.dividends||[]).reduce((a,x)=>a+x.cad,0);
+    const net = sold + div - cost;
+    document.getElementById('paperRows').innerHTML = rows;
+    document.getElementById('paperNote').textContent = `Started ${d.started}. ${d.note} USD/CAD ${d.usdcad} (${d.usdcad_date}).`;
+    document.getElementById('paperStats').innerHTML =
+      `<div class="stat"><span class="label">Invested</span><b class="num">${fmt(cost)}</b><small>${d.trades.length} positions</small></div>`+
+      `<div class="stat"><span class="label">Worth now</span><b class="num">${fmt(worth)}</b><small>market value</small></div>`+
+      `<div class="stat"><span class="label">If sold now</span><b class="num">${fmt(sold)}</b><small>after FX fee</small></div>`+
+      `<div class="stat"><span class="label">Net P/L</span><b class="num ${net>=0?'pos':'neg'}">${net>=0?'+':''}${fmt(net)}</b><small>incl. dividends ${fmt(div)}</small></div>`;
+  }catch(e){ document.getElementById('paperNote').textContent='Paper portfolio data could not load.'; }
+}
+paper();
 document.getElementById('memeRows').innerHTML = MEMES.map(r=>`<tr><td><span class="verdict v-nobuy" style="margin:0;min-width:0;font-size:.8rem">No Buy</span></td><td><b>${r[0]}</b></td><td class="num">${r[1]}</td><td class="num neg">${r[2]}</td><td>${r[3]}</td><td>${r[4]}</td><td>${r[5]}</td></tr>`).join('');
 </script>
 </body>
