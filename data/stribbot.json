@@ -758,5 +758,85 @@
   "stake": 5,
   "result": "Loss",
   "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-08",
+  "game": "PIT @ ANA",
+  "bet": "Anaheim +1.5 (OT incl)",
+  "price": "-285",
+  "decimal": 1.351,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Agreed"
+ },
+ {
+  "date": "2026-11-08",
+  "game": "PHI @ CGY",
+  "bet": "Calgary +1.5 (OT incl)",
+  "price": "-249",
+  "decimal": 1.402,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Agreed"
+ },
+ {
+  "date": "2026-11-08",
+  "game": "NJD @ TOR",
+  "bet": "Toronto +1.5 (OT incl)",
+  "price": "-192",
+  "decimal": 1.521,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-08",
+  "game": "PIT @ ANA",
+  "bet": "Leo Carlsson over 0.5 points",
+  "price": "-237",
+  "decimal": 1.422,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-08",
+  "game": "NJD @ TOR",
+  "bet": "Auston Matthews over 0.5 points",
+  "price": "-230",
+  "decimal": 1.435,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-08",
+  "game": "NJD @ TOR",
+  "bet": "William Nylander over 0.5 points",
+  "price": "-220",
+  "decimal": 1.455,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-08",
+  "game": "TBL @ WPG",
+  "bet": "Kyle Connor over 0.5 points",
+  "price": "-235",
+  "decimal": 1.426,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-08",
+  "game": "PHI @ CGY",
+  "bet": "Under 6.5 goals (OT incl)",
+  "price": "-156",
+  "decimal": 1.641,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Fun only"
  }
 ]
