@@ -163,6 +163,17 @@ body.pip .tlegs { font-size: .76rem; }
 .pasttog { align-self: flex-start; font-size: .85rem; color: var(--muted); }
 .pasttog:hover { color: var(--ink); }
 @media (prefers-reduced-motion: no-preference) { .bet, .row { transition: border-color .2s; } }
+.parbtn { border-style: dashed; }
+.parbtn.on { border-style: solid; border-color: var(--ok); color: var(--ok); }
+#pbuild { position: sticky; bottom: 12px; z-index: 5; background: var(--panel); border: 1px solid var(--accent); border-radius: 10px; padding: 12px 16px; box-shadow: 0 8px 24px rgba(0,0,0,.45); display: flex; flex-direction: column; gap: 8px; margin-top: 12px; }
+#pbuild[hidden] { display: none; }
+#pbuild .phd { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+#pbuild .phd b { font-family: var(--f-display); font-size: 1.2rem; letter-spacing: .03em; text-transform: uppercase; }
+#pbuild ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 4px; max-height: 30vh; overflow-y: auto; }
+#pbuild li { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; gap: 8px; align-items: center; font-size: .88rem; }
+#pbuild li span { color: var(--muted); font-size: .78rem; }
+#pbuild .warn { font-size: .8rem; color: var(--warn); margin: 0; }
+#pbuild .place input.odds { width: 84px; }
 </style>
 </head>
 <body>
@@ -212,7 +223,7 @@ body.pip .tlegs { font-size: .76rem; }
 
 <section aria-labelledby="night-h">
 <h2 id="night-h">Tonight's bets</h2>
-<p class="note">What each signed-in player has placed from tonight's card. Numbers are card numbers from Tonight's top 10 and Top parlays, with the stake and book on each.</p>
+<p class="note">What each signed-in player has placed from tonight's card. Numbers are card numbers from Tonight's top 10 and Top parlays, with the stake and book on each; "own" is a parlay a player built with Add to parlay.</p>
 <div class="stand" id="night"><div class="empty">Loading…</div></div>
 </section>
 
@@ -221,6 +232,7 @@ body.pip .tlegs { font-size: .76rem; }
 <p class="note">Every Pinnacle bet on the slate is scanned and ranked by chance to hit. Stribbot Agents 1–3 each vote. "Agreed" means all three accept. Bar shows our estimated win range; the line is what the price needs.</p>
 <p class="note"><label>My Pinnacle site: <select id="pin-site" aria-label="Which Pinnacle site your account is on"><option value="ca">pinnacle.ca (Ontario)</option><option value="com">pinnacle.com (Quebec and elsewhere)</option></select></label> Place on Pinnacle opens this one. Saved on this device.</p>
 <div class="board" id="board"><div class="empty">No board posted yet.</div></div>
+<div id="pbuild" hidden aria-live="polite"></div>
 </section>
 
 <section aria-labelledby="par-h">
@@ -513,6 +525,7 @@ function renderBoard() {
     a.append(chips, el('p', 'obj', 'Strongest objection: ' + (r.objection || '—')));
     if (r.why) a.append(el('p', 'why', 'In short: ' + r.why));
     const pl = placeRow(r, r.bet, r.game, mine.find(b => b.date === card.date && b.bet === r.bet && b.game === r.game));
+    pl.append(parBtn(r));
     a.append(pl); return a;
   }));
 }
@@ -569,6 +582,83 @@ pl.append(pays, box);
 return pl;
 }
 
+
+// ---- My parlay builder: pick singles from the top 10 and track them as one parlay ----
+const PKEY = () => 'stribbot-parlay-sel|' + (card && card.date);
+const loadSel = () => { try { return JSON.parse(localStorage.getItem(PKEY()) || '[]') || []; } catch (e) { return []; } };
+let psel = [];
+const saveSel = () => { try { localStorage.setItem(PKEY(), JSON.stringify(psel)); } catch (e) {} };
+const toAm = (d) => d >= 2 ? '+' + Math.round((d - 1) * 100) : '-' + Math.round(100 / (d - 1));
+function shortLeg(r) {
+const t = r.track || {};
+if (t.type === 'spread') return t.line === -0.5 ? t.team + ' ML' : t.team + ' ' + (t.line > 0 ? '+' : '') + t.line;
+if (t.type === 'total') return t.away + '-' + t.home + ' ' + (t.side === 'over' ? 'O' : 'U') + t.line;
+if (t.type === 'player') return String(t.player).split(' ').slice(-1)[0] + ' ' + (t.side === 'over' ? 'O' : 'U') + t.line + ' ' + t.stat;
+if (t.type === 'reg') return t.away + '-' + t.home + ' reg';
+return r.bet;
+}
+function legOdds(r) {
+const k = 'stribbot-odds|' + card.date + '|' + r.bet + '|' + (r.game || ''); let ov = {}; try { ov = JSON.parse(localStorage.getItem(k) || '{}') || {}; } catch (e) { ov = {}; }
+const bk = r.books || {};
+const p = (ov.PIN && parseOdds(ov.PIN)) ? ov.PIN : (bk.pinnacle || r.price), b = (ov.B365 && parseOdds(ov.B365)) ? ov.B365 : (bk.bet365 || null);
+return { PIN: p ? parseOdds(p) : null, B365: b ? parseOdds(b) : null };
+}
+const MYPAR = /^My parlay ((?:#\d+\s*\+?\s*)+)/;
+function myParLegs(name) {
+const m = String(name || '').match(MYPAR); if (!m || !card) return null;
+const legs = [...m[1].matchAll(/#(\d+)/g)].map(x => (card.bets || []).find(r => r.rank === Number(x[1])));
+return legs.length > 1 && legs.every(r => r && r.track) ? legs : null;
+}
+function parBtn(r) {
+const on = psel.includes(r.rank);
+const b = el('button', 'parbtn' + (on ? ' on' : ''), on ? '✓ In parlay' : 'Add to parlay'); b.type = 'button';
+b.title = on ? 'Remove this bet from your parlay' : 'Add this bet as a leg of your own parlay';
+if (!r.track) { b.disabled = true; b.title = 'This bet cannot be tracked, so it cannot go in a parlay'; }
+b.addEventListener('click', () => { psel = on ? psel.filter(n => n !== r.rank) : psel.concat([r.rank]); saveSel(); renderBoard(); renderPBuild(); });
+return b;
+}
+function renderPBuild() {
+const box = $('pbuild'); if (!box) return;
+if (!card || !Array.isArray(card.bets)) { box.hidden = true; return; }
+psel = psel.filter(n => card.bets.some(r => r.rank === n && r.track));
+if (!psel.length) { box.hidden = true; box.replaceChildren(); return; }
+box.hidden = false;
+const legs = psel.map(n => card.bets.find(r => r.rank === n)).sort((a, b) => a.rank - b.rank);
+const hd = el('div', 'phd'); hd.append(el('b', '', `My parlay · ${legs.length} leg${legs.length > 1 ? 's' : ''}`));
+const clr = el('button', 'x', 'Clear'); clr.type = 'button'; clr.addEventListener('click', () => { psel = []; saveSel(); renderBoard(); renderPBuild(); }); hd.append(clr);
+const ul = el('ul');
+legs.forEach(r => { const li = el('li'); const d = el('div'); d.append(document.createTextNode(`#${r.rank} ${r.bet} `), el('span', '', r.game + ' · ' + r.start)); const o = legOdds(r);
+const rm = el('button', 'x', '×'); rm.type = 'button'; rm.setAttribute('aria-label', 'Remove #' + r.rank + ' from parlay'); rm.addEventListener('click', () => { psel = psel.filter(n => n !== r.rank); saveSel(); renderBoard(); renderPBuild(); });
+li.append(d, el('b', 'num', o.PIN ? o.PIN.price : '—'), rm); ul.append(li); });
+box.replaceChildren(hd, ul);
+const games = legs.map(r => r.game), dup = [...new Set(games.filter((g, i) => games.indexOf(g) !== i))];
+if (dup.length) box.append(el('p', 'warn', `Same game twice (${dup.join(', ')}): books often refuse same-game legs or price them lower than this. Enter the book's real price in "My odds" if it differs.`));
+const prod = (k) => legs.every(r => legOdds(r)[k]) ? legs.reduce((d, r) => d * legOdds(r)[k].decimal, 1) : null;
+const dPin = prod('PIN'), dB = prod('B365'), chance = legs.reduce((c, r) => c * (Number(r.est) || 0), 1);
+const figs = el('div', 'figs');
+const f = (lab, val) => { const d = el('div'); d.append(el('b', '', val), el('span', 'label', lab)); return d; };
+figs.append(f('Pinnacle', dPin ? toAm(dPin) : '—'), f('bet365', dB ? toAm(dB) : 'n/a'), f('Needs', dPin ? pct(1 / dPin) : '—'), f('Chance', chance ? pct(chance) : '—'));
+box.append(figs);
+if (legs.length < 2) { box.append(el('p', 'note', 'Add at least one more bet from the top 10 to make a parlay.')); return; }
+const pl = el('div', 'place');
+const lab = el('label'); lab.append(document.createTextNode('$')); const inp = el('input'); inp.type = 'number'; inp.min = '1'; inp.step = '0.5'; inp.value = '5'; inp.setAttribute('aria-label', 'Stake for my parlay'); lab.append(inp);
+const ol = el('label'); ol.append(document.createTextNode('My odds')); const oi = el('input', 'odds'); oi.type = 'text'; oi.placeholder = 'optional'; oi.setAttribute('aria-label', 'Your own parlay odds (optional)'); ol.append(oi);
+const pays = el('span', 'pays');
+const own = () => oi.value.trim() ? parseOdds(oi.value) : null;
+const upd = () => { const s = parseFloat(inp.value) || 0, o = own(); if (oi.value.trim() && !o) { pays.textContent = 'Odds like -150, +120 or 2.4'; return; } pays.textContent = o ? `wins ${money(s * (o.decimal - 1))} at your odds` : [dPin ? `Pinnacle wins ${money(s * (dPin - 1))}` : '', dB ? `bet365 wins ${money(s * (dB - 1))}` : ''].filter(Boolean).join(' · '); };
+inp.addEventListener('input', upd); oi.addEventListener('input', upd);
+const tags = legs.map(r => '#' + r.rank).join(' + ');
+let name = `My parlay ${tags}: ${legs.map(shortLeg).join(', ')}`; if (name.length > 120) name = `My parlay ${tags}`;
+const place = (k, dec) => { const s = parseFloat(inp.value); if (!(s > 0)) { pays.textContent = 'Enter a stake above $0'; return; }
+const o = own(); if (oi.value.trim() && !o) { pays.textContent = 'Odds like -150, +120 or 2.4'; oi.focus(); return; }
+const d = o ? o.decimal : dec;
+save(mine.concat([{ id: newId(), date: card.date, game: [...new Set(games)].join(' / '), bet: name, price: (o ? o.price : toAm(d)) + '|' + k, decimal: Math.round(d * 1000) / 1000, stake: Math.round(s * 100) / 100, result: 'Pending', placedAt: new Date().toISOString() }]));
+psel = []; saveSel(); renderAll(); };
+pl.append(lab);
+[['PIN', dPin], ['B365', dB]].forEach(([k, d]) => { const b = el('button', 'bookbtn' + (k === 'PIN' ? ' primary' : '')); b.type = 'button'; b.replaceChildren(document.createTextNode('Place on ' + BOOKS[k]), el('b', '', d ? toAm(d) : '—')); b.disabled = !d && !oi.value.trim(); b.addEventListener('click', () => place(k, d)); oi.addEventListener('input', () => { b.disabled = !d && !oi.value.trim(); }); pl.append(b); });
+pl.append(ol, pays); box.append(pl, el('p', 'note', 'Tracked in the live tracker and settled automatically when every game ends (open the site after the games to settle it).')); upd();
+}
+
 // ---- Live tracker (ESPN public scoreboard; 7 PM - 1 AM ET) ----
 const ESPN = 'https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/';
 const ESPN_AB = { NJD: 'NJ', TBL: 'TB', LAK: 'LA', SJS: 'SJ' };
@@ -584,6 +674,8 @@ const single = (card.bets || []).find(r => r.bet === b.bet && r.game === b.game)
 if (single && single.track) return { b, num: single.rank, name: single.bet, legs: [{ bet: single.bet, t: single.track }] };
 const par = (card.parlays || []).find(r => b.bet === 'Parlay: ' + (r.short || r.bet));
 if (par) return { b, num: par.rank, name: par.legs.length + '-leg parlay', parlay: true, legs: par.legs.map(l => ({ bet: l.bet + ' (' + l.game + ')', t: l.track })) };
+const my = myParLegs(b.bet);
+if (my) return { b, num: null, name: my.length + '-leg parlay (mine)', parlay: true, legs: my.map(r => ({ bet: '#' + r.rank + ' ' + r.bet + ' (' + r.game + ')', t: r.track })) };
 const wt = (card.watch || []).find(r => r.bet === b.bet);
 if (wt) return { b, num: null, name: wt.name || wt.bet, parlay: wt.legs.length > 1, legs: wt.legs.map(l => ({ bet: l.bet, t: l.track })) };
 return null;
@@ -755,7 +847,7 @@ const singles = new Map((card.bets || []).map(r => [r.bet + '|' + r.game, r.rank
 const pars = new Map((card.parlays || []).map(r => ['Parlay: ' + (r.short || r.bet), r.rank]));
 const by = {};
 allBets.filter(b => b.date === card.date).forEach(b => {
-const s = singles.get(b.bet + '|' + b.game), p = pars.get(b.bet);
+const s = singles.get(b.bet + '|' + b.game), p = pars.has(b.bet) ? pars.get(b.bet) : (String(b.bet).startsWith('My parlay #') ? 'own' : null);
 if (s == null && p == null) return;
 const o = by[b.uid] = by[b.uid] || { s: [], p: [], total: 0 };
 const stake = Number(b.stake) || 0;
@@ -765,7 +857,7 @@ o.total += stake;
 const uids = Object.keys(by);
 if (!uids.length) { box.replaceChildren(el('div', 'empty', 'No one has placed a bet from tonight\'s card yet.')); return; }
 const fmt = v => '$' + (Math.round(v * 100) % 100 ? v.toFixed(2) : String(Math.round(v)));
-const cell = list => { const td = el('td', 'picks'); if (!list.length) td.textContent = '—'; list.sort((a, b) => a.n - b.n).forEach(x => td.append(el('span', 'pk', `${x.n} (${fmt(x.stake)})`))); return td; };
+const cell = list => { const td = el('td', 'picks'); if (!list.length) td.textContent = '—'; list.sort((a, b) => String(a.n).localeCompare(String(b.n), undefined, { numeric: true })).forEach(x => td.append(el('span', 'pk', `${x.n} (${fmt(x.stake)})`))); return td; };
 const table = el('table'); const head = el('tr');
 [['Name', ''], ['Singles', ''], ['Parlays', ''], ['Stake total', 'r']].forEach(([h, c]) => head.append(el('th', c, h)));
 const thead = el('thead'); thead.append(head); const tb = el('tbody');
@@ -779,9 +871,9 @@ tb.append(tr);
 table.append(thead, tb); box.replaceChildren(table);
 }
 
-const renderAll = () => { renderMine(); renderBoard(); renderParlays(); renderNight(); renderTracker(); };
+const renderAll = () => { renderMine(); renderBoard(); renderPBuild(); renderParlays(); renderNight(); renderTracker(); };
 renderAll();
-fetch('data/card.json?t=' + Date.now()).then(r => r.json()).catch(() => null).then(c => { card = c; renderAll(); pollLive(); });
+fetch('data/card.json?t=' + Date.now()).then(r => r.json()).catch(() => null).then(c => { card = c; psel = loadSel(); renderAll(); pollLive(); });
 setInterval(() => { if (inWindow()) pollLive(); }, 60000);
 startCloud();
 </script>
