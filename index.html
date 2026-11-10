@@ -229,7 +229,7 @@ body.pip .tlegs { font-size: .76rem; }
 
 <section aria-labelledby="board-h">
 <h2 id="board-h">Tonight's top 10</h2>
-<p class="note">Every Pinnacle bet on the slate is scanned and ranked by chance to hit. Stribbot Agents 1–3 each vote. "Agreed" means all three accept. Bar shows our estimated win range; the line is what the price needs.</p>
+<p class="note">Every Pinnacle bet on the slate is scanned and ranked by chance to hit. Stribbot Agents 1–4 each vote. "Agreed" means all four name it in their top 4. Bar shows our estimated win range; the line is what the price needs.</p>
 <p class="note"><label>My Pinnacle site: <select id="pin-site" aria-label="Which Pinnacle site your account is on"><option value="ca">pinnacle.ca (Ontario)</option><option value="com">pinnacle.com (Quebec and elsewhere)</option></select></label> Place on Pinnacle opens this one. Saved on this device.</p>
 <div class="board" id="board"><div class="empty">No board posted yet.</div></div>
 <div id="pbuild" hidden aria-live="polite"></div>
@@ -521,7 +521,7 @@ function renderBoard() {
     const band = el('i', r.est_high > r.breakeven ? 'good' : ''); band.style.left = x(r.est_low) + '%'; band.style.width = Math.max(2, x(r.est_high) - x(r.est_low)) + '%';
     const be = el('u'); be.style.left = x(r.breakeven) + '%'; rg.append(band, be); a.append(rg);
     const chips = el('div', 'chips');
-    [['Agent 1', r.agent1], ['Agent 2', r.agent2], ['Agent 3', r.agent3], ['Analysts', r.analysts]].forEach(([k, v]) => { const c = el('span', 'chip'); c.append(el('em', '', k), document.createTextNode(v || '—')); chips.append(c); });
+    [['Agent 1', r.agent1], ['Agent 2', r.agent2], ['Agent 3', r.agent3], ...(r.agent4 ? [['Agent 4', r.agent4]] : []), ['Analysts', r.analysts]].forEach(([k, v]) => { const c = el('span', 'chip'); c.append(el('em', '', k), document.createTextNode(v || '—')); chips.append(c); });
     a.append(chips, el('p', 'obj', 'Strongest objection: ' + (r.objection || '—')));
     if (r.why) a.append(el('p', 'why', 'In short: ' + r.why));
     const pl = placeRow(r, r.bet, r.game, mine.find(b => b.date === card.date && b.bet === r.bet && b.game === r.game));
