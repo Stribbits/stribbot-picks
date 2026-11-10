@@ -408,5 +408,40 @@
   "date": "2026-11-08",
   "bet": "Parlay: PHI-CGY U8.5, WPG +2.5",
   "result": "Win"
+ },
+ {
+  "date": "2026-11-09",
+  "bet": "Evan Bouchard over 0.5 points",
+  "result": "Loss"
+ },
+ {
+  "date": "2026-11-09",
+  "bet": "Under 7.5 goals (OT incl)",
+  "result": "Win"
+ },
+ {
+  "date": "2026-11-09",
+  "bet": "Vancouver +1.5 (OT incl)",
+  "result": "Loss"
+ },
+ {
+  "date": "2026-11-09",
+  "bet": "San Jose +1.5 (OT incl)",
+  "result": "Win"
+ },
+ {
+  "date": "2026-11-09",
+  "bet": "Anthony Duclair under 0.5 points",
+  "result": "Win"
+ },
+ {
+  "date": "2026-11-09",
+  "bet": "Adam Fox over 0.5 points",
+  "result": "Loss"
+ },
+ {
+  "date": "2026-11-09",
+  "bet": "Parlay: NYI +2.5, PHI-VAN U7.5",
+  "result": "Win"
  }
 ]

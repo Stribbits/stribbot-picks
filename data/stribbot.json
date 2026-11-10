@@ -838,5 +838,65 @@
   "stake": 5,
   "result": "Loss",
   "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-09",
+  "game": "NYR @ EDM",
+  "bet": "Evan Bouchard over 0.5 points",
+  "price": "-226",
+  "decimal": 1.442,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Agreed"
+ },
+ {
+  "date": "2026-11-09",
+  "game": "NYR @ EDM",
+  "bet": "Under 7.5 goals (OT incl)",
+  "price": "-262",
+  "decimal": 1.382,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-09",
+  "game": "PHI @ VAN",
+  "bet": "Vancouver +1.5 (OT incl)",
+  "price": "-212",
+  "decimal": 1.472,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-09",
+  "game": "NYI @ SJS",
+  "bet": "San Jose +1.5 (OT incl)",
+  "price": "-209",
+  "decimal": 1.478,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-09",
+  "game": "NYI @ SJS",
+  "bet": "Anthony Duclair under 0.5 points",
+  "price": "-187",
+  "decimal": 1.535,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-09",
+  "game": "NYR @ EDM",
+  "bet": "Adam Fox over 0.5 points",
+  "price": "-180",
+  "decimal": 1.556,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Fun only"
  }
 ]
