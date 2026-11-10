@@ -3,8 +3,8 @@
  "scanned": 710,
  "ledger_rows": 710,
  "ranking": "agreed best first, then chance to hit",
- "note": "STRIBBLETS. Tuesday Nov 10 card: 7 games, 710 options priced and logged. AGREED (in all three agents' top 4): Ottawa +1.5. The rest are ranked by estimated chance to hit. Agents 2 and 3 both rated every single Fun only or Pass and warned that our +1.5 puck-line bias (+8 points, from 31 wins in 36) supplies most of the edge: without it, the raw model and Pinnacle numbers are near or below break-even. Below break-even by our own estimate: Toronto +2.5 and both 7.5 unders. Pass verdicts (two agents passed): Detroit +1.5, Winnipeg +1.5, both unders. Learning: benched bet type: points unders (none on card). Adopted hypotheses: none yet (H1-H7 still testing), so none removed a pick. Graded ledger: 133 rows before tonight. Player props were priced (shots, points, assists overs) but none made the top 10: props have lost badly lately and none was clearly above break-even (best: MacKinnon over 0.5 assists -156, est 61.4% vs 60.9%). Team totals were priced and logged but left off the card (the live tracker cannot settle them). Goalie saves markets showed no prices on Pinnacle. No team is on the 2nd night of a back-to-back tonight. Goalies all confirmed except Saros (expected). Prices re-checked on Pinnacle at 4:31 PM ET, unchanged.",
- "updatedAt": "2026-11-10T21:45:00Z",
+ "note": "STRIBBLETS. Tuesday Nov 10 card: 7 games, 710 options priced and logged. No AGREED bet tonight: Agreed now means all four agents (Agent 4 was added tonight) name it in their top 4. Ottawa +1.5 was in Agents 1-3's top 4 but not Agent 4's (Agent 4's top 4: MIN ML -122, NJD ML -140, NSH +1.5, TOR +1.5), so it is Fun only. The rest are ranked by estimated chance to hit. Agents 2 and 3 both rated every single Fun only or Pass and warned that our +1.5 puck-line bias (+8 points, from 31 wins in 36) supplies most of the edge: without it, the raw model and Pinnacle numbers are near or below break-even. Below break-even by our own estimate: Toronto +2.5 and both 7.5 unders. Pass verdicts (two or more agents passed): Detroit +1.5, Winnipeg +1.5, both unders. Learning: benched bet type: points unders (none on card). Adopted hypotheses: none yet (H1-H7 still testing), so none removed a pick. Graded ledger: 133 rows before tonight. Player props were priced (shots, points, assists overs) but none made the top 10: props have lost badly lately and none was clearly above break-even (best: MacKinnon over 0.5 assists -156, est 61.4% vs 60.9%). Team totals were priced and logged but left off the card (the live tracker cannot settle them). Goalie saves markets showed no prices on Pinnacle. No team is on the 2nd night of a back-to-back tonight. Goalies all confirmed except Saros (expected). Prices re-checked on Pinnacle at 4:31 PM ET, unchanged.",
+ "updatedAt": "2026-11-10T23:40:00Z",
  "bets": [
   {
    "rank": 1,
@@ -22,7 +22,7 @@
    "est_low": 0.707,
    "est_high": 0.792,
    "method": "Poisson goal model (regressed GF/GA, home edge, goalie/backup adj, empty-net) weighted 0.3 + Pinnacle no-vig 0.7, plus puck_line_plus1.5 bias +0.081; above break-even",
-   "verdict": "Agreed",
+   "verdict": "Fun only",
    "agent1": "Accept (my top 4 #1)",
    "agent2": "Fun only - in my top 4; the +8 point puck-line bias supplies the edge (raw blend about 71% vs 74.4% break-even)",
    "agent3": "Fun only - in my top 4; estimate leans on the +8 point adjustment, raw about 71%",
@@ -42,7 +42,8 @@
     "home": "OTT",
     "team": "OTT",
     "line": 1.5
-   }
+   },
+   "agent4": "Accept - not in my top 4; price short for a true pick'em, WSH can win by 2"
   },
   {
    "rank": 2,
@@ -80,7 +81,8 @@
     "home": "CBJ",
     "team": "CBJ",
     "line": 1.5
-   }
+   },
+   "agent4": "Accept - CBJ low-event offence; FLA can still win by 2"
   },
   {
    "rank": 3,
@@ -118,7 +120,8 @@
     "home": "MTL",
     "team": "MTL",
     "line": 1.5
-   }
+   },
+   "agent4": "Fun only - MIN 2.26 GA and Wallstedt make a 2-goal MIN win likely"
   },
   {
    "rank": 4,
@@ -156,7 +159,8 @@
     "home": "LAK",
     "team": "NSH",
     "line": 1.5
-   }
+   },
+   "agent4": "Accept (my top 4 #3) - one of the cleaner high-hit spots"
   },
   {
    "rank": 5,
@@ -194,7 +198,8 @@
     "home": "STL",
     "team": "DET",
     "line": 1.5
-   }
+   },
+   "agent4": "Accept - Gibson .860 is a real concern"
   },
   {
    "rank": 6,
@@ -232,7 +237,8 @@
     "home": "WPG",
     "team": "WPG",
     "line": 1.5
-   }
+   },
+   "agent4": "Pass - NJD on a 5-game win streak, wins by 2+ often"
   },
   {
    "rank": 7,
@@ -270,7 +276,8 @@
     "home": "TOR",
     "team": "TOR",
     "line": 2.5
-   }
+   },
+   "agent4": "Pass - near -300 and the edge is thin"
   },
   {
    "rank": 8,
@@ -308,7 +315,8 @@
     "home": "TOR",
     "team": "TOR",
     "line": 1.5
-   }
+   },
+   "agent4": "Accept (my top 4 #4) - covers most regulation losses"
   },
   {
    "rank": 9,
@@ -346,7 +354,8 @@
     "home": "WPG",
     "line": 7.5,
     "side": "under"
-   }
+   },
+   "agent4": "Pass - both teams can open up"
   },
   {
    "rank": 10,
@@ -384,7 +393,8 @@
     "home": "OTT",
     "line": 7.5,
     "side": "under"
-   }
+   },
+   "agent4": "Pass - short price for the volatility"
   }
  ],
  "parlays": [
@@ -789,5 +799,5 @@
    "why": "Florida has lost by 3+ only 4 times in 18 and needs only to avoid a 2-goal loss; Ottawa and Washington are priced dead even."
   }
  ],
- "parlay_note": "8 two-leg parlays from different games, ranked by chance (product of our leg estimates; favourite +1.5 legs carry the same +1.5 puck-line bias). Each note also shows the chance without the bias. Agent 3 kept all eight of these (it dropped two other parlays: a two-unders parlay and FLA +1.5 + MTL +1.5); Agent 2 would drop them all until the bias is validated. No bigger parlay: not enough genuinely high-chance legs."
+ "parlay_note": "8 two-leg parlays from different games, ranked by chance (product of our leg estimates; favourite +1.5 legs carry the same +1.5 puck-line bias). Each note also shows the chance without the bias. Agent 3 kept all eight of these (it dropped two other parlays: a two-unders parlay and FLA +1.5 + MTL +1.5); Agent 2 would drop them all until the bias is validated, and Agent 4 would drop them all (prefers singles). No bigger parlay: not enough genuinely high-chance legs."
 }
