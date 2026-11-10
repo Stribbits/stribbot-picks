@@ -3,7 +3,7 @@
  "scanned": 61,
  "ranking": "agreed best first, then chance to hit",
  "note": "Monday Nov 9 card: 3 late games, so a short card of 6 singles (max 3 a game) and 1 parlay; nothing was padded to reach 10. AGREED (named by all three agents and accepted by all three): Evan Bouchard over 0.5 points. Vancouver +1.5 and San Jose +1.5 are in all three agents' top-4 lists, but Agents 2 and 3 only rate them fun only, so they are marked Fun only. LESSONS APPLIED: no points or shots unders on Vancouver players (they face a team on the 2nd night of a back-to-back, Nov 6/7 lessons); Sanheim and Ekholm points unders left off (top-minute defencemen, Sanheim also faces the slate's worst defence, Nov 6/8 lessons); Edmonton moneyline left off so only one pick needs Edmonton's offence (Nov 8 lesson); NYI-SJS under 6.5 and NYR +1.5 skipped (OT risk at 6.5; Edmonton has won by 2+ in 10 of 18); Vancouver +1.5 estimate capped at the Pinnacle number because the model was 10+ points higher (Nov 7 lesson); below-break-even fillers (Horvat, Pettersson, Islanders team total, shots unders) dropped after two agents passed (Nov 8 lesson). NOT ON THE CARD: Under 7.5 NYI@SJS was the highest-chance bet on the slate (about 76%) but Pinnacle has it at -304, just past Steve's -300 limit (bet365 has it at -290). DeAngelo points under excluded for a role flag (ice time up to 20 minutes with Pulock and Romanov out); Nugent-Hopkins props excluded (played only 6:38 on Nov 7). BACK-TO-BACK (2nd night): Philadelphia only. GOALIES: Garand (NYR, confirmed), Levi (EDM, confirmed), Woll (PHI, RotoWire confirmed), Merilainen (VAN, RotoWire confirmed), Sorokin (NYI, expected), Askarov (SJS, confirmed). Injuries: Shesterkin, Durzi IR and Smits out (NYR); Dach out (EDM); Ristolainen IR (PHI); Willander out, Chytil and Demko IR (VAN); Pulock out, Barzal, Maccelli, Romanov IR (NYI); Couture, Chernyshov IR (SJS). Power-play units from RotoWire. Analysts: Covers only (Dimers and TheSpread not checked today). Excluded by Steve's rules: goals props, assists unders, anything shorter than -300, whole-number totals. 374 Pinnacle markets read, 61 allowed options priced. Pinnacle prices re-checked 4:37 PM ET (NYR-EDM under 7.5 moved -263 to -262); bet365 read about 4:30 PM ET.",
- "updatedAt": "2026-11-09T21:40:00Z",
+ "updatedAt": "2026-11-10T00:06:00Z",
  "bets": [
   {
    "rank": 1,
@@ -239,28 +239,11 @@
    "rank": 1,
    "legs": [
     {
-     "game": "PHI @ VAN",
-     "start": "9:30 PM ET",
-     "bet": "Under 8.5 goals (OT incl)",
-     "price": "-498",
-     "est": 0.836,
-     "bet365": "-550",
-     "track": {
-      "type": "total",
-      "away": "PHI",
-      "home": "VAN",
-      "line": 8.5,
-      "side": "under"
-     },
-     "pinnacle_url": "https://www.pinnacle.ca/en/hockey/nhl/philadelphia-flyers-vs-vancouver-canucks/1639855136/",
-     "bet365_url": "https://www.on.bet365.ca/#/AC/B17/C20836572/D48/E972/F10/"
-    },
-    {
      "game": "NYI @ SJS",
      "start": "10:00 PM ET",
      "bet": "NY Islanders +2.5 (OT incl)",
-     "price": "-671",
-     "est": 0.853,
+     "price": "-659",
+     "est": 0.852,
      "bet365": "-800",
      "track": {
       "type": "spread",
@@ -271,24 +254,41 @@
      },
      "pinnacle_url": "https://www.pinnacle.ca/en/hockey/nhl/new-york-islanders-vs-san-jose-sharks/1639855016/",
      "bet365_url": "https://www.on.bet365.ca/#/AC/B17/C20836572/D48/E972/F10/"
+    },
+    {
+     "game": "PHI @ VAN",
+     "start": "9:30 PM ET",
+     "bet": "Under 7.5 goals (OT incl)",
+     "price": "-306",
+     "est": 0.759,
+     "bet365": "-330",
+     "track": {
+      "type": "total",
+      "away": "PHI",
+      "home": "VAN",
+      "line": 7.5,
+      "side": "under"
+     },
+     "pinnacle_url": "https://www.pinnacle.ca/en/hockey/nhl/philadelphia-flyers-vs-vancouver-canucks/1639855136/",
+     "bet365_url": "https://www.on.bet365.ca/#/AC/B17/C20836572/D48/E972/F10/"
     }
    ],
-   "bet": "Under 8.5 goals (OT incl) + NY Islanders +2.5 (OT incl)",
-   "short": "PHI-VAN U8.5, NYI +2.5",
-   "game": "PHI @ VAN / NYI @ SJS",
-   "price": "-263",
-   "decimal": 1.38,
-   "breakeven": 0.725,
-   "chance": 0.713,
+   "bet": "NY Islanders +2.5 (OT incl) + Under 7.5 goals (OT incl)",
+   "short": "NYI +2.5, PHI-VAN U7.5",
+   "game": "NYI @ SJS / PHI @ VAN",
+   "price": "-189",
+   "decimal": 1.528,
+   "breakeven": 0.654,
+   "chance": 0.647,
    "books": {
-    "pinnacle": "-263",
-    "bet365": "-303",
+    "pinnacle": "-189",
+    "bet365": "-215",
     "best": "pinnacle",
     "bet365_note": null
    },
-   "note": "2-leg parlay, legs from different games. Chance = product of leg estimates (71.3%) vs 72.5% break-even, so slightly below. Agent 2: keep (the only one it kept). Agent 3: keep as the only fun parlay. bet365 pays less and is shorter than -300 there, so use Pinnacle.",
-   "why": "Philadelphia scores 2.2 a game on a back-to-back, so 9+ goals would need Vancouver to leak badly again, and the Islanders have lost by 3+ only 3 times in 16."
+   "note": "Steve's parlay (changed at 7:05 PM ET from PHI-VAN under 8.5 + NYI +2.5). 2 legs from different games. Chance = product of leg estimates (64.7%) vs 65.4% break-even, so about level, slightly below. The under moved from 8.5 to 7.5: it pays more (-189 instead of -263) but now loses on 8 goals; Vancouver's games reached 8+ in 8 of 19. Not re-voted by Agents 2 and 3. Pinnacle prices checked 7:04 PM ET; bet365 read about 4:30 PM ET.",
+   "why": "Philadelphia scores 2.2 goals a game on the 2nd night of a back-to-back and only 2 of its 19 games reached 8 goals, and the Islanders have lost by 3+ only 3 times in 16."
   }
  ],
- "parlay_note": "Only one parlay tonight. With 3 games there are just 3 possible pairs and one 3-leg (legs must come from different games), and both other agents dropped the other three (EDM +1.5 + NYI +2.5, EDM +1.5 + PHI-VAN under 8.5, and a 3-leg at about 50%). Chance = product of leg estimates; Pinnacle pays the leg prices multiplied together."
+ "parlay_note": "One parlay tonight, set by Steve: NY Islanders +2.5 with the PHI-VAN under 7.5. With 3 games there are only 3 possible pairs and one 3-leg (legs must come from different games), and both other agents dropped the other combinations offered earlier. Chance = product of leg estimates; Pinnacle pays the leg prices multiplied together."
 }
