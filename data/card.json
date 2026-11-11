@@ -3,8 +3,8 @@
  "scanned": 651,
  "ledger_rows": 651,
  "ranking": "agreed best first, then chance to hit",
- "note": "Pickle. Wednesday Nov 11 card: 6 games, 651 options priced and logged to the ledger. AGREED: Calgary +1.5 is the only bet in all three agents' top 4 (Agent 1: UTA-VGK U7.5, PIT-SJS U7.5, TBL-BUF U7.5, CGY +1.5; Agent 2: CGY +1.5, SJS +1.5, PHI +1.5, NSH +1.5; Agent 3: BUF +1.5, UTA +1.5, NSH +1.5, CGY +1.5). Honest pricing: before the learned bias, the model-market blend is below break-even on 8 of 10 singles (only PIT-SJS U7.5 and Foerster clear it); those 8 clear break-even only because of the learned bias (+6.9 pts on +1.5 lines, +7.5 on game unders), which both other agents questioned. Treat everything as small, fun-only action. Learning: benched bet types (no singles): points overs, assists overs, game overs, +2.5 puck lines. No hypothesis is adopted yet (H1-H3, H5, H7-H10 testing; H4, H6 retired), so none removed a pick; H10 (model 8+ pts above Pinnacle) flags PIT-SJS U7.5 and Foerster. Graded ledger before tonight: 838 rows. Back-to-back: Nashville is on the 2nd night (won 3-0 at LA last night) and starts backup Annunen (unconfirmed on Daily Faceoff at 4:55 pm ET). Excluded: Carlson and Bourque props (PP-share jumps), Hyman, Olofsson, Wennberg (missed recent games), Troy Terry (no games this season in the NHL data), team totals (no live-tracker type), whole-number totals. Correlated pairs: TBL-BUF U7.5 + Buffalo +1.5, UTA-VGK U7.5 + Utah +1.5, PIT-SJS U7.5 + San Jose +1.5, and Calgary +1.5 + Strome under all lean on low-scoring games; max 2 bets per game. Prices re-checked on Pinnacle at about 4:50 pm ET (Calgary +1.5 moved -209 to -210).",
- "updatedAt": "2026-11-11T21:40:02Z",
+ "note": "Pickle. Wednesday Nov 11 card: 6 games, 651 options priced and logged to the ledger. AGREED: Calgary +1.5 is the only bet in all three agents' top 4 (Agent 1: UTA-VGK U7.5, PIT-SJS U7.5, TBL-BUF U7.5, CGY +1.5; Agent 2: CGY +1.5, SJS +1.5, PHI +1.5, NSH +1.5; Agent 3: BUF +1.5, UTA +1.5, NSH +1.5, CGY +1.5). Honest pricing: before the learned bias, the model-market blend is below break-even on 8 of 10 singles (only PIT-SJS U7.5 and Foerster clear it); those 8 clear break-even only because of the learned bias (+6.9 pts on +1.5 lines, +7.5 on game unders), which both other agents questioned. Treat everything as small, fun-only action. Learning: benched bet types (no singles): points overs, assists overs, game overs, +2.5 puck lines. No hypothesis is adopted yet (H1-H3, H5, H7-H10 testing; H4, H6 retired), so none removed a pick; H10 (model 8+ pts above Pinnacle) flags PIT-SJS U7.5 and Foerster. Graded ledger before tonight: 838 rows. Back-to-back: Nashville is on the 2nd night (won 3-0 at LA last night) and starts backup Annunen (unconfirmed on Daily Faceoff at 4:55 pm ET). Excluded: Carlson and Bourque props (PP-share jumps), Hyman, Olofsson, Wennberg (missed recent games), Troy Terry (no games this season in the NHL data), team totals (no live-tracker type), whole-number totals. Correlated pairs: TBL-BUF U7.5 + Buffalo +1.5, UTA-VGK U7.5 + Utah +1.5, PIT-SJS U7.5 + San Jose +1.5, and Calgary +1.5 + Strome under all lean on low-scoring games; max 2 bets per game. Prices re-checked on Pinnacle at 6:52 pm ET (player props last checked 4:50 pm ET).",
+ "updatedAt": "2026-11-11T23:51:51Z",
  "bets": [
   {
    "rank": 1,
@@ -13,13 +13,13 @@
    "start": "19:30 ET",
    "bet": "Calgary +1.5 (OT incl)",
    "bet_type": "puck_line_plus1.5",
-   "price": "-210",
-   "decimal": 1.476,
-   "breakeven": 0.6774,
-   "est": 0.7372,
+   "price": "-208",
+   "decimal": 1.481,
+   "breakeven": 0.6753,
+   "est": 0.7361,
    "est_model": 0.7069,
-   "est_market": 0.6564,
-   "est_low": 0.6564,
+   "est_market": 0.6549,
+   "est_low": 0.6549,
    "est_high": 0.7372,
    "method": "Final = 0.234 x model + 0.766 x Pinnacle no-vig +0.069 bias (puck_line_plus1.5). Poisson goal model with home edge, goalie, back-to-back and empty-net adjustments (400k sims). Estimate is above break-even.",
    "verdict": "Agreed",
@@ -31,7 +31,7 @@
    "why": "Calgary has the confirmed, in-form goalie (Cooley .914) while the Rangers turn to Korpisalo, who has 1 start this season, and the two sides project almost even (2.82 v 2.79 goals).",
    "stats_url": "https://www.nhl.com/gamecenter/nyr-vs-cgy/2026/11/11/2026020294",
    "books": {
-    "pinnacle": "-210",
+    "pinnacle": "-208",
     "bet365": "-220",
     "best": "pinnacle",
     "bet365_note": null
@@ -51,12 +51,12 @@
    "start": "21:30 ET",
    "bet": "Under 7.5 goals (OT incl)",
    "bet_type": "game_under",
-   "price": "-280",
-   "decimal": 1.357,
-   "breakeven": 0.7369,
-   "est": 0.7749,
+   "price": "-290",
+   "decimal": 1.345,
+   "breakeven": 0.7436,
+   "est": 0.7782,
    "est_model": 0.6912,
-   "est_market": 0.7092,
+   "est_market": 0.716,
    "est_low": 0.6912,
    "est_high": 0.7749,
    "method": "Final = 0.514 x model + 0.486 x Pinnacle no-vig +0.075 bias (game_under). Poisson goal model with home edge, goalie, back-to-back and empty-net adjustments (400k sims). Estimate is above break-even.",
@@ -69,7 +69,7 @@
    "why": "Vegas allows only 2.63 a game with Hart (.900) in net, and the model has the game at about 6.5 goals, so 8+ needs a blowout.",
    "stats_url": "https://www.nhl.com/gamecenter/uta-vs-vgk/2026/11/11/2026020296",
    "books": {
-    "pinnacle": "-280",
+    "pinnacle": "-290",
     "bet365": "-290",
     "best": "pinnacle",
     "bet365_note": null
@@ -127,13 +127,13 @@
    "start": "19:00 ET",
    "bet": "Under 7.5 goals (OT incl)",
    "bet_type": "game_under",
-   "price": "-237",
-   "decimal": 1.422,
-   "breakeven": 0.7032,
-   "est": 0.755,
+   "price": "-235",
+   "decimal": 1.426,
+   "breakeven": 0.7015,
+   "est": 0.7543,
    "est_model": 0.6828,
-   "est_market": 0.677,
-   "est_low": 0.677,
+   "est_market": 0.6757,
+   "est_low": 0.6757,
    "est_high": 0.755,
    "method": "Final = 0.514 x model + 0.486 x Pinnacle no-vig +0.075 bias (game_under). Poisson goal model with home edge, goalie, back-to-back and empty-net adjustments (400k sims). Estimate is above break-even.",
    "verdict": "Fun only",
@@ -145,7 +145,7 @@
    "why": "Buffalo scores only 2.94 a game and has 1 goal in 3 of its last 5, so 8+ goals needs Tampa to run away with it.",
    "stats_url": "https://www.nhl.com/gamecenter/tbl-vs-buf/2026/11/11/2026020293",
    "books": {
-    "pinnacle": "-237",
+    "pinnacle": "-235",
     "bet365": "-260",
     "best": "pinnacle",
     "bet365_note": null
@@ -165,12 +165,12 @@
    "start": "21:30 ET",
    "bet": "Utah +1.5 (OT incl)",
    "bet_type": "puck_line_plus1.5",
-   "price": "-229",
-   "decimal": 1.437,
-   "breakeven": 0.6959,
-   "est": 0.7322,
+   "price": "-230",
+   "decimal": 1.435,
+   "breakeven": 0.697,
+   "est": 0.733,
    "est_model": 0.6279,
-   "est_market": 0.674,
+   "est_market": 0.675,
    "est_low": 0.6279,
    "est_high": 0.7322,
    "method": "Final = 0.234 x model + 0.766 x Pinnacle no-vig +0.069 bias (puck_line_plus1.5). Poisson goal model with home edge, goalie, back-to-back and empty-net adjustments (400k sims). Estimate is above break-even.",
@@ -183,7 +183,7 @@
    "why": "Utah scores 3.50 a game and has lost by 2+ in 7 of 18; a near-even moneyline (+113) makes a one-goal game the common result.",
    "stats_url": "https://www.nhl.com/gamecenter/uta-vs-vgk/2026/11/11/2026020296",
    "books": {
-    "pinnacle": "-229",
+    "pinnacle": "-230",
     "bet365": "-235",
     "best": "pinnacle",
     "bet365_note": null
@@ -199,54 +199,16 @@
   {
    "rank": 6,
    "date": "2026-11-11",
-   "game": "NSH @ ANA",
-   "start": "22:00 ET",
-   "bet": "Under 7.5 goals (OT incl)",
-   "bet_type": "game_under",
-   "price": "-226",
-   "decimal": 1.442,
-   "breakeven": 0.6935,
-   "est": 0.7293,
-   "est_model": 0.6416,
-   "est_market": 0.6678,
-   "est_low": 0.6416,
-   "est_high": 0.7293,
-   "method": "Final = 0.514 x model + 0.486 x Pinnacle no-vig +0.075 bias (game_under). Poisson goal model with home edge, goalie, back-to-back and empty-net adjustments (400k sims). Estimate is above break-even.",
-   "verdict": "Pass",
-   "agent1": "Fun only",
-   "agent2": "Pass - raw blend 3.8 below break-even; Anaheim 3.83 GF",
-   "agent3": "Pass - Anaheim high-scoring, high-conceding",
-   "analysts": "Covers (Saracini): Ducks ML. Covers (Inglis): NSH PP1 points overs (against this under).",
-   "objection": "Two of three agents passed. Anaheim scores 3.83 and allows 3.67, has 8+ goals in 7 of 18, and Nashville starts backup Annunen (.874, unconfirmed). Raw blend 65.5 v 69.3 break-even. Nashville is on the 2nd night of a back-to-back.",
-   "why": "Nashville allows only 2.67 a game and is on tired legs after last night's 3-0 win in LA, which usually means a slower game.",
-   "stats_url": "https://www.nhl.com/gamecenter/nsh-vs-ana/2026/11/11/2026020297",
-   "books": {
-    "pinnacle": "-226",
-    "bet365": "-230",
-    "best": "pinnacle",
-    "bet365_note": null
-   },
-   "track": {
-    "type": "total",
-    "away": "NSH",
-    "home": "ANA",
-    "line": 7.5,
-    "side": "under"
-   }
-  },
-  {
-   "rank": 7,
-   "date": "2026-11-11",
    "game": "TBL @ BUF",
    "start": "19:00 ET",
    "bet": "Buffalo +1.5 (OT incl)",
    "bet_type": "puck_line_plus1.5",
-   "price": "-221",
-   "decimal": 1.452,
-   "breakeven": 0.6887,
-   "est": 0.7292,
+   "price": "-218",
+   "decimal": 1.459,
+   "breakeven": 0.6855,
+   "est": 0.7267,
    "est_model": 0.6352,
-   "est_market": 0.6678,
+   "est_market": 0.6646,
    "est_low": 0.6352,
    "est_high": 0.7292,
    "method": "Final = 0.234 x model + 0.766 x Pinnacle no-vig +0.069 bias (puck_line_plus1.5). Poisson goal model with home edge, goalie, back-to-back and empty-net adjustments (400k sims). Estimate is above break-even.",
@@ -259,7 +221,7 @@
    "why": "Buffalo has lost by 2+ in only 5 of 17, and Tampa is without Brayden Point, with both goalies under .885.",
    "stats_url": "https://www.nhl.com/gamecenter/tbl-vs-buf/2026/11/11/2026020293",
    "books": {
-    "pinnacle": "-221",
+    "pinnacle": "-218",
     "bet365": "-230",
     "best": "pinnacle",
     "bet365_note": null
@@ -273,19 +235,57 @@
    }
   },
   {
+   "rank": 7,
+   "date": "2026-11-11",
+   "game": "NSH @ ANA",
+   "start": "22:00 ET",
+   "bet": "Under 7.5 goals (OT incl)",
+   "bet_type": "game_under",
+   "price": "-214",
+   "decimal": 1.467,
+   "breakeven": 0.6815,
+   "est": 0.7241,
+   "est_model": 0.6416,
+   "est_market": 0.657,
+   "est_low": 0.6416,
+   "est_high": 0.7293,
+   "method": "Final = 0.514 x model + 0.486 x Pinnacle no-vig +0.075 bias (game_under). Poisson goal model with home edge, goalie, back-to-back and empty-net adjustments (400k sims). Estimate is above break-even.",
+   "verdict": "Pass",
+   "agent1": "Fun only",
+   "agent2": "Pass - raw blend 3.8 below break-even; Anaheim 3.83 GF",
+   "agent3": "Pass - Anaheim high-scoring, high-conceding",
+   "analysts": "Covers (Saracini): Ducks ML. Covers (Inglis): NSH PP1 points overs (against this under).",
+   "objection": "Two of three agents passed. Anaheim scores 3.83 and allows 3.67, has 8+ goals in 7 of 18, and Nashville starts backup Annunen (.874, unconfirmed). Raw blend 65.5 v 69.3 break-even. Nashville is on the 2nd night of a back-to-back.",
+   "why": "Nashville allows only 2.67 a game and is on tired legs after last night's 3-0 win in LA, which usually means a slower game.",
+   "stats_url": "https://www.nhl.com/gamecenter/nsh-vs-ana/2026/11/11/2026020297",
+   "books": {
+    "pinnacle": "-214",
+    "bet365": "-230",
+    "best": "pinnacle",
+    "bet365_note": null
+   },
+   "track": {
+    "type": "total",
+    "away": "NSH",
+    "home": "ANA",
+    "line": 7.5,
+    "side": "under"
+   }
+  },
+  {
    "rank": 8,
    "date": "2026-11-11",
    "game": "PIT @ SJS",
    "start": "22:00 ET",
    "bet": "San Jose +1.5 (OT incl)",
    "bet_type": "puck_line_plus1.5",
-   "price": "-196",
-   "decimal": 1.51,
-   "breakeven": 0.6623,
-   "est": 0.7107,
+   "price": "-192",
+   "decimal": 1.521,
+   "breakeven": 0.6575,
+   "est": 0.7075,
    "est_model": 0.6401,
-   "est_market": 0.6421,
-   "est_low": 0.6401,
+   "est_market": 0.638,
+   "est_low": 0.638,
    "est_high": 0.7107,
    "method": "Final = 0.234 x model + 0.766 x Pinnacle no-vig +0.069 bias (puck_line_plus1.5). Poisson goal model with home edge, goalie, back-to-back and empty-net adjustments (400k sims). Estimate is above break-even.",
    "verdict": "Fun only",
@@ -297,7 +297,7 @@
    "why": "Pittsburgh has won just 6 of 18 and allows 3.56 a game, so San Jose at home has a fair chance to keep this within a goal.",
    "stats_url": "https://www.nhl.com/gamecenter/pit-vs-sjs/2026/11/11/2026020298",
    "books": {
-    "pinnacle": "-196",
+    "pinnacle": "-192",
     "bet365": "-200",
     "best": "pinnacle",
     "bet365_note": null
@@ -398,16 +398,16 @@
    "rank": 1,
    "legs": [
     {
-     "game": "PHI @ EDM",
-     "start": "21:00 ET",
+     "game": "NYR @ CGY",
+     "start": "19:30 ET",
      "bet": "Under 8.5 goals (OT incl)",
-     "price": "-491",
-     "est": 0.8714,
-     "bet365": "-550",
+     "price": "-612",
+     "est": 0.8507,
+     "bet365": "-750",
      "track": {
       "type": "total",
-      "away": "PHI",
-      "home": "EDM",
+      "away": "NYR",
+      "home": "CGY",
       "line": 8.5,
       "side": "under"
      }
@@ -415,34 +415,34 @@
     {
      "game": "NSH @ ANA",
      "start": "22:00 ET",
-     "bet": "Anaheim +1.5 (OT incl)",
-     "price": "-360",
-     "est": 0.8344,
-     "bet365": "-360",
+     "bet": "Anaheim +2.5 (OT incl)",
+     "price": "-669",
+     "est": 0.8503,
+     "bet365": "-800",
      "track": {
       "type": "spread",
       "away": "NSH",
       "home": "ANA",
       "team": "ANA",
-      "line": 1.5
+      "line": 2.5
      }
     }
    ],
-   "bet": "Under 8.5 goals (OT incl) + Anaheim +1.5 (OT incl)",
-   "short": "PHI-EDM U8.5, ANA +1.5",
-   "game": "PHI @ EDM / NSH @ ANA",
-   "price": "-186",
-   "decimal": 1.539,
-   "breakeven": 0.6499,
-   "chance": 0.7271,
+   "bet": "Under 8.5 goals (OT incl) + Anaheim +2.5 (OT incl)",
+   "short": "NYR-CGY U8.5, ANA +2.5",
+   "game": "NYR @ CGY / NSH @ ANA",
+   "price": "-297",
+   "decimal": 1.336,
+   "breakeven": 0.7483,
+   "chance": 0.7234,
    "books": {
-    "pinnacle": "-186",
-    "bet365": "-196",
+    "pinnacle": "-297",
+    "bet365": "-364",
     "best": "pinnacle",
-    "bet365_note": null
+    "bet365_note": "bet365 leg prices checked at 4:31 pm ET, not re-checked"
    },
-   "note": "Fun only. Agent 2 fun only; Agent 3 keep (fun only). Pinnacle no-vig puts the joint chance at 60.0%, below the 65.0% break-even; our 72.7% relies on the learned +1.5 / under bias. Different games, so no same-game correlation.",
-   "why": "Philadelphia scores just 2.25 a game, so 9+ goals needs Edmonton to score 6 or more, and Anaheim is at home against a Nashville team on the 2nd night of a back-to-back with its backup in net."
+   "note": "Built for chance to hit (Steve: record first). Leg estimates here are the plain model + Pinnacle blend with no learned boost. Pinnacle no-vig puts the joint chance at 69.0% vs 74.8% break-even, so it is slightly below fair over time. Different games.",
+   "why": "NYR-CGY projects under 6 goals with Calgary scoring 2.56 a game, so 9+ would be a big outlier; and Anaheim is home against a tired Nashville team (2nd night of a back-to-back, backup goalie), so losing by 3+ is unlikely."
   },
   {
    "rank": 2,
@@ -450,24 +450,109 @@
     {
      "game": "NYR @ CGY",
      "start": "19:30 ET",
-     "bet": "NY Rangers +1.5 (OT incl)",
-     "price": "-382",
-     "est": 0.817,
-     "bet365": "-370",
+     "bet": "Under 8.5 goals (OT incl)",
+     "price": "-612",
+     "est": 0.8507,
+     "bet365": "-750",
      "track": {
-      "type": "spread",
+      "type": "total",
       "away": "NYR",
       "home": "CGY",
-      "team": "NYR",
-      "line": 1.5
+      "line": 8.5,
+      "side": "under"
      }
     },
+    {
+     "game": "PIT @ SJS",
+     "start": "22:00 ET",
+     "bet": "Pittsburgh +2.5 (OT incl)",
+     "price": "-650",
+     "est": 0.8394,
+     "bet365": "-750",
+     "track": {
+      "type": "spread",
+      "away": "PIT",
+      "home": "SJS",
+      "team": "PIT",
+      "line": 2.5
+     }
+    }
+   ],
+   "bet": "Under 8.5 goals (OT incl) + Pittsburgh +2.5 (OT incl)",
+   "short": "NYR-CGY U8.5, PIT +2.5",
+   "game": "NYR @ CGY / PIT @ SJS",
+   "price": "-292",
+   "decimal": 1.342,
+   "breakeven": 0.7451,
+   "chance": 0.714,
+   "books": {
+    "pinnacle": "-292",
+    "bet365": "-352",
+    "best": "pinnacle",
+    "bet365_note": "bet365 leg prices checked at 4:31 pm ET, not re-checked"
+   },
+   "note": "Built for chance to hit (Steve: record first). Leg estimates here are the plain model + Pinnacle blend with no learned boost. Pinnacle no-vig puts the joint chance at 68.7% vs 74.5% break-even, so it is slightly below fair over time. Different games.",
+   "why": "NYR-CGY projects under 6 goals with Calgary scoring 2.56 a game, so 9+ would be a big outlier; and Pittsburgh is the road favourite against a San Jose team scoring 2.45 a game, so a 3-goal loss is unlikely."
+  },
+  {
+   "rank": 3,
+   "legs": [
+    {
+     "game": "UTA @ VGK",
+     "start": "21:30 ET",
+     "bet": "Vegas +2.5 (OT incl)",
+     "price": "-607",
+     "est": 0.8334,
+     "bet365": "-700",
+     "track": {
+      "type": "spread",
+      "away": "UTA",
+      "home": "VGK",
+      "team": "VGK",
+      "line": 2.5
+     }
+    },
+    {
+     "game": "NSH @ ANA",
+     "start": "22:00 ET",
+     "bet": "Anaheim +2.5 (OT incl)",
+     "price": "-669",
+     "est": 0.8503,
+     "bet365": "-800",
+     "track": {
+      "type": "spread",
+      "away": "NSH",
+      "home": "ANA",
+      "team": "ANA",
+      "line": 2.5
+     }
+    }
+   ],
+   "bet": "Vegas +2.5 (OT incl) + Anaheim +2.5 (OT incl)",
+   "short": "VGK +2.5, ANA +2.5",
+   "game": "UTA @ VGK / NSH @ ANA",
+   "price": "-295",
+   "decimal": 1.339,
+   "breakeven": 0.7471,
+   "chance": 0.7087,
+   "books": {
+    "pinnacle": "-295",
+    "bet365": "-350",
+    "best": "pinnacle",
+    "bet365_note": "bet365 leg prices checked at 4:31 pm ET, not re-checked"
+   },
+   "note": "Built for chance to hit (Steve: record first). Leg estimates here are the plain model + Pinnacle blend with no learned boost. Pinnacle no-vig puts the joint chance at 68.4% vs 74.7% break-even, so it is slightly below fair over time. Different games.",
+   "why": "Vegas is the home favourite and allows only 2.63 a game, so a 3-goal loss is rare; and Anaheim is home against a tired Nashville team (2nd night of a back-to-back, backup goalie), so losing by 3+ is unlikely."
+  },
+  {
+   "rank": 4,
+   "legs": [
     {
      "game": "PHI @ EDM",
      "start": "21:00 ET",
      "bet": "Under 8.5 goals (OT incl)",
-     "price": "-491",
-     "est": 0.8714,
+     "price": "-498",
+     "est": 0.7974,
      "bet365": "-550",
      "track": {
       "type": "total",
@@ -476,224 +561,139 @@
       "line": 8.5,
       "side": "under"
      }
-    }
-   ],
-   "bet": "NY Rangers +1.5 (OT incl) + Under 8.5 goals (OT incl)",
-   "short": "NYR +1.5, PHI-EDM U8.5",
-   "game": "NYR @ CGY / PHI @ EDM",
-   "price": "-193",
-   "decimal": 1.519,
-   "breakeven": 0.6581,
-   "chance": 0.7119,
-   "books": {
-    "pinnacle": "-193",
-    "bet365": "-200",
-    "best": "pinnacle",
-    "bet365_note": null
-   },
-   "note": "Fun only. Agent 2 fun only; Agent 3 keep (fun only). Pinnacle no-vig puts the joint chance at 60.7%, below the 65.8% break-even; our 71.2% relies on the learned +1.5 / under bias. Different games, so no same-game correlation.",
-   "why": "The Rangers are road favourites (-137) and Calgary scores only 2.56 a game, and Philadelphia scores just 2.25 a game, so 9+ goals needs Edmonton to score 6 or more."
-  },
-  {
-   "rank": 3,
-   "legs": [
-    {
-     "game": "NYR @ CGY",
-     "start": "19:30 ET",
-     "bet": "NY Rangers +1.5 (OT incl)",
-     "price": "-382",
-     "est": 0.817,
-     "bet365": "-370",
-     "track": {
-      "type": "spread",
-      "away": "NYR",
-      "home": "CGY",
-      "team": "NYR",
-      "line": 1.5
-     }
-    },
-    {
-     "game": "NSH @ ANA",
-     "start": "22:00 ET",
-     "bet": "Anaheim +1.5 (OT incl)",
-     "price": "-360",
-     "est": 0.8344,
-     "bet365": "-360",
-     "track": {
-      "type": "spread",
-      "away": "NSH",
-      "home": "ANA",
-      "team": "ANA",
-      "line": 1.5
-     }
-    }
-   ],
-   "bet": "NY Rangers +1.5 (OT incl) + Anaheim +1.5 (OT incl)",
-   "short": "NYR +1.5, ANA +1.5",
-   "game": "NYR @ CGY / NSH @ ANA",
-   "price": "-163",
-   "decimal": 1.613,
-   "breakeven": 0.62,
-   "chance": 0.6817,
-   "books": {
-    "pinnacle": "-163",
-    "bet365": "-160",
-    "best": "bet365",
-    "bet365_note": null
-   },
-   "note": "Fun only. Agent 2 fun only; Agent 3 keep (fun only). Pinnacle no-vig puts the joint chance at 56.8%, below the 62.0% break-even; our 68.2% relies on the learned +1.5 / under bias. Different games, so no same-game correlation.",
-   "why": "The Rangers are road favourites (-137) and Calgary scores only 2.56 a game, and Anaheim is at home against a Nashville team on the 2nd night of a back-to-back with its backup in net."
-  },
-  {
-   "rank": 4,
-   "legs": [
-    {
-     "game": "UTA @ VGK",
-     "start": "21:30 ET",
-     "bet": "Vegas +1.5 (OT incl)",
-     "price": "-334",
-     "est": 0.8109,
-     "bet365": "-320",
-     "track": {
-      "type": "spread",
-      "away": "UTA",
-      "home": "VGK",
-      "team": "VGK",
-      "line": 1.5
-     }
     },
     {
      "game": "PIT @ SJS",
      "start": "22:00 ET",
-     "bet": "Pittsburgh +1.5 (OT incl)",
-     "price": "-350",
-     "est": 0.8161,
-     "bet365": "-350",
+     "bet": "Under 9.5 goals (OT incl)",
+     "price": "-836",
+     "est": 0.8866,
+     "bet365": "-850",
      "track": {
-      "type": "spread",
+      "type": "total",
       "away": "PIT",
       "home": "SJS",
-      "team": "PIT",
-      "line": 1.5
+      "line": 9.5,
+      "side": "under"
      }
     }
    ],
-   "bet": "Vegas +1.5 (OT incl) + Pittsburgh +1.5 (OT incl)",
-   "short": "VGK +1.5, PIT +1.5",
-   "game": "UTA @ VGK / PIT @ SJS",
-   "price": "-149",
-   "decimal": 1.671,
-   "breakeven": 0.5986,
-   "chance": 0.6618,
+   "bet": "Under 8.5 goals (OT incl) + Under 9.5 goals (OT incl)",
+   "short": "PHI-EDM U8.5, PIT-SJS U9.5",
+   "game": "PHI @ EDM / PIT @ SJS",
+   "price": "-290",
+   "decimal": 1.345,
+   "breakeven": 0.7434,
+   "chance": 0.707,
    "books": {
-    "pinnacle": "-149",
-    "bet365": "-145",
-    "best": "bet365",
-    "bet365_note": null
+    "pinnacle": "-290",
+    "bet365": "-312",
+    "best": "pinnacle",
+    "bet365_note": "bet365 leg prices checked at 4:31 pm ET, not re-checked"
    },
-   "note": "Fun only. Agent 2 fun only; Agent 3 keep (fun only). Pinnacle no-vig puts the joint chance at 54.9%, below the 59.9% break-even; our 66.2% relies on the learned +1.5 / under bias. Different games, so no same-game correlation.",
-   "why": "Vegas is the home favourite and allows only 2.63 a game, and Pittsburgh is the road favourite against a San Jose team scoring 2.45 a game."
+   "note": "Built for chance to hit (Steve: record first). Leg estimates here are the plain model + Pinnacle blend with no learned boost. Pinnacle no-vig puts the joint chance at 69.2% vs 74.3% break-even, so it is slightly below fair over time. Different games.",
+   "why": "Philadelphia scores only 2.25 a game, so 9+ needs Edmonton to score 6 or more; and PIT-SJS projects about 6.3 goals, and 10+ has been rare."
   },
   {
    "rank": 5,
    "legs": [
     {
-     "game": "TBL @ BUF",
-     "start": "19:00 ET",
-     "bet": "Tampa Bay +1.5 (OT incl)",
-     "price": "-330",
-     "est": 0.8074,
-     "bet365": "-320",
-     "track": {
-      "type": "spread",
-      "away": "TBL",
-      "home": "BUF",
-      "team": "TBL",
-      "line": 1.5
-     }
-    },
-    {
-     "game": "PIT @ SJS",
-     "start": "22:00 ET",
-     "bet": "Pittsburgh +1.5 (OT incl)",
-     "price": "-350",
-     "est": 0.8161,
-     "bet365": "-350",
-     "track": {
-      "type": "spread",
-      "away": "PIT",
-      "home": "SJS",
-      "team": "PIT",
-      "line": 1.5
-     }
-    }
-   ],
-   "bet": "Tampa Bay +1.5 (OT incl) + Pittsburgh +1.5 (OT incl)",
-   "short": "TBL +1.5, PIT +1.5",
-   "game": "TBL @ BUF / PIT @ SJS",
-   "price": "-148",
-   "decimal": 1.676,
-   "breakeven": 0.5968,
-   "chance": 0.6589,
-   "books": {
-    "pinnacle": "-148",
-    "bet365": "-145",
-    "best": "bet365",
-    "bet365_note": null
-   },
-   "note": "Fun only. Agent 2 fun only; Agent 3 drop (below high-chance bar). Pinnacle no-vig puts the joint chance at 54.7%, below the 59.7% break-even; our 65.9% relies on the learned +1.5 / under bias. Different games, so no same-game correlation.",
-   "why": "Tampa is the road favourite and scores 3.71 a game, and Pittsburgh is the road favourite against a San Jose team scoring 2.45 a game."
-  },
-  {
-   "rank": 6,
-   "legs": [
-    {
-     "game": "TBL @ BUF",
-     "start": "19:00 ET",
-     "bet": "Tampa Bay +1.5 (OT incl)",
-     "price": "-330",
-     "est": 0.8074,
-     "bet365": "-320",
-     "track": {
-      "type": "spread",
-      "away": "TBL",
-      "home": "BUF",
-      "team": "TBL",
-      "line": 1.5
-     }
-    },
-    {
      "game": "UTA @ VGK",
      "start": "21:30 ET",
-     "bet": "Vegas +1.5 (OT incl)",
-     "price": "-334",
-     "est": 0.8109,
-     "bet365": "-320",
+     "bet": "Vegas +2.5 (OT incl)",
+     "price": "-607",
+     "est": 0.8334,
+     "bet365": "-700",
      "track": {
       "type": "spread",
       "away": "UTA",
       "home": "VGK",
       "team": "VGK",
+      "line": 2.5
+     }
+    },
+    {
+     "game": "PIT @ SJS",
+     "start": "22:00 ET",
+     "bet": "Pittsburgh +2.5 (OT incl)",
+     "price": "-650",
+     "est": 0.8394,
+     "bet365": "-750",
+     "track": {
+      "type": "spread",
+      "away": "PIT",
+      "home": "SJS",
+      "team": "PIT",
+      "line": 2.5
+     }
+    }
+   ],
+   "bet": "Vegas +2.5 (OT incl) + Pittsburgh +2.5 (OT incl)",
+   "short": "VGK +2.5, PIT +2.5",
+   "game": "UTA @ VGK / PIT @ SJS",
+   "price": "-290",
+   "decimal": 1.344,
+   "breakeven": 0.7438,
+   "chance": 0.6995,
+   "books": {
+    "pinnacle": "-290",
+    "bet365": "-339",
+    "best": "pinnacle",
+    "bet365_note": "bet365 leg prices checked at 4:31 pm ET, not re-checked"
+   },
+   "note": "Built for chance to hit (Steve: record first). Leg estimates here are the plain model + Pinnacle blend with no learned boost. Pinnacle no-vig puts the joint chance at 68.1% vs 74.4% break-even, so it is slightly below fair over time. Different games.",
+   "why": "Vegas is the home favourite and allows only 2.63 a game, so a 3-goal loss is rare; and Pittsburgh is the road favourite against a San Jose team scoring 2.45 a game, so a 3-goal loss is unlikely."
+  },
+  {
+   "rank": 6,
+   "legs": [
+    {
+     "game": "NYR @ CGY",
+     "start": "19:30 ET",
+     "bet": "NY Rangers +2.5 (OT incl)",
+     "price": "-721",
+     "est": 0.8427,
+     "bet365": "-850",
+     "track": {
+      "type": "spread",
+      "away": "NYR",
+      "home": "CGY",
+      "team": "NYR",
+      "line": 2.5
+     }
+    },
+    {
+     "game": "PHI @ EDM",
+     "start": "21:00 ET",
+     "bet": "Edmonton +1.5 (OT incl)",
+     "price": "-542",
+     "est": 0.8268,
+     "bet365": "-500",
+     "track": {
+      "type": "spread",
+      "away": "PHI",
+      "home": "EDM",
+      "team": "EDM",
       "line": 1.5
      }
     }
    ],
-   "bet": "Tampa Bay +1.5 (OT incl) + Vegas +1.5 (OT incl)",
-   "short": "TBL +1.5, VGK +1.5",
-   "game": "TBL @ BUF / UTA @ VGK",
-   "price": "-144",
-   "decimal": 1.693,
-   "breakeven": 0.5908,
-   "chance": 0.6547,
+   "bet": "NY Rangers +2.5 (OT incl) + Edmonton +1.5 (OT incl)",
+   "short": "NYR +2.5, EDM +1.5",
+   "game": "NYR @ CGY / PHI @ EDM",
+   "price": "-286",
+   "decimal": 1.35,
+   "breakeven": 0.7409,
+   "chance": 0.6968,
    "books": {
-    "pinnacle": "-144",
-    "bet365": "-138",
-    "best": "bet365",
-    "bet365_note": null
+    "pinnacle": "-286",
+    "bet365": "-293",
+    "best": "pinnacle",
+    "bet365_note": "bet365 leg prices checked at 4:31 pm ET, not re-checked"
    },
-   "note": "Fun only. Agent 2 fun only; Agent 3 drop (below high-chance bar). Pinnacle no-vig puts the joint chance at 54.1%, below the 59.1% break-even; our 65.5% relies on the learned +1.5 / under bias. Different games, so no same-game correlation.",
-   "why": "Tampa is the road favourite and scores 3.71 a game, and Vegas is the home favourite and allows only 2.63 a game."
+   "note": "Built for chance to hit (Steve: record first). Leg estimates here are the plain model + Pinnacle blend with no learned boost. Pinnacle no-vig puts the joint chance at 67.9% vs 74.1% break-even, so it is slightly below fair over time. Different games.",
+   "why": "The Rangers are road favourites and Calgary scores 2.56 a game, so a 3-goal Rangers loss is unlikely; and Edmonton is a heavy home favourite against a Philadelphia team that scores 2.25 a game."
   }
  ],
- "parlay_note": "Parlays are favourite +1.5 lines and a PHI-EDM 8.5 under, two legs from different games. Our chance is the product of our final estimates, which carry the learned bias; Using Pinnacle's no-vig chances instead, every parlay is below its break-even. Agent 2 called all of them fun only; Agent 3 kept P1-P4 and would drop P5-P6. The 3-leg and bigger options were left out: the slate has no legs strong enough without the bias."
+ "parlay_note": "Updated 6:55 pm ET at Steve's request: parlays rebuilt for the highest chance to hit within the -300 rule (about 70% each), using leg estimates without the learned boost (that boost overstated far-out lines like PHI-EDM U8.5: about 80%, not 87%). Each parlay is priced -286 to -297 and pays about $1.70-1.75 profit on $5. Pinnacle's own prices put each a few points below break-even, so these favour wins over long-run profit. TBL-BUF legs left out (game starting). Earlier favourite +1.5 parlays removed."
 }
