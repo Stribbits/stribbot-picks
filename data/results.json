@@ -443,5 +443,95 @@
   "date": "2026-11-09",
   "bet": "Parlay: NYI +2.5, PHI-VAN U7.5",
   "result": "Win"
+ },
+ {
+  "date": "2026-11-10",
+  "bet": "Ottawa +1.5 (OT incl)",
+  "result": "Win"
+ },
+ {
+  "date": "2026-11-10",
+  "bet": "Columbus +1.5 (OT incl)",
+  "result": "Loss"
+ },
+ {
+  "date": "2026-11-10",
+  "bet": "Montreal +1.5 (OT incl)",
+  "result": "Win"
+ },
+ {
+  "date": "2026-11-10",
+  "bet": "Nashville +1.5 (OT incl)",
+  "result": "Win"
+ },
+ {
+  "date": "2026-11-10",
+  "bet": "Detroit +1.5 (OT incl)",
+  "result": "Win"
+ },
+ {
+  "date": "2026-11-10",
+  "bet": "Winnipeg +1.5 (OT incl)",
+  "result": "Win"
+ },
+ {
+  "date": "2026-11-10",
+  "bet": "Toronto +2.5 (OT incl)",
+  "result": "Loss"
+ },
+ {
+  "date": "2026-11-10",
+  "bet": "Toronto +1.5 (OT incl)",
+  "result": "Loss"
+ },
+ {
+  "date": "2026-11-10",
+  "bet": "Under 7.5 goals (OT incl)",
+  "result": "Win"
+ },
+ {
+  "date": "2026-11-10",
+  "bet": "Under 7.5 goals (OT incl)",
+  "result": "Win"
+ },
+ {
+  "date": "2026-11-10",
+  "bet": "Parlay: NJD +1.5, COL +1.5",
+  "result": "Loss"
+ },
+ {
+  "date": "2026-11-10",
+  "bet": "Parlay: NJD +1.5, STL +2.5",
+  "result": "Loss"
+ },
+ {
+  "date": "2026-11-10",
+  "bet": "Parlay: COL +1.5, STL +2.5",
+  "result": "Win"
+ },
+ {
+  "date": "2026-11-10",
+  "bet": "Parlay: NJD +2.5, LAK +1.5",
+  "result": "Loss"
+ },
+ {
+  "date": "2026-11-10",
+  "bet": "Parlay: STL +1.5, LAK +1.5",
+  "result": "Loss"
+ },
+ {
+  "date": "2026-11-10",
+  "bet": "Parlay: NJD +2.5, MIN +1.5",
+  "result": "Win"
+ },
+ {
+  "date": "2026-11-10",
+  "bet": "Parlay: STL +1.5, MIN +1.5",
+  "result": "Win"
+ },
+ {
+  "date": "2026-11-10",
+  "bet": "Parlay: FLA +1.5, OTT +1.5",
+  "result": "Win"
  }
 ]

@@ -898,5 +898,65 @@
   "stake": 5,
   "result": "Loss",
   "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-10",
+  "game": "WSH @ OTT",
+  "bet": "Ottawa +1.5 (OT incl)",
+  "price": "-291",
+  "decimal": 1.344,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-10",
+  "game": "FLA @ CBJ",
+  "bet": "Columbus +1.5 (OT incl)",
+  "price": "-246",
+  "decimal": 1.407,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-10",
+  "game": "MIN @ MTL",
+  "bet": "Montreal +1.5 (OT incl)",
+  "price": "-238",
+  "decimal": 1.42,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-10",
+  "game": "NSH @ LAK",
+  "bet": "Nashville +1.5 (OT incl)",
+  "price": "-226",
+  "decimal": 1.442,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-10",
+  "game": "COL @ TOR",
+  "bet": "Toronto +2.5 (OT incl)",
+  "price": "-295",
+  "decimal": 1.339,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-10",
+  "game": "COL @ TOR",
+  "bet": "Toronto +1.5 (OT incl)",
+  "price": "-162",
+  "decimal": 1.617,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Fun only"
  }
 ]
