@@ -1,10 +1,10 @@
 {
   "name": "Stribbot paper portfolio",
   "started": "2026-11-09",
-  "note": "Fake money. Entries at the card's Nov 6 prices. US buys pay Wealthsimple's 1.5% FX fee; selling US stocks would cost another 1.5%. TSX trades are commission-free.",
+  "note": "Fake money. Entries at the Nov 6 closes (USD/CAD 1.4017). US buys paid Wealthsimple's 1.5% FX fee; selling US stocks would cost another 1.5%. TSX trades are commission-free.",
   "fx_fee": 0.015,
-  "usdcad": 1.411,
-  "usdcad_date": "2026-11-06",
+  "usdcad": 1.4196,
+  "usdcad_date": "2026-11-10",
   "trades": [
     {
       "ticker": "CW",
@@ -12,29 +12,31 @@
       "ccy": "USD",
       "entry": 463.47,
       "entry_note": "Nov 6 close",
-      "shares": 0.753109,
+      "shares": 0.758105,
       "stop": 434.0,
       "target": null,
       "exit_rule": "Close below $434 (gap filled)",
-      "last": 463.47,
-      "last_date": "2026-11-06",
+      "last": 477.92,
+      "last_date": "2026-11-10",
       "status": "open",
-      "cost_cad": 500.0
+      "cost_cad": 500.0,
+      "entry_usdcad": 1.4017
     },
     {
       "ticker": "ABNB",
       "name": "Airbnb",
       "ccy": "USD",
-      "entry": 190.0,
-      "entry_note": "Nov 6 close, estimated from +11.7% move \u2014 will correct to official close",
-      "shares": 1.83707,
+      "entry": 189.99,
+      "entry_note": "Nov 6 official close",
+      "shares": 1.849356,
       "stop": 170.5,
       "target": null,
       "exit_rule": "Close below $170.50 (gap filled)",
-      "last": 190.0,
-      "last_date": "2026-11-06",
+      "last": 186.9,
+      "last_date": "2026-11-10",
       "status": "open",
-      "cost_cad": 500.0
+      "cost_cad": 500.0,
+      "entry_usdcad": 1.4017
     },
     {
       "ticker": "FTS",
@@ -46,8 +48,8 @@
       "stop": 79.0,
       "target": null,
       "exit_rule": "Close below C$79; ex-dividend Nov 17 (66.5\u00a2/share)",
-      "last": 84.91,
-      "last_date": "2026-11-06",
+      "last": 84.68,
+      "last_date": "2026-11-10",
       "status": "open",
       "cost_cad": 500.0
     }
