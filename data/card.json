@@ -3,8 +3,8 @@
  "scanned": 651,
  "ledger_rows": 651,
  "ranking": "agreed best first, then chance to hit",
- "note": "Pickle. Wednesday Nov 11 card: 6 games, 651 options priced and logged to the ledger. AGREED: Calgary +1.5 is the only bet in all three agents' top 4 (Agent 1: UTA-VGK U7.5, PIT-SJS U7.5, TBL-BUF U7.5, CGY +1.5; Agent 2: CGY +1.5, SJS +1.5, PHI +1.5, NSH +1.5; Agent 3: BUF +1.5, UTA +1.5, NSH +1.5, CGY +1.5). Honest pricing: before the learned bias, the model-market blend is below break-even on 8 of 10 singles (only PIT-SJS U7.5 and Foerster clear it); those 8 clear break-even only because of the learned bias (+6.9 pts on +1.5 lines, +7.5 on game unders), which both other agents questioned. Treat everything as small, fun-only action. Learning: benched bet types (no singles): points overs, assists overs, game overs, +2.5 puck lines. No hypothesis is adopted yet (H1-H3, H5, H7-H10 testing; H4, H6 retired), so none removed a pick; H10 (model 8+ pts above Pinnacle) flags PIT-SJS U7.5 and Foerster. Graded ledger before tonight: 838 rows. Back-to-back: Nashville is on the 2nd night (won 3-0 at LA last night) and starts backup Annunen (unconfirmed on Daily Faceoff at 4:55 pm ET). Excluded: Carlson and Bourque props (PP-share jumps), Hyman, Olofsson, Wennberg (missed recent games), Troy Terry (no games this season in the NHL data), team totals (no live-tracker type), whole-number totals. Correlated pairs: TBL-BUF U7.5 + Buffalo +1.5, UTA-VGK U7.5 + Utah +1.5, PIT-SJS U7.5 + San Jose +1.5, and Calgary +1.5 + Strome under all lean on low-scoring games; max 2 bets per game. Prices re-checked on Pinnacle at 6:52 pm ET (player props last checked 4:50 pm ET).",
- "updatedAt": "2026-11-11T23:51:51Z",
+ "note": "Pickle. Wednesday Nov 11 card: 6 games, 651 options priced and logged to the ledger. AGREED: Calgary +1.5 is the only bet in all four agents' top 4 (Agent 4 (Grok) added at 6:55 pm ET: CGY +1.5, SJS +1.5, PHI +1.5, UTA +1.5; it hit its free-tier limit before voting on the rest. Agent 1: UTA-VGK U7.5, PIT-SJS U7.5, TBL-BUF U7.5, CGY +1.5; Agent 2: CGY +1.5, SJS +1.5, PHI +1.5, NSH +1.5; Agent 3: BUF +1.5, UTA +1.5, NSH +1.5, CGY +1.5). Honest pricing: before the learned bias, the model-market blend is below break-even on 8 of 10 singles (only PIT-SJS U7.5 and Foerster clear it); those 8 clear break-even only because of the learned bias (+6.9 pts on +1.5 lines, +7.5 on game unders), which both other agents questioned. Treat everything as small, fun-only action. Learning: benched bet types (no singles): points overs, assists overs, game overs, +2.5 puck lines. No hypothesis is adopted yet (H1-H3, H5, H7-H10 testing; H4, H6 retired), so none removed a pick; H10 (model 8+ pts above Pinnacle) flags PIT-SJS U7.5 and Foerster. Graded ledger before tonight: 838 rows. Back-to-back: Nashville is on the 2nd night (won 3-0 at LA last night) and starts backup Annunen (unconfirmed on Daily Faceoff at 4:55 pm ET). Excluded: Carlson and Bourque props (PP-share jumps), Hyman, Olofsson, Wennberg (missed recent games), Troy Terry (no games this season in the NHL data), team totals (no live-tracker type), whole-number totals. Correlated pairs: TBL-BUF U7.5 + Buffalo +1.5, UTA-VGK U7.5 + Utah +1.5, PIT-SJS U7.5 + San Jose +1.5, and Calgary +1.5 + Strome under all lean on low-scoring games; max 2 bets per game. Prices re-checked on Pinnacle at 6:52 pm ET (player props last checked 4:50 pm ET).",
+ "updatedAt": "2026-11-11T23:55:58Z",
  "bets": [
   {
    "rank": 1,
@@ -42,7 +42,8 @@
     "home": "CGY",
     "team": "CGY",
     "line": 1.5
-   }
+   },
+   "agent4": "Accept small single - in Agent 4 top 4 (Calgary has lost by 2+ in 9 of 18 but faces Korpisalo with Shesterkin out; price a bit short)"
   },
   {
    "rank": 2,
@@ -80,7 +81,8 @@
     "home": "VGK",
     "line": 7.5,
     "side": "under"
-   }
+   },
+   "agent4": "No vote - Agent 4 hit its free-tier limit before reviewing the candidate list"
   },
   {
    "rank": 3,
@@ -118,7 +120,8 @@
     "home": "SJS",
     "line": 7.5,
     "side": "under"
-   }
+   },
+   "agent4": "No vote - Agent 4 hit its free-tier limit before reviewing the candidate list"
   },
   {
    "rank": 4,
@@ -156,7 +159,8 @@
     "home": "BUF",
     "line": 7.5,
     "side": "under"
-   }
+   },
+   "agent4": "No vote - game had started when Agent 4 was added"
   },
   {
    "rank": 5,
@@ -194,7 +198,8 @@
     "home": "VGK",
     "team": "UTA",
     "line": 1.5
-   }
+   },
+   "agent4": "Accept small single - in Agent 4 top 4 (Utah is competitive; Vegas good but not invincible)"
   },
   {
    "rank": 6,
@@ -232,7 +237,8 @@
     "home": "BUF",
     "team": "BUF",
     "line": 1.5
-   }
+   },
+   "agent4": "No vote - game had started when Agent 4 was added"
   },
   {
    "rank": 7,
@@ -270,7 +276,8 @@
     "home": "ANA",
     "line": 7.5,
     "side": "under"
-   }
+   },
+   "agent4": "No vote - Agent 4 hit its free-tier limit before reviewing the candidate list"
   },
   {
    "rank": 8,
@@ -308,7 +315,8 @@
     "home": "SJS",
     "team": "SJS",
     "line": 1.5
-   }
+   },
+   "agent4": "Accept small single - in Agent 4 top 4 (Home dog vs a PIT team allowing 3.56 a game; usable price)"
   },
   {
    "rank": 9,
@@ -349,7 +357,8 @@
     "line": 0.5,
     "side": "under"
    },
-   "player_line": "C, PP2"
+   "player_line": "C, PP2",
+   "agent4": "No vote - Agent 4 hit its free-tier limit before reviewing the candidate list"
   },
   {
    "rank": 10,
@@ -390,7 +399,8 @@
     "line": 0.5,
     "side": "under"
    },
-   "player_line": "R, PP2"
+   "player_line": "R, PP2",
+   "agent4": "No vote - Agent 4 hit its free-tier limit before reviewing the candidate list"
   }
  ],
  "parlays": [
