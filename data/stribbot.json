@@ -958,5 +958,95 @@
   "stake": 5,
   "result": "Loss",
   "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-11",
+  "game": "NYR @ CGY",
+  "bet": "Calgary +1.5 (OT incl)",
+  "price": "-208",
+  "decimal": 1.481,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Agreed"
+ },
+ {
+  "date": "2026-11-11",
+  "game": "UTA @ VGK",
+  "bet": "Under 7.5 goals (OT incl)",
+  "price": "-290",
+  "decimal": 1.345,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-11",
+  "game": "PIT @ SJS",
+  "bet": "Under 7.5 goals (OT incl)",
+  "price": "-205",
+  "decimal": 1.488,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-11",
+  "game": "TBL @ BUF",
+  "bet": "Under 7.5 goals (OT incl)",
+  "price": "-235",
+  "decimal": 1.426,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-11",
+  "game": "UTA @ VGK",
+  "bet": "Utah +1.5 (OT incl)",
+  "price": "-230",
+  "decimal": 1.435,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-11",
+  "game": "TBL @ BUF",
+  "bet": "Buffalo +1.5 (OT incl)",
+  "price": "-218",
+  "decimal": 1.459,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-11",
+  "game": "PIT @ SJS",
+  "bet": "San Jose +1.5 (OT incl)",
+  "price": "-192",
+  "decimal": 1.521,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-11",
+  "game": "NYR @ CGY",
+  "bet": "Ryan Strome under 0.5 points",
+  "price": "-220",
+  "decimal": 1.455,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-11",
+  "game": "PHI @ EDM",
+  "bet": "Tyson Foerster under 0.5 points",
+  "price": "-180",
+  "decimal": 1.556,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Fun only"
  }
 ]
