@@ -613,5 +613,100 @@
   "date": "2026-11-11",
   "bet": "Parlay: NYR +2.5, EDM +1.5",
   "result": "Win"
+ },
+ {
+  "date": "2026-11-12",
+  "bet": "Ottawa +1.5 (OT incl)",
+  "result": "Win"
+ },
+ {
+  "date": "2026-11-12",
+  "bet": "BUF-CHI Under 7.5 goals (OT incl)",
+  "result": "Win"
+ },
+ {
+  "date": "2026-11-12",
+  "bet": "Tampa Bay +1.5 (OT incl)",
+  "result": "Win"
+ },
+ {
+  "date": "2026-11-12",
+  "bet": "NY Islanders +1.5 (OT incl)",
+  "result": "Win"
+ },
+ {
+  "date": "2026-11-12",
+  "bet": "Utah +1.5 (OT incl)",
+  "result": "Win"
+ },
+ {
+  "date": "2026-11-12",
+  "bet": "Montreal +1.5 (OT incl)",
+  "result": "Win"
+ },
+ {
+  "date": "2026-11-12",
+  "bet": "Washington +1.5 (OT incl)",
+  "result": "Loss"
+ },
+ {
+  "date": "2026-11-12",
+  "bet": "Detroit +1.5 (OT incl)",
+  "result": "Win"
+ },
+ {
+  "date": "2026-11-12",
+  "bet": "WPG-DAL Under 6.5 goals (OT incl)",
+  "result": "Loss"
+ },
+ {
+  "date": "2026-11-12",
+  "bet": "Toronto +1.5 (OT incl)",
+  "result": "Loss"
+ },
+ {
+  "date": "2026-11-12",
+  "bet": "Parlay: MTL-BOS U8.5, WPG-DAL U8.5",
+  "result": "Loss"
+ },
+ {
+  "date": "2026-11-12",
+  "bet": "Parlay: DET-FLA U8.5, WPG-DAL U8.5",
+  "result": "Loss"
+ },
+ {
+  "date": "2026-11-12",
+  "bet": "Parlay: DET-FLA U8.5, MTL-BOS U8.5",
+  "result": "Loss"
+ },
+ {
+  "date": "2026-11-12",
+  "bet": "Parlay: NYI-LAK U8.5, STL-UTA U8.5",
+  "result": "Win"
+ },
+ {
+  "date": "2026-11-12",
+  "bet": "Parlay: NYI-LAK U8.5, WSH-NJD U8.5",
+  "result": "Win"
+ },
+ {
+  "date": "2026-11-12",
+  "bet": "Parlay: STL-UTA U8.5, WSH-NJD U8.5",
+  "result": "Win"
+ },
+ {
+  "date": "2026-11-12",
+  "bet": "Parlay: MIN +2.5, DAL +1.5",
+  "result": "Loss"
+ },
+ {
+  "date": "2026-11-12",
+  "bet": "Parlay: BUF +2.5, DAL +1.5",
+  "result": "Loss"
+ },
+ {
+  "date": "2026-11-12",
+  "bet": "MTL-BOS U8.5 + DET-FLA U8.5 + WPG-DAL U8.5",
+  "result": "Loss"
  }
 ]

@@ -1048,5 +1048,105 @@
   "stake": 5,
   "result": "Loss",
   "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-12",
+  "game": "COL @ OTT",
+  "bet": "Ottawa +1.5 (OT incl)",
+  "price": "-286",
+  "decimal": 1.35,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Agreed"
+ },
+ {
+  "date": "2026-11-12",
+  "game": "BUF @ CHI",
+  "bet": "BUF-CHI Under 7.5 goals (OT incl)",
+  "price": "-277",
+  "decimal": 1.361,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-12",
+  "game": "TBL @ CBJ",
+  "bet": "Tampa Bay +1.5 (OT incl)",
+  "price": "-300",
+  "decimal": 1.333,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-12",
+  "game": "NYI @ LAK",
+  "bet": "NY Islanders +1.5 (OT incl)",
+  "price": "-244",
+  "decimal": 1.41,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-12",
+  "game": "STL @ UTA",
+  "bet": "Utah +1.5 (OT incl)",
+  "price": "-257",
+  "decimal": 1.389,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Pass"
+ },
+ {
+  "date": "2026-11-12",
+  "game": "MTL @ BOS",
+  "bet": "Montreal +1.5 (OT incl)",
+  "price": "-237",
+  "decimal": 1.422,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-12",
+  "game": "WSH @ NJD",
+  "bet": "Washington +1.5 (OT incl)",
+  "price": "-188",
+  "decimal": 1.532,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-12",
+  "game": "DET @ FLA",
+  "bet": "Detroit +1.5 (OT incl)",
+  "price": "-178",
+  "decimal": 1.562,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Pass"
+ },
+ {
+  "date": "2026-11-12",
+  "game": "WPG @ DAL",
+  "bet": "WPG-DAL Under 6.5 goals (OT incl)",
+  "price": "-150",
+  "decimal": 1.667,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-12",
+  "game": "MIN @ TOR",
+  "bet": "Toronto +1.5 (OT incl)",
+  "price": "-165",
+  "decimal": 1.606,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Pass"
  }
 ]
