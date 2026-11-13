@@ -4,7 +4,7 @@
  "ledger_rows": 1076,
  "ranking": "agreed best first, then chance to hit",
  "note": "applejack. Learning: benched bet types (no singles): points overs, assists overs, game overs, +2.5 puck lines. Adopted filters: H1 (no points unders on PP1 players), H3/H10 (model 8+ pts above Pinnacle) - H10 removed Minnesota-Toronto Under 7.5 (our top raw estimate, 82.3%, model 8.9 pts above market). Graded ledger: 1,483 rows (mostly Nov 10-11, so still provisional). 1,076 options priced and logged tonight across 10 games. Most singles are +1.5 puck lines whose estimate clears break-even only because of the learned +1.5 bias (H11, still testing); each pick says so. One pick per game. Agents: Agent 2's blind top 4 were all shorter than -300, so its replacement top 4 (given after seeing ours) was used; Agent 3 independently named Ottawa +1.5. Utah, Detroit and Toronto +1.5 got Pass votes from Agents 2 and 3. Teams on the 2nd night of a back-to-back: Tampa Bay, Buffalo, Utah. Goalies per RotoWire/Daily Faceoff ~3:45 PM ET: Hildeby (TBL), Ellis (BUF), Knight (CHI), Thompson (WSH), Vejmelka (UTA), Sorokin (NYI) expected or likely, not confirmed. Re-check goalies before betting.",
- "updatedAt": "2026-11-12T21:15:00Z",
+ "updatedAt": "2026-11-13T00:15:00Z",
  "bets": [
   {
    "rank": 1,
@@ -789,5 +789,60 @@
    "why": "Chicago has won by 3+ rarely while scoring 2.17 a game, and Dallas loses by 2+ only 3 times in 17."
   }
  ],
- "parlay_note": "Two-leg parlays from different games, priced at -300 or better on Pinnacle (product of leg decimals). Chance = product of leg estimates. The Under 8.5 legs carry the learned +5.5 pt under bias, so their chances sit roughly 5-8 pts above Pinnacle no-vig; treat them as fun only. Agent 2 would drop P7-P8 (just under break-even); Agent 3 would drop P5-P6. No bigger parlay: the slate did not have enough high-chance legs that were not already correlated unders."
+ "parlay_note": "Two-leg parlays from different games, priced at -300 or better on Pinnacle (product of leg decimals). Chance = product of leg estimates. The Under 8.5 legs carry the learned +5.5 pt under bias, so their chances sit roughly 5-8 pts above Pinnacle no-vig; treat them as fun only. Agent 2 would drop P7-P8 (just under break-even); Agent 3 would drop P5-P6. No bigger parlay: the slate did not have enough high-chance legs that were not already correlated unders.",
+ "watch": [
+  {
+   "bet": "MTL-BOS U8.5 + DET-FLA U8.5 + WPG-DAL U8.5",
+   "name": "Steve's 3-leg parlay: all three under 8.5",
+   "legs": [
+    {
+     "game": "MTL @ BOS",
+     "start": "7:07 PM ET",
+     "bet": "MTL-BOS Under 8.5 goals (OT incl)",
+     "price": "-499",
+     "track": {
+      "type": "total",
+      "away": "MTL",
+      "home": "BOS",
+      "line": 8.5,
+      "side": "under"
+     }
+    },
+    {
+     "game": "DET @ FLA",
+     "start": "7:37 PM ET",
+     "bet": "DET-FLA Under 8.5 goals (OT incl)",
+     "price": "-560",
+     "track": {
+      "type": "total",
+      "away": "DET",
+      "home": "FLA",
+      "line": 8.5,
+      "side": "under"
+     }
+    },
+    {
+     "game": "WPG @ DAL",
+     "start": "8:07 PM ET",
+     "bet": "WPG-DAL Under 8.5 goals (OT incl)",
+     "price": "-631",
+     "track": {
+      "type": "total",
+      "away": "WPG",
+      "home": "DAL",
+      "line": 8.5,
+      "side": "under"
+     }
+    }
+   ],
+   "price": "-156",
+   "decimal": 1.639,
+   "chance": 0.722,
+   "books": {
+    "pinnacle": "-156",
+    "bet365": "-183"
+   },
+   "note": "Steve's own bet for Nov 12 (requested after the card). Prices are pre-game; MTL-BOS had already started when it was added."
+  }
+ ]
 }
