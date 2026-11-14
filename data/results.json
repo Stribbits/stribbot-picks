@@ -708,5 +708,30 @@
   "date": "2026-11-12",
   "bet": "MTL-BOS U8.5 + DET-FLA U8.5 + WPG-DAL U8.5",
   "result": "Loss"
+ },
+ {
+  "date": "2026-11-13",
+  "bet": "NYR-VAN Under 7.5 goals (OT incl)",
+  "result": "Win"
+ },
+ {
+  "date": "2026-11-13",
+  "bet": "NY Rangers team total Under 4.5 (OT incl)",
+  "result": "Loss"
+ },
+ {
+  "date": "2026-11-13",
+  "bet": "Vladislav Gavrikov under 0.5 points",
+  "result": "Loss"
+ },
+ {
+  "date": "2026-11-13",
+  "bet": "Nashville team total Under 3.5 (OT incl)",
+  "result": "Win"
+ },
+ {
+  "date": "2026-11-13",
+  "bet": "Brett Howden under 0.5 points",
+  "result": "Win"
  }
 ]

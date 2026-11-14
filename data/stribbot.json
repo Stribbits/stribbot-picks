@@ -1148,5 +1148,55 @@
   "stake": 5,
   "result": "Loss",
   "verdict": "Pass"
+ },
+ {
+  "date": "2026-11-13",
+  "game": "NYR @ VAN",
+  "bet": "NYR-VAN Under 7.5 goals (OT incl)",
+  "price": "-282",
+  "decimal": 1.355,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Agreed"
+ },
+ {
+  "date": "2026-11-13",
+  "game": "NYR @ VAN",
+  "bet": "NY Rangers team total Under 4.5 (OT incl)",
+  "price": "-236",
+  "decimal": 1.424,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-13",
+  "game": "NYR @ VAN",
+  "bet": "Vladislav Gavrikov under 0.5 points",
+  "price": "-259",
+  "decimal": 1.386,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-13",
+  "game": "NSH @ VGK",
+  "bet": "Nashville team total Under 3.5 (OT incl)",
+  "price": "-243",
+  "decimal": 1.412,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-13",
+  "game": "NSH @ VGK",
+  "bet": "Brett Howden under 0.5 points",
+  "price": "-261",
+  "decimal": 1.383,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Fun only"
  }
 ]
