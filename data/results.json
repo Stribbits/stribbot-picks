@@ -733,5 +733,35 @@
   "date": "2026-11-13",
   "bet": "Brett Howden under 0.5 points",
   "result": "Win"
+ },
+ {
+  "date": "2026-11-14",
+  "bet": "Oliver Ekman-Larsson under 0.5 points",
+  "result": "Win"
+ },
+ {
+  "date": "2026-11-14",
+  "bet": "Anaheim +1.5 (OT incl)",
+  "result": "Loss"
+ },
+ {
+  "date": "2026-11-14",
+  "bet": "Boston +1.5 (OT incl)",
+  "result": "Loss"
+ },
+ {
+  "date": "2026-11-14",
+  "bet": "St. Louis +1.5 (OT incl)",
+  "result": "Loss"
+ },
+ {
+  "date": "2026-11-14",
+  "bet": "Jordan Spence under 0.5 points",
+  "result": "Win"
+ },
+ {
+  "date": "2026-11-14",
+  "bet": "Parlay: TBL +1.5, PHI-CBJ U8.5",
+  "result": "Loss"
  }
 ]

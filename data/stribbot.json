@@ -1198,5 +1198,55 @@
   "stake": 5,
   "result": "Win",
   "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-14",
+  "game": "EDM @ TOR",
+  "bet": "Oliver Ekman-Larsson under 0.5 points",
+  "price": "-270",
+  "decimal": 1.37,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-14",
+  "game": "NYI @ ANA",
+  "bet": "Anaheim +1.5 (OT incl)",
+  "price": "-290",
+  "decimal": 1.345,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-14",
+  "game": "MIN @ BOS",
+  "bet": "Boston +1.5 (OT incl)",
+  "price": "-258",
+  "decimal": 1.388,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-14",
+  "game": "FLA @ STL",
+  "bet": "St. Louis +1.5 (OT incl)",
+  "price": "-256",
+  "decimal": 1.391,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-14",
+  "game": "OTT @ PIT",
+  "bet": "Jordan Spence under 0.5 points",
+  "price": "-300",
+  "decimal": 1.333,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Fun only"
  }
 ]
