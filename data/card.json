@@ -5,7 +5,7 @@
  "format": "headline singles (top 5, one per game) + separate parlays",
  "ranking": "chance to hit",
  "note": "Pumpernickel. Steve loosened the rules today after a 0-bet card: we now always publish the top 5 singles by chance to hit (one per game) and run them past Agents 2 and 3. None of tonight's five passes the old Nov 13 rules, so all are 'Fun only'. Four are below break-even before the learned bias, three are home +1.5s (H14 has hit about 10 points under estimate), and the top pick has the model 11 points above Pinnacle (H10). Read the objections. No pick was named by all three agents (no 'Agreed'). Agent 2's own top 4: CHI +1.5, WPG-CHI U6.5, BOS -1.5, TOR -1.5. Agent 3's: BOS +1.5, STL +1.5, WSH +1.5, PIT +1.5. Benched types still off the card: shots, points overs, assists, +2.5, period totals. 1,580 options logged; graded ledger 2,797 rows. Goalies for NYI-ANA and FLA-STL are unconfirmed and the sources disagree, so check before the puck drops.",
- "updatedAt": "2026-11-14T16:55:00Z",
+ "updatedAt": "2026-11-14T17:40:00Z",
  "bets": [
   {
    "rank": 1,
@@ -217,8 +217,59 @@
    }
   }
  ],
- "parlays": [],
- "parlay_note": "Parlays are tracked separately from the headline record. None tonight.",
+ "parlays": [
+  {
+   "rank": 1,
+   "legs": [
+    {
+     "game": "DET @ TBL",
+     "start": "7:07 PM ET",
+     "bet": "Tampa Bay +1.5 (OT incl)",
+     "price": "-585",
+     "est": 0.866,
+     "bet365": "-550",
+     "track": {
+      "type": "spread",
+      "away": "DET",
+      "home": "TBL",
+      "team": "TBL",
+      "line": 1.5
+     }
+    },
+    {
+     "game": "PHI @ CBJ",
+     "start": "7:07 PM ET",
+     "bet": "PHI-CBJ Under 8.5 goals (OT incl)",
+     "price": "-654",
+     "est": 0.874,
+     "bet365": "-800",
+     "track": {
+      "type": "total",
+      "away": "PHI",
+      "home": "CBJ",
+      "line": 8.5,
+      "side": "under"
+     }
+    }
+   ],
+   "bet": "Tampa Bay +1.5 (OT incl) + PHI-CBJ Under 8.5 goals (OT incl)",
+   "short": "TBL +1.5, PHI-CBJ U8.5",
+   "game": "DET @ TBL / PHI @ CBJ",
+   "price": "-286",
+   "decimal": 1.3499,
+   "breakeven": 0.7408,
+   "chance": 0.757,
+   "books": {
+    "pinnacle": "-286",
+    "bet365": "-303",
+    "best": "pinnacle",
+    "bet365_note": null
+   },
+   "note": "Added at Steve's request (Nov 14 chat): the two most likely outcomes on the slate, paired to get near the -300 limit. Fun only. Pinnacle no-vig puts the pair at about 70%; our estimate is 75.7%. The Tampa leg clears its break-even only with the learned bias.",
+   "why": "Philadelphia (2.24 goals a game) and Columbus (2.47) are the two lowest-scoring teams on the slate, and Detroit has won only 7 of 20 games, so a Detroit win by 2+ is unlikely."
+  }
+ ],
+ "parlay_note": "Parlays are tracked separately from the headline record. Tonight's parlay was added at Steve's request and is Fun only.",
  "dropped": [
   {
    "bet": "New Jersey +1.5 (OT incl)",
