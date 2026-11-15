@@ -36,7 +36,7 @@ section { display: flex; flex-direction: column; gap: 14px; }
 .rank { font-family: var(--f-display); font-size: 1.9rem; font-weight: 700; color: var(--muted); line-height: .9; min-width: 1.4em; }
 .title { font-weight: 600; font-size: 1.02rem; }
 .pill { font-size: .72rem; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; padding: 3px 9px; border-radius: 999px; border: 1px solid currentColor; white-space: nowrap; }
-.v-Agreed { color: var(--ok); } .v-Fun { color: var(--warn); } .v-Pass { color: var(--muted); }
+.v-Agreed { color: var(--ok); } .v-Fun { color: var(--warn); } .v-Pass { color: var(--muted); } .v-MONEY { color: var(--ok); } .v-WINS { color: var(--warn); }
 .figs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
 .figs div { display: flex; flex-direction: column; }
 .figs b { font-family: var(--f-num); font-size: 1rem; font-weight: 600; }
@@ -217,7 +217,7 @@ body.pip .tlegs { font-size: .76rem; }
 
 <section aria-labelledby="stand-h">
 <h2 id="stand-h">Standings</h2>
-<p class="note">Everyone who signs in, ranked by profit on settled bets. Bets from the card are settled automatically from final scores. The two Stribbot rows are just for fun (no money bet): wins and losses on the card's Agreed singles, and on Agreed plus Fun only singles, since Oct 27.</p>
+<p class="note">Everyone who signs in, ranked by profit on settled bets. Bets from the card are settled automatically from final scores. The two Stribbot rows are just for fun (no money bet): wins and losses on the card's MONEY singles, and on all card singles (MONEY + WINS), since the new plan started on Nov 15.</p>
 <div class="stand" id="stand"><div class="empty">Loading standings…</div></div>
 </section>
 
@@ -228,8 +228,8 @@ body.pip .tlegs { font-size: .76rem; }
 </section>
 
 <section aria-labelledby="board-h">
-<h2 id="board-h">Tonight's top 10</h2>
-<p class="note">Every Pinnacle bet on the slate is scanned and ranked by chance to hit. Stribbot Agents 1–4 each vote. "Agreed" means all four name it in their top 4. Bar shows our estimated win range; the line is what the price needs.</p>
+<h2 id="board-h">Tonight's card</h2>
+<p class="note">Every Pinnacle bet on the slate is scanned. MONEY = points props where our number beats Pinnacle's fair price (on probation). WINS = likely game-line favourites, which cost a little over time. Bar shows our estimated win range; the line is what the price needs.</p>
 <p class="note"><label>My Pinnacle site: <select id="pin-site" aria-label="Which Pinnacle site your account is on"><option value="ca">pinnacle.ca (Ontario)</option><option value="com">pinnacle.com (Quebec and elsewhere)</option></select></label> Place on Pinnacle opens this one. Saved on this device.</p>
 <div class="board" id="board"><div class="empty">No board posted yet.</div></div>
 <div id="pbuild" hidden aria-live="polite"></div>
@@ -354,13 +354,13 @@ function renderMigrate() {
   box.replaceChildren(t, btn);
 }
 
-// Stribbot's own record: every Agreed / Fun only single on the card since 2026-10-27 at a flat $5.
+// Stribbot's own record: every MONEY / WINS single on the card since 2026-11-15 (plan v2) at a flat $5. The Oct 27 - Nov 14 record is archived in data/stribbot_v1_2026-10-27_to_11-14.json.
 // History comes from data/stribbot.json (written by the daily run); tonight's card is added live.
 let stribbotHist = [];
 fetch('data/stribbot.json?t=' + Date.now()).then(r => r.ok ? r.json() : []).catch(() => []).then(l => { stribbotHist = Array.isArray(l) ? l : []; renderStandings(); });
 function stribbotBets() {
 const list = stribbotHist.slice(); const seen = new Set(list.map(b => okey(b.date, b.bet)));
-if (card && card.date >= '2026-10-27') (card.bets || []).forEach(r => { if (!['Agreed', 'Fun only'].includes(r.verdict) || seen.has(okey(card.date, r.bet))) return; list.push({ date: card.date, game: r.game, bet: r.bet, price: r.price, decimal: r.decimal, stake: 5, result: official.get(okey(card.date, r.bet)) || 'Pending', verdict: r.verdict }); });
+if (card && card.date >= '2026-11-15') (card.bets || []).forEach(r => { if (!['MONEY', 'WINS'].includes(r.verdict) || seen.has(okey(card.date, r.bet))) return; list.push({ date: card.date, game: r.game, bet: r.bet, price: r.price, decimal: r.decimal, stake: 5, result: official.get(okey(card.date, r.bet)) || 'Pending', verdict: r.verdict }); });
 return list;
 }
 function renderStandings() {
@@ -376,8 +376,8 @@ renderNight();
   const sb = stribbotBets();
   const botRowOf = (uid, name, list, tip) => { const t = tally(list); return { uid, bot: true, name, tip, ...t, roi: t.staked ? t.pl / t.staked : 0, wins: list.filter(b => b.result === 'Win').length, losses: list.filter(b => b.result === 'Loss').length }; };
   if (sb.length) {
-    rows.push(botRowOf('stribbot-agreed', 'Stribbot (Agreed only)', sb.filter(b => b.verdict === 'Agreed'), 'Every Agreed single on the card since Oct 27 (no money bet)'));
-    rows.push(botRowOf('stribbot-all', 'Stribbot (Agreed & Fun)', sb, 'Every Agreed and Fun only single on the card since Oct 27 (no money bet)'));
+    rows.push(botRowOf('stribbot-agreed', 'Stribbot (Money lane)', sb.filter(b => b.verdict === 'MONEY'), 'Every MONEY single on the card since Nov 15 (no money bet)'));
+    rows.push(botRowOf('stribbot-all', 'Stribbot (All singles)', sb, 'Every MONEY and WINS single on the card since Nov 15 (no money bet)'));
   }
   rows.sort((a, b) => (b.pl - a.pl) || (b.roi - a.roi) || a.name.localeCompare(b.name));
   if (!rows.length) { box.replaceChildren(el('div', 'empty', 'No one has logged a bet yet. Sign in and place one to start the table.')); return; }
@@ -505,10 +505,10 @@ function renderBoard() {
   const box = $('board');
   if (!card || !Array.isArray(card.bets) || !card.bets.length) { box.replaceChildren(el('div', 'empty', 'No board posted yet.')); $('takeaway').textContent = 'No board posted yet.'; return; }
   const rows = card.bets.slice().sort((a, b) => a.rank - b.rank);
-  const agreed = rows.filter(r => r.verdict === 'Agreed').length, fun = rows.filter(r => r.verdict === 'Fun only').length;
-  $('takeaway').textContent = `${card.date}: ${card.scanned ? card.scanned.toLocaleString() + ' Pinnacle bets scanned. ' : ''}${agreed} agreed, ${fun} fun only, ${rows.length - agreed - fun} passed.`;
+  const agreed = rows.filter(r => r.verdict === 'Agreed').length, fun = rows.filter(r => r.verdict === 'Fun only').length, money = rows.filter(r => r.verdict === 'MONEY').length, winsN = rows.filter(r => r.verdict === 'WINS').length;
+  $('takeaway').textContent = (money || winsN) ? `${card.date}: ${card.scanned ? card.scanned.toLocaleString() + ' Pinnacle bets scanned. ' : ''}${money} money, ${winsN} wins.` : `${card.date}: ${card.scanned ? card.scanned.toLocaleString() + ' Pinnacle bets scanned. ' : ''}${agreed} agreed, ${fun} fun only, ${rows.length - agreed - fun} passed.`;
   box.replaceChildren(...rows.map(r => {
-    const a = el('article', 'bet' + (r.verdict === 'Agreed' ? ' agreed' : ''));
+    const a = el('article', 'bet' + (['Agreed', 'MONEY'].includes(r.verdict) ? ' agreed' : ''));
     const top = el('div', 'top'), left = el('div'); left.style.display = 'flex'; left.style.gap = '10px';
     left.append(el('div', 'rank', String(r.rank)));
     const t = el('div'); t.append(el('div', 'title', r.bet), el('div', 'note', `${r.game} · ${r.start}`)); left.append(t);
