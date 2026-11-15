@@ -1,0 +1,1252 @@
+[
+ {
+  "date": "2026-10-27",
+  "game": "MIN @ UTA",
+  "bet": "Minnesota +1.5 (OT incl)",
+  "price": "-244",
+  "decimal": 1.41,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Agreed"
+ },
+ {
+  "date": "2026-10-27",
+  "game": "BUF @ SJS",
+  "bet": "San Jose +1.5 (OT incl)",
+  "price": "-195",
+  "decimal": 1.513,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Agreed"
+ },
+ {
+  "date": "2026-10-27",
+  "game": "MIN @ UTA",
+  "bet": "Logan Cooley under 2.5 shots",
+  "price": "-218",
+  "decimal": 1.459,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Agreed"
+ },
+ {
+  "date": "2026-10-27",
+  "game": "FLA @ WPG",
+  "bet": "Dylan Samberg under 0.5 points",
+  "price": "-314",
+  "decimal": 1.318,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Agreed"
+ },
+ {
+  "date": "2026-10-27",
+  "game": "FLA @ WPG",
+  "bet": "Gustav Forsling under 0.5 points",
+  "price": "-310",
+  "decimal": 1.323,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-10-27",
+  "game": "CBJ @ PHI",
+  "bet": "Philadelphia +1.5 (OT incl)",
+  "price": "-253",
+  "decimal": 1.395,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-10-27",
+  "game": "NYI @ NSH",
+  "bet": "NY Islanders +1.5 (OT incl)",
+  "price": "-251",
+  "decimal": 1.398,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-10-27",
+  "game": "VAN @ ANA",
+  "bet": "Zeev Buium under 0.5 points",
+  "price": "-250",
+  "decimal": 1.4,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-10-27",
+  "game": "VAN @ ANA",
+  "bet": "Leo Carlsson over 0.5 points",
+  "price": "-218",
+  "decimal": 1.459,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-10-28",
+  "game": "TOR @ SEA",
+  "bet": "Seattle +1.5 (OT incl)",
+  "price": "-219",
+  "decimal": 1.457,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Agreed"
+ },
+ {
+  "date": "2026-10-28",
+  "game": "TOR @ SEA",
+  "bet": "William Nylander over 0.5 points",
+  "price": "-240",
+  "decimal": 1.417,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Agreed"
+ },
+ {
+  "date": "2026-10-28",
+  "game": "CGY @ EDM",
+  "bet": "Yegor Sharangovich under 0.5 assists",
+  "price": "-363",
+  "decimal": 1.275,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-10-28",
+  "game": "TOR @ SEA",
+  "bet": "Mackie Samoskevich under 0.5 assists",
+  "price": "-312",
+  "decimal": 1.321,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-10-28",
+  "game": "CGY @ EDM",
+  "bet": "Connor McDavid over 0.5 assists",
+  "price": "-321",
+  "decimal": 1.312,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-10-28",
+  "game": "PHI @ WSH",
+  "bet": "Washington moneyline (OT incl)",
+  "price": "-233",
+  "decimal": 1.429,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-10-28",
+  "game": "NJD @ COL",
+  "bet": "Colorado 2nd-period team total over 0.5",
+  "price": "-227",
+  "decimal": 1.441,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-10-28",
+  "game": "NJD @ COL",
+  "bet": "Martin Necas over 0.5 points",
+  "price": "-225",
+  "decimal": 1.444,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-10-28",
+  "game": "CGY @ EDM",
+  "bet": "Calgary @ Edmonton total over 5.5 goals (OT incl)",
+  "price": "-177",
+  "decimal": 1.564,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-10-29",
+  "game": "BOS @ STL",
+  "bet": "Boston +1.5 (OT incl)",
+  "price": "-262",
+  "decimal": 1.382,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Agreed"
+ },
+ {
+  "date": "2026-10-29",
+  "game": "WSH @ NSH",
+  "bet": "Nashville +1.5 (OT incl)",
+  "price": "-252",
+  "decimal": 1.397,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Agreed"
+ },
+ {
+  "date": "2026-10-29",
+  "game": "OTT @ LAK",
+  "bet": "Los Angeles +1.5 (OT incl)",
+  "price": "-251",
+  "decimal": 1.398,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Agreed"
+ },
+ {
+  "date": "2026-10-29",
+  "game": "BUF @ ANA",
+  "bet": "Anaheim +1.5 (OT incl)",
+  "price": "-198",
+  "decimal": 1.505,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-10-29",
+  "game": "UTA @ PIT",
+  "bet": "Pittsburgh +1.5 (OT incl)",
+  "price": "-205",
+  "decimal": 1.488,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-10-29",
+  "game": "VAN @ SJS",
+  "bet": "Mason Marchment under 2.5 shots",
+  "price": "-204",
+  "decimal": 1.49,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-10-30",
+  "game": "NJD @ VGK",
+  "bet": "New Jersey +1.5 (OT incl)",
+  "price": "-262",
+  "decimal": 1.382,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Agreed"
+ },
+ {
+  "date": "2026-10-30",
+  "game": "SEA @ CGY",
+  "bet": "Calgary +1.5 (OT incl)",
+  "price": "-258",
+  "decimal": 1.388,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Agreed"
+ },
+ {
+  "date": "2026-10-30",
+  "game": "WPG @ FLA",
+  "bet": "Eetu Luostarinen under 0.5 points",
+  "price": "-195",
+  "decimal": 1.513,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-10-30",
+  "game": "NJD @ VGK",
+  "bet": "Jack Hughes over 0.5 points",
+  "price": "-225",
+  "decimal": 1.444,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-01",
+  "game": "OTT @ ANA",
+  "bet": "Anaheim +1.5 (OT incl)",
+  "price": "-236",
+  "decimal": 1.424,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Agreed"
+ },
+ {
+  "date": "2026-11-01",
+  "game": "OTT @ ANA",
+  "bet": "Alex Killorn under 0.5 assists",
+  "price": "-390",
+  "decimal": 1.256,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-01",
+  "game": "EDM @ NYR",
+  "bet": "Gabe Perreault under 0.5 assists",
+  "price": "-372",
+  "decimal": 1.269,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-01",
+  "game": "EDM @ NYR",
+  "bet": "Vladislav Gavrikov under 0.5 assists",
+  "price": "-363",
+  "decimal": 1.275,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-01",
+  "game": "UTA @ PHI",
+  "bet": "Christian Dvorak under 0.5 assists",
+  "price": "-354",
+  "decimal": 1.282,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-01",
+  "game": "UTA @ PHI",
+  "bet": "Jamie Drysdale under 0.5 assists",
+  "price": "-231",
+  "decimal": 1.433,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-01",
+  "game": "OTT @ ANA",
+  "bet": "Anaheim 2nd-period team total over 0.5",
+  "price": "-218",
+  "decimal": 1.459,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-02",
+  "game": "VGK @ BOS",
+  "bet": "Boston +1.5 (OT incl)",
+  "price": "-265",
+  "decimal": 1.377,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Agreed"
+ },
+ {
+  "date": "2026-11-02",
+  "game": "COL @ CHI",
+  "bet": "Chicago team total over 1.5 goals (OT incl)",
+  "price": "-304",
+  "decimal": 1.329,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-02",
+  "game": "CGY @ SJS",
+  "bet": "San Jose +1.5 (OT incl)",
+  "price": "-320",
+  "decimal": 1.312,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-02",
+  "game": "CGY @ SJS",
+  "bet": "Zayne Parekh under 0.5 assists",
+  "price": "-264",
+  "decimal": 1.379,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-03",
+  "game": "ANA @ VAN",
+  "bet": "Leo Carlsson over 0.5 points",
+  "price": "-240",
+  "decimal": 1.417,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Agreed"
+ },
+ {
+  "date": "2026-11-03",
+  "game": "EDM @ NJD",
+  "bet": "Connor McDavid over 0.5 assists",
+  "price": "-225",
+  "decimal": 1.444,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Agreed"
+ },
+ {
+  "date": "2026-11-03",
+  "game": "UTA @ TOR",
+  "bet": "Toronto +1.5 (OT incl)",
+  "price": "-196",
+  "decimal": 1.51,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Agreed"
+ },
+ {
+  "date": "2026-11-03",
+  "game": "EDM @ NJD",
+  "bet": "Edmonton +1.5 (OT incl)",
+  "price": "-186",
+  "decimal": 1.538,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Agreed"
+ },
+ {
+  "date": "2026-11-03",
+  "game": "UTA @ TOR",
+  "bet": "Oliver Ekman-Larsson under 0.5 points",
+  "price": "-320",
+  "decimal": 1.312,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-03",
+  "game": "DAL @ WSH",
+  "bet": "Dallas +1.5 (OT incl)",
+  "price": "-277",
+  "decimal": 1.361,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-03",
+  "game": "STL @ NYR",
+  "bet": "St. Louis +1.5 (OT incl)",
+  "price": "-245",
+  "decimal": 1.408,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-03",
+  "game": "MIN @ PHI",
+  "bet": "Matt Boldy under 1.5 points",
+  "price": "-240",
+  "decimal": 1.417,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-04",
+  "game": "SJS @ LAK",
+  "bet": "San Jose +2.5 (OT incl)",
+  "price": "-324",
+  "decimal": 1.309,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Agreed"
+ },
+ {
+  "date": "2026-11-04",
+  "game": "CHI @ FLA",
+  "bet": "Chicago +2.5 (OT incl)",
+  "price": "-224",
+  "decimal": 1.446,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Agreed"
+ },
+ {
+  "date": "2026-11-04",
+  "game": "OTT @ BUF",
+  "bet": "Ottawa +2.5 (OT incl)",
+  "price": "-406",
+  "decimal": 1.246,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-04",
+  "game": "SJS @ LAK",
+  "bet": "Los Angeles +1.5 (OT incl)",
+  "price": "-440",
+  "decimal": 1.227,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-04",
+  "game": "CGY @ SEA",
+  "bet": "Seattle +1.5 (OT incl)",
+  "price": "-358",
+  "decimal": 1.279,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-04",
+  "game": "CGY @ SEA",
+  "bet": "Calgary +2.5 (OT incl)",
+  "price": "-393",
+  "decimal": 1.254,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-04",
+  "game": "OTT @ BUF",
+  "bet": "Buffalo +1.5 (OT incl)",
+  "price": "-324",
+  "decimal": 1.309,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-04",
+  "game": "CHI @ FLA",
+  "bet": "Under 7 goals (OT incl)",
+  "price": "-253",
+  "decimal": 1.395,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-05",
+  "game": "BOS @ PIT",
+  "bet": "Boston +1.5 (OT incl)",
+  "price": "-277",
+  "decimal": 1.361,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Agreed"
+ },
+ {
+  "date": "2026-11-05",
+  "game": "STL @ NJD",
+  "bet": "St. Louis +2.5 (OT incl)",
+  "price": "-270",
+  "decimal": 1.37,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Agreed"
+ },
+ {
+  "date": "2026-11-05",
+  "game": "UTA @ MTL",
+  "bet": "Montreal +1.5 (OT incl)",
+  "price": "-231",
+  "decimal": 1.433,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Agreed"
+ },
+ {
+  "date": "2026-11-05",
+  "game": "CAR @ NYI",
+  "bet": "NY Islanders +2.5 (OT incl)",
+  "price": "-295",
+  "decimal": 1.339,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-05",
+  "game": "VAN @ WPG",
+  "bet": "Vancouver +2.5 (OT incl)",
+  "price": "-247",
+  "decimal": 1.405,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-05",
+  "game": "NSH @ COL",
+  "bet": "Nashville +2.5 (OT incl)",
+  "price": "-239",
+  "decimal": 1.418,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-05",
+  "game": "CHI @ TBL",
+  "bet": "Anthony Cirelli under 2.5 shots",
+  "price": "-242",
+  "decimal": 1.413,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-06",
+  "game": "SJS @ MIN",
+  "bet": "Under 7.5 goals (OT incl)",
+  "price": "-274",
+  "decimal": 1.365,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Agreed"
+ },
+ {
+  "date": "2026-11-06",
+  "game": "SJS @ MIN",
+  "bet": "San Jose +2.5 (OT incl)",
+  "price": "-192",
+  "decimal": 1.521,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-06",
+  "game": "ANA @ CGY",
+  "bet": "Zayne Parekh under 0.5 points",
+  "price": "-155",
+  "decimal": 1.645,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-06",
+  "game": "ANA @ CGY",
+  "bet": "Yegor Sharangovich under 0.5 points",
+  "price": "-160",
+  "decimal": 1.625,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-07",
+  "game": "NYR @ SEA",
+  "bet": "Seattle +1.5 (OT incl)",
+  "price": "-222",
+  "decimal": 1.45,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Agreed"
+ },
+ {
+  "date": "2026-11-07",
+  "game": "DET @ COL",
+  "bet": "Detroit +2.5 (OT incl)",
+  "price": "-240",
+  "decimal": 1.417,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Agreed"
+ },
+ {
+  "date": "2026-11-07",
+  "game": "CHI @ CAR",
+  "bet": "Under 7.5 goals (OT incl)",
+  "price": "-289",
+  "decimal": 1.346,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Agreed"
+ },
+ {
+  "date": "2026-11-07",
+  "game": "MTL @ TOR",
+  "bet": "Montreal +1.5 (OT incl)",
+  "price": "-300",
+  "decimal": 1.333,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Agreed"
+ },
+ {
+  "date": "2026-11-07",
+  "game": "DET @ COL",
+  "bet": "Under 7.5 goals (OT incl)",
+  "price": "-275",
+  "decimal": 1.364,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-07",
+  "game": "UTA @ OTT",
+  "bet": "Ottawa +1.5 (OT incl)",
+  "price": "-237",
+  "decimal": 1.422,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-07",
+  "game": "PIT @ LAK",
+  "bet": "Pittsburgh +1.5 (OT incl)",
+  "price": "-238",
+  "decimal": 1.42,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-07",
+  "game": "NJD @ NYI",
+  "bet": "NY Islanders +1.5 (OT incl)",
+  "price": "-200",
+  "decimal": 1.5,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-07",
+  "game": "NYR @ SEA",
+  "bet": "Over 5.5 goals (OT incl)",
+  "price": "-154",
+  "decimal": 1.649,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-07",
+  "game": "SJS @ DAL",
+  "bet": "Jamie Benn under 1.5 shots",
+  "price": "-121",
+  "decimal": 1.826,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-08",
+  "game": "PIT @ ANA",
+  "bet": "Anaheim +1.5 (OT incl)",
+  "price": "-285",
+  "decimal": 1.351,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Agreed"
+ },
+ {
+  "date": "2026-11-08",
+  "game": "PHI @ CGY",
+  "bet": "Calgary +1.5 (OT incl)",
+  "price": "-249",
+  "decimal": 1.402,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Agreed"
+ },
+ {
+  "date": "2026-11-08",
+  "game": "NJD @ TOR",
+  "bet": "Toronto +1.5 (OT incl)",
+  "price": "-192",
+  "decimal": 1.521,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-08",
+  "game": "PIT @ ANA",
+  "bet": "Leo Carlsson over 0.5 points",
+  "price": "-237",
+  "decimal": 1.422,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-08",
+  "game": "NJD @ TOR",
+  "bet": "Auston Matthews over 0.5 points",
+  "price": "-230",
+  "decimal": 1.435,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-08",
+  "game": "NJD @ TOR",
+  "bet": "William Nylander over 0.5 points",
+  "price": "-220",
+  "decimal": 1.455,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-08",
+  "game": "TBL @ WPG",
+  "bet": "Kyle Connor over 0.5 points",
+  "price": "-235",
+  "decimal": 1.426,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-08",
+  "game": "PHI @ CGY",
+  "bet": "Under 6.5 goals (OT incl)",
+  "price": "-156",
+  "decimal": 1.641,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-09",
+  "game": "NYR @ EDM",
+  "bet": "Evan Bouchard over 0.5 points",
+  "price": "-226",
+  "decimal": 1.442,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Agreed"
+ },
+ {
+  "date": "2026-11-09",
+  "game": "NYR @ EDM",
+  "bet": "Under 7.5 goals (OT incl)",
+  "price": "-262",
+  "decimal": 1.382,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-09",
+  "game": "PHI @ VAN",
+  "bet": "Vancouver +1.5 (OT incl)",
+  "price": "-212",
+  "decimal": 1.472,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-09",
+  "game": "NYI @ SJS",
+  "bet": "San Jose +1.5 (OT incl)",
+  "price": "-209",
+  "decimal": 1.478,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-09",
+  "game": "NYI @ SJS",
+  "bet": "Anthony Duclair under 0.5 points",
+  "price": "-187",
+  "decimal": 1.535,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-09",
+  "game": "NYR @ EDM",
+  "bet": "Adam Fox over 0.5 points",
+  "price": "-180",
+  "decimal": 1.556,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-10",
+  "game": "WSH @ OTT",
+  "bet": "Ottawa +1.5 (OT incl)",
+  "price": "-291",
+  "decimal": 1.344,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-10",
+  "game": "FLA @ CBJ",
+  "bet": "Columbus +1.5 (OT incl)",
+  "price": "-246",
+  "decimal": 1.407,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-10",
+  "game": "MIN @ MTL",
+  "bet": "Montreal +1.5 (OT incl)",
+  "price": "-238",
+  "decimal": 1.42,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-10",
+  "game": "NSH @ LAK",
+  "bet": "Nashville +1.5 (OT incl)",
+  "price": "-226",
+  "decimal": 1.442,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-10",
+  "game": "COL @ TOR",
+  "bet": "Toronto +2.5 (OT incl)",
+  "price": "-295",
+  "decimal": 1.339,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-10",
+  "game": "COL @ TOR",
+  "bet": "Toronto +1.5 (OT incl)",
+  "price": "-162",
+  "decimal": 1.617,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-11",
+  "game": "NYR @ CGY",
+  "bet": "Calgary +1.5 (OT incl)",
+  "price": "-208",
+  "decimal": 1.481,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Agreed"
+ },
+ {
+  "date": "2026-11-11",
+  "game": "UTA @ VGK",
+  "bet": "Under 7.5 goals (OT incl)",
+  "price": "-290",
+  "decimal": 1.345,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-11",
+  "game": "PIT @ SJS",
+  "bet": "Under 7.5 goals (OT incl)",
+  "price": "-205",
+  "decimal": 1.488,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-11",
+  "game": "TBL @ BUF",
+  "bet": "Under 7.5 goals (OT incl)",
+  "price": "-235",
+  "decimal": 1.426,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-11",
+  "game": "UTA @ VGK",
+  "bet": "Utah +1.5 (OT incl)",
+  "price": "-230",
+  "decimal": 1.435,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-11",
+  "game": "TBL @ BUF",
+  "bet": "Buffalo +1.5 (OT incl)",
+  "price": "-218",
+  "decimal": 1.459,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-11",
+  "game": "PIT @ SJS",
+  "bet": "San Jose +1.5 (OT incl)",
+  "price": "-192",
+  "decimal": 1.521,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-11",
+  "game": "NYR @ CGY",
+  "bet": "Ryan Strome under 0.5 points",
+  "price": "-220",
+  "decimal": 1.455,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-11",
+  "game": "PHI @ EDM",
+  "bet": "Tyson Foerster under 0.5 points",
+  "price": "-180",
+  "decimal": 1.556,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-12",
+  "game": "COL @ OTT",
+  "bet": "Ottawa +1.5 (OT incl)",
+  "price": "-286",
+  "decimal": 1.35,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Agreed"
+ },
+ {
+  "date": "2026-11-12",
+  "game": "BUF @ CHI",
+  "bet": "BUF-CHI Under 7.5 goals (OT incl)",
+  "price": "-277",
+  "decimal": 1.361,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-12",
+  "game": "TBL @ CBJ",
+  "bet": "Tampa Bay +1.5 (OT incl)",
+  "price": "-300",
+  "decimal": 1.333,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-12",
+  "game": "NYI @ LAK",
+  "bet": "NY Islanders +1.5 (OT incl)",
+  "price": "-244",
+  "decimal": 1.41,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-12",
+  "game": "STL @ UTA",
+  "bet": "Utah +1.5 (OT incl)",
+  "price": "-257",
+  "decimal": 1.389,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Pass"
+ },
+ {
+  "date": "2026-11-12",
+  "game": "MTL @ BOS",
+  "bet": "Montreal +1.5 (OT incl)",
+  "price": "-237",
+  "decimal": 1.422,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-12",
+  "game": "WSH @ NJD",
+  "bet": "Washington +1.5 (OT incl)",
+  "price": "-188",
+  "decimal": 1.532,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-12",
+  "game": "DET @ FLA",
+  "bet": "Detroit +1.5 (OT incl)",
+  "price": "-178",
+  "decimal": 1.562,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Pass"
+ },
+ {
+  "date": "2026-11-12",
+  "game": "WPG @ DAL",
+  "bet": "WPG-DAL Under 6.5 goals (OT incl)",
+  "price": "-150",
+  "decimal": 1.667,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-12",
+  "game": "MIN @ TOR",
+  "bet": "Toronto +1.5 (OT incl)",
+  "price": "-165",
+  "decimal": 1.606,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Pass"
+ },
+ {
+  "date": "2026-11-13",
+  "game": "NYR @ VAN",
+  "bet": "NYR-VAN Under 7.5 goals (OT incl)",
+  "price": "-282",
+  "decimal": 1.355,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Agreed"
+ },
+ {
+  "date": "2026-11-13",
+  "game": "NYR @ VAN",
+  "bet": "NY Rangers team total Under 4.5 (OT incl)",
+  "price": "-236",
+  "decimal": 1.424,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-13",
+  "game": "NYR @ VAN",
+  "bet": "Vladislav Gavrikov under 0.5 points",
+  "price": "-259",
+  "decimal": 1.386,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-13",
+  "game": "NSH @ VGK",
+  "bet": "Nashville team total Under 3.5 (OT incl)",
+  "price": "-243",
+  "decimal": 1.412,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-13",
+  "game": "NSH @ VGK",
+  "bet": "Brett Howden under 0.5 points",
+  "price": "-261",
+  "decimal": 1.383,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-14",
+  "game": "EDM @ TOR",
+  "bet": "Oliver Ekman-Larsson under 0.5 points",
+  "price": "-270",
+  "decimal": 1.37,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-14",
+  "game": "NYI @ ANA",
+  "bet": "Anaheim +1.5 (OT incl)",
+  "price": "-290",
+  "decimal": 1.345,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-14",
+  "game": "MIN @ BOS",
+  "bet": "Boston +1.5 (OT incl)",
+  "price": "-258",
+  "decimal": 1.388,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-14",
+  "game": "FLA @ STL",
+  "bet": "St. Louis +1.5 (OT incl)",
+  "price": "-256",
+  "decimal": 1.391,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "Fun only"
+ },
+ {
+  "date": "2026-11-14",
+  "game": "OTT @ PIT",
+  "bet": "Jordan Spence under 0.5 points",
+  "price": "-300",
+  "decimal": 1.333,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "Fun only"
+ }
+]
