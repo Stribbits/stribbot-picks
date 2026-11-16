@@ -763,5 +763,25 @@
   "date": "2026-11-14",
   "bet": "Parlay: TBL +1.5, PHI-CBJ U8.5",
   "result": "Loss"
+ },
+ {
+  "date": "2026-11-15",
+  "bet": "Victor Olofsson over 0.5 points",
+  "result": "Win"
+ },
+ {
+  "date": "2026-11-15",
+  "bet": "Vasily Podkolzin over 0.5 points",
+  "result": "Win"
+ },
+ {
+  "date": "2026-11-15",
+  "bet": "Florida +1.5 (OT incl)",
+  "result": "Win"
+ },
+ {
+  "date": "2026-11-15",
+  "bet": "Calgary +1.5 (OT incl)",
+  "result": "Loss"
  }
 ]

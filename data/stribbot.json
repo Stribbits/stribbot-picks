@@ -1,1 +1,42 @@
-[]
+[
+ {
+  "date": "2026-11-15",
+  "game": "VAN @ VGK",
+  "bet": "Victor Olofsson over 0.5 points",
+  "price": "-150",
+  "decimal": 1.667,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "MONEY"
+ },
+ {
+  "date": "2026-11-15",
+  "game": "EDM @ PHI",
+  "bet": "Vasily Podkolzin over 0.5 points",
+  "price": "+126",
+  "decimal": 2.26,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "MONEY"
+ },
+ {
+  "date": "2026-11-15",
+  "game": "FLA @ DAL",
+  "bet": "Florida +1.5 (OT incl)",
+  "price": "-216",
+  "decimal": 1.463,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "WINS"
+ },
+ {
+  "date": "2026-11-15",
+  "game": "CGY @ ANA",
+  "bet": "Calgary +1.5 (OT incl)",
+  "price": "-192",
+  "decimal": 1.521,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "WINS"
+ }
+]
