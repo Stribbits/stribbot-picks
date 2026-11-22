@@ -38,5 +38,15 @@
   "stake": 5,
   "result": "Loss",
   "verdict": "WINS"
+ },
+ {
+  "date": "2026-11-16",
+  "game": "MTL @ NYR",
+  "bet": "Alexis Lafreniere over 0.5 points",
+  "price": "-145",
+  "decimal": 1.69,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "MONEY"
  }
 ]
