@@ -28,5 +28,35 @@
   "stake": 19.82,
   "result": "Win",
   "placedAt": "2026-11-22T23:30:00Z"
+ },
+ {
+  "date": "2026-11-23",
+  "game": "CGY @ OTT",
+  "bet": "Drake Batherson over 0.5 points",
+  "price": "-160",
+  "decimal": 1.625,
+  "stake": 5,
+  "result": "Pending",
+  "placedAt": "2026-11-23T23:35:00Z"
+ },
+ {
+  "date": "2026-11-23",
+  "game": "UTA @ WPG + ANA @ SEA",
+  "bet": "Parlay: Utah +1.5 + Seattle +1.5 (OT incl)",
+  "price": "+82",
+  "decimal": 1.823,
+  "stake": 5,
+  "result": "Pending",
+  "placedAt": "2026-11-23T23:35:00Z"
+ },
+ {
+  "date": "2026-11-23",
+  "game": "CBJ @ NJD + TOR @ NYI + LAK @ MTL",
+  "bet": "Parlay: New Jersey +1.5 + NY Islanders +1.5 + Montreal +1.5 (OT incl)",
+  "price": "+83",
+  "decimal": 1.828,
+  "stake": 5,
+  "result": "Pending",
+  "placedAt": "2026-11-23T23:35:00Z"
  }
 ]
