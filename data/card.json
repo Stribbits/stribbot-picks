@@ -5,9 +5,9 @@
  "format": "plan v2: MONEY (points 0.5 overs, max 3) + WINS (game-line favourites, max 2) + 0-1 parlay + $0 track shelf; one bet per game",
  "ranking": "MONEY: price closest to -110 among +EV qualifiers; WINS: highest no-vig within 58-78%",
  "plan_version": "v2",
- "status": "final (5 PM re-check done; Seattle +1.5 waits on Anaheim goalie)",
+ "status": "final (6:15 PM re-check done)",
  "note": "Plan v2, 7 games, final card: 3 singles + 1 fun parlay. MONEY: Batherson. WINS: Utah +1.5 and Seattle +1.5 (Seattle only once Anaheim's goalie is confirmed). Parlay (fun only): Islanders ML + New Jersey ML. Orlov was dropped at the 4:55 PM re-check: Minnesota is starting Gustavsson instead of Wallstedt. Re-check: Cooley/Ullmark, Cossa, Skinner (RotoWire), Talbot/Hellebuyck, Dobes and Askarov confirmed; Dostal and Kuemper still unconfirmed; Batherson still PP1; Winnipeg +1.5 moved -282 to -267, Seattle +1.5 -294 to -289. 924 options priced and logged; 114 DATA CHECK rows. No bet365 friends flags. Nov 22: Kane (W), Edmonton +1.5 (W), Harley (L). Steve's rule (Nov 23): no bets against the favourite, so Winnipeg +1.5 became Utah +1.5 and the LA +1.5 parlay leg was replaced.",
- "updatedAt": "2026-11-23T22:30:00Z",
+ "updatedAt": "2026-11-23T23:20:00Z",
  "bets": [
   {
    "rank": 1,
@@ -64,7 +64,7 @@
    "bet": "Seattle +1.5 (OT incl)",
    "bet_type": "puck_line_plus1.5",
    "lane": "WINS",
-   "price": "-289",
+   "price": "-288",
    "decimal": 1.346,
    "breakeven": 0.7429,
    "est": 0.7237,
@@ -86,7 +86,7 @@
    "goalies": "Lukas Dostal (Unconfirmed) vs Joey Daccord (Likely)",
    "lineup_check": "Seattle without McCann (IR); Anaheim with Carlsson day-to-day",
    "stats_url": "https://www.nhl.com/gamecenter/ana-vs-sea/2026/11/23/2026020383",
-   "status": "conditional: bet only once Anaheim's goalie is confirmed (still unconfirmed at 4:55 PM)",
+   "status": "Hold until Anaheim goalie confirmed (Dostal unconfirmed at 6:20 PM)",
    "books": {
     "pinnacle": "-289",
     "bet365": null,
@@ -109,7 +109,7 @@
    "bet": "Utah +1.5 (OT incl)",
    "bet_type": "puck_line_plus1.5",
    "lane": "WINS",
-   "price": "-285",
+   "price": "-287",
    "decimal": 1.351,
    "breakeven": 0.7403,
    "est": 0.7144,
@@ -170,7 +170,7 @@
      "game": "CBJ @ NJD",
      "start": "7:00 PM ET",
      "bet": "New Jersey moneyline",
-     "price": "-189",
+     "price": "-191",
      "est": 0.641,
      "bet365": "-210",
      "track": {
