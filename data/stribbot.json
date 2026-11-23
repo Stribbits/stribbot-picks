@@ -48,5 +48,35 @@
   "stake": 5,
   "result": "Loss",
   "verdict": "MONEY"
+ },
+ {
+  "date": "2026-11-22",
+  "game": "PIT @ DAL",
+  "bet": "Thomas Harley over 0.5 points",
+  "price": "-105",
+  "decimal": 1.952,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "MONEY"
+ },
+ {
+  "date": "2026-11-22",
+  "game": "CHI @ VAN",
+  "bet": "Patrick Kane over 0.5 points",
+  "price": "-165",
+  "decimal": 1.606,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "MONEY"
+ },
+ {
+  "date": "2026-11-22",
+  "game": "EDM @ STL",
+  "bet": "Edmonton +1.5 (OT incl)",
+  "price": "-255",
+  "decimal": 1.392,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "WINS"
  }
 ]

@@ -788,5 +788,20 @@
   "date": "2026-11-16",
   "bet": "Alexis Lafreniere over 0.5 points",
   "result": "Loss"
+ },
+ {
+  "date": "2026-11-22",
+  "bet": "Thomas Harley over 0.5 points",
+  "result": "Loss"
+ },
+ {
+  "date": "2026-11-22",
+  "bet": "Patrick Kane over 0.5 points",
+  "result": "Win"
+ },
+ {
+  "date": "2026-11-22",
+  "bet": "Edmonton +1.5 (OT incl)",
+  "result": "Win"
  }
 ]
