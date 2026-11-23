@@ -6,8 +6,8 @@
  "ranking": "MONEY: price closest to -110 among +EV qualifiers; WINS: highest no-vig within 58-78%",
  "plan_version": "v2",
  "status": "final (5 PM re-check done; Seattle +1.5 waits on Anaheim goalie)",
- "note": "Plan v2, 7 games, final card: 3 singles + 1 fun parlay. MONEY: Batherson. WINS: Winnipeg +1.5 and Seattle +1.5 (Seattle only once Anaheim's goalie is confirmed). Parlay (fun only): LA +1.5 + New Jersey ML. Orlov was dropped at the 4:55 PM re-check: Minnesota is starting Gustavsson instead of Wallstedt. Re-check: Cooley/Ullmark, Cossa, Skinner (RotoWire), Talbot/Hellebuyck, Dobes and Askarov confirmed; Dostal and Kuemper still unconfirmed; Batherson still PP1; Winnipeg +1.5 moved -282 to -267, Seattle +1.5 -294 to -289. 924 options priced and logged; 114 DATA CHECK rows. No bet365 friends flags. Nov 22: Kane (W), Edmonton +1.5 (W), Harley (L).",
- "updatedAt": "2026-11-23T21:58:00Z",
+ "note": "Plan v2, 7 games, final card: 3 singles + 1 fun parlay. MONEY: Batherson. WINS: Utah +1.5 and Seattle +1.5 (Seattle only once Anaheim's goalie is confirmed). Parlay (fun only): Islanders ML + New Jersey ML. Orlov was dropped at the 4:55 PM re-check: Minnesota is starting Gustavsson instead of Wallstedt. Re-check: Cooley/Ullmark, Cossa, Skinner (RotoWire), Talbot/Hellebuyck, Dobes and Askarov confirmed; Dostal and Kuemper still unconfirmed; Batherson still PP1; Winnipeg +1.5 moved -282 to -267, Seattle +1.5 -294 to -289. 924 options priced and logged; 114 DATA CHECK rows. No bet365 friends flags. Nov 22: Kane (W), Edmonton +1.5 (W), Harley (L). Steve's rule (Nov 23): no bets against the favourite, so Winnipeg +1.5 became Utah +1.5 and the LA +1.5 parlay leg was replaced.",
+ "updatedAt": "2026-11-23T22:30:00Z",
  "bets": [
   {
    "rank": 1,
@@ -106,43 +106,43 @@
    "date": "2026-11-23",
    "game": "UTA @ WPG",
    "start": "7:30 PM ET",
-   "bet": "Winnipeg +1.5 (OT incl)",
+   "bet": "Utah +1.5 (OT incl)",
    "bet_type": "puck_line_plus1.5",
    "lane": "WINS",
-   "price": "-267",
-   "decimal": 1.375,
-   "breakeven": 0.7275,
-   "est": 0.7117,
-   "est_raw": 0.7117,
-   "est_model": 0.7028,
-   "est_market": 0.7147,
+   "price": "-285",
+   "decimal": 1.351,
+   "breakeven": 0.7403,
+   "est": 0.7144,
+   "est_raw": 0.7144,
+   "est_model": 0.6874,
+   "est_market": 0.7234,
    "est_low": 0.703,
    "est_high": 0.721,
-   "ev": -0.0217,
-   "hold": 0.0128,
+   "ev": -0.0349,
+   "hold": 0.0168,
    "method": "Plan v2: Pinnacle no-vig (power method); no model edge used (WINS lane)",
    "verdict": "WINS",
    "agent1": "WINS lane: qualifies under plan v2",
    "agent2": "Fact check: no issue",
-   "agent3": "Fact check: Skinner not confirmed in Winnipeg's preview",
+   "agent3": "Fact check: Skinner not confirmed in preview (since confirmed on RotoWire)",
    "analysts": "Not checked",
-   "objection": "WINS lane: no edge, expected cost about 3%. Price moved -282 to -267 by the re-check (slightly better payout). Utah has won by 2+ in 25% of its games.",
-   "why": "This is close to a pick'em at home, so Winnipeg only loses this bet if Utah wins by 2 or more, which Utah has done in 6 of 24 games.",
+   "objection": "WINS lane: no edge, expected cost about 2.5%. This is a coin-flip game (Utah -107, Winnipeg -103); Utah became the slight favourite late, so per Steve's rule we're on Utah's side. Winnipeg has won by 2+ in 17% of its games.",
+   "why": "Utah is the slight favourite, so this only loses if Winnipeg wins by 2 or more, which the Jets have done in 4 of 24 games.",
    "goalies": "Sebastian Cossa (Confirmed) vs Stuart Skinner (Confirmed on RotoWire, Likely on Daily Faceoff)",
    "lineup_check": "Winnipeg with Morrissey back; no key absences found",
    "stats_url": "https://www.nhl.com/gamecenter/uta-vs-wpg/2026/11/23/2026020382",
    "status": "final (5 PM re-check done)",
    "books": {
-    "pinnacle": "-267",
-    "bet365": "-275",
+    "pinnacle": "-285",
+    "bet365": null,
     "best": "pinnacle",
-    "bet365_note": null
+    "bet365_note": "checked: bet365 showed Utah -1.5 / Winnipeg +1.5 on the main line"
    },
    "track": {
     "type": "spread",
     "away": "UTA",
     "home": "WPG",
-    "team": "WPG",
+    "team": "UTA",
     "line": 1.5
    }
   }
@@ -152,26 +152,26 @@
    "rank": 1,
    "legs": [
     {
-     "game": "LAK @ MTL",
+     "game": "TOR @ NYI",
      "start": "7:30 PM ET",
-     "bet": "Los Angeles +1.5 (OT incl)",
-     "price": "-193",
-     "est": 0.6377,
-     "bet365": "-190",
+     "bet": "NY Islanders moneyline",
+     "price": "-149",
+     "est": 0.5899,
+     "bet365": "-165",
      "track": {
       "type": "spread",
-      "away": "LAK",
-      "home": "MTL",
-      "team": "LAK",
-      "line": 1.5
+      "away": "TOR",
+      "home": "NYI",
+      "team": "NYI",
+      "line": -0.5
      }
     },
     {
      "game": "CBJ @ NJD",
      "start": "7:00 PM ET",
      "bet": "New Jersey moneyline",
-     "price": "-188",
-     "est": 0.64,
+     "price": "-189",
+     "est": 0.641,
      "bet365": "-210",
      "track": {
       "type": "spread",
@@ -182,24 +182,24 @@
      }
     }
    ],
-   "bet": "Los Angeles +1.5 (OT incl) + New Jersey moneyline",
-   "short": "LAK +1.5, NJD ML",
-   "game": "LAK @ MTL / CBJ @ NJD",
-   "price": "+133",
-   "decimal": 2.326,
-   "breakeven": 0.43,
-   "chance": 0.4081,
+   "bet": "NY Islanders moneyline + New Jersey moneyline",
+   "short": "NYI ML, NJD ML",
+   "game": "TOR @ NYI / CBJ @ NJD",
+   "price": "+156",
+   "decimal": 2.555,
+   "breakeven": 0.3913,
+   "chance": 0.3781,
    "books": {
-    "pinnacle": "+133",
-    "bet365": "+125",
+    "pinnacle": "+156",
+    "bet365": "+137",
     "best": "pinnacle",
     "bet365_note": null
    },
-   "note": "Fun only. Market joint chance 41.4%, ours 40.8%; needs 43.0%. Book's cut about 4%. LA's Kuemper still unconfirmed at 4:55 PM (Expected on RotoWire); Panarin expected back for LA.",
-   "why": "Los Angeles only loses its leg if Montreal wins by 2+ (21% of Montreal games), and New Jersey (3.8 goals a game) is at home against Columbus (2.6)."
+   "note": "Fun only, two home favourites. Market joint chance 37.7%, ours 37.8%; needs 39.1%. Book's cut about 4%. Sorokin (NYI) is 'Likely'; Talbot and Hellebuyck confirmed.",
+   "why": "Both are home favourites: New Jersey scores 3.8 a game against a Columbus team scoring 2.6, and the Islanders (2.9 goals against) host a Toronto team allowing 3.6."
   }
  ],
- "parlay_note": "Parlays are tracked separately from the singles record. Fun only: about a 41% chance, expected cost about 4-5%.",
+ "parlay_note": "Parlays are tracked separately from the singles record. Fun only.",
  "track_shelf": [
   {
    "bet": "bet365 friends flags",
@@ -207,6 +207,20 @@
   }
  ],
  "dropped": [
+  {
+   "bet": "Parlay: LA +1.5 + New Jersey ML",
+   "game": "LAK @ MTL / CBJ @ NJD",
+   "price": "+133",
+   "est": 0.4081,
+   "reason": "Removed: Steve's rule (Nov 23) - no bets against the favourite (LA was the underdog)"
+  },
+  {
+   "bet": "Winnipeg +1.5",
+   "game": "UTA @ WPG",
+   "price": "-261",
+   "est": 0.712,
+   "reason": "Swapped for Utah +1.5: Utah became the slight favourite (-107 vs -103) and Steve's rule says no bets against the favourite"
+  },
   {
    "bet": "Dmitry Orlov over 0.5 points",
    "game": "MIN @ SJS",
