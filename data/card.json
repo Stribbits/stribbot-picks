@@ -7,7 +7,7 @@
  "plan_version": "v2",
  "status": "final (6:15 PM re-check done)",
  "note": "Plan v2, 7 games, final card: 3 singles + 1 fun parlay. MONEY: Batherson. WINS: Utah +1.5 and Seattle +1.5 (Seattle only once Anaheim's goalie is confirmed). Parlay (fun only): Islanders ML + New Jersey ML. Orlov was dropped at the 4:55 PM re-check: Minnesota is starting Gustavsson instead of Wallstedt. Re-check: Cooley/Ullmark, Cossa, Skinner (RotoWire), Talbot/Hellebuyck, Dobes and Askarov confirmed; Dostal and Kuemper still unconfirmed; Batherson still PP1; Winnipeg +1.5 moved -282 to -267, Seattle +1.5 -294 to -289. 924 options priced and logged; 114 DATA CHECK rows. No bet365 friends flags. Nov 22: Kane (W), Edmonton +1.5 (W), Harley (L). Steve's rule (Nov 23): no bets against the favourite, so Winnipeg +1.5 became Utah +1.5 and the LA +1.5 parlay leg was replaced.",
- "updatedAt": "2026-11-23T23:20:00Z",
+ "updatedAt": "2026-11-24T00:10:00Z",
  "bets": [
   {
    "rank": 1,
@@ -276,6 +276,44 @@
    "price": "-159 / -173",
    "est": 0.6162,
    "reason": "WINS qualifiers, but only 2 WINS singles allowed and they rank below Seattle and Winnipeg"
+  }
+ ],
+ "watch": [
+  {
+   "bet": "NJD NYI MTL +1.5",
+   "name": "Steve's 3-leg parlay: Devils, Islanders, Canadiens +1.5",
+   "legs": [
+    {
+     "bet": "New Jersey +1.5 (CBJ @ NJD)",
+     "track": {
+      "type": "spread",
+      "away": "CBJ",
+      "home": "NJD",
+      "team": "NJD",
+      "line": 1.5
+     }
+    },
+    {
+     "bet": "NY Islanders +1.5 (TOR @ NYI)",
+     "track": {
+      "type": "spread",
+      "away": "TOR",
+      "home": "NYI",
+      "team": "NYI",
+      "line": 1.5
+     }
+    },
+    {
+     "bet": "Montreal +1.5 (LAK @ MTL)",
+     "track": {
+      "type": "spread",
+      "away": "LAK",
+      "home": "MTL",
+      "team": "MTL",
+      "line": 1.5
+     }
+    }
+   ]
   }
  ]
 }
