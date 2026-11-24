@@ -78,5 +78,35 @@
   "stake": 5,
   "result": "Win",
   "verdict": "WINS"
+ },
+ {
+  "date": "2026-11-23",
+  "game": "CGY @ OTT",
+  "bet": "Drake Batherson over 0.5 points",
+  "price": "-160",
+  "decimal": 1.625,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "MONEY"
+ },
+ {
+  "date": "2026-11-23",
+  "game": "ANA @ SEA",
+  "bet": "Seattle +1.5 (OT incl)",
+  "price": "-288",
+  "decimal": 1.346,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "WINS"
+ },
+ {
+  "date": "2026-11-23",
+  "game": "UTA @ WPG",
+  "bet": "Utah +1.5 (OT incl)",
+  "price": "-287",
+  "decimal": 1.351,
+  "stake": 5,
+  "result": "Loss",
+  "verdict": "WINS"
  }
 ]

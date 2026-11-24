@@ -36,7 +36,7 @@
   "price": "-160",
   "decimal": 1.625,
   "stake": 5,
-  "result": "Pending",
+  "result": "Loss",
   "placedAt": "2026-11-23T23:35:00Z"
  },
  {
@@ -46,7 +46,7 @@
   "price": "+82",
   "decimal": 1.823,
   "stake": 5,
-  "result": "Pending",
+  "result": "Loss",
   "placedAt": "2026-11-23T23:35:00Z"
  },
  {
@@ -56,7 +56,7 @@
   "price": "+83",
   "decimal": 1.828,
   "stake": 5,
-  "result": "Pending",
+  "result": "Loss",
   "placedAt": "2026-11-23T23:35:00Z"
  }
 ]

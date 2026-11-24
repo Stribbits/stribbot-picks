@@ -803,5 +803,30 @@
   "date": "2026-11-22",
   "bet": "Edmonton +1.5 (OT incl)",
   "result": "Win"
+ },
+ {
+  "date": "2026-11-23",
+  "bet": "Drake Batherson over 0.5 points",
+  "result": "Loss"
+ },
+ {
+  "date": "2026-11-23",
+  "bet": "Seattle +1.5 (OT incl)",
+  "result": "Win"
+ },
+ {
+  "date": "2026-11-23",
+  "bet": "Utah +1.5 (OT incl)",
+  "result": "Loss"
+ },
+ {
+  "date": "2026-11-23",
+  "bet": "Parlay: NYI ML, NJD ML",
+  "result": "Loss"
+ },
+ {
+  "date": "2026-11-23",
+  "bet": "NJD NYI MTL +1.5",
+  "result": "Loss"
  }
 ]

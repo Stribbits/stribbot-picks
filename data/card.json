@@ -1,319 +1,79 @@
 {
- "date": "2026-11-23",
- "scanned": 924,
- "ledger_rows": 924,
+ "date": "2026-11-24",
+ "scanned": 148,
+ "ledger_rows": 148,
  "format": "plan v2: MONEY (points 0.5 overs, max 3) + WINS (game-line favourites, max 2) + 0-1 parlay + $0 track shelf; one bet per game",
- "ranking": "MONEY: price closest to -110 among +EV qualifiers; WINS: highest no-vig within 58-78%",
+ "ranking": "MONEY by |decimal-1.90|, then lineup, then edge; WINS by highest no-vig",
  "plan_version": "v2",
- "status": "final (6:15 PM re-check done)",
- "note": "Plan v2, 7 games, final card: 3 singles + 1 fun parlay. MONEY: Batherson. WINS: Utah +1.5 and Seattle +1.5 (Seattle only once Anaheim's goalie is confirmed). Parlay (fun only): Islanders ML + New Jersey ML. Orlov was dropped at the 4:55 PM re-check: Minnesota is starting Gustavsson instead of Wallstedt. Re-check: Cooley/Ullmark, Cossa, Skinner (RotoWire), Talbot/Hellebuyck, Dobes and Askarov confirmed; Dostal and Kuemper still unconfirmed; Batherson still PP1; Winnipeg +1.5 moved -282 to -267, Seattle +1.5 -294 to -289. 924 options priced and logged; 114 DATA CHECK rows. No bet365 friends flags. Nov 22: Kane (W), Edmonton +1.5 (W), Harley (L). Steve's rule (Nov 23): no bets against the favourite, so Winnipeg +1.5 became Utah +1.5 and the LA +1.5 parlay leg was replaced.",
- "updatedAt": "2026-11-24T00:10:00Z",
+ "status": "draft (6:15 PM re-check pending)",
+ "note": "One-game night (VGK @ EDM). One MONEY bet. No WINS bet: Vegas is the favourite but every Vegas game line is a DATA CHECK (our model has Edmonton stronger than the market does), and Edmonton +1.5 is the underdog side (Steve's rule). No parlay (needs two games).",
+ "updatedAt": "2026-11-24T23:00:00Z",
  "bets": [
   {
    "rank": 1,
-   "date": "2026-11-23",
-   "game": "CGY @ OTT",
-   "start": "7:30 PM ET",
-   "bet": "Drake Batherson over 0.5 points",
+   "date": "2026-11-24",
+   "game": "VGK @ EDM",
+   "start": "8:00 PM ET",
+   "bet": "Trevor Connelly over 0.5 points",
    "bet_type": "points_over",
    "lane": "MONEY",
-   "price": "-160",
-   "decimal": 1.625,
-   "breakeven": 0.6154,
-   "est": 0.6333,
-   "est_raw": 0.6333,
-   "est_model": 0.6375,
-   "est_market": 0.5833,
-   "est_low": 0.583,
-   "est_high": 0.637,
-   "ev": 0.0291,
-   "hold": 0.0321,
-   "method": "Plan v2: Pinnacle no-vig (power method) + model nudge capped at 5 pts (points 0.5 only); model = Poisson on blended points rate scaled to Pinnacle-implied team total",
+   "price": "+125",
+   "decimal": 2.25,
+   "breakeven": 0.4444,
+   "est": 0.4562,
+   "est_raw": 0.4562,
+   "est_model": 0.4598,
+   "est_market": 0.4062,
+   "est_low": 0.406,
+   "est_high": 0.46,
+   "ev": 0.0265,
+   "hold": 0.0382,
+   "method": "plan v2: no-vig + min(gap,0.05)",
    "verdict": "MONEY",
-   "agent1": "MONEY lane: qualifies under plan v2",
-   "agent2": "Fact check: no issue (line 2 with Tomasino and Pinto, PP1)",
-   "agent3": "Fact check: no issue (line 2, PP1); goalies listed, Ullmark labelled confirmed",
-   "analysts": "Not checked",
-   "objection": "Pinnacle has him at 58%, we have 63% (needs 62%), a thin edge. He was held off the sheet in 2 of his last 5 and played only 13:50 on Nov 21. Calgary's Cooley (.906) is a decent goalie. Best price is bet365 -155.",
-   "why": "Batherson has 22 points in 24 games on Ottawa's top power play, and Ottawa is a big home favourite against a Calgary team that allows 3.5 goals a game.",
-   "goalies": "Devin Cooley (Confirmed) vs Linus Ullmark (Confirmed)",
-   "lineup_check": "Line 2 (Tomasino-Pinto-Batherson) and PP1 on Daily Faceoff and RotoWire (2 PM ET); played Nov 21 (0 points, 13:50)",
-   "stats_url": "https://www.nhl.com/player/8480208",
-   "status": "final (5 PM re-check done)",
+   "agent1": "MONEY: gap +0.054, decimal 2.25 (closest to 1.90 of the qualifiers; only qualifier)",
+   "agent2": "Fact check: no issue with Connelly's line (L2 with Karlsson and Marner); PP2 not shown in its sources; Levi confirmed, Hart listed but not marked confirmed. Says Nugent-Hopkins expected back for EDM (top line with McDavid and Kapanen).",
+   "agent3": "Fact check: no factual issue. Line and PP2 unchanged; Levi confirmed; Hart listed confirmed by one source, likely by another.",
+   "analysts": "",
+   "objection": "Second-line, PP2 winger at +125: about a 45% shot; he had 0 points in 2 of his last 5 and bet365 has him at -105, so the books disagree.",
+   "why": "16 points in 25 games (0.64/gm), points in 3 of his last 5, 2nd line with Marner and Karlsson plus PP2, vs Levi (.896).",
+   "goalies": "Carter Hart (Likely on Daily Faceoff, Confirmed on RotoWire) vs Devon Levi (Confirmed)",
+   "lineup_check": "Daily Faceoff: L2 Connelly-Karlsson-Marner, PP2 (Bowman, Karlsson, Connelly, Andersson, Theodore). RotoWire PP2 matches. Nugent-Hopkins reportedly returns for EDM tonight (helps EDM; no effect on Connelly's role).",
+   "stats_url": "https://www.nhl.com/player/8484803",
+   "status": "active",
    "books": {
-    "pinnacle": "-160",
-    "bet365": "-155",
-    "best": "bet365",
-    "bet365_note": null
+    "pinnacle": "+125",
+    "bet365": "-105",
+    "best": "Pinnacle +125",
+    "bet365_note": "bet365 -105 is much worse; Pinnacle only"
    },
    "track": {
     "type": "player",
-    "away": "CGY",
-    "home": "OTT",
-    "player": "Drake Batherson",
+    "away": "VGK",
+    "home": "EDM",
+    "player": "Trevor Connelly",
     "stat": "P",
     "line": 0.5,
     "side": "over"
    }
-  },
-  {
-   "rank": 2,
-   "date": "2026-11-23",
-   "game": "ANA @ SEA",
-   "start": "9:40 PM ET",
-   "bet": "Seattle +1.5 (OT incl)",
-   "bet_type": "puck_line_plus1.5",
-   "lane": "WINS",
-   "price": "-288",
-   "decimal": 1.346,
-   "breakeven": 0.7429,
-   "est": 0.7237,
-   "est_raw": 0.7237,
-   "est_model": 0.7162,
-   "est_market": 0.7262,
-   "est_low": 0.716,
-   "est_high": 0.729,
-   "ev": -0.0259,
-   "hold": 0.0167,
-   "method": "Plan v2: Pinnacle no-vig (power method); no model edge used (WINS lane)",
-   "verdict": "WINS",
-   "agent1": "WINS lane: qualifies under plan v2",
-   "agent2": "Fact check: no issue",
-   "agent3": "Fact check: no issue found; starters not confirmed",
-   "analysts": "Not checked",
-   "objection": "WINS lane: no edge, expected cost about 2.5%. At -289 you risk about $2.90 to win $1. Anaheim's goalie (Dostal) was still unconfirmed at 4:55 PM ET: don't bet until he or another starter is confirmed. Anaheim has won by 2+ in 25% of its games.",
-   "why": "Seattle is the home favourite, so this only loses if Anaheim wins by 2 or more, which the Ducks have done in 6 of 24 games.",
-   "goalies": "Lukas Dostal (Unconfirmed) vs Joey Daccord (Likely)",
-   "lineup_check": "Seattle without McCann (IR); Anaheim with Carlsson day-to-day",
-   "stats_url": "https://www.nhl.com/gamecenter/ana-vs-sea/2026/11/23/2026020383",
-   "status": "Hold until Anaheim goalie confirmed (Dostal unconfirmed at 6:20 PM)",
-   "books": {
-    "pinnacle": "-289",
-    "bet365": null,
-    "best": "pinnacle",
-    "bet365_note": "bet365 only showed Anaheim +1.5 on the main line"
-   },
-   "track": {
-    "type": "spread",
-    "away": "ANA",
-    "home": "SEA",
-    "team": "SEA",
-    "line": 1.5
-   }
-  },
-  {
-   "rank": 3,
-   "date": "2026-11-23",
-   "game": "UTA @ WPG",
-   "start": "7:30 PM ET",
-   "bet": "Utah +1.5 (OT incl)",
-   "bet_type": "puck_line_plus1.5",
-   "lane": "WINS",
-   "price": "-287",
-   "decimal": 1.351,
-   "breakeven": 0.7403,
-   "est": 0.7144,
-   "est_raw": 0.7144,
-   "est_model": 0.6874,
-   "est_market": 0.7234,
-   "est_low": 0.703,
-   "est_high": 0.721,
-   "ev": -0.0349,
-   "hold": 0.0168,
-   "method": "Plan v2: Pinnacle no-vig (power method); no model edge used (WINS lane)",
-   "verdict": "WINS",
-   "agent1": "WINS lane: qualifies under plan v2",
-   "agent2": "Fact check: no issue",
-   "agent3": "Fact check: Skinner not confirmed in preview (since confirmed on RotoWire)",
-   "analysts": "Not checked",
-   "objection": "WINS lane: no edge, expected cost about 2.5%. This is a coin-flip game (Utah -107, Winnipeg -103); Utah became the slight favourite late, so per Steve's rule we're on Utah's side. Winnipeg has won by 2+ in 17% of its games.",
-   "why": "Utah is the slight favourite, so this only loses if Winnipeg wins by 2 or more, which the Jets have done in 4 of 24 games.",
-   "goalies": "Sebastian Cossa (Confirmed) vs Stuart Skinner (Confirmed on RotoWire, Likely on Daily Faceoff)",
-   "lineup_check": "Winnipeg with Morrissey back; no key absences found",
-   "stats_url": "https://www.nhl.com/gamecenter/uta-vs-wpg/2026/11/23/2026020382",
-   "status": "final (5 PM re-check done)",
-   "books": {
-    "pinnacle": "-285",
-    "bet365": null,
-    "best": "pinnacle",
-    "bet365_note": "checked: bet365 showed Utah -1.5 / Winnipeg +1.5 on the main line"
-   },
-   "track": {
-    "type": "spread",
-    "away": "UTA",
-    "home": "WPG",
-    "team": "UTA",
-    "line": 1.5
-   }
   }
  ],
- "parlays": [
-  {
-   "rank": 1,
-   "legs": [
-    {
-     "game": "TOR @ NYI",
-     "start": "7:30 PM ET",
-     "bet": "NY Islanders moneyline",
-     "price": "-149",
-     "est": 0.5899,
-     "bet365": "-165",
-     "track": {
-      "type": "spread",
-      "away": "TOR",
-      "home": "NYI",
-      "team": "NYI",
-      "line": -0.5
-     }
-    },
-    {
-     "game": "CBJ @ NJD",
-     "start": "7:00 PM ET",
-     "bet": "New Jersey moneyline",
-     "price": "-191",
-     "est": 0.641,
-     "bet365": "-210",
-     "track": {
-      "type": "spread",
-      "away": "CBJ",
-      "home": "NJD",
-      "team": "NJD",
-      "line": -0.5
-     }
-    }
-   ],
-   "bet": "NY Islanders moneyline + New Jersey moneyline",
-   "short": "NYI ML, NJD ML",
-   "game": "TOR @ NYI / CBJ @ NJD",
-   "price": "+156",
-   "decimal": 2.555,
-   "breakeven": 0.3913,
-   "chance": 0.3781,
-   "books": {
-    "pinnacle": "+156",
-    "bet365": "+137",
-    "best": "pinnacle",
-    "bet365_note": null
-   },
-   "note": "Fun only, two home favourites. Market joint chance 37.7%, ours 37.8%; needs 39.1%. Book's cut about 4%. Sorokin (NYI) is 'Likely'; Talbot and Hellebuyck confirmed.",
-   "why": "Both are home favourites: New Jersey scores 3.8 a game against a Columbus team scoring 2.6, and the Islanders (2.9 goals against) host a Toronto team allowing 3.6."
-  }
- ],
- "parlay_note": "Parlays are tracked separately from the singles record. Fun only.",
- "track_shelf": [
-  {
-   "bet": "bet365 friends flags",
-   "note": "None tonight on game lines or 1+ points. Shots/assists tabs not checked."
-  }
- ],
+ "parlays": [],
+ "parlay_note": "No parlay: only one game tonight (legs must come from different games).",
+ "track_shelf": "No bet365 friends flags (no bet365 points price beat Pinnacle's no-vig by 2.5%). 26 of 148 rows are DATA CHECK, mostly game lines: our model has EDM ~57% to win, the market has VGK ~53%.",
  "dropped": [
   {
-   "bet": "Parlay: LA +1.5 + New Jersey ML",
-   "game": "LAK @ MTL / CBJ @ NJD",
-   "price": "+133",
-   "est": 0.4081,
-   "reason": "Removed: Steve's rule (Nov 23) - no bets against the favourite (LA was the underdog)"
+   "bet": "EDM +1.5 (OT incl)",
+   "game": "VGK @ EDM",
+   "price": "-248",
+   "est": 0.714,
+   "reason": "Steve's rule: no bets against the favourite (Edmonton is the underdog)"
   },
   {
-   "bet": "Winnipeg +1.5",
-   "game": "UTA @ WPG",
-   "price": "-261",
-   "est": 0.712,
-   "reason": "Swapped for Utah +1.5: Utah became the slight favourite (-107 vs -103) and Steve's rule says no bets against the favourite"
-  },
-  {
-   "bet": "Dmitry Orlov over 0.5 points",
-   "game": "MIN @ SJS",
-   "price": "+130",
-   "est": 0.4455,
-   "reason": "Dropped at re-check: Minnesota's starter changed to Filip Gustavsson (confirmed), not Wallstedt as expected; the price hasn't moved, so we don't know how the market reads it. No other qualifier could take the slot."
-  },
-  {
-   "bet": "Utah +1.5",
-   "game": "UTA @ WPG",
-   "price": "-266",
-   "est": 0.7072,
-   "reason": "WINS qualifier, but the game is used by Winnipeg +1.5 (higher no-vig)"
-  },
-  {
-   "bet": "Anaheim +1.5",
-   "game": "ANA @ SEA",
-   "price": "-239",
-   "est": 0.6833,
-   "reason": "WINS qualifier, but the game is used by Seattle +1.5"
-  },
-  {
-   "bet": "Minnesota moneyline / San Jose +1.5",
-   "game": "MIN @ SJS",
-   "price": "-172 / -159",
-   "est": 0.63,
-   "reason": "WINS qualifiers, but MIN@SJS is used by Orlov; San Jose +1.5 also faces a Minnesota team that wins by 2+ in 56%"
-  },
-  {
-   "bet": "Ottawa moneyline",
-   "game": "CGY @ OTT",
-   "price": "-250",
-   "est": 0.6883,
-   "reason": "WINS qualifier, but CGY@OTT is used by Batherson"
-  },
-  {
-   "bet": "Tim Stutzle over 0.5 points",
-   "game": "CGY @ OTT",
-   "price": "-235",
-   "est": 0.722,
-   "reason": "Price shorter than the MONEY band (decimal 1.43 < 1.60)"
-  },
-  {
-   "bet": "Artemi Panarin over 0.5 points",
-   "game": "LAK @ MTL",
-   "price": "-195",
-   "est": 0.681,
-   "reason": "Price shorter than the MONEY band; returning from 3 missed games"
-  },
-  {
-   "bet": "NY Islanders ML / Toronto +1.5",
-   "game": "TOR @ NYI",
-   "price": "-159 / -173",
-   "est": 0.6162,
-   "reason": "WINS qualifiers, but only 2 WINS singles allowed and they rank below Seattle and Winnipeg"
-  }
- ],
- "watch": [
-  {
-   "bet": "NJD NYI MTL +1.5",
-   "name": "Steve's 3-leg parlay: Devils, Islanders, Canadiens +1.5",
-   "legs": [
-    {
-     "bet": "New Jersey +1.5 (CBJ @ NJD)",
-     "track": {
-      "type": "spread",
-      "away": "CBJ",
-      "home": "NJD",
-      "team": "NJD",
-      "line": 1.5
-     }
-    },
-    {
-     "bet": "NY Islanders +1.5 (TOR @ NYI)",
-     "track": {
-      "type": "spread",
-      "away": "TOR",
-      "home": "NYI",
-      "team": "NYI",
-      "line": 1.5
-     }
-    },
-    {
-     "bet": "Montreal +1.5 (LAK @ MTL)",
-     "track": {
-      "type": "spread",
-      "away": "LAK",
-      "home": "MTL",
-      "team": "MTL",
-      "line": 1.5
-     }
-    }
-   ]
+   "bet": "VGK +1.5 (OT incl)",
+   "game": "VGK @ EDM",
+   "price": "-315",
+   "est": 0.742,
+   "reason": "DATA CHECK: model 0.63 vs market 0.74 (gap -0.12)"
   }
  ]
 }
