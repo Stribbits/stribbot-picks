@@ -108,5 +108,25 @@
   "stake": 5,
   "result": "Loss",
   "verdict": "WINS"
+ },
+ {
+  "date": "2026-11-24",
+  "game": "VGK @ EDM",
+  "bet": "Mitchell Marner over 0.5 points",
+  "price": "-215",
+  "decimal": 1.465,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "WINS"
+ },
+ {
+  "date": "2026-11-24",
+  "game": "VGK @ EDM",
+  "bet": "VGK +1.5 (OT incl)",
+  "price": "-315",
+  "decimal": 1.317,
+  "stake": 5,
+  "result": "Win",
+  "verdict": "WINS"
  }
 ]
