@@ -1,6 +1,6 @@
 {
-  "version": "1.1.0",
-  "file": "StribHub-1.1.0.zip",
-  "sha256": "6d8349f8a7d2ca0d47297959ec7ff539ee48d9356e4109da3c933f4199973916",
-  "notes": "Accounts are now made only by the studio admin. Sign in with the username and password you were given."
+  "version": "1.1.1",
+  "file": "StribHub-1.1.1.zip",
+  "sha256": "aebdb1b2f3ea3fa7afc6e08abbe82a8ac7ae7f62bec06a78954cb48ebf7d6db1",
+  "notes": "Smaller windows fit properly. StribMeme and TaskForge find or ask for their program per person. Sign-in windows from StribBet now come to the front."
 }
