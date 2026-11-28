@@ -1,6 +1,6 @@
 {
-  "version": "1.1.2",
-  "file": "StribHub-1.1.2.zip",
-  "sha256": "a7241be837c17713a40038f1f7fe514d5e68b270a36b0a6e75e32e4bcea8272f",
-  "notes": "Fixes StribMeme and TaskForge showing up as separate programs in the taskbar."
+  "version": "1.1.3",
+  "file": "StribHub-1.1.3.zip",
+  "sha256": "4f7d6b638077e920aa38954492d584b7175d9aef8c2b605d32242ad234946356",
+  "notes": "Chat box now stays visible in small windows, and trims the white edge around embedded pages."
 }
