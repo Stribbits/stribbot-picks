@@ -1,6 +1,6 @@
 {
-  "version": "1.1.1",
-  "file": "StribHub-1.1.1.zip",
-  "sha256": "aebdb1b2f3ea3fa7afc6e08abbe82a8ac7ae7f62bec06a78954cb48ebf7d6db1",
-  "notes": "Smaller windows fit properly. StribMeme and TaskForge find or ask for their program per person. Sign-in windows from StribBet now come to the front."
+  "version": "1.1.2",
+  "file": "StribHub-1.1.2.zip",
+  "sha256": "a7241be837c17713a40038f1f7fe514d5e68b270a36b0a6e75e32e4bcea8272f",
+  "notes": "Fixes StribMeme and TaskForge showing up as separate programs in the taskbar."
 }
