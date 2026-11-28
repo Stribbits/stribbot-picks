@@ -1,6 +1,6 @@
 {
-  "version": "1.0.0",
-  "file": "StribHub-1.0.0.zip",
-  "sha256": "94851b24a0a3850785d0917fd6c92831f270abec458acfc91e52c5cad72b004d",
-  "notes": "First release: Chat, TaskForge, StribBet, StribMeme, StribCro and Admin in one app."
+  "version": "1.0.1",
+  "file": "StribHub-1.0.1.zip",
+  "sha256": "34849a30f2476e29c28dfac84e8a2c18df3fa8e0e4db2098459283e63f1de263",
+  "notes": "Fixes the white bar around StribBet, plus clicking and scrolling inside it."
 }
